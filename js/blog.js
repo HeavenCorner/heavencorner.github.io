@@ -60,7 +60,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 (function(){
     if(!isPages('data-ispost')){
         var navbar = document.querySelector('.navbar.navbar-custom')
-        // navbar.classList.add('is-fixed');
+        navbar.classList.add('is-fixed');
     }
 
 })();
@@ -72,18 +72,59 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 * */
 
 /*
-    博文页面
+    博文页面，手机端时仅仅显示菜单按钮
 */
 (function(){
     if (isPages('data-ispost')){
+
         var navbar = document.querySelector('.navbar-custom');
         var introHeader = document.querySelector('.intro-header').offsetHeight;
         var introHeader = introHeader > 497 ? introHeader : 400;
         var toc = document.querySelector('.toc-wrap');
         var postTitle = document.querySelector('.post-title-haojen');
         scrollCheck(toc,'toc-fixed',introHeader-60);
-        scrollCheck(navbar,'is-fixed');
-        scrollCheck(postTitle,'post-title-fixed',introHeader-60);
+
+        //检测页面的宽度大小，当小于768时就不弹出20170322
+
+        if($(window).width() < 768){
+            //当向下滑动一定距离后
+            $(document).scroll(function(){
+                if($(document).scrollTop() > 300){
+                    $('.navbar-toggle').css({
+                        background: 'rgba(0,0,0,0.3)',
+                        borderRadius: '10%',
+                        transition: 'all 1s'
+                    });
+                    $('.navbar.navbar-default.navbar-custom.navbar-fixed-top').css({
+                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                        boxShadow: '0 0 0px rgba(14, 14, 14, 0)',
+                    });
+                    $('.navbar-brand.animated.pulse').css({
+                        display: 'none',
+                    });
+                }else{
+                    $('.navbar-toggle').css({
+                        background: 'rgba(0,0,0,0)',
+                        borderRadius: '0',
+                    });
+                    $('.navbar.navbar-default.navbar-custom.navbar-fixed-top').css({
+                        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                        boxShadow: '0 0 10px rgba(14, 14, 14, .26)',
+                    });
+                    $('.navbar-brand.animated.pulse').css({
+                        display: 'block',
+                    });
+                }
+            });
+
+            scrollCheck(navbar,'is-fixed');
+            scrollCheck(postTitle,'post-title-fixed',introHeader-60);
+
+        }else{
+            scrollCheck(navbar,'is-fixed');
+            scrollCheck(postTitle,'post-title-fixed',introHeader-60);
+        }
+        return;
     }
 })();
 
