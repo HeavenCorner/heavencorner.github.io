@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        测试第一篇文章｜Duyang&#39;s blog
+        CSS3选择器｜Duyang&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://Duyang.github.io/2017/03/22/测试第一篇/">
+    <link rel="canonical" href="http://Duyang.github.io/2015/06/29/测试文章006/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -86,7 +86,7 @@
 
 
                     <li>
-                            <a href="/tags/">标签云</a>
+                            <a href="/works/">关于我</a>
                         </li>
 							
 						
@@ -100,7 +100,7 @@
 
 
                     <li>
-                            <a href="/works/">关于我</a>
+                            <a href="/tags/">标签云</a>
                         </li>
 							
 						
@@ -165,12 +165,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>测试第一篇文章</h1>
+                    <h1>CSS3选择器</h1>
                     
                     <span class="meta">
                          作者 DuyangSir
                         <span>
-                          日期 2017-03-22
+                          日期 2015-06-29
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -182,7 +182,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            测试第一篇文章
+            CSS3选择器
         </span>
     </div>
 </header>
@@ -193,26 +193,187 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>这是副标题，哈哈哈哈</p>
-<h2 id="标题一"><a href="#标题一" class="headerlink" title="标题一"></a>标题一</h2><h3 id="下面是框框"><a href="#下面是框框" class="headerlink" title="下面是框框"></a>下面是框框</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="不怎么样"><a href="#不怎么样" class="headerlink" title="不怎么样"></a>不怎么样</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo deploy 内容怎么样</div></pre></td></tr></table></figure>
-<p>这个地方是结束</p>
+                <h3 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h3><a id="more"></a>
+<p><code>E &gt; F</code>子元素选择器选择的是子元素F，子孙不会被选中<br>而后代选择器<code>E F</code>是选择所有的F，包括子子孙孙</p>
+<h3 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h3><p><code>E + F</code>相邻兄弟选择器 1.必须是同级的 2.必须是相邻的 3.必须是在下方 4.有且只有一个符合</p>
+<h3 id="通用兄弟选择器"><a href="#通用兄弟选择器" class="headerlink" title="通用兄弟选择器"></a>通用兄弟选择器</h3><p><code>E ~ F</code>相邻兄弟选择器 1.必须是同级的 2.必须是在下方 3.可以有多个符合</p>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><p><code>[abc]</code>类型，例如<code>[class]</code>指具有class属性的值</p>
+<p><code>[abc =&quot;value&quot;]</code>类型，属性和值选择器，例如<code>[class=&quot;div&quot;]</code>仅适用<code>class=&quot;div&quot;</code></p>
+<p><code>[abc ~=&quot;value&quot;]</code> ~表示几个以空格隔开的属性值中包含了”value”，例如<code>[class~=&quot;div1&quot;]</code>适用于<code>class=&quot;div1 div2 s2&quot;</code>和<code>class=&quot;div&quot;</code></p>
+<p><code>[abc ^=&quot;value&quot;]</code> ^以value开头的值</p>
+<p><code>[abc $=&quot;value&quot;]</code> $以value结尾的值</p>
+<p><code>[abc *=&quot;value&quot;]</code> *包含value的值</p>
+<p><code>[abc |=&quot;value&quot;]</code> |以value或value-开头的值</p>
+<p><code>[abc =&quot;value&quot;]</code>和<code>[abc *=&quot;value&quot;]</code>较实用。</p>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><h3 id="锚点伪类（a的伪类）"><a href="#锚点伪类（a的伪类）" class="headerlink" title="锚点伪类（a的伪类）"></a>锚点伪类（a的伪类）</h3><p>简称爱恨法则 love &amp; hate</p>
+<ol>
+<li><p>l = link 没有访问过的状态</p>
+</li>
+<li><p>v = visited 访问过后的状态</p>
+</li>
+<li><p>h = hover 鼠标悬浮在标签上的状态</p>
+</li>
+<li><p>a = active 鼠标悬浮在标签上按下没有松开的状态</p>
+</li>
+</ol>
+<p>使用时候顺序不能变，必须从前到后。</p>
+<h3 id="UI元素伪类-表单元素"><a href="#UI元素伪类-表单元素" class="headerlink" title="UI元素伪类 表单元素"></a>UI元素伪类 表单元素</h3><ol>
+<li>:focus 伪类在元素获得焦点（选中输入框时）时向元素添加特殊的样式。</li>
+<li><p>:disabled 废弃状态触发，定义样式，input元素必须要有disabled属性。</p>
+<p> <code>&lt;input type=&quot;text&quot; value=&quot;我是input1&quot; disabled/&gt;</code></p>
+</li>
+<li><p>:checked 选中时做出相应样式改变（兼容性较差）</p>
+<p> 与 <code>&lt;input type=&quot;checkbox&quot;&gt;</code>或 <code>&lt;input type=&quot;radio&quot;&gt;</code>配合使用。</p>
+</li>
+<li><p>:enabled 可用的表单元素状态 默认状态；与disabled相反。</p>
+</li>
+</ol>
+<pre>
+    &lt;style>
+        input:disabled{
+            border:2px solid blue;
+            background-color:gold;
+              color:red;
+        }
+        input:focus{
+            border:3px solid red;
+            color:yellow;
+        }
+        input:checked{
+            display:block;
+            width:50px;
+            height:50px;
+        }
+        input:enabled{
+            background-color:pink;
+        }
+    &lt;/style>
+    &lt;form>
+        &lt;input type="text" disabled value="这是一个废弃标签"/>
+        &lt;input type="text" value="这是测试focus的"/>
+        &lt;input type="text" value="未设置的背景色是pink的"/>
+        &lt;input type="checkbox"/>
+        &lt;input type="checkbox"/>
+    &lt;/form>
+</pre>
+
+
+
+
+<pre>
+    <style>
+        input:disabled{
+            border:2px solid blue;
+            background-color:gold;
+              color:red;
+        }
+        input:focus{
+            border:3px solid red;
+            color:yellow;
+        }
+        input:checked{
+            display:block;
+            width:50px;
+            height:50px;
+        }
+        input:enabled{
+            background-color:pink;
+        }
+    </style>
+    <form>
+        <input type="text" disabled value="这是一个废弃标签">
+        <input type="text" value="这是测试focus的">
+        <input type="text" value="未设置的背景色是pink的">
+        <input type="checkbox">
+        <input type="checkbox">
+    </form>
+</pre>
+
+
+
+<h3 id="否定选择器"><a href="#否定选择器" class="headerlink" title="否定选择器"></a>否定选择器</h3><p><code>:not</code>类型，通常和属性选择器结合使用</p>
+<p>选中所有的input，排除submit的</p>
+<pre>
+&lt;style>
+        input:not([type="submit"]){
+            border:2px solid red;
+        }
+    &lt;/style>
+    &lt;form>
+    &lt;input type="text"/>
+    &lt;input type="submit"/>
+    &lt;/form>
+</pre>
+
+<pre>
+<style>
+        input:not([type="submit"]){
+            border:2px solid red;
+        }
+    </style>
+    <form>
+    <input type="text">
+    <input type="submit">
+    </form>
+</pre>
+
+<h3 id="nth选择器"><a href="#nth选择器" class="headerlink" title="nth选择器"></a>nth选择器</h3><p><code>:first-child</code> 选择某个元素的第一个子元素</p>
+<p><code>:last-child</code> 选择某个元素的最后一个子元素</p>
+<p><code>:nth-last-child()</code> 选择某个元素的一个或多个特定的子元素，从这个元素的最后一个子元素开始算</p>
+<p><code>:nth-of-type()</code> 选择指定的元素</p>
+<p><code>:nth-last-of-type()</code> 选择指定的元素，从元素的最后一个开始计算</p>
+<p><code>:first-of-type</code> 选择一个上级元素下的第一个同类子元素</p>
+<p><code>:last-of-type</code> 选择一个上级元素的最后一个同类子元素</p>
+<p><code>:only-child</code> 选择的元素是它的父元素的唯一一个子元素</p>
+<p><code>:only-of-type</code> 选择一个元素是它的上级元素的唯一一个相同类型的子元素</p>
+<p><code>:empty</code> 选择的元素里面没有任何内容</p>
+<h3 id="—"><a href="#—" class="headerlink" title="—-"></a>—-</h3><p><code>:nth-child()</code>选择某个元素的一个或多个特定的子元素</p>
+<p><code>:nth-child(length)</code>参数是具体数字</p>
+<p><code>:nth-child(n)</code>参数是n,n从1开始计算</p>
+<p><code>:nth-child(2n)</code>n的倍数选择，n从1开始算(偶数行也可用even)</p>
+<p><code>:nth-child(2n+1)</code>表示隔几选一(奇数行也可用odd)</p>
+<p><code>:nth-child(n+length)</code>选择大于等于length后面的元素</p>
+<p><code>:nth-child(-n+length)</code>选择小于等于length前面的元素</p>
+<h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><p><code>::first-letter</code>选择文本块的第一个字母，除非在同一行里面包含一些其它元素，不过这个主要运用于段落排版上多</p>
+<p><code>::first-line</code>选择元素的第一行</p>
+<p><code>::before,::after</code>这两个主要用来给元素的前面或后面插入内容，这两个常用”content”配合使用，见过最多的就是清除浮动还有图片icon</p>
+<p><code>::selection</code>用来改变浏览网页选中文本的默认效果，<code>::selection</code>只能设置两个属性background,color属性，设置其他属性是没有任何效果的</p>
+<h4 id="利用伪元素请浮动"><a href="#利用伪元素请浮动" class="headerlink" title="利用伪元素请浮动"></a>利用伪元素请浮动</h4><pre>
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+    /*兼容IE时用，但只识别只有一个冒号的伪元素，养成书写习惯*/
+    height: 0;
+    overflow: hidden;
+    zoom:1;
+}
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2017/03/23/测试第二篇/" data-toggle="tooltip" data-placement="top"
-                           title="">&larr; Previous Post</a>
-                    </li>
                     
+                    <li class="next">
+                        <a href="/2015/06/29/测试文章004/" data-toggle="tooltip" data-placement="top"
+                           title="HTML5标签-04音视频">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -224,7 +385,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#标题一"><span class="toc-text">标题一</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下面是框框"><span class="toc-text">下面是框框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不怎么样"><span class="toc-text">不怎么样</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三级标题"><span class="toc-text">三级标题</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#子元素选择器"><span class="toc-text">子元素选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相邻兄弟选择器"><span class="toc-text">相邻兄弟选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通用兄弟选择器"><span class="toc-text">通用兄弟选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性选择器"><span class="toc-text">属性选择器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#伪类选择器"><span class="toc-text">伪类选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#锚点伪类（a的伪类）"><span class="toc-text">锚点伪类（a的伪类）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UI元素伪类-表单元素"><span class="toc-text">UI元素伪类 表单元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#否定选择器"><span class="toc-text">否定选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nth选择器"><span class="toc-text">nth选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#—"><span class="toc-text">—-</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#伪元素"><span class="toc-text">伪元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#利用伪元素请浮动"><span class="toc-text">利用伪元素请浮动</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>

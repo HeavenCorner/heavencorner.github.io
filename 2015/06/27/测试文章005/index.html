@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="新浪微博">
+    <meta name="keyword" content="null">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="为同在天堂的5年行程" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        HTML5标签-01｜Duyang&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://Duyang.github.io/2015/06/27/测试文章005/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('/img/index-title-bg.png')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    为同在天堂的5年行程
+                </span>
+                的博客
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+					
+                    
+                        
+							
+                    <!--在此处把显示连接的目录更改成中文20170322-->
+
+                        
+                        
+
+
+                    <li>
+                            <a href="/works/">关于我</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                    <!--在此处把显示连接的目录更改成中文20170322-->
+
+                        
+                        
+
+
+                    <li>
+                            <a href="/tags/">标签云</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="http://static.leiphone.com/uploads/new/article/pic/201607/5785058497600.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('http://static.leiphone.com/uploads/new/article/pic/201607/5785058497600.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>HTML5标签-01</h1>
+                    
+                    <span class="meta">
+                         作者 DuyangSir
+                        <span>
+                          日期 2015-06-27
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            HTML5标签-01
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h2 id="01-短语句"><a href="#01-短语句" class="headerlink" title="01 短语句"></a>01 短语句</h2><h3 id="mark"><a href="#mark" class="headerlink" title="mark"></a>mark</h3><h3 id="标记：高亮文本，常作用于搜索高亮"><a href="#标记：高亮文本，常作用于搜索高亮" class="headerlink" title="标记：高亮文本，常作用于搜索高亮"></a>标记：高亮文本，常作用于搜索高亮</h3><pre>
+&lt;mark>这是一个重点&lt;/mark>你看看是不
+</pre>
+<a id="more"></a>
+#### 显示效果
+
+<pre>
+<mark>这是一个重点</mark>你看看是不
+</pre>
+
+<h3 id="meter"><a href="#meter" class="headerlink" title="meter"></a>meter</h3><h3 id="定义度量衡：表示在一定范围内的值，如投票占比、使用量等"><a href="#定义度量衡：表示在一定范围内的值，如投票占比、使用量等" class="headerlink" title="定义度量衡：表示在一定范围内的值，如投票占比、使用量等"></a>定义度量衡：表示在一定范围内的值，如投票占比、使用量等</h3><h4 id="属性值："><a href="#属性值：" class="headerlink" title="属性值："></a>属性值：</h4><ul>
+<li>value 实际度量的值，默认为0，可以为整数或者浮点数</li>
+<li>max 最大值，默认值是1</li>
+<li>min 最小值，默认值是0</li>
+<li>low 范围的下限值</li>
+<li>high 范围的上限值</li>
+<li>optimum 最佳的值，必须在min属性值与max属性值</li>
+</ul>
+<pre>
+    &lt;meter value="40" min="0" max="100">&lt;/meter>
+</pre>
+
+<h4 id="显示效果"><a href="#显示效果" class="headerlink" title="显示效果"></a>显示效果</h4><pre>
+    <meter value="40" min="0" max="100"></meter>
+</pre>
+
+<h3 id="progress"><a href="#progress" class="headerlink" title="progress"></a>progress</h3><h3 id="定义进度"><a href="#定义进度" class="headerlink" title="定义进度"></a>定义进度</h3><h4 id="属性值：-1"><a href="#属性值：-1" class="headerlink" title="属性值："></a>属性值：</h4><ul>
+<li>value 规定已经完成多少任务</li>
+<li>max 规定任务一共需要多少工作</li>
+</ul>
+<pre>
+&lt;progress value="20" max="100">&lt;/progress>
+</pre>
+
+<h4 id="显示效果-1"><a href="#显示效果-1" class="headerlink" title="显示效果"></a>显示效果</h4><pre>
+<progress value="20" max="100"></progress>
+</pre>
+
+<h3 id="time"><a href="#time" class="headerlink" title="time"></a>time</h3><h3 id="定义时间和日期"><a href="#定义时间和日期" class="headerlink" title="定义时间和日期"></a>定义时间和日期</h3><h3 id="wbr"><a href="#wbr" class="headerlink" title="wbr"></a>wbr</h3><h3 id="定义换行"><a href="#定义换行" class="headerlink" title="定义换行"></a>定义换行</h3><h3 id="abbr"><a href="#abbr" class="headerlink" title="abbr"></a>abbr</h3><h3 id="定义缩写"><a href="#定义缩写" class="headerlink" title="定义缩写"></a>定义缩写</h3><p>####通过对缩写进行标记，您能够为浏览器、拼写检查和搜索引擎提供有用的信息。</p>
+<pre>
+The &lt;abbr title="World Health Organization"&gt;WTO&lt;/abbr&gt; was founded in 1948.
+</pre>
+
+<h3 id="显示样式为"><a href="#显示样式为" class="headerlink" title="显示样式为"></a>显示样式为</h3><pre>
+The <abbr title="World Health Organization">WTO</abbr> was founded in 1948.
+</pre>
+
+<h3 id="bdi"><a href="#bdi" class="headerlink" title="bdi"></a>bdi</h3><h3 id="定义bidi隔离"><a href="#定义bidi隔离" class="headerlink" title="定义bidi隔离"></a>定义bidi隔离</h3><h4 id="允许您设置一段文本，使其脱离其父元素的文本方向设置"><a href="#允许您设置一段文本，使其脱离其父元素的文本方向设置" class="headerlink" title="允许您设置一段文本，使其脱离其父元素的文本方向设置"></a>允许您设置一段文本，使其脱离其父元素的文本方向设置</h4><p><code>Username &lt;bdi&gt;Bill&lt;/bdi&gt;:80 points</code></p>
+<h2 id="引入文本的三个标签"><a href="#引入文本的三个标签" class="headerlink" title="引入文本的三个标签"></a>引入文本的三个标签</h2><h3 id="1、cite"><a href="#1、cite" class="headerlink" title="1、cite"></a>1、cite</h3><pre>
+&lt;cite&gt;飞流直下三千尺，哎呀哎呀这么高。&lt;/cite&gt;
+</pre>
+
+<h3 id="引用的文本将以斜体显示"><a href="#引用的文本将以斜体显示" class="headerlink" title="引用的文本将以斜体显示"></a>引用的文本将以斜体显示</h3><pre>
+<cite>飞流直下三千尺，哎呀哎呀这么高。</cite>
+</pre>
+
+<h3 id="2、blockquote"><a href="#2、blockquote" class="headerlink" title="2、blockquote"></a>2、blockquote</h3><h3 id="标签定义块引用"><a href="#标签定义块引用" class="headerlink" title="标签定义块引用"></a>标签定义块引用</h3><h4 id="lt-blockquote-gt-与-lt-blockquote-gt-之间的所有文本都会从常规文本中分离出来，经常会在左、右两边进行缩进（增加外边距），而且有时会使用斜体。也就是说，块引用拥有它们自己的空间。"><a href="#lt-blockquote-gt-与-lt-blockquote-gt-之间的所有文本都会从常规文本中分离出来，经常会在左、右两边进行缩进（增加外边距），而且有时会使用斜体。也就是说，块引用拥有它们自己的空间。" class="headerlink" title="&lt;blockquote&gt;与&lt;/blockquote&gt; 之间的所有文本都会从常规文本中分离出来，经常会在左、右两边进行缩进（增加外边距），而且有时会使用斜体。也就是说，块引用拥有它们自己的空间。"></a>&lt;blockquote&gt;与&lt;/blockquote&gt; 之间的所有文本都会从常规文本中分离出来，经常会在左、右两边进行缩进（增加外边距），而且有时会使用斜体。也就是说，块引用拥有它们自己的空间。</h4><pre>
+&lt;blockquote&gt;飞流直下三千尺，哎呀哎呀这么高。&lt;/blockquote&gt;
+</pre>
+
+<h3 id="显示样式为“块”"><a href="#显示样式为“块”" class="headerlink" title="显示样式为“块”"></a>显示样式为“块”</h3><pre>
+飞流直下三千尺，哎呀哎呀这么高。
+</pre>
+
+<h3 id="3、q"><a href="#3、q" class="headerlink" title="3、q"></a>3、q</h3><pre>
+&lt;q&gt;飞流直下三千尺，哎呀哎呀这么高。&lt;/q&gt;
+</pre>
+
+<h4 id="浏览器在引用的周围插入了引号"><a href="#浏览器在引用的周围插入了引号" class="headerlink" title="浏览器在引用的周围插入了引号"></a>浏览器在引用的周围插入了引号</h4><pre>
+<q>飞流直下三千尺，哎呀哎呀这么高。</q>
+</pre>
+
+<h3 id="pre"><a href="#pre" class="headerlink" title="pre"></a>pre</h3><h4 id="pre-元素可定义预格式化的文本。被包围在-pre-元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。"><a href="#pre-元素可定义预格式化的文本。被包围在-pre-元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。" class="headerlink" title="pre 元素可定义预格式化的文本。被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。"></a>pre 元素可定义预格式化的文本。被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。</h4><pre>
+&lt;pre&gt;飞流直下三千尺，哎呀哎呀这么高。&lt;/pre&gt;
+</pre>
+
+<h3 id="本文看到的框框就是它了"><a href="#本文看到的框框就是它了" class="headerlink" title="本文看到的框框就是它了"></a>本文看到的框框就是它了</h3><pre>
+<pre>
+飞流直下三千尺，哎呀哎呀这么高。
+</pre>
+</pre>
+
+
+
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2015/06/28/测试文章001/" data-toggle="tooltip" data-placement="top"
+                           title="HTML5标签-03表单">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2015/06/24/测试文章003/" data-toggle="tooltip" data-placement="top"
+                           title="Meta标签">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-短语句"><span class="toc-text">01 短语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mark"><span class="toc-text">mark</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标记：高亮文本，常作用于搜索高亮"><span class="toc-text">标记：高亮文本，常作用于搜索高亮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#meter"><span class="toc-text">meter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义度量衡：表示在一定范围内的值，如投票占比、使用量等"><span class="toc-text">定义度量衡：表示在一定范围内的值，如投票占比、使用量等</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#属性值："><span class="toc-text">属性值：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#显示效果"><span class="toc-text">显示效果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#progress"><span class="toc-text">progress</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义进度"><span class="toc-text">定义进度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#属性值：-1"><span class="toc-text">属性值：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#显示效果-1"><span class="toc-text">显示效果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#time"><span class="toc-text">time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义时间和日期"><span class="toc-text">定义时间和日期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wbr"><span class="toc-text">wbr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义换行"><span class="toc-text">定义换行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#abbr"><span class="toc-text">abbr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义缩写"><span class="toc-text">定义缩写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示样式为"><span class="toc-text">显示样式为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bdi"><span class="toc-text">bdi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义bidi隔离"><span class="toc-text">定义bidi隔离</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#允许您设置一段文本，使其脱离其父元素的文本方向设置"><span class="toc-text">允许您设置一段文本，使其脱离其父元素的文本方向设置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引入文本的三个标签"><span class="toc-text">引入文本的三个标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、cite"><span class="toc-text">1、cite</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用的文本将以斜体显示"><span class="toc-text">引用的文本将以斜体显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、blockquote"><span class="toc-text">2、blockquote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标签定义块引用"><span class="toc-text">标签定义块引用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#lt-blockquote-gt-与-lt-blockquote-gt-之间的所有文本都会从常规文本中分离出来，经常会在左、右两边进行缩进（增加外边距），而且有时会使用斜体。也就是说，块引用拥有它们自己的空间。"><span class="toc-text"><blockquote>与</blockquote> 之间的所有文本都会从常规文本中分离出来，经常会在左、右两边进行缩进（增加外边距），而且有时会使用斜体。也就是说，块引用拥有它们自己的空间。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示样式为“块”"><span class="toc-text">显示样式为“块”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、q"><span class="toc-text">3、q</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器在引用的周围插入了引号"><span class="toc-text">浏览器在引用的周围插入了引号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pre"><span class="toc-text">pre</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pre-元素可定义预格式化的文本。被包围在-pre-元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。"><span class="toc-text">pre 元素可定义预格式化的文本。被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本文看到的框框就是它了"><span class="toc-text">本文看到的框框就是它了</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/Duyang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Duyang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 为同在天堂的5年行程 2017
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://Duyang.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','null','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="/img/530k.png">
+</body>
+
+</html>

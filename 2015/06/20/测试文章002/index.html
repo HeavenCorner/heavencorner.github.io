@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="新浪微博">
+    <meta name="keyword" content="null">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="为同在天堂的5年行程" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        使用hexo搭建博客｜Duyang&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://Duyang.github.io/2015/06/20/测试文章002/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('/img/index-title-bg.png')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    为同在天堂的5年行程
+                </span>
+                的博客
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+					
+                    
+                        
+							
+                    <!--在此处把显示连接的目录更改成中文20170322-->
+
+                        
+                        
+
+
+                    <li>
+                            <a href="/works/">关于我</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                    <!--在此处把显示连接的目录更改成中文20170322-->
+
+                        
+                        
+
+
+                    <li>
+                            <a href="/tags/">标签云</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="http://static.leiphone.com/uploads/new/article/pic/201607/5785058497600.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('http://static.leiphone.com/uploads/new/article/pic/201607/5785058497600.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>使用hexo搭建博客</h1>
+                    
+                    <span class="meta">
+                         作者 DuyangSir
+                        <span>
+                          日期 2015-06-20
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            使用hexo搭建博客
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h4 id="本篇教程基于Mac快速搭建个人博客"><a href="#本篇教程基于Mac快速搭建个人博客" class="headerlink" title="本篇教程基于Mac快速搭建个人博客"></a>本篇教程基于Mac快速搭建个人博客</h4><a id="more"></a>
+<h3 id="1、安装NodeJS"><a href="#1、安装NodeJS" class="headerlink" title="1、安装NodeJS"></a>1、安装NodeJS</h3><ol>
+<li>可以通过<a href="https://nodejs.org/en/" target="_blank" rel="external">官网下载</a>NodeJS。</li>
+<li>运行安装nodeJS。</li>
+<li>安装完成后在命令行输入“node -v”即可判断是否安装成功</li>
+</ol>
+<p><em>显示为v+数字组合就是安装的node的当前版本，表示已经安装成功</em></p>
+<h3 id="2、安装Git"><a href="#2、安装Git" class="headerlink" title="2、安装Git"></a>2、安装Git</h3><ol>
+<li>Mac可以通过安装Xcode就自带有Git</li>
+<li>在命令行输入“git –version”可查看Git是否安装成功</li>
+</ol>
+<p><em>显示为git version+数字组合就是git的当前版本号，表示已经安装了git</em></p>
+<h3 id="3、申请github账号"><a href="#3、申请github账号" class="headerlink" title="3、申请github账号"></a>3、申请github账号</h3><p>点击进入<a href="https://github.com" target="_blank" rel="external">github官网</a>申请账号</p>
+<h2 id="二、Hexo的安装"><a href="#二、Hexo的安装" class="headerlink" title="二、Hexo的安装"></a>二、Hexo的安装</h2><ol>
+<li>首先在命令行里输入命令“hexo install -g hexo”</li>
+<li>如果安装过程中有出现报错字样的话，可以尝试下用sudo来提升安装权限，输入命令：“sudo hexo install -g hexo”(不行就“sudo npm install-g hexo”)。</li>
+<li>然后会提示输入密码，即为电脑管理员的密码。</li>
+<li>在命令行里输入“hexo version”，看到hexo的相关信息即表明hexo安装成功。</li>
+<li>新建一个文件夹，用于存放整个博客，在此文件夹下输入命令“hexo init”初始化hexo目录。</li>
+<li>最后输入“hexo server”启动本地配置，显示如下：<pre><br>INFO  Start processing<br>INFO  Hexo is running at <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>. Press Ctrl+C to stop.<br></pre></li>
+<li>复制上面代码中的地址到浏览器便可以在本地浏览新建的博客。</li>
+</ol>
+<h2 id="三、配置Github"><a href="#三、配置Github" class="headerlink" title="三、配置Github"></a>三、配置Github</h2><h4 id="已申请的Github账号一枚"><a href="#已申请的Github账号一枚" class="headerlink" title="已申请的Github账号一枚"></a>已申请的Github账号一枚</h4><h3 id="1、配置ssh-key"><a href="#1、配置ssh-key" class="headerlink" title="1、配置ssh-key"></a>1、配置ssh-key</h3><ol>
+<li>在命令行里输入“git”，等待运行。</li>
+<li>继续输入“ssh-keygen”然后连续三次回车，可以看到下面语句<pre>The key’s randomart image is:<br>+—[RSA 2048]—-+<br>|             o.++|<br>|           . .<em>+o|<br>|          = +++ B|<br>|         B =.o+B.|<br>|        S </em> +.o=+|<br>|         = E ooo=|<br>|          = +  oo|<br>|           o +. .|<br>|            +.o+.|<br>+—-[SHA256]—–+</pre></li>
+<li>接着输入“vim ~/.ssh/id_rsa.pub”会出现另一个对话框，复制“ssh-key”（<em>注意不要多复制内容，否则无效</em>），然后输入“:q”退出窗口，回到命令行。</li>
+<li>登录Github，进入设置-SSH and GPG keys-New SSH key把复制的ssh-key添加进去。</li>
+</ol>
+<h3 id="2、配置Github与本地机器验证"><a href="#2、配置Github与本地机器验证" class="headerlink" title="2、配置Github与本地机器验证"></a>2、配置Github与本地机器验证</h3><ol>
+<li>在命令行中输入“git config - -global user.name “此处为申请的Github的用户名””</li>
+<li>继续输入“git config - -global user.email “此处为申请的Github邮箱””</li>
+</ol>
+<h3 id="3、新建博客域名仓库"><a href="#3、新建博客域名仓库" class="headerlink" title="3、新建博客域名仓库"></a>3、新建博客域名仓库</h3><ol>
+<li>点击“new repository”新建域名仓库，编写输入域名名称。</li>
+<li>勾选“ Initialize this repository with a README ”选项，提交。</li>
+</ol>
+<h2 id="四、发布"><a href="#四、发布" class="headerlink" title="四、发布"></a>四、发布</h2><h3 id="1、发布前的准备"><a href="#1、发布前的准备" class="headerlink" title="1、发布前的准备"></a>1、发布前的准备</h3><ol>
+<li>打开新建的博客文件夹，根目录下找到并使用“Sublime Text”打开“_config.yml”文件.</li>
+<li>文档开头的语句可以自定义，关于博客的名称和相关简介标签。<pre>title: 博客标题名称<br>subtitle: 副标题<br>description:<br>author: 博主<br>language:<br>timezone:</pre></li>
+<li>在文档的最下边，修改“type: git”和添加“repo: 域名仓库的https地址”，代码如下：<pre><br>deploy:<br>type: git<br>repo: <a href="https://github.com/-----------/-----------.io.git" target="_blank" rel="external">https://github.com/-----------/-----------.io.git</a></pre></li>
+</ol>
+<h3 id="2、正式发布"><a href="#2、正式发布" class="headerlink" title="2、正式发布"></a>2、正式发布</h3><ol>
+<li>部署提示找不到Git,输入命令“npm install hexo-deployer-git –save”等待安装完成。<pre><br>npm install hexo-deployer-git –save<br></pre></li>
+<li>输入命令“hexo g”转换文本格式。</li>
+<li>输入命令“hexo d”发布上传到服务器库。</li>
+<li>可以了，登录浏览器查看你的微博吧~ </li>
+</ol>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2015/06/24/测试文章003/" data-toggle="tooltip" data-placement="top"
+                           title="Meta标签">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、前期准备"><span class="toc-text">一、前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#本篇教程基于Mac快速搭建个人博客"><span class="toc-text">本篇教程基于Mac快速搭建个人博客</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、安装NodeJS"><span class="toc-text">1、安装NodeJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、安装Git"><span class="toc-text">2、安装Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、申请github账号"><span class="toc-text">3、申请github账号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Hexo的安装"><span class="toc-text">二、Hexo的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、配置Github"><span class="toc-text">三、配置Github</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#已申请的Github账号一枚"><span class="toc-text">已申请的Github账号一枚</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、配置ssh-key"><span class="toc-text">1、配置ssh-key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、配置Github与本地机器验证"><span class="toc-text">2、配置Github与本地机器验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、新建博客域名仓库"><span class="toc-text">3、新建博客域名仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、发布"><span class="toc-text">四、发布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、发布前的准备"><span class="toc-text">1、发布前的准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、正式发布"><span class="toc-text">2、正式发布</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/Duyang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Duyang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 为同在天堂的5年行程 2017
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://Duyang.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','null','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="/img/530k.png">
+</body>
+
+</html>
