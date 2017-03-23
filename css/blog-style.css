@@ -1096,14 +1096,15 @@ img::-moz-selection {
     height: 55px;
 }
 
-.navbar-custom.is-fixed::before {
-    content: ' ';
-    display: block;
-    height: 2px;
-    position: absolute;
-    width: 100%;
-    background: red;
-}
+/*原始样式最上边的红线*/
+/*.navbar-custom.is-fixed::before {*/
+    /*content: ' ';*/
+    /*display: block;*/
+    /*height: 2px;*/
+    /*position: absolute;*/
+    /*width: 100%;*/
+    /*background: red;*/
+/*}*/
 
 .navbar-custom.is-fixed .brand-logo {
     border-radius: 3px;
@@ -1186,14 +1187,19 @@ img::-moz-selection {
 .site-heading .about-me img{
     width: 120px;height: 120px;
     border-radius: 50%;
-    /*ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¤ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â´ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã¢â‚¬Â¹Ãƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â½ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¹ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¾ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ*/
-    opacity: .9;
+    /*opacity: .9;*/
 }
+/*主页面的 名字 样式*/
 .site-heading h5 a{
     color: #fff;
     font-size: 18px;
     letter-spacing: 1px;
     font-weight: 400;
+    text-decoration: none;
+    transition: all .5s;
+}
+.site-heading h5 a:hover{
+    font-size: 20px;
 }
 .site-heading p {
     margin: 0;
