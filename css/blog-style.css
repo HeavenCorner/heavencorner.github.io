@@ -239,6 +239,32 @@ article blockquote cite:before{
     line-height: 2;
     margin-top: 20px;
 }
+/*新增加的在pc端时*/
+@media only screen and (min-width: 768px) {
+    .navbar-default .navbar-collapse {
+        /*border: none;*/
+        /*background: rgba(255,255,255,0.4);*/
+        /*background: rgba(0,0,0,0.4);*/
+
+        /*box-shadow: rgba(0, 0, 0, 0.2) 0 1px 4px;*/
+        /*border-radius: 2px;*/
+        /*width: 100px;*/
+        /*float: right;*/
+        /*margin: 0;*/
+        /*text-align: center;*/
+    }
+    #huxblog_navbar a {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 28px;
+        color: #ffffff;
+        /*text-shadow: 0px 0px 3px #ffffff;*/
+    }
+
+}
+
+
+
 /*手机端导航栏的样式*/
 @media only screen and (max-width: 767px) {
     .navbar-default .navbar-collapse {

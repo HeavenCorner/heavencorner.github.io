@@ -60,7 +60,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 (function(){
     if(!isPages('data-ispost')){
         var navbar = document.querySelector('.navbar.navbar-custom')
-        navbar.classList.add('is-fixed');
+        // navbar.classList.add('is-fixed');
     }
 
 })();
