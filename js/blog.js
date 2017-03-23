@@ -85,7 +85,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
         scrollCheck(toc,'toc-fixed',introHeader-60);
 
         //检测页面的宽度大小，当小于768时就不弹出20170322
-
+        alert($(window).width());
         if($(window).width() < 768){
             //当向下滑动一定距离后
             $(document).scroll(function(){
