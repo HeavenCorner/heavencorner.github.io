@@ -74,7 +74,6 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 /*
     博文页面，手机端时仅仅显示菜单按钮
 */
-alert($(window).width());
 
 (function(){
     if (isPages('data-ispost')){
@@ -87,7 +86,6 @@ alert($(window).width());
         scrollCheck(toc,'toc-fixed',introHeader-60);
 
         //检测页面的宽度大小，当小于768时就不弹出20170322
-        alert($(window).width());
         if($(window).width() < 768){
             //当向下滑动一定距离后
             $(document).scroll(function(){
