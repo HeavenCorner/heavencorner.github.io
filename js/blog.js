@@ -89,7 +89,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
         if($(window).width() < 768){
             //当向下滑动一定距离后
             $(document).scroll(function(){
-                if($(document).scrollTop() > 300){
+                if($(document).scrollTop() > 360){
                     $('.navbar-toggle').css({
                         background: 'rgba(0,0,0,0.3)',
                         borderRadius: '10%',
