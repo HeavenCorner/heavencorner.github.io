@@ -74,6 +74,8 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 /*
     博文页面，手机端时仅仅显示菜单按钮
 */
+alert($(window).width());
+
 (function(){
     if (isPages('data-ispost')){
 
