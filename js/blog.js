@@ -139,7 +139,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 //首页和标签云下下的a标签都绑定点击事件，跳转后在向下滑动一定的距离，20170324
 (function(){
-    $('#tag_cloud a,#index_tags a').on('click',function(){
+    $('#tag_cloud a').on('click',function(){
         setTimeout(function(){
             var top = $(document).scrollTop() - 60;
             // $(document).scrollTop(top);
@@ -147,5 +147,18 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
                 scrollTop: top
             }, 500)
         },100)
+    })
+})();
+
+//从主页的标签云跳转到标签云里不会滚动，所以给标签那一页加上只要不是距离上边大于300就自动向下滑动60
+(function(){
+    setTimeout(function(){
+        if($(document).scrollTop() > 200){
+            var top = $(document).scrollTop() - 60;
+            // $(document).scrollTop(top);
+            $('body').animate({
+                scrollTop: top
+            }, 500)
+        }
     })
 })();
