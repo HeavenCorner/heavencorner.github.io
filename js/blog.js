@@ -142,7 +142,6 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
     $('#tag_cloud a').on('click',function(){
         setTimeout(function(){
             var top = $(document).scrollTop() - 60;
-            // $(document).scrollTop(top);
             $('body').animate({
                 scrollTop: top
             }, 800)
@@ -155,7 +154,6 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
     setTimeout(function(){
         if($(document).scrollTop() > 200){
             var top = $(document).scrollTop() - 60;
-            // $(document).scrollTop(top);
             $('body').animate({
                 scrollTop: top
             }, 1000)
