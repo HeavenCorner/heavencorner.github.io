@@ -151,7 +151,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
     })
 })();
 
-//从主页的标签云跳转到标签云里不会滚动，所以给标签那一页加上只要不是距离上边大于300就自动向下滑动60 20170324
+//从主页的标签云跳转到标签云里不会滚动，所以给页面（所有的）加上只要不是距离上边大于300就自动向下滑动60 20170324
 (function(){
     setTimeout(function(){
         if($(document).scrollTop() > 200){
