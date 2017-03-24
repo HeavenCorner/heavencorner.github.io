@@ -313,6 +313,34 @@ article blockquote cite:before{
     #huxblog_navbar.in li {
         opacity: 1;
     }
+
+    /*手机端footer*/
+    footer {
+        font-size: 20px;
+        padding: 20px 0 10px;
+    }
+
+    footer .list-inline {
+        margin: 0;
+        padding: 0;
+    }
+
+    footer .copyright {
+        font-size: 10px;
+        text-align: center;
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
+
+    footer .copyright a {
+        color: #337ab7;
+    }
+
+    footer .copyright a:hover,
+    footer .copyright a:focus {
+        color: #0085a1;
+    }
+
 }
 
 .navbar-custom {
@@ -594,9 +622,10 @@ footer .list-inline {
 }
 
 footer .copyright {
-    font-size: 14px;
+    font-size: 10px;
     text-align: center;
     margin-top: 12px;
+    margin-bottom: 8px;
 }
 
 footer .copyright a {
