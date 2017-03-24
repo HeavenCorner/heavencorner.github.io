@@ -312,6 +312,7 @@ article blockquote cite:before{
     footer .list-inline {
         margin: 0;
         padding: 0;
+        cursor: pointer;
     }
 
     footer .copyright {
