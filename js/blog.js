@@ -141,11 +141,10 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 (function(){
     $('#tag_cloud a').on('click',function(){
 
-        var top = $(document).scrollTop() + 60;
         setTimeout(function(){
-            $(document).stop().animate({
-                scrollTop: top
-            },350)
+            var top = $(document).scrollTop() + 60;
+
+            $(document).scrollTop(top);
         },100)
     })
 })();
