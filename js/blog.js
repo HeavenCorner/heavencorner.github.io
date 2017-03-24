@@ -136,3 +136,10 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
         }, 500)
     }
 })();
+
+//标签云下下的a标签都绑定点击事件，跳转后在向下滑动一定的距离，20170324
+(function(){
+    $('#tag_cloud a').on('click',function(){
+        $(document).scroll($(document).scroll + 50);
+    })
+})();
