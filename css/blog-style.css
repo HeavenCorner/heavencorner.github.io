@@ -343,6 +343,11 @@ article blockquote cite:before{
     z-index: 6;
     transition: background .5s;
     line-height: 1.7;
+    max-height: 56px;
+}
+
+.navbar-custom > .container-fluid {
+    max-height: 56px;
 }
 
 .navbar-custom .navbar-brand {
@@ -435,6 +440,10 @@ article blockquote cite:before{
     margin-bottom: 20px;
 }
 
+/*博文下的title设置低一点*/
+.intro-header-text{
+    height: 280px;
+}
 .intro-header>.container{
     display: table-cell;
     vertical-align: middle;

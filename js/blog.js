@@ -77,6 +77,8 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 (function(){
     if (isPages('data-ispost')){
+        //title变低
+        $('.intro-header').addClass('intro-header-text');
 
         var navbar = document.querySelector('.navbar-custom');
         var introHeader = document.querySelector('.intro-header').offsetHeight;
