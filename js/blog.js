@@ -145,7 +145,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
             // $(document).scrollTop(top);
             $('body').animate({
                 scrollTop: top
-            }, 500)
+            }, 800)
         },100)
     })
 })();
@@ -158,7 +158,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
             // $(document).scrollTop(top);
             $('body').animate({
                 scrollTop: top
-            }, 500)
+            }, 1000)
         }
     })
 })();
