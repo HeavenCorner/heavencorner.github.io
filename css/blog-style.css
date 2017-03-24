@@ -722,12 +722,50 @@ form .row:first-child .floating-label-form-group {
     padding: 0 !important;
 }
 
+.pager li{
+    width: 50%;
+    height: 100%;
+}
+.pager .previous{
+    float: left;
+}
+.pager .next{
+    float: right;
+}
+
+.pager li > a{
+    position: relative;
+}
+.pager .previous a{
+    padding: 10px 10px 10px 20px;
+
+}
+.pager .next a{
+    padding: 10px 20px 10px 10px;
+
+}
+/*博文下一篇左右箭头*/
+
+.pager li i{
+    display: inline-block;
+    height: 20px;
+    margin-top: -7px;
+}
+
+.pager .previous i{
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.pager .next i{
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
 .pager li > a,
 .pager li > span {
-    /* Hux learn from
-       *     TypeIsBeautiful,
-       *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-       */
     font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
     line-height: 1.7;
     text-transform: uppercase;
@@ -737,17 +775,35 @@ form .row:first-child .floating-label-form-group {
     padding: 10px;
     background-color: white;
     border-radius: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 @media only screen and (min-width: 768px) {
-    .pager li > a,
-    .pager li > span {
+    .pager li > a{
+        max-width: 260px;
         font-size: 14px;
-        padding: 15px 25px;
+        text-overflow: ellipsis;
+
+    }
+    .pager li > span{
+        /*max-width: 230px;*/
+    }
+}
+@media only screen and (max-width: 767px) {
+    .pager li > a{
+        max-width: 180px;
+        font-size: 14px;
+        text-overflow: ellipsis;
+    }
+    .pager li > span{
+        /*max-width: 110px;*/
     }
 }
 
 .pager li > a {
+    /*max-width: 200px;*/
     color: #404040;
 }
 
