@@ -43,12 +43,13 @@ hr{
     border-color: #0085a1;
 }
 
+/*侧边栏的头像*/
 .sidebar-container .short-about img {
     width: 100%;
     display: block;
-    border-radius: 50%;
+    border-radius: 5px;
     margin-bottom: 20px;
-    box-shadow: 0 0 2px black;
+    box-shadow: 3px 3px 3px grey;
 }
 
 .sidebar-container .short-about p {
@@ -330,6 +331,14 @@ article blockquote cite:before{
     footer .copyright a:focus {
         color: #0085a1;
     }
+    /*我的名字*/
+    .intro-header .about-me h4 {
+        display: none;
+    }
+
+    .intro-header .about-me h5 {
+        display: block;
+    }
 
 }
 
@@ -502,7 +511,7 @@ article blockquote cite:before{
 .intro-header .post-heading .meta span {
     padding-left: 1em;
 }
-
+/*pc*/
 @media only screen and (min-width: 768px) {
     .intro-header .post-heading h1,
     .intro-header .post-heading .subheading{
@@ -524,6 +533,28 @@ article blockquote cite:before{
 
     .intro-header {
         height: 370px;
+    }
+    /*pc端不显示大标题头像，仅仅在侧边栏显示*/
+    .intro-header .about-me img{
+        display: none;
+    }
+    /*我的名字更改为h4的'为同在天堂的5年形成'*/
+    .intro-header .about-me h5 {
+        display: none;
+    }
+    .intro-header .about-me h4 {
+        display: block;
+    }
+    .intro-header .about-me h4 a{
+        font-size: 50px;
+    }
+    .intro-header .about-me h4 a:hover{
+        font-size: 60px;
+    }
+    /*我的签名*/
+    .intro-header .about-me p{
+        padding-top: 20px;
+        font-size: 14px;
     }
 }
 
@@ -1129,7 +1160,7 @@ img::-moz-selection {
 }
 
 /*
-  @Haojen
+  pc侧边栏的
 */
 
 .intro-header .site-heading .subheading {
@@ -1138,6 +1169,7 @@ img::-moz-selection {
 
 .sidebar-container .short-about {
     text-align: center;
+
 }
 
 
@@ -1306,7 +1338,9 @@ img::-moz-selection {
     /*opacity: .9;*/
 }
 /*主页面的 名字 样式*/
-.site-heading h5 a{
+.site-heading h5 a,
+.site-heading h4 a
+{
     color: #fff;
     font-size: 18px;
     letter-spacing: 1px;
