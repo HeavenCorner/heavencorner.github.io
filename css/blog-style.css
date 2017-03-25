@@ -340,6 +340,7 @@ article blockquote cite:before{
     }
     #totop {
         right: 10px;
+        bottom: 10px;
     }
     /*我的名字*/
     .intro-header .about-me h4 {
