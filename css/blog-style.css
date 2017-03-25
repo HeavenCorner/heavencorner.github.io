@@ -339,8 +339,8 @@ article blockquote cite:before{
         color: #0085a1;
     }
     #totop {
-        right: 10px;
-        bottom: 10px;
+        right: 10px !important;
+        bottom: 10px !important;
     }
     /*我的名字*/
     .intro-header .about-me h4 {
