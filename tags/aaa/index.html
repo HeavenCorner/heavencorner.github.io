@@ -43,6 +43,21 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
+<!-- 滑块 -->
+<style>
+    .nav {
+        position: relative;
+    }
+    .nav-fly {
+        position: absolute;
+        top: 52px;
+        left: 0px;
+        display: block;
+        height: 3px;
+        background: #FFFFFF;
+        width: 0;
+    }
+</style>
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="true
 " data-ishome = "false" >
     <div class="container-fluid">
@@ -68,7 +83,7 @@
             also mask any touch event of tags, unfortunately.
         -->
         <!-- /.navbar-collapse -->
-        <div id="huxblog_navbar">
+        <div id="blog_navbar">
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -87,10 +102,13 @@
                         <a href="/massage/">留言板</a>
                     </li>
 
+                    <!--滑块-->
+                    <i class="nav-fly"></i>
 
                 </ul>
             </div>
         </div>
+
     </div>
     <!-- /.container -->
 </nav>
@@ -100,7 +118,7 @@
     // in high-perf jank-free CSS3 implementation
 //    var $body   = document.body;
     var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
+    var $navbar = document.querySelector('#blog_navbar');
     var $collapse = document.querySelector('.navbar-collapse');
 
     $toggle.addEventListener('click', handleMagic)

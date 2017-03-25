@@ -162,3 +162,26 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
         }
     })
 })();
+
+//滑块消失
+$("#blog_navbar .nav").on("mouseleave", function() {
+    $(".nav-fly").stop().animate({
+        width: 0
+    }, 300)
+})
+//滑块移动
+$("#blog_navbar .nav li").on("mouseenter", function() {
+
+    $index2 = $(this).index();
+    if($index2 > 4) {
+        return
+    }
+    //上一个的宽
+    $width = parseInt($("#blog_navbar .nav li").eq($index2).css("width"));
+
+    $left = $(this).position().left;
+    $(".nav-fly").stop().animate({
+        width: $(this).css("width"),
+        left: $left + "px"
+    }, 300)
+})

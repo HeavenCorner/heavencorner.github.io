@@ -243,14 +243,18 @@ article blockquote cite:before{
 /*新增加的在pc端时*/
 @media only screen and (min-width: 768px) {
 
-    #huxblog_navbar a {
+    #blog_navbar a {
         font-weight: 500;
         font-size: 14px;
         line-height: 16px;
         color: #ffffff;
-        /*text-shadow: 0px 0px 3px #ffffff;*/
+        transition: all .5s;
     }
 
+    #blog_navbar a:hover {
+        /*color: #337ab7;*/
+        text-shadow: 7px 8px 1px #337ab7;
+    }
 }
 
 
@@ -270,7 +274,7 @@ article blockquote cite:before{
         text-align: center;
     }
 
-    #huxblog_navbar a {
+    #blog_navbar a {
         font-weight: 500;
         font-size: 14px;
         line-height: 28px;
@@ -278,29 +282,29 @@ article blockquote cite:before{
         /*text-shadow: 0px 0px 3px #ffffff;*/
     }
 
-    #huxblog_navbar .navbar-collapse {
+    #blog_navbar .navbar-collapse {
         height: 0;
         transform: scaleY(0);
         transform-origin: top right;
         transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    #huxblog_navbar li {
+    #blog_navbar li {
         opacity: 0;
         transition: opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 205ms;
     }
 
-    #huxblog_navbar.in {
+    #blog_navbar.in {
         transform: scaleX(1);
         opacity: 1;
     }
 
-    #huxblog_navbar.in .navbar-collapse {
+    #blog_navbar.in .navbar-collapse {
         transform: scaleY(1);
         -webkit-transform: scaleY(1);
     }
 
-    #huxblog_navbar.in li {
+    #blog_navbar.in li {
         opacity: 1;
     }
 
@@ -379,6 +383,7 @@ article blockquote cite:before{
     letter-spacing: 1px;
     text-shadow: 0 0 1px rgba(0,0,0,.1);
 }
+
 
 .navbar-custom .nav li a:active {
     background: rgba(0, 0, 0, 0.12);
@@ -565,7 +570,8 @@ article blockquote cite:before{
         font-size: 50px;
     }
     .intro-header .about-me h4 a:hover{
-        font-size: 60px;
+        text-shadow: 20px 14px 7px rgba(0,0,0,0.7);
+        font-size: 55px;
     }
     /*我的签名*/
     .intro-header .about-me p{

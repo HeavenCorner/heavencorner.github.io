@@ -43,6 +43,21 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
+<!-- 滑块 -->
+<style>
+    .nav {
+        position: relative;
+    }
+    .nav-fly {
+        position: absolute;
+        top: 52px;
+        left: 0px;
+        display: block;
+        height: 3px;
+        background: #FFFFFF;
+        width: 0;
+    }
+</style>
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
@@ -68,7 +83,7 @@
             also mask any touch event of tags, unfortunately.
         -->
         <!-- /.navbar-collapse -->
-        <div id="huxblog_navbar">
+        <div id="blog_navbar">
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -87,10 +102,13 @@
                         <a href="/massage/">留言板</a>
                     </li>
 
+                    <!--滑块-->
+                    <i class="nav-fly"></i>
 
                 </ul>
             </div>
         </div>
+
     </div>
     <!-- /.container -->
 </nav>
@@ -100,7 +118,7 @@
     // in high-perf jank-free CSS3 implementation
 //    var $body   = document.body;
     var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
+    var $navbar = document.querySelector('#blog_navbar');
     var $collapse = document.querySelector('.navbar-collapse');
 
     $toggle.addEventListener('click', handleMagic)
@@ -167,17 +185,13 @@
                 
                 <a href="#Life" title="Life" rel="1">Life</a>
                 
-                <a href="#jjj" title="jjj" rel="1">jjj</a>
-                
-                <a href="#ijik" title="ijik" rel="1">ijik</a>
-                
                 <a href="#haha" title="haha" rel="1">haha</a>
                 
                 <a href="#hhhhhhh" title="hhhhhhh" rel="1">hhhhhhh</a>
                 
-                <a href="#jidhsh" title="jidhsh" rel="1">jidhsh</a>
+                <a href="#jjj" title="jjj" rel="1">jjj</a>
                 
-                <a href="#jhs" title="jhs" rel="1">jhs</a>
+                <a href="#ijik" title="ijik" rel="1">ijik</a>
                 
                 <a href="#gygy" title="gygy" rel="1">gygy</a>
                 
@@ -186,6 +200,10 @@
                 <a href="#aaa" title="aaa" rel="1">aaa</a>
                 
                 <a href="#jij" title="jij" rel="1">jij</a>
+                
+                <a href="#jidhsh" title="jidhsh" rel="1">jidhsh</a>
+                
+                <a href="#jhs" title="jhs" rel="1">jhs</a>
                 
             </div>
 
@@ -234,40 +252,6 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="jjj">
-                    <span class="tag-text">jjj</span>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/2015/06/24/测试文章003/">
-                        <h2 class="post-title">
-                            测试文章003
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="ijik">
-                    <span class="tag-text">ijik</span>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/2015/06/24/测试文章003/">
-                        <h2 class="post-title">
-                            测试文章003
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="haha">
                     <span class="tag-text">haha</span>
                 </span>
@@ -302,14 +286,14 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="jidhsh">
-                    <span class="tag-text">jidhsh</span>
+                <span class="fa fa-tag listing-seperator" id="jjj">
+                    <span class="tag-text">jjj</span>
                 </span>
                 
                 <div class="post-preview">
-                    <a href="/2015/06/29/测试文章006/">
+                    <a href="/2015/06/24/测试文章003/">
                         <h2 class="post-title">
-                            测试文章006
+                            测试文章003
                         </h2>
                         
                     </a>
@@ -319,14 +303,14 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="jhs">
-                    <span class="tag-text">jhs</span>
+                <span class="fa fa-tag listing-seperator" id="ijik">
+                    <span class="tag-text">ijik</span>
                 </span>
                 
                 <div class="post-preview">
-                    <a href="/2015/06/29/测试文章006/">
+                    <a href="/2015/06/24/测试文章003/">
                         <h2 class="post-title">
-                            测试文章006
+                            测试文章003
                         </h2>
                         
                     </a>
@@ -395,6 +379,40 @@
                     <a href="/2015/06/29/测试文章004/">
                         <h2 class="post-title">
                             测试文章004
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="jidhsh">
+                    <span class="tag-text">jidhsh</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2015/06/29/测试文章006/">
+                        <h2 class="post-title">
+                            测试文章006
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="jhs">
+                    <span class="tag-text">jhs</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2015/06/29/测试文章006/">
+                        <h2 class="post-title">
+                            测试文章006
                         </h2>
                         
                     </a>
