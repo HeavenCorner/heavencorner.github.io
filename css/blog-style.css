@@ -257,15 +257,9 @@ article blockquote cite:before{
     }
 
     #totop {
-        position: fixed;
         right: 100px;
         bottom: 40px;
-        z-index: 9999;
-        display: none;
-        height: 32px;
-        width: 32px;
-        background-color: rgba(0,0,0,0.3);
-        text-align: center;
+
     }
 }
 /*###导航栏的白色阴影*/
@@ -1420,7 +1414,15 @@ img::-moz-selection {
     width:0;
 }
 /*返回顶部样式，在footer里*/
-
+#totop {
+    position: fixed;
+    z-index: 9999;
+    display: none;
+    height: 32px;
+    width: 32px;
+    background-color: rgba(0,0,0,0.3);
+    text-align: center;
+}
 #totop a {
     display: inline-block;
     color: #ffffff;
