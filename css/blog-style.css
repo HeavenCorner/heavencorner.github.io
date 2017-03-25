@@ -240,7 +240,7 @@ article blockquote cite:before{
     line-height: 2;
     margin-top: 20px;
 }
-/*新增加的在pc端时*/
+/*新增加的在pc端时的导航栏样式*/
 @media only screen and (min-width: 768px) {
 
     #blog_navbar a {
@@ -248,18 +248,21 @@ article blockquote cite:before{
         font-size: 14px;
         line-height: 16px;
         color: #ffffff;
-        transition: all .5s;
+        transition: all .8s;
     }
 
     #blog_navbar a:hover {
-        /*color: #337ab7;*/
-        text-shadow: 7px 8px 1px #337ab7;
+        color: #337ab7;
+        /*text-shadow: 7px 8px 1px #337ab7;*/
     }
+}
+/*###导航栏的白色阴影*/
+.navbar {
+    box-shadow: 0 3px 4px rgba(255,255,255,.6) !important;
 }
 
 
-
-/*手机端导航栏的样式*/
+/*###手机端导航栏的样式*/
 @media only screen and (max-width: 767px) {
     .navbar-default .navbar-collapse {
         border: none;
@@ -338,6 +341,9 @@ article blockquote cite:before{
     /*我的名字*/
     .intro-header .about-me h4 {
         display: none;
+    }
+    .intro-header .about-me {
+        padding-top: 45px;
     }
 
     .intro-header .about-me h5 {
@@ -454,7 +460,7 @@ article blockquote cite:before{
     margin-bottom: 20px;
 }
 
-/*博文下的title设置低一点*/
+/*###博文下的title设置低一点*/
 .intro-header-text{
     height: 280px;
 }
@@ -462,10 +468,10 @@ article blockquote cite:before{
 .intro-header .container{
     /*display: table-cell;*/
     vertical-align: middle;
-    padding: 55px 15px 15px;
+    padding: 75px 15px 15px;
 }
 
-/*轮播图样式*/
+/*###轮播图样式*/
 .intro-header > ul{
     margin: 0;
     padding: 0;
@@ -501,7 +507,6 @@ article blockquote cite:before{
     margin: 10px 0 0;
 }
 
-/*ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¯ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã¢â‚¬Â¹ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂªÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¹Ãƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­*/
 .intro-header .display-mid{
     display: table-cell;
     vertical-align: middle;
@@ -558,6 +563,7 @@ article blockquote cite:before{
     .intro-header .about-me img{
         display: none;
     }
+
     /*我的名字更改为h4的'为同在天堂的5年形成'*/
     .intro-header .about-me h5 {
         display: none;
@@ -567,7 +573,8 @@ article blockquote cite:before{
         display: block;
     }
     .intro-header .about-me h4 a{
-        font-size: 50px;
+        line-height: 55px;
+        font-size: 48px;
     }
     .intro-header .about-me h4 a:hover{
         text-shadow: 20px 14px 7px rgba(0,0,0,0.7);
@@ -796,7 +803,7 @@ form .row:first-child .floating-label-form-group {
     padding: 10px 20px 10px 10px;
 
 }
-/*博文下一篇左右箭头*/
+/*###博文下一篇左右箭头*/
 
 .pager li i{
     display: inline-block;
@@ -1100,7 +1107,7 @@ img::-moz-selection {
     margin-top: 3px;
 }
 
-/* Hux customize Style for Duoshuo */
+/* Duoshuo */
 .comment {
     margin-top: 20px;
 }
@@ -1181,7 +1188,7 @@ img::-moz-selection {
     color: #ddd;
 }
 
-/*
+/*###
   pc侧边栏的
 */
 
@@ -1263,7 +1270,7 @@ img::-moz-selection {
     height: 55px;
 }
 
-/*原始样式最上边的红线*/
+/*###原始样式最上边的红线*/
 /*.navbar-custom.is-fixed::before {*/
     /*content: ' ';*/
     /*display: block;*/
@@ -1273,7 +1280,7 @@ img::-moz-selection {
     /*background: red;*/
 /*}*/
 
-/*博客名*/
+/*###博客名*/
 .navbar-custom.is-fixed .brand-logo {
     border-radius: 3px;
     /*background: rgba(255,255,255,0.4);*/
@@ -1285,7 +1292,7 @@ img::-moz-selection {
     /*text-shadow: 0px 0px 20px #ffffff;*/
 }
 
-/*导航菜单*/
+/*###导航菜单*/
 .navbar-custom.is-fixed .navbar-brand,
 .navbar-custom.is-fixed .navbar-right a {
     color: #ffffff;
@@ -1359,7 +1366,7 @@ img::-moz-selection {
     border-radius: 50%;
     /*opacity: .9;*/
 }
-/*主页面的 名字 样式*/
+/*###主页面的 名字 样式*/
 .site-heading h5 a,
 .site-heading h4 a
 {
@@ -1370,17 +1377,21 @@ img::-moz-selection {
     text-decoration: none;
     transition: all .5s;
 }
+
 .site-heading h5 a:hover{
     font-size: 20px;
 }
+
 .site-heading p {
     margin: 0;
     color: #eee;
     font-size: 15px;
 }
+
 .custom-haojen-container{
     padding-top: 0;
 }
+
 @media (min-width: 992px) {
     .custom-haojen-container {
         padding-top: 90px;
