@@ -1,4 +1,4 @@
-// ** ToTop Start **
+// ** ToTop Start **  未使用
 (function($) {
   // When to show the scroll link
   // higher number = scroll link appears further down the page

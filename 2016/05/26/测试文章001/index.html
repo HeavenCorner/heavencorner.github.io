@@ -288,6 +288,12 @@
 <!-- Footer -->
 <!-- Footer -->
 <footer>
+    <div id="totop">
+        <a href="###">
+            <i class="glyphicon glyphicon-menu-up"></i>
+            <span>回到<br>顶部</span>
+        </a>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 text-center">
@@ -345,6 +351,13 @@
 
 <!-- async load function -->
 <script>
+//    <!--返回顶部-->
+    $("#totop").click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
     function async(u, c) {
       var d = document, t = 'script',
           o = d.createElement(t),

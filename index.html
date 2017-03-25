@@ -520,6 +520,16 @@ value 实际度量的值，默认为0，可以为整数或者..
                 <div class="tags" id="index_tags">
                     
                     
+                    <a href="/tags/#haha" title="haha"
+                       rel="1">haha</a>
+                    
+                    
+                    
+                    <a href="/tags/#hhhhhhh" title="hhhhhhh"
+                       rel="1">hhhhhhh</a>
+                    
+                    
+                    
                     <a href="/tags/#Movies" title="Movies"
                        rel="1">Movies</a>
                     
@@ -527,6 +537,26 @@ value 实际度量的值，默认为0，可以为整数或者..
                     
                     <a href="/tags/#Life" title="Life"
                        rel="1">Life</a>
+                    
+                    
+                    
+                    <a href="/tags/#jjj" title="jjj"
+                       rel="1">jjj</a>
+                    
+                    
+                    
+                    <a href="/tags/#ijik" title="ijik"
+                       rel="1">ijik</a>
+                    
+                    
+                    
+                    <a href="/tags/#gygy" title="gygy"
+                       rel="1">gygy</a>
+                    
+                    
+                    
+                    <a href="/tags/#jhdah" title="jhdah"
+                       rel="1">jhdah</a>
                     
                     
                     
@@ -549,36 +579,6 @@ value 实际度量的值，默认为0，可以为整数或者..
                        rel="1">jhs</a>
                     
                     
-                    
-                    <a href="/tags/#jjj" title="jjj"
-                       rel="1">jjj</a>
-                    
-                    
-                    
-                    <a href="/tags/#ijik" title="ijik"
-                       rel="1">ijik</a>
-                    
-                    
-                    
-                    <a href="/tags/#haha" title="haha"
-                       rel="1">haha</a>
-                    
-                    
-                    
-                    <a href="/tags/#hhhhhhh" title="hhhhhhh"
-                       rel="1">hhhhhhh</a>
-                    
-                    
-                    
-                    <a href="/tags/#gygy" title="gygy"
-                       rel="1">gygy</a>
-                    
-                    
-                    
-                    <a href="/tags/#jhdah" title="jhdah"
-                       rel="1">jhdah</a>
-                    
-                    
                 </div>
             </section>
             
@@ -592,6 +592,12 @@ value 实际度量的值，默认为0，可以为整数或者..
 <!-- Footer -->
 <!-- Footer -->
 <footer>
+    <div id="totop">
+        <a href="###">
+            <i class="glyphicon glyphicon-menu-up"></i>
+            <span>回到<br>顶部</span>
+        </a>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 text-center">
@@ -649,6 +655,13 @@ value 实际度量的值，默认为0，可以为整数或者..
 
 <!-- async load function -->
 <script>
+//    <!--返回顶部-->
+    $("#totop").click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
     function async(u, c) {
       var d = document, t = 'script',
           o = d.createElement(t),
