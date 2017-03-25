@@ -1412,7 +1412,8 @@ img::-moz-selection {
     position: fixed;
     right: 100px;
     bottom: 40px;
-    display: inline-block;
+    z-index: 9999;
+    display: none;
     height: 32px;
     width: 32px;
     background-color: rgba(0,0,0,0.3);

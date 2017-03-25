@@ -379,8 +379,28 @@
         $('html, body').animate({
             scrollTop: 0
         }, 500);
+        $('#totop i').css({
+            display: "inline-block"
+        })
+        $('#totop span').css({
+            display: "none"
+        })
         return false;
     });
+
+    $(window).scroll(function(){
+        if($(window).scrollTop() > 460){
+
+            $('#totop').css({
+                display: "block"
+            })
+        }else{
+            $('#totop').css({
+                display: "none"
+            })
+        }
+    });
+
     function async(u, c) {
       var d = document, t = 'script',
           o = d.createElement(t),
