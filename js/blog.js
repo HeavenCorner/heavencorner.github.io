@@ -104,6 +104,9 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
                     $('.navbar-brand.animated.pulse').css({
                         display: 'none',
                     });
+                    $('.navbar').css({
+                        boxShadow: '0 3px 4px rgba(255,255,255,0) !important'
+                    });
                 }else{
                     $('.navbar-toggle').css({
                         background: 'rgba(0,0,0,0)',
@@ -115,6 +118,9 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
                     });
                     $('.navbar-brand.animated.pulse').css({
                         display: 'block',
+                    });
+                    $('.navbar').css({
+                        boxShadow: '0 3px 4px rgba(255,255,255,.6) !important'
                     });
                 }
             });
