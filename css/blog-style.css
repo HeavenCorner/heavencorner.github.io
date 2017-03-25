@@ -453,12 +453,27 @@ article blockquote cite:before{
 .intro-header-text{
     height: 280px;
 }
-.intro-header>.container{
-    display: table-cell;
+
+.intro-header .container{
+    /*display: table-cell;*/
     vertical-align: middle;
     padding: 55px 15px 15px;
 }
 
+/*轮播图样式*/
+.intro-header > ul{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.intro-header > ul >li.container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+ }
 
 .intro-header .site-heading,
 .intro-header .page-heading,
@@ -543,6 +558,7 @@ article blockquote cite:before{
         display: none;
     }
     .intro-header .about-me h4 {
+        padding-top: 90px;
         display: block;
     }
     .intro-header .about-me h4 a{
