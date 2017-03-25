@@ -263,7 +263,7 @@ article blockquote cite:before{
     }
 }
 /*###导航栏的白色阴影*/
-.navbar {
+.shadow {
     box-shadow: 0 3px 4px rgba(255,255,255,.6) !important;
 }
 
