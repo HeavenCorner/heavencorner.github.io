@@ -36,9 +36,6 @@
 
 <style>
 
-    header.intro-header {
-        background-image: url('/img/index-title-bg.png')
-    }
 </style>
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
@@ -197,9 +194,9 @@
         /*display: none*/
     }
 
-    /*只第一个显示背景图片*/
+    /*只第一个显示背景图片，（已经更改，没有第一个，都不显示背景图片）*/
     .custom-haojen-container .post-preview:not(:nth-child(1)) {
-        /*background-image: none !important;*/
+        background-image: none !important;
     }
 
     /*第一个分界线去掉*/
@@ -276,6 +273,19 @@
         font-size: 15px;
         color: #0085a1;
     }
+    /*主页轮播背景图*/
+    header.intro-header.index {
+        background-image: url('/img/index-title-bg.png');
+    }
+    /*右侧边栏样式*/
+    #nav-right {
+        padding-left: 30px;
+        padding-right: 0px;
+    }
+    /*轮播图背景*/
+    #lunbo-bg li:nth-child(1){
+        background-color: rgba(0,0,0,0.3);
+    }
 </style>
 
 <!-- Page Header -->
@@ -283,8 +293,8 @@
 <div class="col-lg-12 col-md-12 ">
     <div class="row">
         <!--升级成轮播图20170325-->
-        <header class="intro-header">
-            <ul>
+        <header class="intro-header index">
+            <ul id="lunbo-bg">
                 <li class="container">
                     <div class="site-heading text-center">
                         <div class="about-me">
@@ -311,7 +321,11 @@
     <!-- Post Container -->
     <div class="row">
         <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content （博文内容页面） -->
+            <!-- Main Content （博文主页内容页面） -->
+<!--博文头部的颜色分类-->
+<style>
+
+</style>
 
 
 
@@ -395,14 +409,14 @@ Mac可以通过安装Xco..
                 col-sm-12
                 col-xs-12
                 sidebar-container
-            ">
+            " id="nav-right">
 
             <!-- About Me pc端侧边栏的头像及说明-->
             <section class="visible-md visible-lg" style="padding: 0 18px">
                 <div class="short-about">
                     <!--侧边栏头像-->
                     
-                    <img src="/img/touxiang.jpg"/>
+                    <img src="/img/530k.png"/>
                     
                     <h5><a href="/about/">DuYang</a></h5>
                     
@@ -472,16 +486,6 @@ Mac可以通过安装Xco..
                     
                     
                     
-                    <a href="/tags/#haha" title="haha"
-                       rel="1">haha</a>
-                    
-                    
-                    
-                    <a href="/tags/#hhhhhhh" title="hhhhhhh"
-                       rel="1">hhhhhhh</a>
-                    
-                    
-                    
                     <a href="/tags/#aaa" title="aaa"
                        rel="1">aaa</a>
                     
@@ -489,6 +493,16 @@ Mac可以通过安装Xco..
                     
                     <a href="/tags/#jij" title="jij"
                        rel="1">jij</a>
+                    
+                    
+                    
+                    <a href="/tags/#haha" title="haha"
+                       rel="1">haha</a>
+                    
+                    
+                    
+                    <a href="/tags/#hhhhhhh" title="hhhhhhh"
+                       rel="1">hhhhhhh</a>
                     
                     
                     

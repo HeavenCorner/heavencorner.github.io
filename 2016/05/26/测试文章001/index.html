@@ -36,9 +36,6 @@
 
 <style>
 
-    header.intro-header {
-        background-image: url('/img/index-title-bg.png')
-    }
 </style>
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
@@ -144,16 +141,15 @@
 <!-- Main Content -->
 
 <!--only post-->
+<!-- （20170326）针对阅读时标题颜色的优化，在博客正文标题内添加  header-img 图片路径就显示图片，如果添加了 bg-color 就显示纯色背景 -->
 
-
-<img class="wechat-title-img"
-     src="/img/index-title-bg.png">
-
+    <img src="" alt="" style="opacity: 0;">
 
 <style>
     
+
     header.intro-header {
-        background-image: url('/img/index-title-bg.png')
+        background: red;
     }
 
     
@@ -201,9 +197,7 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <h2 id="03-表单元素"><a href="#03-表单元素" class="headerlink" title="03 表单元素"></a>03 表单元素</h2><h2 id="input新类型"><a href="#input新类型" class="headerlink" title="input新类型"></a>input新类型</h2><a id="more"></a>
-<h3 id="tel"><a href="#tel" class="headerlink" title="tel"></a>tel</h3><h4 id="用于输入电话号码，用户点击识别后会跳出数字键。"><a href="#用于输入电话号码，用户点击识别后会跳出数字键。" class="headerlink" title="用于输入电话号码，用户点击识别后会跳出数字键。"></a>用于输入电话号码，用户点击识别后会跳出数字键。</h4><input type="tel">
-
-<h4 id="显示效果"><a href="#显示效果" class="headerlink" title="显示效果"></a>显示效果</h4><pre>
+<h3 id="tel"><a href="#tel" class="headerlink" title="tel"></a>tel</h3><h4 id="用于输入电话号码，用户点击识别后会跳出数字键。"><a href="#用于输入电话号码，用户点击识别后会跳出数字键。" class="headerlink" title="用于输入电话号码，用户点击识别后会跳出数字键。"></a>用于输入电话号码，用户点击识别后会跳出数字键。<input type="tel"></h4><h4 id="显示效果"><a href="#显示效果" class="headerlink" title="显示效果"></a>显示效果</h4><pre>
 <input type="tel">
 </pre>
 
