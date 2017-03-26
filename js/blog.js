@@ -93,9 +93,9 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
             $(document).scroll(function(){
                 if($(document).scrollTop() > 360){
                     $('.navbar-toggle').css({
-                        background: 'rgba(0,0,0,0.3)',
+                        background: 'rgba(0,0,0,0.1)',
                         borderRadius: '10%',
-                        transition: 'all 1s'
+                        transition: 'all 0s'
                     });
                     $('.navbar.navbar-default.navbar-custom.navbar-fixed-top').css({
                         backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -104,20 +104,29 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
                     $('.navbar-brand.animated.pulse').css({
                         display: 'none',
                     });
+                    $('.navbar-toggle').addClass('navbar-toggles');
+                    $('.navbar').removeClass('navbar-customs');
                     $('.navbar').removeClass('shadow');
+                    $('.navbar').removeClass('navbar-fixed-top');
+                    // $('.navbar').addClass('lookc');
+
                 }else{
                     $('.navbar-toggle').css({
                         background: 'rgba(0,0,0,0)',
                         borderRadius: '0',
                     });
                     $('.navbar.navbar-default.navbar-custom.navbar-fixed-top').css({
-                        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                        backgroundColor: 'rgba(0, 0, 0, 0.2)',
                         boxShadow: '0 0 10px rgba(14, 14, 14, .26)',
                     });
                     $('.navbar-brand.animated.pulse').css({
                         display: 'block',
                     });
+                    $('.navbar-toggle').removeClass('navbar-toggles');
+                    $('.navbar').addClass('navbar-customs');
                     $('.navbar').addClass('shadow');
+                    $('.navbar').addClass('navbar-fixed-top');
+                    // $('.navbar').removeClass('lookc');
 
                 }
             });

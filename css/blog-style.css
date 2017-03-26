@@ -378,14 +378,22 @@ article blockquote cite:before{
         display: block;
     }
 
+    .navbar {
+        transition: all .5s;
+    }
 }
 
-.navbar-custom {
-    background: none;
-    border: none;
+.navbar-customs {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.navbar-custom {
+    /*bottom: 0;*/
+    /*right: 0;*/
+    background: none;
+    border: none;
     width: 100%;
     z-index: 6;
     transition: background .5s;
@@ -1438,7 +1446,7 @@ img::-moz-selection {
     display: none;
     height: 32px;
     width: 32px;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.15);
     text-align: center;
 }
 #totop a {
@@ -1466,3 +1474,13 @@ img::-moz-selection {
     display: none;
 }
 
+/*阅读文章时的菜单按钮的样式*/
+
+.lookc {
+    /*bottom: 10px !important;*/
+    /*right: 10px !important;*/
+}
+
+.navbar-toggles {
+    /*border-radius: 50%;*/
+}
