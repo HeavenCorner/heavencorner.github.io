@@ -1005,6 +1005,7 @@ img::-moz-selection {
     margin: 0 2px;
     margin-bottom: 8px;
     background: #D6D6D6;
+    transition: all 1s;
 }
 
 #tag_cloud a:hover,
@@ -1490,4 +1491,10 @@ img::-moz-selection {
 
 .navbar-toggles {
     /*border-radius: 50%;*/
+}
+
+/*音乐播放器*/
+.musicbox {
+    height: 100px;
+    background-color: pink;
 }

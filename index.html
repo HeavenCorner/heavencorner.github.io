@@ -93,7 +93,7 @@
                         <a href="/tags/">标签云</a>
                     </li>
                     <li>
-                        <a href="/massage/">留言板</a>
+                        <a href="/massage/">寄语墙</a>
                     </li>
 
                     <!--滑块-->
@@ -137,7 +137,7 @@
 
 <!-- Main Content -->
 
-<!--主页，主页专用样式-->
+<!--主页，主页专用样式，20170327后期添加的功能模块都在这里书写样式-->
 
 
 <style>
@@ -240,24 +240,6 @@
         /*}*/
     }
 
-    /*手机屏幕*/
-    @media (max-width: 400px) {
-        /*.custom-haojen-container .post-preview:nth-child(1) {*/
-            /*height: 195px;*/
-        /*}*/
-
-        /*.custom-haojen-container .post-preview-poetry:nth-child(1) h2 {*/
-            /*font-size: 20px !important;*/
-        /*}*/
-
-        /*.custom-haojen-container .post-preview:nth-child(1) .post-subtitle {*/
-            /*font-size: 16px;*/
-        /*}*/
-
-        /*.custom-haojen-container .post-preview:nth-child(1) a {*/
-            /*padding: 30px 20px;*/
-        /*}*/
-    }
     .index-tage-title {
         text-align: center;
     }
@@ -270,7 +252,7 @@
         font-size: 15px;
         color: #0085a1;
     }
-    /*主页轮播背景图*/
+    /*主页轮播背景图，在此处的是固定不变的一张背景图*/
     header.intro-header.index {
         background-image: url('/img/index-title-bg.png');
     }
@@ -279,11 +261,13 @@
         padding-left: 30px;
         padding-right: 0px;
     }
-    /*轮播图背景*/
+    /*轮播图背景，li滚动的背景色，可用自定义图片代替*/
     #lunbo-bg li:nth-child(1){
         background-color: rgba(0,0,0,0.3);
     }
 </style>
+
+
 
 <!-- Page Header -->
 <!--col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block  添加此属性移动端无title-->
@@ -313,21 +297,25 @@
         </header>
     </div>
 </div>
+<!--网易云音乐-->
+
+<!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=299594&auto=1&height=66"></iframe>-->
+
 <!-- Main Content -->
 <div class="container custom-haojen-container">
     <!-- Post Container -->
     <div class="row">
         <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content （博文主页内容页面） -->
+            <!-- Main Content （主页博文的内容页面）会插入到page.ejs -->
 <!--博文头部的颜色分类-->
-<style>
 
-</style>
+<div class="musicbox">
+    <p>音乐播放器，模块开发中...</p>
+</div>
 
 
 
-<div class="post-preview "
-     style="background-image: url('/img/index-title-bg.png')">
+<div class="post-preview ">
     <a href="/2016/05/26/测试文章001/">
         <h2 class="post-title">
             测试文章001这是一个名字很长很长很长的博客
@@ -347,12 +335,7 @@ tel用于输入电话号码，用户点击识别后会跳出数字键。显示�
 
 
 
-search用于提示用户输入要搜索的文字；search和text之间的区别主要在于样式上&lt;input type=&quot;search&quot;/&gt;
-显示效果
-
-
-
-url用于输入..
+search用于提示用户输入要搜索的文字；search和text之间的区别主要在于样式上&l ...
             </p>
         </div>
     </a>
@@ -363,8 +346,7 @@ url用于输入..
 
 
 
-<div class="post-preview "
-     style="background-image: url('/img/index-title-bg.png')">
+<div class="post-preview ">
     <a href="/2015/06/29/测试文章006/">
         <h2 class="post-title">
             测试文章006
@@ -377,8 +359,7 @@ url用于输入..
             <p>
                 子元素选择器
 E &gt; F子元素选择器选择的是子元素F，子孙不会被选中而后代选择器E F是选择所有的F，包括子子孙孙
-相邻兄弟选择器E + F相邻兄弟选择器 1.必须是同级的 2.必须是相邻的 3.必须是在下方 4.有且只有一个符合
-通用兄弟选择器E ~ F相邻兄弟选择器 1.必须是同级的 ..
+相邻兄弟选择器E + F相邻兄弟选择器 1.必须是同级的 2.必须是相 ...
             </p>
         </div>
     </a>
@@ -389,8 +370,7 @@ E &gt; F子元素选择器选择的是子元素F，子孙不会被选中而后�
 
 
 
-<div class="post-preview "
-     style="background-image: url('/img/index-title-bg.png')">
+<div class="post-preview ">
     <a href="/2015/06/29/测试文章004/">
         <h2 class="post-title">
             测试文章004
@@ -404,9 +384,7 @@ E &gt; F子元素选择器选择的是子元素F，子孙不会被选中而后�
                 04音视频标签1、audio定义声音，比如音乐或其他音频流&lt;audio&gt;&lt;/audio&gt;
 属性值
 autoplay音频在就绪后马上播放
-controls向用户显示控件，比如播放按钮
-loop当音频结束时重新开始播放
-preload音频在页面加载时进行加载，并预备播放；如果..
+controls向用户显示控件， ...
             </p>
         </div>
     </a>
@@ -417,8 +395,7 @@ preload音频在页面加载时进行加载，并预备播放；如果..
 
 
 
-<div class="post-preview "
-     style="background-image: url('/img/index-title-bg.png')">
+<div class="post-preview ">
     <a href="/2015/06/27/测试文章005/">
         <h2 class="post-title">
             测试文章005
@@ -439,8 +416,7 @@ preload音频在页面加载时进行加载，并预备播放；如果..
 这是一个重点你看看是不
 
 
-meter定义度量衡：表示在一定范围内的值，如投票占比、使用量等属性值：
-value 实际度量的值，默认为0，可以为整数或者..
+meter定义度量衡 ...
             </p>
         </div>
     </a>
@@ -529,16 +505,6 @@ value 实际度量的值，默认为0，可以为整数或者..
                 <div class="tags" id="index_tags">
                     
                     
-                    <a href="/tags/#haha" title="haha"
-                       rel="1">haha</a>
-                    
-                    
-                    
-                    <a href="/tags/#hhhhhhh" title="hhhhhhh"
-                       rel="1">hhhhhhh</a>
-                    
-                    
-                    
                     <a href="/tags/#Movies" title="Movies"
                        rel="1">Movies</a>
                     
@@ -549,13 +515,13 @@ value 实际度量的值，默认为0，可以为整数或者..
                     
                     
                     
-                    <a href="/tags/#jjj" title="jjj"
-                       rel="1">jjj</a>
+                    <a href="/tags/#haha" title="haha"
+                       rel="1">haha</a>
                     
                     
                     
-                    <a href="/tags/#ijik" title="ijik"
-                       rel="1">ijik</a>
+                    <a href="/tags/#hhhhhhh" title="hhhhhhh"
+                       rel="1">hhhhhhh</a>
                     
                     
                     
@@ -566,6 +532,16 @@ value 实际度量的值，默认为0，可以为整数或者..
                     
                     <a href="/tags/#jij" title="jij"
                        rel="1">jij</a>
+                    
+                    
+                    
+                    <a href="/tags/#jjj" title="jjj"
+                       rel="1">jjj</a>
+                    
+                    
+                    
+                    <a href="/tags/#ijik" title="ijik"
+                       rel="1">ijik</a>
                     
                     
                     

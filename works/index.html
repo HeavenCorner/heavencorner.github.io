@@ -93,7 +93,7 @@
                         <a href="/tags/">标签云</a>
                     </li>
                     <li>
-                        <a href="/massage/">留言板</a>
+                        <a href="/massage/">寄语墙</a>
                     </li>
 
                     <!--滑块-->
@@ -142,7 +142,7 @@
     }
 
     header .bg-header {
-        height: 500px;
+        height: 430px;
         background-color: #62A4FF;
     }
 
@@ -313,10 +313,10 @@
                 </div>
                 <div class="personal-profile">
                     <h1>
-                        DuyangSir
+                        一个前端工程师的个人网站
                     </h1>
-                    <h2>"你若能信，在信的人，凡事都能" </h2>
-                    <h6><span>马可福音 9:23</span></h6>
+                    <!--<h2>"你若能信，在信的人，凡事都能" </h2>-->
+                    <!--<h6><span>马可福音 9:23</span></h6>-->
                 </div>
             </div>
         </div>
@@ -333,181 +333,6 @@
     </div>
 </div>
 <!--canvas-->
-<script>
-//    <!-- 头像旋转圈 -->
-    var canvas=document.getElementById("title-canvas");
-    var ctx=canvas.getContext("2d");
-//    转圜
-    function Arc(x,y,r,b,o,w,dsp,colors) {
-        var dsp = dsp/100;
-        this.x = x;
-        this.y = y;
-        this.r = r;
-        this.abegin = b;
-        this.aover = o;
-        this.width = w;
-        this.dsp = dsp.toFixed(2);
-        this.color = colors;
-        this.long = this.aover - this.abegin;
-    }
-
-    Arc.prototype.drawArc = function(){
-
-        ctx.strokeStyle = this.color;
-        ctx.lineWidth = this.width;
-        ctx.lineCap="round";
-        ctx.beginPath();
-        ctx.arc(this.x,this.y,this.r,this.abegin*Math.PI,this.aover*Math.PI);
-        ctx.stroke();
-    }
-
-    Arc.prototype.move = function(){
-        this.abegin = parseFloat(this.abegin) + parseFloat(this.dsp);
-        this.aover = parseFloat(this.aover) + parseFloat(this.dsp);
-        if(this.abegin > 2){
-            this.abegin = 0;
-            this.aover = this.long;
-        }
-    }
-
-    var arcsLength = 4;
-    var arrs = [];
-    var arrb = [0.1,0.6,1.1,1.6];
-    var arro = [0.3,0.8,1.4,1.7];
-    //速度1-5
-    var asp = [1,1.2,1.8,1.5];
-//    var asp = [7,7.1,7.2,7.3];
-
-
-
-for(var i=0;i<arcsLength;i++){
-
-        arcs = new Arc(120,120,95,arrb[i],arro[i],16,asp[i],"#0085a1");
-        arrs.push(arcs);
-        arcs.drawArc();
-
-    }
-
-        //    雪花
-    var deg = Math.PI/180;
-
-    var canvasn=document.getElementById("header-canvas");
-    var context=canvasn.getContext("2d");
-
-    canvasn.width = window.innerWidth;
-
-
-    function Arcn(x,y,r,sx,sy,colors) {
-        this.x = x;
-        this.y = y;
-        this.r = r;
-        this.speedX = sx;
-        this.speedY = sy;
-        this.color = colors;
-    }
-
-    Arcn.prototype.drawArc = function(){
-        context.shadowBlur = 20;
-        context.shadowColor = this.color;
-        context.fillStyle = this.color;
-        context.beginPath();
-        context.arc(this.x,this.y,this.r,0,360*deg);
-        context.fill();
-
-    }
-
-    Arcn.prototype.move = function(){
-        if(this.x>(canvasn.width-this.r)||this.x<this.r){
-            this.speedX = -this.speedX;
-    //				this.speedX *= -1;
-
-        }
-        if(this.y>(canvasn.height-this.r)||this.y<this.r){
-            this.speedY = -this.speedY;
-    //				this.speedY *= -1;
-
-        }
-        this.x +=  this.speedX;
-        this.y +=  this.speedY;
-    }
-    var arcsLengthn = 20;//设置球的个数
-    var arrsn = [];
-    var arcsn = {};
-    var arcsZn = {};
-
-    var stop = null;
-    var firstTime;
-
-    var s = {
-        minSpeed : 0.1,//设置最小速度
-        speed : 1.5, //设置最大速度
-        minR : 5, //设置最小半径
-        maxR : 10, //设置最大半径
-    }
-
-    function firstDraw(){
-
-        context.clearRect(0,0,canvas.width,canvas.height);
-//        arrs = []; //此处的清除是为手动控制做的
-
-        for(var i=0;i<arcsLengthn;i++){
-            //每次生成球的位置在设置最大半径的区域内，不会出现bug,60为固定值，否则设置maxR也会出现鬼畜
-
-            arcsn = new Arcn(getRandom(100,canvasn.width-60),getRandom(100,canvasn.height-60),getRandom(s.minR,s.maxR),getRandomS(-s.speed,s.speed),getRandomS(-s.speed,s.speed),getRanColor(0));
-            arrsn.push(arcsn);
-            arcsn.drawArc();
-        }
-
-    }
-    firstDraw();
-
-
-
-
-
-    ani();//开始运动
-
-    function ani(){
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        context.clearRect(0,0,canvasn.width,canvasn.height);
-
-
-        for(var i=0;i<arrs.length;i++){
-            arrs[i].drawArc();
-            arrs[i].move();
-
-        }
-
-        for(var i=0;i<arrsn.length;i++){
-            arrsn[i].drawArc();
-            arrsn[i].move();
-        }
-
-        window.requestAnimationFrame(ani);
-    }
-
-
-    //随机速度
-    function getRandomS(min,max){
-        var speeds = Math.round(Math.random()*(max-min)+min);
-        while(Math.abs(speeds)<s.minSpeed){
-            speeds = Math.round(Math.random()*(max-min)+min);
-        }
-        return speeds;
-    }
-    //随机数
-    function getRandom(min,max){
-        return Math.round(Math.random()*(max-min)+min);
-    }
-    //随机色
-    function getRanColor(x){
-        if(x == 0){
-            return 'rgba(255,255,255,0.7)';
-        }
-        var ranColors = "rgba(" + getRandom(0, 250) + "," + getRandom(0, 250) + "," + getRandom(0, 250) + ",1)";
-        return ranColors;
-    }
-</script>
 <!-- Footer -->
 <!-- Footer -->
 <footer>
