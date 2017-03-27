@@ -321,7 +321,7 @@
             </div>
         </div>
     </header>
-    <!--关于工作方面的内容-->
+    <!--关于...的内容-->
     <div class="container">
         <section class="row">
             <div class="col-sm-10 col-sm-offset-1
@@ -441,7 +441,7 @@
         this.x +=  this.speedX;
         this.y +=  this.speedY;
     }
-    var arcsLengthn = 20;//设置球的个数
+    var arcsLengthn = 26;//设置球的个数
     var arrsn = [];
     var arcsn = {};
     var arcsZn = {};
@@ -460,12 +460,21 @@
 
     function firstDraw(){
         context.clearRect(0,0,canvas.width,canvas.height);
-        for(var i=0;i<arcsLengthn;i++){
-
-            arcsn = new Arcn(getRandom(100,canvasn.width-60),getRandom(100,canvasn.height-60),getRandom(s.minR,s.maxR),getRandomS(-s.speed,s.speed),getRandomS(-s.speedy,s.speedy),getRanColor(0));
+//        for(var i=0;i<arcsLengthn;i++){
+//
+//            arcsn = new Arcn(getRandom(100,canvasn.width-60),getRandom(100,canvasn.height-60),getRandom(s.minR,s.maxR),getRandomS(-s.speed,s.speed),getRandomS(-s.speedy,s.speedy),getRanColor(0));
+//            arrsn.push(arcsn);
+//            arcsn.drawArc();
+//        }
+//        同源发出
+        var ntime = setInterval(function(){
+            arcsn = new Arcn(getRandom(canvasn.width/2 - 60,canvasn.width/2 + 60),getRandom(canvasn.height/2 - 80,canvasn.height/2 + 60),getRandom(s.minR,s.maxR),getRandomS(-s.speed,s.speed),getRandomS(-s.speedy,s.speedy),getRanColor(0));
             arrsn.push(arcsn);
             arcsn.drawArc();
-        }
+            if(arrsn.length == arcsLengthn){
+                clearInterval(ntime);
+            }
+        },400)
 
     }
     firstDraw();
