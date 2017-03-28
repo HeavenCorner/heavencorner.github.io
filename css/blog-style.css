@@ -271,7 +271,7 @@ article blockquote cite:before{
     }
 
     #blog_navbar a:hover {
-        color: #337ab7;
+        color: #62A4FF;
         text-shadow: 1px 1px 2px #ffffff;
 
         /*text-shadow: 7px 8px 1px #337ab7;*/
@@ -1392,7 +1392,7 @@ img::-moz-selection {
 }
 .post-preview > a > .post-title{
     margin-bottom: 0;
-    font-weight: 350;
+    font-weight: 300;
     text-shadow: 0 0 1px rgba(0,0,0,.15);
     color: #0085a1;
 }
