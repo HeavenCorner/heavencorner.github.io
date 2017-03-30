@@ -22,7 +22,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://duyangsir.github.io/Tags/hhhhhhh/">
+    <link rel="canonical" href="http://www.jzyhn.com/Tags/hhhhhhh/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -39,8 +39,8 @@
 <!-- Navigation -->
 <!-- 滑块 -->
 <style>
-    .nav {
-        position: relative;
+    nav {
+        background-color: rgba(0,0,0,0.2);
     }
     .nav-fly {
         position: absolute;
@@ -51,6 +51,14 @@
         background: #FFFFFF;
         width: 0;
     }
+    .titleouttimes {
+        display: inline-block;
+        overflow: hidden;
+    }
+    .titleouttimes span {
+
+        width: 2.2rem;
+    }
 </style>
 <nav class="navbar shadow navbar-default navbar-custom navbar-customs navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="true
 " data-ishome = "false" >
@@ -58,25 +66,18 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand animated pulse" href="/">
-                <span class="brand-logo" class="cssgo">
+                <span class="brand-logo titleouttimes" class="cssgo">
                     为同在天堂的5年行程
                 </span>
             </a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <!-- /.navbar-collapse -->
         <div id="blog_navbar">
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -87,10 +88,10 @@
                         <a href="/about/" class="nav-li2">关于</a>
                     </li>
                     <li>
-                        <a href="/works/" class="nav-li3">在职</a>
+                        <a href="/work/" class="nav-li3">在职</a>
                     </li>
                     <li>
-                        <a href="/tags/" class="nav-li4">标签云</a>
+                        <a href="/tag/" class="nav-li4">标签云</a>
                     </li>
                     <li>
                         <a href="/massage/" class="nav-li5">寄语墙</a>
@@ -140,16 +141,35 @@
     .intro-header .site-heading {
         margin: 50px;
     }
+    /*标签页的高度*/
+    .intro-header {
+        background-position: center;
+        background-repeat: no-repeat;
+        /*background-color: #808080;*/
+        background-attachment: scroll;
+        background-size: cover;
+        height: 260px;
+        display: table;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .post-preview > a > .post-title {
+        color: #000000;
+    }
+    /*目录高亮*/
+    .nav-li4 {
+        color: #62A4FF !important;
+    }
 </style>
 
 <!-- Page Header -->
-<header class="intro-header intro-header-text">
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading text-center">
-                    <h1>archives</h1>
-                    <span class="subheading">可以根据归档日期检索所有文件</span>
+                    <h1>标签云</h1>
+                    <span class="subheading">在这里你可以根据标签，快速检索文章</span>
                 </div>
             </div>
         </div>
@@ -160,144 +180,250 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- archive list -->
+            <!-- 标签云 -->
+            <div id='tag_cloud' class="tags">
+                
+                <a href="#Movies" title="Movies" rel="1">Movies</a>
+                
+                <a href="#Life" title="Life" rel="1">Life</a>
+                
+                <a href="#haha" title="haha" rel="1">haha</a>
+                
+                <a href="#hhhhhhh" title="hhhhhhh" rel="1">hhhhhhh</a>
+                
+                <a href="#aaa" title="aaa" rel="1">aaa</a>
+                
+                <a href="#jij" title="jij" rel="1">jij</a>
+                
+                <a href="#jjj" title="jjj" rel="1">jjj</a>
+                
+                <a href="#ijik" title="ijik" rel="1">ijik</a>
+                
+                <a href="#jidhsh" title="jidhsh" rel="1">jidhsh</a>
+                
+                <a href="#jhs" title="jhs" rel="1">jhs</a>
+                
+                <a href="#gygy" title="gygy" rel="1">gygy</a>
+                
+                <a href="#jhdah" title="jhdah" rel="1">jhdah</a>
+                
+            </div>
+
+            <!-- 标签列表 -->
             
-				
-				
-				
-					
-					
-					<div class="archive archive-year" data-date="2016">
-						<h2 class="archive-title">
-						<span class="fa fa-archive">
-							<a href="/archives/2016">2016</a>
-						</span>
-						</h2>
-				
-				
-					
-					
-					<div class="archive archive-month" data-date="201605">
-						<h3 class="archive-title">
-							<a href="/archives/2016/05">05</a>
-						</h3>
-				
-				<div class="one-tag-list">
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Movies">
+                    <span class="tag-text">Movies</span>
+                </span>
+                
                 <div class="post-preview">
                     <a href="/2016/05/26/测试文章001/">
-                        <h4 class="post-title">
+                        <h2 class="post-title">
                             测试文章001这是一个名字很长很长很长的博客
-                        </h4>
+                        </h2>
                         
-                        <h4 class="post-subtitle">
+                        <h3 class="post-subtitle">
                             hi, duyang
-                        </h4>
+                        </h3>
                         
                     </a>
                 </div>
-				<hr>
-				</div>
+                <hr>
+                
+            </div>
             
-				
-				
-				
-					
-					</div><!--month-->
-					</div><!--year-->
-					
-					
-					
-					<div class="archive archive-year" data-date="2015">
-						<h2 class="archive-title">
-						<span class="fa fa-archive">
-							<a href="/archives/2015">2015</a>
-						</span>
-						</h2>
-				
-				
-					
-					
-					<div class="archive archive-month" data-date="201506">
-						<h3 class="archive-title">
-							<a href="/archives/2015/06">06</a>
-						</h3>
-				
-				<div class="one-tag-list">
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Life">
+                    <span class="tag-text">Life</span>
+                </span>
+                
                 <div class="post-preview">
-                    <a href="/2015/06/29/测试文章006/">
-                        <h4 class="post-title">
-                            测试文章006
-                        </h4>
+                    <a href="/2016/05/26/测试文章001/">
+                        <h2 class="post-title">
+                            测试文章001这是一个名字很长很长很长的博客
+                        </h2>
+                        
+                        <h3 class="post-subtitle">
+                            hi, duyang
+                        </h3>
                         
                     </a>
                 </div>
-				<hr>
-				</div>
+                <hr>
+                
+            </div>
             
-				
-				
-				
-				
-				<div class="one-tag-list">
-                <div class="post-preview">
-                    <a href="/2015/06/29/测试文章004/">
-                        <h4 class="post-title">
-                            测试文章004
-                        </h4>
-                        
-                    </a>
-                </div>
-				<hr>
-				</div>
-            
-				
-				
-				
-				
-				<div class="one-tag-list">
-                <div class="post-preview">
-                    <a href="/2015/06/27/测试文章005/">
-                        <h4 class="post-title">
-                            测试文章005
-                        </h4>
-                        
-                    </a>
-                </div>
-				<hr>
-				</div>
-            
-				
-				
-				
-				
-				<div class="one-tag-list">
-                <div class="post-preview">
-                    <a href="/2015/06/24/测试文章003/">
-                        <h4 class="post-title">
-                            测试文章003
-                        </h4>
-                        
-                    </a>
-                </div>
-				<hr>
-				</div>
-            
-				
-				
-				
-				
-				<div class="one-tag-list">
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="haha">
+                    <span class="tag-text">haha</span>
+                </span>
+                
                 <div class="post-preview">
                     <a href="/2015/06/20/测试文章002/">
-                        <h4 class="post-title">
+                        <h2 class="post-title">
                             测试文章002
-                        </h4>
+                        </h2>
                         
                     </a>
                 </div>
-				<hr>
-				</div>
+                <hr>
+                
+            </div>
             
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="hhhhhhh">
+                    <span class="tag-text">hhhhhhh</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2015/06/20/测试文章002/">
+                        <h2 class="post-title">
+                            测试文章002
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="aaa">
+                    <span class="tag-text">aaa</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2015/06/29/测试文章004/">
+                        <h2 class="post-title">
+                            测试文章004
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="jij">
+                    <span class="tag-text">jij</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2015/06/29/测试文章004/">
+                        <h2 class="post-title">
+                            测试文章004
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="jjj">
+                    <span class="tag-text">jjj</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2015/06/24/测试文章003/">
+                        <h2 class="post-title">
+                            测试文章003
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="ijik">
+                    <span class="tag-text">ijik</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2015/06/24/测试文章003/">
+                        <h2 class="post-title">
+                            测试文章003
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="jidhsh">
+                    <span class="tag-text">jidhsh</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2015/06/29/测试文章006/">
+                        <h2 class="post-title">
+                            测试文章006
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="jhs">
+                    <span class="tag-text">jhs</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2015/06/29/测试文章006/">
+                        <h2 class="post-title">
+                            测试文章006
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="gygy">
+                    <span class="tag-text">gygy</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2015/06/27/测试文章005/">
+                        <h2 class="post-title">
+                            测试文章005
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="jhdah">
+                    <span class="tag-text">jhdah</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2015/06/27/测试文章005/">
+                        <h2 class="post-title">
+                            测试文章005
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
+            
+
         </div>
     </div>
 </div>
@@ -305,6 +431,7 @@
 <!-- Footer -->
 <!-- Footer -->
 <footer>
+
     <!--背景色菜单-->
     <div id="bgc">
         <a href="###">
@@ -346,15 +473,6 @@
                 
 
                 
-                    <li>
-                        <a target="_blank"  href="https://github.com/duyangsir">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
 
                 
 
@@ -394,6 +512,23 @@
         return false;
     });
 
+    $("#totop").on("mouseenter",function(){
+        $('#totop a span').css({
+            display: 'inline-block'
+        })
+        $('#totop a i').css({
+            display: 'none'
+        })
+    })
+    $("#totop").on("mouseleave",function(){
+        $('#totop a span').css({
+            display: 'none'
+        })
+        $('#totop a i').css({
+            display: 'inline-block'
+        })
+    })
+
     $(window).scroll(function(){
         if($(window).scrollTop() > 460){
 
@@ -405,6 +540,9 @@
                 display: "none"
             })
         }
+        $('.toc-wrap.toc-fixed').css({
+            width: $('.hidden-xs.col-sm-3.toc-col').css('width')
+        })
     });
 
     function async(u, c) {
@@ -421,7 +559,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://duyangsir.github.io/js/jquery.tagcloud.js",function(){
+        async("http://www.jzyhn.com/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},

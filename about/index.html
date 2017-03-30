@@ -22,7 +22,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://duyangsir.github.io/about/">
+    <link rel="canonical" href="http://www.jzyhn.com/about/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -39,8 +39,8 @@
 <!-- Navigation -->
 <!-- 滑块 -->
 <style>
-    .nav {
-        position: relative;
+    nav {
+        background-color: rgba(0,0,0,0.2);
     }
     .nav-fly {
         position: absolute;
@@ -51,6 +51,14 @@
         background: #FFFFFF;
         width: 0;
     }
+    .titleouttimes {
+        display: inline-block;
+        overflow: hidden;
+    }
+    .titleouttimes span {
+
+        width: 2.2rem;
+    }
 </style>
 <nav class="navbar shadow navbar-default navbar-custom navbar-customs navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
 " data-ishome = "false" >
@@ -58,25 +66,18 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand animated pulse" href="/">
-                <span class="brand-logo" class="cssgo">
+                <span class="brand-logo titleouttimes" class="cssgo">
                     为同在天堂的5年行程
                 </span>
             </a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <!-- /.navbar-collapse -->
         <div id="blog_navbar">
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -87,10 +88,10 @@
                         <a href="/about/" class="nav-li2">关于</a>
                     </li>
                     <li>
-                        <a href="/works/" class="nav-li3">在职</a>
+                        <a href="/work/" class="nav-li3">在职</a>
                     </li>
                     <li>
-                        <a href="/tags/" class="nav-li4">标签云</a>
+                        <a href="/tag/" class="nav-li4">标签云</a>
                     </li>
                     <li>
                         <a href="/massage/" class="nav-li5">寄语墙</a>
@@ -142,8 +143,13 @@
     }
 
     header .bg-header {
-        height: 500px;
+        height: 82vh;
+        min-height: 480px;
         background-color: #62A4FF;
+    }
+    footer{
+        height: 18vh;
+        min-height: 80px;
     }
 
     /*头像*/
@@ -294,6 +300,10 @@
     .nav-li2 {
         color: #62A4FF !important;
     }
+/*倒计时*/
+    .outtimes span {
+        width: 2.2rem;
+    }
 </style>
 
 <div class="works-container" style="background-color: #fafafa">
@@ -316,223 +326,66 @@
 
                 </div>
                 <div class="personal-profile">
-                    <h1>
+                    <h1 >
                         DuyangSir
                     </h1>
-                    <h2>"你若能信，在信的人，凡事都能" </h2>
+                    <h4 class="outtimes"></h4>
+                    <h2>" 你若能信，在信的人，凡事都能 " </h2>
                     <h6><span>马可福音 9:23</span></h6>
                 </div>
             </div>
         </div>
     </header>
-    <!--关于...的内容-->
+    <!--关于工作方面的内容-->
     <div class="container">
-        <section class="row">
-            <div class="col-sm-10 col-sm-offset-1
-                        col-md-8 col-md-offset-2
-                      works-area">
-                
-            </div>
-        </section>
+        <!--<section class="row">-->
+            <!--<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text">-->
+                <!--<h3>在职</h3>-->
+                <!--<div class="container-text">-->
+                    <!--<p>文章内容</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</section>-->
     </div>
 </div>
-<!--canvas-->
-<script>
-    //    <!-- 头像旋转圈 -->
-    var canvas=document.getElementById("title-canvas");
-    var ctx=canvas.getContext("2d");
-    //    转圜
-    function Arc(x,y,r,b,o,w,dsp,colors) {
-        var dsp = dsp/100;
-        var timestop = 230;
-        this.time = timestop;
-        this.timestop = timestop;
+<!--关于工作方面的内容-->
 
-        this.x = x;
-        this.y = y;
-        this.r = r;
-        this.abegin = b;
-        this.aover = o;
-        this.width = w;
-        this.dsp = dsp.toFixed(2);
-        this.color = colors;
-        this.long = this.aover - this.abegin;
+<style>
+    .container {
+        /*height: 400px;*/
+    }
+    .container h3{
+        text-align: center;
+    }
+    .container .text{
+        top: -48px;
+        background-color: #2aa198;
+        /*height: 300px;*/
+    }
+    .container-text p{
+        text-indent: 2em;
     }
 
-    Arc.prototype.drawArc = function(){
+    /*<!--手机端-->*/
+    /*@media only screen and (max-width: 767px) {*/
 
-        ctx.strokeStyle = this.color;
-        ctx.lineWidth = this.width;
-        ctx.lineCap="round";
-        ctx.beginPath();
-        ctx.arc(this.x,this.y,this.r,this.abegin*Math.PI,this.aover*Math.PI);
-        ctx.stroke();
-    }
-    var m = false;
-    Arc.prototype.move = function(){
+        /*header .bg-header {*/
+            /*height: 90vh;*/
+            /*min-height: 480px;*/
+            /*background-color: #62A4FF;*/
+        /*}*/
+        /*footer{*/
+            /*height: 10vh;*/
+            /*max-height: 80px;*/
+        /*}*/
+    /*}*/
 
-        if(this.abegin <= 2 ){
-            this.abegin = parseFloat(this.abegin) + parseFloat(this.dsp);
-            this.aover = parseFloat(this.aover) + parseFloat(this.dsp);
-        }else if(this.abegin > 2){
-            this.timestop --;
-            if(this.timestop < 0){
-                this.abegin = 0;
-                this.aover = this.long;
-                this.timestop = this.time;
-            }
+</style>
 
-        }
-    }
-
-    var arcsLength = 4;
-    var arrs = [];
-    var arrb = [0.1,0.6,1.1,1.6];
-    var arro = [0.3,0.8,1.4,1.7];
-    //速度1-5
-    var asp = [1,1.2,1.8,1.5];
-    //    var asp = [7,7.1,7.2,7.3];
-
-
-
-    for(var i=0;i<arcsLength;i++){
-
-        arcs = new Arc(120,120,95,arrb[i],arro[i],16,asp[i],"#0085a1");
-        arrs.push(arcs);
-        arcs.drawArc();
-
-    }
-
-    //    雪花
-    var deg = Math.PI/180;
-
-    var canvasn=document.getElementById("header-canvas");
-    var context=canvasn.getContext("2d");
-
-    canvasn.width = window.innerWidth;
-
-
-    function Arcn(x,y,r,sx,sy,colors) {
-        this.x = x;
-        this.y = y;
-        this.r = r;
-        this.speedX = sx;
-        this.speedY = sy;
-        this.color = colors;
-    }
-
-    Arcn.prototype.drawArc = function(){
-        context.shadowBlur = 20;
-        context.shadowColor = this.color;
-        context.fillStyle = this.color;
-        context.beginPath();
-        context.arc(this.x,this.y,this.r,0,360*deg);
-        context.fill();
-
-    }
-
-    Arcn.prototype.move = function(){
-        if(this.x>(canvasn.width-this.r)||this.x<this.r){
-            this.speedX = -this.speedX;
-            //				this.speedX *= -1;
-
-        }
-        if(this.y>(canvasn.height-this.r)||this.y<this.r){
-            this.speedY = -this.speedY;
-            //				this.speedY *= -1;
-
-        }
-        this.x +=  this.speedX;
-        this.y +=  this.speedY;
-    }
-    var arcsLengthn = 26;//设置球的个数
-    var arrsn = [];
-    var arcsn = {};
-    var arcsZn = {};
-
-    var stop = null;
-    var firstTime;
-
-    var s = {
-        minSpeed : 0.1,//设置最小速度
-        speed : 1.5, //设置最大速度
-        minSpeedy : 0.3,//设置最小速度
-        speedy : 1, //设置最大速度
-        minR : 5, //设置最小半径
-        maxR : 10, //设置最大半径
-    }
-
-    function firstDraw(){
-        context.clearRect(0,0,canvas.width,canvas.height);
-//        for(var i=0;i<arcsLengthn;i++){
-//
-//            arcsn = new Arcn(getRandom(100,canvasn.width-60),getRandom(100,canvasn.height-60),getRandom(s.minR,s.maxR),getRandomS(-s.speed,s.speed),getRandomS(-s.speedy,s.speedy),getRanColor(0));
-//            arrsn.push(arcsn);
-//            arcsn.drawArc();
-//        }
-//        同源发出
-        var ntime = setInterval(function(){
-            arcsn = new Arcn(getRandom(canvasn.width/2 - 60,canvasn.width/2 + 60),getRandom(canvasn.height/2 - 80,canvasn.height/2 + 60),getRandom(s.minR,s.maxR),getRandomS(-s.speed,s.speed),getRandomS(-s.speedy,s.speedy),getRanColor(0));
-            arrsn.push(arcsn);
-            arcsn.drawArc();
-            if(arrsn.length == arcsLengthn){
-                clearInterval(ntime);
-            }
-        },550)
-
-    }
-    firstDraw();
-
-
-
-
-
-    ani();//开始运动
-
-    function ani(){
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        context.clearRect(0,0,canvasn.width,canvasn.height);
-
-
-        for(var i=0;i<arrs.length;i++){
-            arrs[i].drawArc();
-            arrs[i].move();
-
-        }
-
-        for(var i=0;i<arrsn.length;i++){
-            arrsn[i].drawArc();
-            arrsn[i].move();
-        }
-
-        window.requestAnimationFrame(ani);
-    }
-
-
-    //随机速度
-    function getRandomS(min,max){
-        var speeds = Math.round(Math.random()*(max-min)+min);
-        while(Math.abs(speeds)<s.minSpeed){
-            speeds = Math.round(Math.random()*(max-min)+min);
-        }
-        return speeds;
-    }
-    //随机数
-    function getRandom(min,max){
-        return Math.round(Math.random()*(max-min)+min);
-    }
-    //随机色
-    function getRanColor(x){
-        if(x == 0){
-            return 'rgba(255,255,255,0.7)';
-        }
-        var ranColors = "rgba(" + getRandom(0, 250) + "," + getRandom(0, 250) + "," + getRandom(0, 250) + ",1)";
-        return ranColors;
-    }
-</script>
 <!-- Footer -->
 <!-- Footer -->
 <footer>
+
     <!--背景色菜单-->
     <div id="bgc">
         <a href="###">
@@ -574,15 +427,6 @@
                 
 
                 
-                    <li>
-                        <a target="_blank"  href="https://github.com/duyangsir">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
 
                 
 
@@ -622,6 +466,23 @@
         return false;
     });
 
+    $("#totop").on("mouseenter",function(){
+        $('#totop a span').css({
+            display: 'inline-block'
+        })
+        $('#totop a i').css({
+            display: 'none'
+        })
+    })
+    $("#totop").on("mouseleave",function(){
+        $('#totop a span').css({
+            display: 'none'
+        })
+        $('#totop a i').css({
+            display: 'inline-block'
+        })
+    })
+
     $(window).scroll(function(){
         if($(window).scrollTop() > 460){
 
@@ -633,6 +494,9 @@
                 display: "none"
             })
         }
+        $('.toc-wrap.toc-fixed').css({
+            width: $('.hidden-xs.col-sm-3.toc-col').css('width')
+        })
     });
 
     function async(u, c) {
@@ -649,7 +513,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://duyangsir.github.io/js/jquery.tagcloud.js",function(){
+        async("http://www.jzyhn.com/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},

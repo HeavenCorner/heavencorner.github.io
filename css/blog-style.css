@@ -78,6 +78,9 @@ hr{
 .sidebar-container .short-about .list-inline > li {
     padding-left: 0;
 }
+html{
+    font-size: 12px;
+}
 
 body {
     line-height: 1.7;
@@ -110,6 +113,7 @@ article .post-container h2{
 }
 a {
     color: #404040;
+    transition: all .5s;
 }
 
 a:hover,
@@ -127,7 +131,10 @@ blockquote {
     color: #808080;
     font-size: 0.95em;
     margin: 20px 0 20px;
-    border-color: #62A4FF;
+    padding-top: 0;
+    padding-bottom: 0;
+    /*border-color: rgba(0,0,0,0.15);*/
+    border-color: #0fa9c3;
 }
 
 blockquote i {
@@ -296,6 +303,11 @@ article blockquote cite:before{
 
 /*###手机端导航栏的样式*/
 @media only screen and (max-width: 767px) {
+    /*护眼背景色*/
+    .huyan {
+        background-color: #fdf7eb !important;
+
+    }
     .nav-fly{
         background-color: transparent !important;
     }
@@ -411,7 +423,7 @@ article blockquote cite:before{
 .navbar-custom {
     /*bottom: 0;*/
     /*right: 0;*/
-    background: none;
+    background: rgba(0,0,0,0.2);
     border: none;
     width: 100%;
     z-index: 6;
@@ -452,7 +464,7 @@ article blockquote cite:before{
 
 @media only screen and (min-width: 768px) {
     .navbar-custom {
-        background: transparent;
+        /*background: transparent;*/
         border-bottom: 1px solid transparent;
     }
     .navbar-custom body {
@@ -523,7 +535,7 @@ article blockquote cite:before{
 .intro-header .container{
     /*display: table-cell;*/
     vertical-align: middle;
-    padding: 75px 15px 15px;
+    padding: 45px 15px 25px;
 }
 
 /*###轮播图样式*/
@@ -727,7 +739,7 @@ a:focus {
 
 footer {
     font-size: 20px;
-    padding: 20px 0 10px;
+    padding: 0px 0 10px;
 }
 
 footer .list-inline {
@@ -1319,6 +1331,7 @@ img::-moz-selection {
 }
 
 .container .toc-wrap.toc-fixed {
+    width: 240px;
     position: fixed;
     top: 85px;
     margin-top: 0;
@@ -1496,13 +1509,12 @@ img::-moz-selection {
 #totop a:hover span {
     font-size: 14px;
     line-height: 16px;
-    display: inline-block;
 }
 
 #totop a:hover i {
     font-size: 28px;
     line-height: 32px;
-    display: none;
+    /*display: none;*/
 }
 
 /*阅读文章时的菜单按钮的样式*/
@@ -1516,11 +1528,6 @@ img::-moz-selection {
     /*border-radius: 50%;*/
 }
 
-/*音乐播放器*/
-.musicbox {
-    height: 100px;
-    background-color: pink;
-}
 
 /*背景色选择*/
 #bgc {
@@ -1591,4 +1598,50 @@ img::-moz-selection {
 
 #bgc ul li:nth-child(3){
     background-color: #fdf7eb;
+}
+
+/*中心旋转动画*/
+.centerz {
+    animation:centerrotate 50s linear infinite;
+    -webkit-animation:centerrotate 50s linear infinite;
+    transform:rotate(0deg);
+    -webkit-transform:rotate(7deg);
+}
+
+/*暂停动画*/
+
+.centerz-paused {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused
+}
+
+/*开始播放*/
+.centerz-running {
+    animation-play-state:running;
+    -webkit-animation-play-state:running;
+}
+
+@keyframes centerrotate
+{
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@-webkit-keyframes centerrotate /*Safari and Chrome*/
+{
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.box-shadows {
+    box-shadow: rgba(0, 0, 0, 0.4) 0 0px 8px 0;
+
 }
