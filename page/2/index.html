@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        为同在天堂的5年行程
+        为同在天堂的5年行程 —— web前端工程师
         
     </title>
 
@@ -82,19 +82,19 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/" class="nav-li1">首页</a>
+                        <a href="/" class="nav-li1" target="_blank">首页</a>
                     </li>
                     <li>
-                        <a href="/about/" class="nav-li2">关于</a>
+                        <a href="/about/" class="nav-li2" target="_blank">关于</a>
                     </li>
                     <li>
-                        <a href="/work/" class="nav-li3">在职</a>
+                        <a href="/work/" class="nav-li3" target="_blank">在职</a>
                     </li>
                     <li>
-                        <a href="/tag/" class="nav-li4">标签云</a>
+                        <a href="/tags/" class="nav-li4" target="_blank">标签云</a>
                     </li>
                     <li>
-                        <a href="/massage/" class="nav-li5">寄语墙</a>
+                        <a href="/message/" class="nav-li5" target="_blank">寄语墙</a>
                     </li>
 
                     <!--滑块-->
@@ -134,6 +134,7 @@
             $navbar.className += " in";
         }
     }
+//
 </script>
 
 <!-- Main Content -->
@@ -486,6 +487,16 @@
                 <div class="tags" id="index_tags">
                     
                     
+                    <a href="/tags/#jjj" title="jjj"
+                       rel="1">jjj</a>
+                    
+                    
+                    
+                    <a href="/tags/#ijik" title="ijik"
+                       rel="1">ijik</a>
+                    
+                    
+                    
                     <a href="/tags/#Movies" title="Movies"
                        rel="1">Movies</a>
                     
@@ -506,6 +517,16 @@
                     
                     
                     
+                    <a href="/tags/#gygy" title="gygy"
+                       rel="1">gygy</a>
+                    
+                    
+                    
+                    <a href="/tags/#jhdah" title="jhdah"
+                       rel="1">jhdah</a>
+                    
+                    
+                    
                     <a href="/tags/#aaa" title="aaa"
                        rel="1">aaa</a>
                     
@@ -516,16 +537,6 @@
                     
                     
                     
-                    <a href="/tags/#jjj" title="jjj"
-                       rel="1">jjj</a>
-                    
-                    
-                    
-                    <a href="/tags/#ijik" title="ijik"
-                       rel="1">ijik</a>
-                    
-                    
-                    
                     <a href="/tags/#jidhsh" title="jidhsh"
                        rel="1">jidhsh</a>
                     
@@ -533,16 +544,6 @@
                     
                     <a href="/tags/#jhs" title="jhs"
                        rel="1">jhs</a>
-                    
-                    
-                    
-                    <a href="/tags/#gygy" title="gygy"
-                       rel="1">gygy</a>
-                    
-                    
-                    
-                    <a href="/tags/#jhdah" title="jhdah"
-                       rel="1">jhdah</a>
                     
                     
                 </div>
@@ -646,6 +647,8 @@
         $('#totop a i').css({
             display: 'none'
         })
+        $('#totop').css('background-color','rgba(0,0,0,0.5)')
+
     })
     $("#totop").on("mouseleave",function(){
         $('#totop a span').css({
@@ -654,6 +657,7 @@
         $('#totop a i').css({
             display: 'inline-block'
         })
+        $('#totop').css('background-color','rgba(0,0,0,0.15)')
     })
 
     $(window).scroll(function(){

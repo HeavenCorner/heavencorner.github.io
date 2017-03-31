@@ -343,6 +343,7 @@ $('#bgc').on('mouseenter',function () {
 
 //全局倒计时函数
 var en = 0;
+var msg = 0;
 
 $(function(){
     var times = 0;
@@ -377,30 +378,39 @@ $(function(){
 
         }
 
-        if(times < 100){
-            if(en){
-                $('.titleouttimes').html('In order to in heaven, Five years of effort');
+        if(msg){
+            $('.titleouttimes').html('In order to in heaven');
+        }else{
+            if(times < 100){
+                if(en){
+                    $('.titleouttimes').html('In order to in heaven, Five years of effort');
 
-            }else{
-                $('.titleouttimes').html('为同在天堂的5年行程');
+                }else{
+                    $('.titleouttimes').html('为同在天堂的5年行程');
 
+                }
+            }else if(times < 201){
+                if(en){
+                    // $('.titleouttimes').html(day + " day " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " h " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " m " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " s ");
+                }else{
+                    $('.titleouttimes').html(day + " 天 " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " 时 " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " 分 " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " 秒 ");
+
+                }
+
+            }else if(times > 201){
+                times = 0;
             }
-        }else if(times < 201){
-            if(en){
-                $('.titleouttimes').html(day + " day " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " h " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " min " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " s ");
-
-            }else{
-                $('.titleouttimes').html(day + " 天 " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " 时 " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " 分 " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " 秒 ");
-
-            }
-
-        }else if(times > 201){
-            times = 0;
         }
+
         times ++;
 
+        if(en){
+            $('.outtimes').html(day + " day " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " h " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " m " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " s ");
 
-        $('.outtimes').html(day + " 天 " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " 时 " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " 分 " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " 秒 ");
+        }else{
+            $('.outtimes').html(day + " 天 " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " 时 " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " 分 " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " 秒 ");
+
+        }
 
         //正计时
         $('.lastTimeDay').html(day2 + "天");
@@ -527,10 +537,12 @@ if(canvas) {
         if (this.t < 0) {
 
             this.t = this.ts;
-            if (this.r > 0.01) {
-                this.r -= 0.01;
+            this.r = this.r * 100;
+            if (this.r > 4) {
+                this.r -= 2;
 
-            } else {
+                this.r = this.r/100;
+            } else if (this.r < 4){
                 arrsn.splice(i, 1);
             }
 
@@ -580,7 +592,7 @@ if(canvas) {
 
     } else {
         arcsLengthn = 76;//设置球的个数
-        timen = 200;
+        timen = 120;
     }
 
     var arrsn = [];
@@ -610,7 +622,7 @@ if(canvas) {
 //        同源发出
         var ntime = setInterval(function () {
             if (arrsn.length < arcsLengthn) {
-                arcsn = new Arcn(getRandom(canvasn.width / 2 - 60, canvasn.width / 2 + 60), getRandom(parseInt($('#title-canvas').offset().top) + 80, parseInt($('#title-canvas').offset().top) + 140), getRandom(s.minR, s.maxR), getRandomS(-s.speed, s.speed), getRandomS(-s.speedy, s.speedy), getRanColor(0), getRandomS(1, 4));
+                arcsn = new Arcn(getRandom(canvasn.width / 2 - 60, canvasn.width / 2 + 60), getRandom(parseInt($('#title-canvas').offset().top) + 80, parseInt($('#title-canvas').offset().top) + 140), getRandom(s.minR, s.maxR), getRandomS(-s.speed, s.speed), getRandomS(-s.speedy, s.speedy), getRanColor(0), getRandomS(1, 6));
                 arrsn.push(arcsn);
                 arcsn.drawArc();
 //                if(arrsn.length == arcsLengthn){
@@ -676,10 +688,11 @@ if(canvas) {
     }
 
 }
-console.log($('#massage-page').length);
+console.log($('#message-page').length);
 //寄语页
-if($('#massage-page').length > 0){
+if($('#message-page').length > 0){
     en = 1;
+    msg = 1;
 //    寄语全部为英文
     $('.nav-li1').html('HOME');
     $('.nav-li2').html('ABOUT');

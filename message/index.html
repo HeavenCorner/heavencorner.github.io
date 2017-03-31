@@ -18,11 +18,17 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        massage｜为同在天堂的5年行程
+        
+        
+        message｜In order to in heaven, Five years of effort
+
+        
+
+
         
     </title>
 
-    <link rel="canonical" href="http://www.jzyhn.com/massage/">
+    <link rel="canonical" href="http://www.jzyhn.com/message/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -82,19 +88,19 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/" class="nav-li1">首页</a>
+                        <a href="/" class="nav-li1" target="_blank">首页</a>
                     </li>
                     <li>
-                        <a href="/about/" class="nav-li2">关于</a>
+                        <a href="/about/" class="nav-li2" target="_blank">关于</a>
                     </li>
                     <li>
-                        <a href="/work/" class="nav-li3">在职</a>
+                        <a href="/work/" class="nav-li3" target="_blank">在职</a>
                     </li>
                     <li>
-                        <a href="/tag/" class="nav-li4">标签云</a>
+                        <a href="/tags/" class="nav-li4" target="_blank">标签云</a>
                     </li>
                     <li>
-                        <a href="/massage/" class="nav-li5">寄语墙</a>
+                        <a href="/message/" class="nav-li5" target="_blank">寄语墙</a>
                     </li>
 
                     <!--滑块-->
@@ -134,6 +140,7 @@
             $navbar.className += " in";
         }
     }
+//
 </script>
 
 <!-- Main Content -->
@@ -147,6 +154,7 @@
         background-color: #0085a1;
     }
     header .bg-header {
+        position: relative;
         height: 82vh;
         min-height: 480px;
     }
@@ -300,28 +308,102 @@
         width: 100%;
         height: 100%;
     }
-    /*移动端*/
+    .text-center{
+        color: #ffffff;
+    }
+    .container .text h3{
+        padding-top: 30vh;
+        padding-bottom: 3vh;
+    }
+    .outtimes.msg-time{
+        display: none;
+    }
+
+    /*倒计时背景的样式*/
+
+    .bg-outtimes{
+        position: absolute;
+        top:33vh;
+        color: rgba(0,0,0,0.05);
+        display: block;
+        width: 100%;
+        font-size: 7.6vh;
+        font-weight: bold;
+        transform:scaleY(3.6);
+        -webkit-transform:scaleY(3.6);
+    }
+
+    .bg-outtimes span {
+        display: inline-block;
+        width: 10vh;
+    }
+
+    @media only screen and (min-width: 1100px) {
+        .bg-outtimes {
+            transform:scale3d(1.4,6,1);
+            -webkit-transform:scale3d(1.4,6,1);
+        }
+    }
+    @media only screen and (min-width: 1230px) {
+        .bg-outtimes {
+            transform:scale3d(1.6,6,1);
+            -webkit-transform:scale3d(1.6,6,1);
+        }
+    }
+    @media only screen and (min-width: 769px) {
+        .container-text p {
+            font-size: 2rem;
+        }
+
+    }
+
+
+
+        /*移动端*/
     @media screen and (max-width: 768px) {
         .personal-profile h1{
             font-size: 18px !important;
         }
+        .copyright.text-muted {
+            padding-bottom: 0px !important;
+            margin-top: 5px !important;
+        }
+        .list-inline.text-center{
+            margin-top: -8px !important;
+        }
+        .container .text h3{
+            padding-top: 26vh !important;
+        }
+        .outtimes.msg-time{
+            opacity: 0.3;
+            padding-top: 2vh;
+            display: block;
+        }
+        .bg-outtimes {
+            display: none;
+        }
 
     }
+
     /*目录高亮*/
     .nav-li5 {
         color: #62A4FF !important;
     }
 </style>
 
-<div class="works-container" id="massage-page" style="background-color: #fafafa">
+<div class="works-container" id="message-page" style="background-color: #fafafa">
     <header>
         <div class="container bg-header text-center">
+            <!--倒计时背景-->
+            <p class="bg-outtimes outtimes"></p>
+
             <section class="row">
                 <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text">
                     <h3></h3>
                     <div class="container-text">
                         <p>To live well. See you next world.</p>
                         <p>In order to in heaven, Five years of effort.</p>
+                        <p class="outtimes msg-time"></p>
                     </div>
                 </div>
             </section>
@@ -331,15 +413,6 @@
 
 
 </div>
-<style>
-    .text-center{
-        color: #ffffff;
-    }
-    .container .text h3{
-        padding-top: 30vh;
-        padding-bottom: 3vh;
-    }
-</style>
 <!-- Footer -->
 <!-- Footer -->
 <footer>
@@ -431,6 +504,8 @@
         $('#totop a i').css({
             display: 'none'
         })
+        $('#totop').css('background-color','rgba(0,0,0,0.5)')
+
     })
     $("#totop").on("mouseleave",function(){
         $('#totop a span').css({
@@ -439,6 +514,7 @@
         $('#totop a i').css({
             display: 'inline-block'
         })
+        $('#totop').css('background-color','rgba(0,0,0,0.15)')
     })
 
     $(window).scroll(function(){
