@@ -270,7 +270,10 @@ article blockquote cite:before{
 }
 /*新增加的在pc端时的导航栏样式*/
 @media only screen and (min-width: 768px) {
-
+    #blog_navbar {
+        position: relative;
+        z-index: 999;
+    }
     #blog_navbar a {
         font-weight: 500;
         font-size: 14px;
