@@ -6,8 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="null">
-    <meta name="keyword" content="null">
+    <meta name="description" content="我是DuyangSir，一名前端工程师，对前端和编程技术非常热爱">
+    <meta name="keyword" content="web前端工程师,个人博客,为同在天堂的5年行程,初恋,信仰前端工程师">
+    <meta name="author" content="DuyangSir">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -152,6 +153,7 @@
     }
 
     header .bg-header {
+        position: relative;
         height: 440px;
         background-color: #0fa9c3;
     }
@@ -315,21 +317,29 @@
 
 <div class="works-container" style="background-color: #fafafa">
     <header>
-        <div id="snow-wrap">
+
+        <!--路径画板-->
+        <div id="path-wrap">
+            <canvas id="path-canvas" width="" height=""></canvas>
         </div>
-        <div class="bg-header text-center">
+
+        <div class="bg-header text-center" id="work-page-bgheader">
+
+
+
             <div class="profile">
 
                 <div class="avatar">
                     <div class="title-wrap">
                         <div class="title-ctx-wrap">
                         </div>
-                        <img src="/img/tx-grey.png">
+                        <img class="" src="/img/tx-grey.png">
                     </div>
                 </div>
+
                 <div class="personal-profile">
                     <h1>
-                        <i>V-mx</i> 一个前端工程师的站点
+                        <i>V-mx</i> 一个前端工程师的路径站点
                     </h1>
                 </div>
             </div>
@@ -342,14 +352,23 @@
                 <h3>...ing</h3>
                 <div class="container-text huyan">
                     <blockquote  class="em1-2">
+                        <br>
+
                         <i class="em1-2">web前端工程师<br>你好 </i>
+                        <br>
+
                     </blockquote>
 
                     <p>
-                        是的，这就是现在的职业，在一个证券公司做前端，两年前，我还铁了心的毕业后成为一个硬件工程师，以此不辜负了自己的动手能力和在学校实验室苦练的电路板绘制，但是尝试过之后，我打算放弃，原因有以下三点：
+                        是的，这就是现在的职业，在一个证券公司做前端，两年前，我还铁了心的毕业后成为一个嵌入式硬件工程师，
+                        以此不辜负了自己的动手能力和在学校实验室苦练的电路板绘制和参加的国家级比赛，
+                        但是尝试过此专业的工作之后，我打算放弃，原因有以下三点：
                     </p>
                     <p>
-                        1、做硬件需要经常接触电路板，而电路板的加工工艺离不开助焊剂和洗板水，而助焊剂含有重金属--铅，经常触摸和洗板，或者焊接调试改个线什么的，都通过皮肤和呼吸道进入体内了，刚开始没那么电路板要画，所以焊接调试也有我的份。开始每天嗓子疼，晚上回去一头的油。后来意识到，铅啊！
+                        1、做硬件需要经常接触电路板，而电路板的加工工艺离不开助焊剂和洗板水，而助焊剂含有重金属--铅，
+                        经常触摸和洗板，或者焊接调试改个线什么的，都通过皮肤和呼吸道进入体内了，
+                        刚开始没那么电路板要画，所以焊接调试也有我的份。
+                        开始每天嗓子疼，晚上回去一头的油。后来意识到，铅，是重金属，不是贵金属，剧毒。
                     </p>
                     <p>
                         2、同上。
@@ -358,24 +377,40 @@
                         3、同上。
                     </p>
                     <blockquote>
+                        <br>
+
                         <i class="em1-2">以上原由，还在做硬件的同学请忽略...毕竟分支不一样嘛。</i>
+                        <br>
+
                     </blockquote>
                     <hr>
                     <p>
                         2016年5月2日晚，距离现在<span class="lastTimeDay">此处会自动填入天数</span>，
-                        确切点说就是<span class="lastTimeS">此处会自动填入秒</span>秒，那晚决定来魔都，需要重新整理强化技能，一个小目标，在路上；倒计时 Go！
+                        确切点说就是<span class="lastTimeS">此处会自动填入秒</span>秒，
+                        那晚决定来魔都，需要重新整理强化技能，一个小目标，在路上；倒计时，走起。
                     </p>
                     <p>
                         关于本站，本来应该在"关于"页面描述的，显然被主题占了，那也就是属于主题的关于了，所以，关于本站：
                     </p>
 
                     <blockquote  class="em1-2">
+                        <br>
+
                         <i class="em1-2">
                             v-mx.com 第二版，自适应移动和PC端，第一版为个人简历动态网站，的确为我求职立下了不少功劳，很好。
                         </i>
+                        <br>
                         <i>
-                            本次版本使用了hexo搭建的静态网站(Console里一直有一个报错 -_-// )，仿照原有主题架构做了深度优化，故未启用数据库。
+                            纯净的页面，是不需要被改动，包括留言或者评论。
                         </i>
+                        <br>
+                        <i>
+                            本次版本是搭建的静态网站，仿照hexo原有主题架构做了深度优化，
+                            故未启用数据库，也没有使用第三方评论插件
+                            不可以留言或者评论。
+                        </i>
+                        <br>
+
                     </blockquote>
 
                 </div>
@@ -440,6 +475,8 @@
     }
 
 </style>
+
+
 <!-- Footer -->
 <!-- Footer -->
 <footer>

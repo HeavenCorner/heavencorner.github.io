@@ -1625,9 +1625,13 @@ img::-moz-selection {
 {
     from {
         transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+
     }
     to {
         transform:rotate(360deg);
+        -webkit-transform:rotate(360deg);
+
     }
 }
 
@@ -1635,9 +1639,13 @@ img::-moz-selection {
 {
     from {
         transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+
     }
     to {
         transform:rotate(360deg);
+        -webkit-transform:rotate(360deg);
+
     }
 }
 
@@ -1650,3 +1658,78 @@ img::-moz-selection {
 .outtimes span {
     width: 2.2rem;
 }
+
+.white-shadow-s{
+    animation:white-shadow-s 100s ease infinite;
+    -webkit-animation:white-shadow-s 100s ease infinite;
+    animation-direction:alternate;
+    -webkit-animation-direction:alternate;
+    box-shadow:  0 0px 0px white;
+
+}
+
+@keyframes white-shadow-s
+{
+    from {
+        box-shadow:  0 0px 0px white;
+
+    }
+    to {
+        box-shadow:  0 0px 25px white;
+
+    }
+}
+
+@-webkit-keyframes white-shadow-s /*Safari and Chrome*/
+{
+    from {
+        box-shadow:  0 0px 0px white;
+
+    }
+    to {
+        box-shadow:  0 0px 25px white;
+    }
+}
+
+.black-shadow-s{
+    animation:black-shadow-s 100s ease infinite;
+    -webkit-animation:black-shadow-s 100s ease infinite;
+    animation-direction:alternate;
+    -webkit-animation-direction:alternate;
+    box-shadow:  0 0px 0px black;
+
+}
+
+@keyframes black-shadow-s
+{
+    from {
+        box-shadow:  0 0px 0px black;
+
+    }
+    to {
+        box-shadow:  0 0px 25px black;
+
+    }
+}
+
+@-webkit-keyframes black-shadow-s /*Safari and Chrome*/
+{
+    from {
+        box-shadow:  0 0px 0px black;
+
+    }
+    to {
+        box-shadow:  0 0px 25px black;
+    }
+}
+
+/*路径闪电*/
+/*在work页面*/
+
+
+
+
+
+
+
+

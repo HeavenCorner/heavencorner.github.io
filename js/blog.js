@@ -269,21 +269,19 @@ $("#blog_navbar .nav li").on("mouseenter", function() {
         width: $(this).css("width"),
         left: $left + "px"
     }, 300)
-})
+});
 
 //背景色选择
 $('#bgc').on('mouseenter',function () {
     $('#bgc ul').stop().animate({
         height: '300%',
     },500)
-})
-
-
-
+});
 
 //初次加载，暂未启用loadAudio要注释掉，否则会报错
 // (function(){
 //音乐播放
+/*
     function loadAudio(src, callback) {
         var audio = new Audio(src);
         audio.onloadedmetadata = callback;
@@ -340,10 +338,16 @@ $('#bgc').on('mouseenter',function () {
 
 // })();
 
+*/
+
+//全局无限循环定时器，需要变换的都写在这一个定时器里
 
 //全局倒计时函数
 var en = 0;
 var msg = 0;
+var wsn = 0;
+var ws = 0;
+var wsm = true;
 
 $(function(){
     var times = 0;
@@ -415,6 +419,41 @@ $(function(){
         //正计时
         $('.lastTimeDay').html(day2 + "天");
         $('.lastTimeS').html(disTime2);
+
+
+        //白色发光
+        wsn ++;
+
+        if(wsn % 2 == 0){
+
+            if(ws > 20){
+                wsm = false;
+            }else if(ws < 0){
+                wsm = true;
+            }
+
+            if(wsm){
+                ws ++;
+            }else{
+                ws --;
+            }
+
+
+            $('.white-shadow-s-js').css({
+                'box-shadow': '0px 0px ' + ws + 'px white'
+            });
+
+            $('.black-shadow-s-js').css({
+                'box-shadow': '0px 0px ' + ws + 'px black'
+            });
+
+            if(wsn > 100){
+                wsn = 0;
+            }
+
+        }
+
+
 
 
     }, 50)
@@ -522,7 +561,7 @@ if(canvas) {
 
     Arcn.prototype.drawArc = function (i) {
         context.shadowBlur = 20;
-        context.shadowColor = this.color;
+        context.shadowColor = '#ffffff';
         context.fillStyle = this.color;
         context.beginPath();
         context.arc(this.x, this.y, this.r, 0, 360 * deg);
@@ -675,6 +714,15 @@ if(canvas) {
         return Math.round(Math.random() * (max - min) + min);
     }
 
+//随机偶数
+    function getRandom(min, max) {
+        var n = Math.round(Math.random() * (max - min) + min);
+        while (n % 2 != 0){
+            n = Math.round(Math.random() * (max - min) + min);
+        }
+        return n;
+    }
+
 //随机色
     function getRanColor(x) {
         if (x == 0) {
@@ -707,3 +755,94 @@ if($('#message-page').length > 0){
 }else{
     en = 0;
 }
+
+/*路径闪电*/
+
+//画线和点的封装函数
+function draws(obj,arrAll,seep,star,center,end,box){
+    console.log(arrAll);
+    var drawTime = null;
+    var num = arrAll.length-1;//循环次数
+    var i=0;
+    var bl = 1;
+    var sx,sy,ex,ey;
+    var xn,yn;
+    if(star){
+        addShan(i,arrAll,box);
+    }
+    drawStar();
+    function drawStar(){
+        sx=arrAll[i][0];
+        sy=arrAll[i][1];
+
+        ex=arrAll[i+1][0];
+        ey=arrAll[i+1][1];
+
+        obj.lineWidth = 1;
+        obj.strokeStyle = "white";
+        //向上\下画
+
+        if(ex-sx == 0){
+            xn = 0;
+            yn = (ey-sy)/Math.abs(ey-sy);
+            //左\右
+        }else if(ey-sy == 0){
+            xn = (ex-sx)/Math.abs(ex-sx);
+            yn = 0;
+            //右下、左上、左下、右上
+        }else {
+            xn = (ex-sx)/Math.abs(ex-sx);
+            yn = (ey-sy)/Math.abs(ey-sy);
+
+            bl=Math.abs((ex-sx)/(ey-sy));// x/y
+            console.log(xn,yn,bl);
+        }
+    }
+    drawTime = setInterval(function(){
+        //beginPath()一定要放在内部，不然同时调用多个此函数会冲突
+        obj.beginPath();
+        obj.moveTo(sx,sy);
+        //每次y画1像素，x轴就画1*x/y
+        sx=sx+(xn*bl*seep);
+        sy=sy+(yn*seep);
+        //不是整数，需要二次判定，直上直下判断四种情况，斜着画判断四种情况
+        if((xn == 0 &&((yn == -1) && sy<ey ||(yn == 1) && sy>ey))||(yn == 0 &&((xn == -1) && sx<ex ||(xn == 1) && sx>ex))||
+            (xn != 0 && yn != 0)&&((yn == -1)&&(sy < ey)||(yn == 1)&&(sy > ey))){
+            num -= 1;
+            i += 1;
+            if(num == 0){
+                if(end){
+                    addShan(i,arrAll,box);
+                }
+                clearInterval(drawTime);
+                return;
+            }
+            if(center){
+                addShan(i,arrAll,box);
+            }
+            drawStar();
+        }
+//			console.log(sx,sy);
+        obj.lineTo(sx,sy);
+        obj.closePath();
+        obj.stroke();
+    },10)
+}
+//添加一个闪烁点
+function addShan(i,arrAll,box){
+    //每次中间切换启动显示一个div闪烁点
+    var r = getRandomO(8,20);//随机半径
+    var divObj = $('<div class="shan"></div>');
+    $(box).append(divObj);
+    divObj.css({
+        "left":arrAll[i][0]-(r/2)+"px",
+        "top":arrAll[i][1]-(r/2)+"px",
+        "display":"block",
+        "width": r + "px",
+        "height": r + "px",
+    })
+}
+
+//在work页面画路径图
+
+
