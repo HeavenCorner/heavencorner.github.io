@@ -1748,17 +1748,17 @@ img::-moz-selection {
     -webkit-animation:bg-sf 40s ease infinite;
     animation-direction:alternate;
     -webkit-animation-direction:alternate;
-    background-size: 400% 400%;
+    background-size: 400% 600%;
 }
 
 @keyframes bg-sf
 {
     from {
-        background-size: 400% 400%;
+        background-size: 400% 600%;
 
     }
     to {
-        background-size: 100% 100%;
+        background-size: 100% 150%;
 
     }
 }
@@ -1766,11 +1766,11 @@ img::-moz-selection {
 @-webkit-keyframes bg-sf /*Safari and Chrome*/
 {
     from {
-        background-size: 400% 400%;
+        background-size: 400% 600%;
 
     }
     to {
-        background-size: 100% 100%;
+        background-size: 100% 150%;
     }
 }
 
@@ -1779,14 +1779,14 @@ img::-moz-selection {
     -webkit-animation:bg-sf-c 40s ease infinite;
     animation-direction:alternate;
     -webkit-animation-direction:alternate;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.7);
 
 }
 
 @keyframes bg-sf-c
 {
     from {
-        background-color: rgba(0,0,0,0.6);
+        background-color: rgba(0,0,0,0.7);
 
 
     }
@@ -1798,7 +1798,7 @@ img::-moz-selection {
 @-webkit-keyframes bg-sf-c /*Safari and Chrome*/
 {
     from {
-        background-color: rgba(0,0,0,0.6);
+        background-color: rgba(0,0,0,0.7);
 
     }
     to {
@@ -1807,6 +1807,10 @@ img::-moz-selection {
     }
 }
 
+/*字体黑色阴影*/
+.black-shadow-text {
+    text-shadow: 0 0 14px black;
+}
 
 /*路径闪电*/
 /*在work页面*/
