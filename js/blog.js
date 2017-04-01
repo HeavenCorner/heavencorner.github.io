@@ -349,6 +349,10 @@ var wsn = 0;
 var ws = 0;
 var wsm = true;
 
+var wsn2 = 0;
+var ws2 = 100;
+var wsm2 = true;
+
 $(function(){
     var times = 0;
     setInterval(function() {
@@ -452,6 +456,37 @@ $(function(){
             }
 
         }
+
+    //    背景自动放大
+
+        wsn2 ++;
+
+        if(wsn2 % 4 == 0){
+
+            if(ws2 > 300){
+                wsm2 = false;
+            }else if(ws2 < 101){
+                wsm2 = true;
+            }
+
+            if(wsm2){
+                ws2 ++;
+            }else{
+                ws2 --;
+            }
+
+
+            // $('header.intro-header.index').css({
+            //     'background-size': ws2 + '% ' + ws2 + '%',
+            // });
+
+
+            if(wsn2 > 500){
+                wsn2 = 0;
+            }
+
+        }
+
 
 
 

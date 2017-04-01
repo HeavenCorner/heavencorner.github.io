@@ -535,7 +535,7 @@ article blockquote cite:before{
 .intro-header .container{
     /*display: table-cell;*/
     vertical-align: middle;
-    padding: 45px 15px 25px;
+    padding: 35px 15px 25px;
 }
 
 /*###轮播图样式*/
@@ -605,6 +605,7 @@ article blockquote cite:before{
 }
 /*pc*/
 @media only screen and (min-width: 768px) {
+
     .intro-header .post-heading h1,
     .intro-header .post-heading .subheading{
         font-weight: 300;
@@ -620,6 +621,8 @@ article blockquote cite:before{
     }
 
     .intro-header .post-heading .meta {
+        display: inline-block;
+        padding-top: 10px;
         font-size: 16px;
     }
 
@@ -1269,20 +1272,37 @@ img::-moz-selection {
 
 }
 
-
+/*app*/
 @media screen and (max-width: 768px) {
     .intro-header .post-heading .subheading {
         font-size: 19px;
     }
 
     .intro-header .post-heading .meta {
+        display: inline-block;
+        padding-top: 10px;
         font-size: 14px;
     }
+    /*标签页*/
+    .subheading-app {
+        display: block !important;
+        line-height: 22px !important;
+    }
+    .subheading-pc {
+        display: none !important;
+    }
 }
-
+/*pc*/
 @media screen and (min-width: 768px) {
     .navbar .container-fluid {
         padding: 0 5%;
+    }
+    /*标签页*/
+    .subheading-app {
+        display: none !important;
+    }
+    .subheading-pc {
+        display: block !important;
     }
 
 }
@@ -1722,6 +1742,71 @@ img::-moz-selection {
         box-shadow:  0 0px 25px black;
     }
 }
+/*背景动画*/
+.bg-sf{
+    animation:bg-sf 40s ease infinite;
+    -webkit-animation:bg-sf 40s ease infinite;
+    animation-direction:alternate;
+    -webkit-animation-direction:alternate;
+    background-size: 400% 400%;
+}
+
+@keyframes bg-sf
+{
+    from {
+        background-size: 400% 400%;
+
+    }
+    to {
+        background-size: 100% 100%;
+
+    }
+}
+
+@-webkit-keyframes bg-sf /*Safari and Chrome*/
+{
+    from {
+        background-size: 400% 400%;
+
+    }
+    to {
+        background-size: 100% 100%;
+    }
+}
+
+.bg-sf-c{
+    animation:bg-sf-c 40s ease infinite;
+    -webkit-animation:bg-sf-c 40s ease infinite;
+    animation-direction:alternate;
+    -webkit-animation-direction:alternate;
+    background-color: rgba(0,0,0,0.6);
+
+}
+
+@keyframes bg-sf-c
+{
+    from {
+        background-color: rgba(0,0,0,0.6);
+
+
+    }
+    to {
+        background-color: rgba(0,0,0,0);
+    }
+}
+
+@-webkit-keyframes bg-sf-c /*Safari and Chrome*/
+{
+    from {
+        background-color: rgba(0,0,0,0.6);
+
+    }
+    to {
+        background-color: rgba(0,0,0,0);
+
+    }
+}
+
 
 /*路径闪电*/
 /*在work页面*/
