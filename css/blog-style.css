@@ -1820,7 +1820,45 @@ img::-moz-selection {
 }
 
 /*路径闪电*/
+.shan {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px #ffffff;
+    /*-webkit-animation: shan 1s infinite linear 0s;*/
+    /*animation: shan 1s infinite linear 0s;*/
+    /*-webkit-animation-direction: alternate;*/
+    /*animation-direction: alternate;*/
+}
 
+.shan span{
+    position: absolute;
+    top:9px;
+    left: -18px;
+    color: #ffffff;
+    font-size: 20px;
+}
+/*js代替，有闪现阴影bug*/
+/*@keyframes shan {*/
+    /*from {*/
+        /*box-shadow: 0 0 20px #ffffff;*/
+    /*}*/
+    /*to {*/
+        /*box-shadow: 0 0 5px #ffffff;*/
+    /*}*/
+/*}*/
+/*@-webkit-keyframes shan {*/
+    /*from {*/
+        /*box-shadow: 0 0 20px #ffffff;*/
+    /*}*/
+    /*to {*/
+        /*box-shadow: 0 0 5px #ffffff;*/
+    /*}*/
+/*}*/
 
 
 /*在work页面*/
@@ -1828,7 +1866,7 @@ img::-moz-selection {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.3);
+    /*background: rgba(0,0,0,0.3);*/
     z-index: 3;
 }
 .bg-header .avatar img{

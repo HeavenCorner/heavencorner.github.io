@@ -353,6 +353,9 @@ var wsn2 = 0;
 var ws2 = 100;
 var wsm2 = true;
 
+var wsn3 = 0;
+var wsn3s = true;
+
 $(function(){
     var times = 0;
     setInterval(function() {
@@ -490,9 +493,33 @@ $(function(){
 
         }
 
+        if(wsn3s){
+            wsn3s = false;
+            pathshancanvas();
+        }
+
+        //30,000ms重新画一次闪电路径
+        wsn3 ++;
+        if(wsn3 % 500 == 0){
+            $(".shan").remove();
+
+                pathshancanvas();
 
 
+            //删除移动数量的shan节点,大于某数量就开始一个个删除
+            // if($('.shan').length > 30){
+            //     console.log($('.shan').length);
+            //
+            //     $(".shan").eq(getRandom(0,30)).remove();
+            //
+            //     console.log($('.shan').length);
+            //
+            // }
 
+            if(wsn3 > 500){
+                wsn3 = 0;
+            }
+        }
 
     }, 50)
 });
@@ -747,34 +774,37 @@ if(canvas) {
         return speeds;
     }
 
-//随机数
-    function getRandom(min, max) {
-        return Math.round(Math.random() * (max - min) + min);
-    }
 
-//随机偶数
-    function getRandom(min, max) {
-        var n = Math.round(Math.random() * (max - min) + min);
-        while (n % 2 != 0){
-            n = Math.round(Math.random() * (max - min) + min);
-        }
-        return n;
-    }
-
-//随机色
-    function getRanColor(x) {
-        if (x == 0) {
-            return 'rgba(255,255,255,0.6)';
-        }
-        if (x == 1) {
-            return 'rgba(0,0,0,0.6)';
-        }
-        var ranColors = "rgba(" + getRandom(0, 250) + "," + getRandom(0, 250) + "," + getRandom(0, 250) + ",1)";
-        return ranColors;
-    }
 
 }
-console.log($('#message-page').length);
+
+//随机数
+function getRandom(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
+
+//随机偶数
+function getRandomO(min, max) {
+    var n = Math.round(Math.random() * (max - min) + min);
+    while (n % 2 != 0){
+        n = Math.round(Math.random() * (max - min) + min);
+    }
+    return n;
+}
+
+//随机色
+function getRanColor(x) {
+    if (x == 0) {
+        return 'rgba(255,255,255,0.6)';
+    }
+    if (x == 1) {
+        return 'rgba(0,0,0,0.6)';
+    }
+    var ranColors = "rgba(" + getRandom(0, 250) + "," + getRandom(0, 250) + "," + getRandom(0, 250) + ",1)";
+    return ranColors;
+}
+
+// console.log($('#message-page').length);
 //寄语页
 if($('#message-page').length > 0){
     en = 1;
@@ -797,19 +827,81 @@ if($('#message-page').length > 0){
 /*路径闪电*/
 
 //画线和点的封装函数
+var canvasOne = document.getElementById("path-canvas");
+var arrlw = window.innerWidth;
+var arrlh = parseInt($('#path-wrap').css('height'));
+//放到全局定时器里
+function pathshancanvas() {
+
+    if (canvasOne) {
+
+
+
+        canvasOne.width = arrlw;
+        canvasOne.height = arrlh;
+
+        var arrA3 = [];
+
+        var slen = 6; //闪点数量
+
+        // if ($(window).width() < 768) {
+        //
+        //     slen = 5; //闪点数量
+        //
+        // }else {
+        //     slen = 30; //闪点数量
+        //
+        // }
+
+
+            for (var i = 0; i < slen; i++) {
+            (function (i) {
+                var arrAss = [];
+                var x = parseInt(arrlw / slen);
+                //每次生成1/n的区域x坐标,y坐标
+                arrAss[0] = getRandom(60 + (x * i), parseInt((arrlw * 7 / 8) * i / slen + 60));
+                arrAss[1] = getRandom(parseInt(20), parseInt(arrlh - 135));
+                // arrAss[0] = getRandom(parseInt(40), parseInt(arrlw));
+                // arrAss[1] = getRandom(parseInt(20), parseInt(arrlh));
+                arrA3[i] = arrAss;
+
+
+                // addShan(i,arrA3,"#path-wrap");
+            })(i)
+        }
+
+        // var arrA3 = [[getRandom(parseInt(),parseInt()),146],[240,220],[240,870],[345,870],[345,1060]];
+        var contextB = canvasOne.getContext("2d");
+
+        contextB.clearRect(0, 0, arrlw, arrlh);
+        // draws(contextB, arrA3, 4, false, false, false, "#path-wrap");
+
+        setTimeout(function(){
+            draws(contextB, arrA3, 4, 1, 1, 1, "#path-wrap");
+
+        },300)
+
+
+    }
+
+}
+
 function draws(obj,arrAll,seep,star,center,end,box){
-    console.log(arrAll);
+    // console.log(arrAll);
     var drawTime = null;
     var num = arrAll.length-1;//循环次数
     var i=0;
     var bl = 1;
     var sx,sy,ex,ey;
     var xn,yn;
+    var y = 2016;
     if(star){
-        addShan(i,arrAll,box);
+        addShan(i,arrAll,box,y);
     }
     drawStar();
     function drawStar(){
+        // console.log(arrAll);
+
         sx=arrAll[i][0];
         sy=arrAll[i][1];
 
@@ -833,44 +925,50 @@ function draws(obj,arrAll,seep,star,center,end,box){
             yn = (ey-sy)/Math.abs(ey-sy);
 
             bl=Math.abs((ex-sx)/(ey-sy));// x/y
-            console.log(xn,yn,bl);
+            // console.log(xn,yn,bl);
         }
     }
+    // ani2();
     drawTime = setInterval(function(){
-        //beginPath()一定要放在内部，不然同时调用多个此函数会冲突
-        obj.beginPath();
-        obj.moveTo(sx,sy);
-        //每次y画1像素，x轴就画1*x/y
-        sx=sx+(xn*bl*seep);
-        sy=sy+(yn*seep);
-        //不是整数，需要二次判定，直上直下判断四种情况，斜着画判断四种情况
-        if((xn == 0 &&((yn == -1) && sy<ey ||(yn == 1) && sy>ey))||(yn == 0 &&((xn == -1) && sx<ex ||(xn == 1) && sx>ex))||
-            (xn != 0 && yn != 0)&&((yn == -1)&&(sy < ey)||(yn == 1)&&(sy > ey))){
-            num -= 1;
-            i += 1;
-            if(num == 0){
-                if(end){
-                    addShan(i,arrAll,box);
+        // function ani2() {
+
+            //beginPath()一定要放在内部，不然同时调用多个此函数会冲突
+            obj.beginPath();
+            obj.moveTo(sx, sy);
+            //每次y画1像素，x轴就画1*x/y
+            sx = sx + (xn * bl * seep);
+            sy = sy + (yn * seep);
+            //不是整数，需要二次判定，直上直下判断四种情况，斜着画判断四种情况
+            if ((xn == 0 && ((yn == -1) && sy < ey || (yn == 1) && sy > ey)) || (yn == 0 && ((xn == -1) && sx < ex || (xn == 1) && sx > ex)) ||
+                (xn != 0 && yn != 0) && ((yn == -1) && (sy < ey) || (yn == 1) && (sy > ey))) {
+                num -= 1;
+                i += 1;
+                y += 1;
+                if (num == 0) {
+                    if (end) {
+                        addShan(i, arrAll, box,y);
+                    }
+                    clearInterval(drawTime);
+                    return;
                 }
-                clearInterval(drawTime);
-                return;
+                if (center) {
+                    addShan(i, arrAll, box,y);
+                }
+                drawStar();
             }
-            if(center){
-                addShan(i,arrAll,box);
-            }
-            drawStar();
-        }
 //			console.log(sx,sy);
-        obj.lineTo(sx,sy);
-        obj.closePath();
-        obj.stroke();
-    },10)
+            obj.lineTo(sx, sy);
+            obj.closePath();
+            obj.stroke();
+            // window.requestAnimationFrame(ani2);
+        // }
+    },60)
 }
 //添加一个闪烁点
-function addShan(i,arrAll,box){
+function addShan(i,arrAll,box,y){
     //每次中间切换启动显示一个div闪烁点
-    var r = getRandomO(8,20);//随机半径
-    var divObj = $('<div class="shan"></div>');
+    var r = getRandomO(8,14);//随机半径
+    var divObj = $('<div class="shan black-shadow-s-js"><span>' + y + '</span></div>');
     $(box).append(divObj);
     divObj.css({
         "left":arrAll[i][0]-(r/2)+"px",
@@ -880,6 +978,28 @@ function addShan(i,arrAll,box){
         "height": r + "px",
     })
 }
+
+//背景音乐，检测到小屏幕时不自动播放
+// if($(window).width() < 768) {
+// //主页
+// $('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=234228&auto=0&height=66')
+//
+// //工作
+// $('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=437597650&auto=0&height=32')
+//
+// }
+
+if($(window).width() > 768){
+
+//主页
+    $('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=234228&auto=1&height=66')
+
+//工作
+    $('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=437597650&auto=1&height=32')
+
+}
+
+
 
 //在work页面画路径图
 

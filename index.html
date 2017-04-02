@@ -536,10 +536,11 @@
         position: relative;
         height: 86px;
         text-align: center;
-        background-color: rgba(0,133,161,0.2);
+        background-color: rgba(0,133,161,0.1);
+        /*box-shadow: 0 0 5px rgba(0,0,0,0.2);*/
         color: #ffffff;
         font-size: 30px;
-        z-index: 8;
+        z-index: 2;
     }
     .musicbox p {
         padding: 10px 0 0px;
@@ -600,11 +601,12 @@
         color: #505050;
         line-height: 60px;
     }
+
 </style>
-<div class="musicbox">
+<div class="musicbox" id="index-bgm">
     <span class="music-t">The sound of love</span>
     <span class="music-b"></span>
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=100% src="//music.163.com/outchain/player?type=2&id=234228&auto=1&height=66"></iframe>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=100% src="//music.163.com/outchain/player?type=2&id=234228&auto=0&height=66"></iframe>
 </div>
 
 
@@ -612,7 +614,7 @@
 <div class="post-preview ">
     <a href="/2016/05/26/测试文章001/" target="_blank">
         <h2 class="post-title">
-            测试文章001这是一个名字很长很长很长的博客
+            处于测试阶段，还未正式发布，完善中
         </h2>
         <p class="post-meta">
             <i class="fa fa-calendar" aria-hidden="true"></i> 2016-05-26
@@ -801,13 +803,13 @@ meter定义度量衡 ...
                     
                     
                     
-                    <a href="/tags/#haha" title="haha"
-                       rel="1">haha</a>
+                    <a href="/tags/#gygy" title="gygy"
+                       rel="1">gygy</a>
                     
                     
                     
-                    <a href="/tags/#hhhhhhh" title="hhhhhhh"
-                       rel="1">hhhhhhh</a>
+                    <a href="/tags/#jhdah" title="jhdah"
+                       rel="1">jhdah</a>
                     
                     
                     
@@ -821,13 +823,13 @@ meter定义度量衡 ...
                     
                     
                     
-                    <a href="/tags/#gygy" title="gygy"
-                       rel="1">gygy</a>
+                    <a href="/tags/#haha" title="haha"
+                       rel="1">haha</a>
                     
                     
                     
-                    <a href="/tags/#jhdah" title="jhdah"
-                       rel="1">jhdah</a>
+                    <a href="/tags/#hhhhhhh" title="hhhhhhh"
+                       rel="1">hhhhhhh</a>
                     
                     
                     
@@ -882,11 +884,6 @@ meter定义度量衡 ...
             <span>回到<br>顶部</span>
         </a>
     </div>
-
-
-
-
-
 
     <div class="container">
         <div class="row">
@@ -995,10 +992,9 @@ meter定义度量衡 ...
                 display: "block"
             })
 
-
             //进度条
             var winH = $(window).height();
-            var progressbarW = ((winH + winT - pbc)* 100 /pagelong).toFixed(2);
+            var progressbarW = ((winH + winT - pbc) * 100 /pagelong).toFixed(2);
 
             console.log(winH + winT , pagelong ,progressbarW);
 

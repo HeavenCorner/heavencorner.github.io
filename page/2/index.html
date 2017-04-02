@@ -536,10 +536,11 @@
         position: relative;
         height: 86px;
         text-align: center;
-        background-color: rgba(0,133,161,0.2);
+        background-color: rgba(0,133,161,0.1);
+        /*box-shadow: 0 0 5px rgba(0,0,0,0.2);*/
         color: #ffffff;
         font-size: 30px;
-        z-index: 8;
+        z-index: 2;
     }
     .musicbox p {
         padding: 10px 0 0px;
@@ -600,11 +601,12 @@
         color: #505050;
         line-height: 60px;
     }
+
 </style>
-<div class="musicbox">
+<div class="musicbox" id="index-bgm">
     <span class="music-t">The sound of love</span>
     <span class="music-b"></span>
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=100% src="//music.163.com/outchain/player?type=2&id=234228&auto=1&height=66"></iframe>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=100% src="//music.163.com/outchain/player?type=2&id=234228&auto=0&height=66"></iframe>
 </div>
 
 
@@ -739,13 +741,13 @@
                     
                     
                     
-                    <a href="/tags/#haha" title="haha"
-                       rel="1">haha</a>
+                    <a href="/tags/#gygy" title="gygy"
+                       rel="1">gygy</a>
                     
                     
                     
-                    <a href="/tags/#hhhhhhh" title="hhhhhhh"
-                       rel="1">hhhhhhh</a>
+                    <a href="/tags/#jhdah" title="jhdah"
+                       rel="1">jhdah</a>
                     
                     
                     
@@ -759,13 +761,13 @@
                     
                     
                     
-                    <a href="/tags/#gygy" title="gygy"
-                       rel="1">gygy</a>
+                    <a href="/tags/#haha" title="haha"
+                       rel="1">haha</a>
                     
                     
                     
-                    <a href="/tags/#jhdah" title="jhdah"
-                       rel="1">jhdah</a>
+                    <a href="/tags/#hhhhhhh" title="hhhhhhh"
+                       rel="1">hhhhhhh</a>
                     
                     
                     
@@ -820,11 +822,6 @@
             <span>回到<br>顶部</span>
         </a>
     </div>
-
-
-
-
-
 
     <div class="container">
         <div class="row">
@@ -933,10 +930,9 @@
                 display: "block"
             })
 
-
             //进度条
             var winH = $(window).height();
-            var progressbarW = ((winH + winT - pbc)* 100 /pagelong).toFixed(2);
+            var progressbarW = ((winH + winT - pbc) * 100 /pagelong).toFixed(2);
 
             console.log(winH + winT , pagelong ,progressbarW);
 

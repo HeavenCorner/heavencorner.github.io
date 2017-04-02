@@ -327,9 +327,51 @@
         position: relative;
         z-index: 4;
     }
+
+    .iframe-box{
+        height: 32px;
+        position: relative;
+        left: 50%;
+
+        width: 300px;
+        margin-left: -150px;
+    }
+
+    .iframe-box span{
+        position: absolute;
+        top: 12px;
+        left: 46px;
+        display: block;
+        width: 183px;
+        text-align: center;
+
+        padding-left: 20px;
+        /*min-width: 149px;*/
+        height: 18px;
+        background-color: #ffffff;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .iframe-box i{
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        display: block;
+        width: 23px;
+        /*min-width: 149px;*/
+        height: 23px;
+        background-color: #f3f3f4;
+        font-size: 21px;
+    }
+
+    iframe {
+
+    }
 </style>
 
 <div class="works-container" style="background-color: #fafafa">
+
     <header>
 
         <!--路径画板-->
@@ -365,7 +407,18 @@
             <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text huyan box-shadows">
                 <h3>Anything...ing</h3>
                 <h4><i>Vector - Maximum</i></h4>
-                <h5>-- 把细节做到极致</h5>
+
+                <!--<h5>&#45;&#45; 把细节做到极致</h5>-->
+
+
+                <div class="iframe-box" id="work-bgm">
+                    <!--<span>Costly process</span>-->
+                    <span>把细节做到极致</span>
+                    <i class="glyphicon glyphicon-music"></i>
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=437597650&auto=0&height=32"></iframe>
+                </div>
+
+
                 <div class="container-text huyan">
                     <blockquote  class="em1-2">
                         <br>
@@ -531,11 +584,6 @@
         </a>
     </div>
 
-
-
-
-
-
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 text-center">
@@ -643,10 +691,9 @@
                 display: "block"
             })
 
-
             //进度条
             var winH = $(window).height();
-            var progressbarW = ((winH + winT - pbc)* 100 /pagelong).toFixed(2);
+            var progressbarW = ((winH + winT - pbc) * 100 /pagelong).toFixed(2);
 
             console.log(winH + winT , pagelong ,progressbarW);
 
