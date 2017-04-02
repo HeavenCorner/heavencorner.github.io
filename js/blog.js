@@ -373,22 +373,25 @@ $(function(){
         var hours2 = (disTime2 - minutes2 * 60 - seconds2) / 3600 % 24;
         var day2 = (disTime2 - hours2 * 3600 - minutes2 * 60 - seconds2) / 86400;
 
-        if(times == 95 || times == 195){
-            //加一个切换动画
-            $(".titleouttimes").animate({
-                height:'toggle'
-            },400,function(){
-                $(".titleouttimes").animate({
-                    height:'toggle'
-                },400);
-            });
 
-
-        }
 
         if(msg){
             $('.titleouttimes').html('In order to in heaven');
         }else{
+
+            if(times == 95 || times == 195){
+                //加一个切换动画
+                $(".titleouttimes").animate({
+                    height:'toggle'
+                },400,function(){
+                    $(".titleouttimes").animate({
+                        height:'toggle'
+                    },400);
+                });
+
+
+            }
+
             if(times < 100){
                 if(en){
                     $('.titleouttimes').html('In order to in heaven, Five years of effort');
@@ -413,7 +416,7 @@ $(function(){
         times ++;
 
         if(en){
-            $('.outtimes').html(day + " day " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " h " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " m " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " s ");
+            $('.outtimes').html(day + " day " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " h " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " m " + "<span class='leftspan' style='display: inline-block'>" + o(seconds) + "</span>" + " s ");
 
         }else{
             $('.outtimes').html(day + " 天 " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " 时 " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " 分 " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " 秒 ");
@@ -879,5 +882,7 @@ function addShan(i,arrAll,box){
 }
 
 //在work页面画路径图
+
+//生成随机坐标，保证自适应
 
 

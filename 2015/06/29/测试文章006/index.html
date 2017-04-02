@@ -180,6 +180,12 @@
     }
 </style>
 
+<!--进度条，仅博文-->
+<div class="progress-bar">
+    <span class="progress-bar-run"></span>
+</div>
+
+
 <header class="intro-header">
     <div class="container">
         <div class="row">
@@ -217,6 +223,7 @@
 <!-- 序言 -->
 
 <!-- 博客正文 -->
+
 
 <article>
     <div class="container">
@@ -507,6 +514,12 @@ E &gt; F子元素选择器选择的是子元素F，子孙不会被选中而后�
             <span>回到<br>顶部</span>
         </a>
     </div>
+
+
+
+
+
+
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 text-center">
@@ -555,6 +568,13 @@ E &gt; F子元素选择器选择的是子元素F，子孙不会被选中而后�
 
 <!-- async load function -->
 <script>
+//    <!--变量-->
+    var initTop = 360;
+//    进度条调试显示差量
+
+    var pbc = parseInt($(window).height() / 1.5);
+//        pbc = 0;
+
 //    <!--返回顶部-->
     $("#totop").click(function() {
         $('html, body').animate({
@@ -566,6 +586,9 @@ E &gt; F子元素选择器选择的是子元素F，子孙不会被选中而后�
         $('#totop span').css({
             display: "none"
         })
+//        app点击优化
+        $('#totop').css('background-color','rgba(0,0,0,0.15)')
+
         return false;
     });
 
@@ -590,19 +613,49 @@ E &gt; F子元素选择器选择的是子元素F，子孙不会被选中而后�
     })
 
     $(window).scroll(function(){
-        if($(window).scrollTop() > 460){
+
+        var winT = $(window).scrollTop();
+        var pagelong = $(document.body).outerHeight(true) - pbc;
+
+
+        if(winT > initTop){
 
             $('#totop').css({
                 display: "block"
             })
+            $('.progress-bar').css({
+                display: "block"
+            })
+
+
+            //进度条
+            var winH = $(window).height();
+            var progressbarW = ((winH + winT - pbc)* 100 /pagelong).toFixed(2);
+
+            console.log(winH + winT , pagelong ,progressbarW);
+
+            $('.progress-bar span').css({
+                width : progressbarW + '%'
+            })
+
+
         }else{
             $('#totop').css({
                 display: "none"
             })
+            $('.progress-bar').css({
+                display: "none"
+            })
+
         }
         $('.toc-wrap.toc-fixed').css({
             width: $('.hidden-xs.col-sm-3.toc-col').css('width')
         })
+
+
+
+
+
     });
 
     function async(u, c) {

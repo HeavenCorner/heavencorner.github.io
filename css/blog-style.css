@@ -114,6 +114,7 @@ article .post-container h2{
 a {
     color: #404040;
     transition: all .5s;
+    -webkit-transition: all .5s;
 }
 
 a:hover,
@@ -655,6 +656,11 @@ article blockquote cite:before{
     .intro-header .about-me p{
         padding-top: 20px;
         font-size: 16px;
+    }
+
+    /*进度条*/
+    .progress-bar {
+        height: 6px !important;
     }
 }
 
@@ -1814,10 +1820,47 @@ img::-moz-selection {
 }
 
 /*路径闪电*/
+
+
+
 /*在work页面*/
+#path-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 3;
+}
+.bg-header .avatar img{
+    position: relative;
+    z-index: 4;
+}
 
 
 
+
+
+/*进度条progress-bar-run progress-bar*/
+.progress-bar {
+    position: fixed;
+    bottom: 0px;
+    z-index: 9999;
+    display: none;
+    height: 4px;
+    background: transparent;
+    width: 100%;
+}
+
+.progress-bar span{
+    display: block;
+    float: left;
+    height: 100%;
+    background: #0fa9c3;
+    width: 0%;
+    /*transition: all .1s;*/
+    /*-webkit-transition: all .1s;*/
+
+}
 
 
 
