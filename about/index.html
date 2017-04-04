@@ -318,6 +318,12 @@
         color: #62A4FF !important;
     }
 
+    #about-img{
+        position: relative;
+        z-index: 999;
+        cursor: pointer;
+    }
+
 </style>
 
 <div class="works-container" style="background-color: #fafafa">
@@ -335,12 +341,12 @@
                         <div class="title-ctx-wrap">
                             <canvas id="title-canvas" width="240" height="240"></canvas>
                         </div>
-                        <img src="/img/tx.jpg">
+                        <img id="about-img" src="/img/tx.jpg">
                     </div>
 
                 </div>
                 <div class="personal-profile">
-                    <h1 >
+                    <h1 id="about-name">
                         DuyangSir
                     </h1>
                     <h4 class="outtimes"></h4>

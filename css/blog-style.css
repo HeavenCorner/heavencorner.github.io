@@ -1814,6 +1814,37 @@ img::-moz-selection {
     }
 }
 
+
+.op{
+    opacity: .5;
+    animation:op 5s linear infinite;
+    -webkit-animation:op 5s linear infinite;
+    animation-direction:alternate;
+    -webkit-animation-direction:alternate;
+}
+
+
+@keyframes op
+{
+    from {
+        opacity: .3;
+    }
+    to {
+        opacity: .8;
+    }
+}
+
+@-webkit-keyframes op /*Safari and Chrome*/
+{
+    from {
+        opacity: .3;
+    }
+    to {
+        opacity: .8;
+    }
+}
+
+
 /*字体黑色阴影*/
 .black-shadow-text {
     text-shadow: 0 0 14px black;
@@ -1862,17 +1893,7 @@ img::-moz-selection {
 
 
 /*在work页面*/
-#path-wrap{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    /*background: rgba(0,0,0,0.3);*/
-    z-index: 3;
-}
-.bg-header .avatar img{
-    position: relative;
-    z-index: 4;
-}
+
 
 
 

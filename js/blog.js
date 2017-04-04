@@ -498,9 +498,9 @@ $(function(){
             pathshancanvas();
         }
 
-        //30,000ms重新画一次闪电路径
+        //nms重新画一次闪电路径
         wsn3 ++;
-        if(wsn3 % 500 == 0){
+        if(wsn3 % 400 == 0){
             $(".shan").remove();
 
                 pathshancanvas();
@@ -516,7 +516,7 @@ $(function(){
             //
             // }
 
-            if(wsn3 > 500){
+            if(wsn3 > 400){
                 wsn3 = 0;
             }
         }
@@ -533,16 +533,65 @@ function o(s) {
 }
 
 <!--canvas-->
+
 //    <!-- 头像旋转圈 -->
 var canvas=document.getElementById("title-canvas");
+
+//特效：鼠标移到头像上会出现红色球的标记位
+var aboutred = false;
+//白色
+$("#about-img").on("mouseleave", function() {
+    //清空
+    clearInterval(cotime);
+    for(var i = 0;i < arrsn.length;i++){
+        arrsn[i].color = '#ffffff';
+    }
+    aboutred = false;
+    $('#about-name').css('color','#ffffff');
+
+    //转圈
+    for(var j=0;j<4;j++){
+
+        arrs[j].timestop = timestop;
+        arrs[j].dsp = asp[j]/100;
+    }
+
+})
+//红色
+var cotime = null;
+$("#about-img").on("mouseenter", function() {
+
+     cotime = setInterval(function () {
+        console.log(1);
+        for(var i = 0;i < arrsn.length;i++){
+            arrsn[i].color = getRanColor();
+        }
+         $('#about-name').css('color',getRanColor());
+
+     },100);
+
+     //转圈
+     for(var j=0;j<4;j++){
+
+         arrs[j].timestop = 'fast';
+         arrs[j].dsp = asp2[j]/20;
+     }
+
+    aboutred = true;
+
+});
 //在其他的页面没有就跳出
 if(canvas) {
+
+
     var ctx = canvas.getContext("2d");
 
+
 //    转圜
+    var timestop = 230;
+
     function Arc(x, y, r, b, o, w, dsp, colors) {
         var dsp = dsp / 100;
-        var timestop = 230;
         this.time = timestop;
         this.timestop = timestop;
 
@@ -573,6 +622,13 @@ if(canvas) {
             this.abegin = parseFloat(this.abegin) + parseFloat(this.dsp);
             this.aover = parseFloat(this.aover) + parseFloat(this.dsp);
         } else if (this.abegin > 2) {
+
+            if(this.timestop == "fast"){
+                this.abegin = 0;
+                this.aover = this.long;
+                return;
+            }
+
             this.timestop--;
             if (this.timestop < 0) {
                 this.abegin = 0;
@@ -589,7 +645,7 @@ if(canvas) {
     var arro = [0.3, 0.8, 1.4, 1.7];
 //速度1-5
     var asp = [1, 1.2, 1.8, 1.5];
-//    var asp = [7,7.1,7.2,7.3];
+    var asp2 = [3, 2, 4, 5];
 
 
     for (var i = 0; i < arcsLength; i++) {
@@ -626,7 +682,7 @@ if(canvas) {
 
     Arcn.prototype.drawArc = function (i) {
         context.shadowBlur = 20;
-        context.shadowColor = '#ffffff';
+        context.shadowColor = this.color;
         context.fillStyle = this.color;
         context.beginPath();
         context.arc(this.x, this.y, this.r, 0, 360 * deg);
@@ -696,7 +752,7 @@ if(canvas) {
 
     } else {
         arcsLengthn = 76;//设置球的个数
-        timen = 120;
+        timen = 150;
     }
 
     var arrsn = [];
@@ -717,16 +773,19 @@ if(canvas) {
 
     function firstDraw() {
         context.clearRect(0, 0, canvas.width, canvas.height);
-//        for(var i=0;i<arcsLengthn;i++){
-//
-//            arcsn = new Arcn(getRandom(100,canvasn.width-60),getRandom(100,canvasn.height-60),getRandom(s.minR,s.maxR),getRandomS(-s.speed,s.speed),getRandomS(-s.speedy,s.speedy),getRanColor(0));
-//            arrsn.push(arcsn);
-//            arcsn.drawArc();
-//        }
+
 //        同源发出
         var ntime = setInterval(function () {
             if (arrsn.length < arcsLengthn) {
-                arcsn = new Arcn(getRandom(canvasn.width / 2 - 60, canvasn.width / 2 + 60), getRandom(parseInt($('#title-canvas').offset().top) + 80, parseInt($('#title-canvas').offset().top) + 140), getRandom(s.minR, s.maxR), getRandomS(-s.speed, s.speed), getRandomS(-s.speedy, s.speedy), getRanColor(0), getRandomS(1, 6));
+
+                if(aboutred){
+                    arcsn = new Arcn(getRandom(canvasn.width / 2 - 60, canvasn.width / 2 + 60), getRandom(parseInt($('#title-canvas').offset().top) + 80, parseInt($('#title-canvas').offset().top) + 140), getRandom(s.minR, s.maxR), getRandomS(-s.speed, s.speed), getRandomS(-s.speedy, s.speedy), getRanColor(), getRandomS(1, 6));
+
+                }else{
+                    arcsn = new Arcn(getRandom(canvasn.width / 2 - 60, canvasn.width / 2 + 60), getRandom(parseInt($('#title-canvas').offset().top) + 80, parseInt($('#title-canvas').offset().top) + 140), getRandom(s.minR, s.maxR), getRandomS(-s.speed, s.speed), getRandomS(-s.speedy, s.speedy), getRanColor(0), getRandomS(1, 6));
+                }
+
+
                 arrsn.push(arcsn);
                 arcsn.drawArc();
 //                if(arrsn.length == arcsLengthn){
@@ -859,7 +918,7 @@ function pathshancanvas() {
                 var arrAss = [];
                 var x = parseInt(arrlw / slen);
                 //每次生成1/n的区域x坐标,y坐标
-                arrAss[0] = getRandom(60 + (x * i), parseInt((arrlw * 7 / 8) * i / slen + 60));
+                arrAss[0] = getRandom(arrlw/40 + (x * i), parseInt((arrlw) * i / slen + arrlw/30));
                 arrAss[1] = getRandom(parseInt(20), parseInt(arrlh - 135));
                 // arrAss[0] = getRandom(parseInt(40), parseInt(arrlw));
                 // arrAss[1] = getRandom(parseInt(20), parseInt(arrlh));
@@ -967,7 +1026,7 @@ function draws(obj,arrAll,seep,star,center,end,box){
 //添加一个闪烁点
 function addShan(i,arrAll,box,y){
     //每次中间切换启动显示一个div闪烁点
-    var r = getRandomO(8,14);//随机半径
+    var r = getRandomO(7,16);//随机半径
     var divObj = $('<div class="shan black-shadow-s-js"><span>' + y + '</span></div>');
     $(box).append(divObj);
     divObj.css({
