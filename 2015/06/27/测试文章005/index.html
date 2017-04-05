@@ -184,11 +184,24 @@
         padding-top: 80px;
     }
 
+    header.intro-header {
+        position: relative;
+    }
+
+    .mark-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.3);
+    }
+
+
     @media only screen and (min-width: 768px) {
         header.intro-header .container{
             padding-top: 105px;
         }
     }
+
 </style>
 
 <!--进度条，仅博文-->
@@ -197,7 +210,10 @@
 </div>
 
 
-<header class="intro-header">
+<header class="intro-header data-ispost-is">
+    <div class="mark-bg">
+
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
@@ -329,26 +345,7 @@ The <abbr title="World Health Organization">WTO</abbr> was founded in 1948.
                 <hr>
 
                 <!-- 分享 -->
-                <div class="ds-share"
-                     style="text-align: right"
-                     data-thread-key="2015/06/27/测试文章005/"
-                     data-title="测试文章005"
-                     data-url="http://www.jzyhn.com/2015/06/27/测试文章005/"
-                     data-images=""
-                     data-content="01 短语句mark标记：高亮文本，常作用于搜索高亮
-&lt;mark>这是一个重点&lt;/... | 为同在天堂的5年行程 ">
-                    <div class="ds-share-inline">
-                        <ul class="ds-share-icons-16">
-                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                        </ul>
-                        <div class="ds-share-icons-more">
-                        </div>
-                    </div>
-                    <hr>
-                </div>
+                
 
 
                 <!--下面是每一篇文章的上一篇下一篇，更改为显示名称内容，鼠标移上去显示全部的内容20170324-->
@@ -544,14 +541,14 @@ The <abbr title="World Health Organization">WTO</abbr> was founded in 1948.
                 display: "block"
             })
             $('.progress-bar').css({
-                display: "block"
+                opacity: '1',
             })
 
             //进度条
             var winH = $(window).height();
             var progressbarW = ((winH + winT - pbc) * 100 /pagelong).toFixed(2);
 
-            console.log(winH + winT , pagelong ,progressbarW);
+//            console.log(winH + winT , pagelong ,progressbarW);
 
             $('.progress-bar span').css({
                 width : progressbarW + '%'
@@ -563,7 +560,7 @@ The <abbr title="World Health Organization">WTO</abbr> was founded in 1948.
                 display: "none"
             })
             $('.progress-bar').css({
-                display: "none"
+                opacity: '0',
             })
 
         }

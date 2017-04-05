@@ -182,11 +182,24 @@
         padding-top: 80px;
     }
 
+    header.intro-header {
+        position: relative;
+    }
+
+    .mark-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.3);
+    }
+
+
     @media only screen and (min-width: 768px) {
         header.intro-header .container{
             padding-top: 105px;
         }
     }
+
 </style>
 
 <!--进度条，仅博文-->
@@ -195,14 +208,17 @@
 </div>
 
 
-<header class="intro-header">
+<header class="intro-header data-ispost-is">
+    <div class="mark-bg">
+
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
                     <h1>处于测试阶段，还未正式发布，完善中</h1>
                     
-                    <h2 class="subheading">hi, duyang</h2>
+                    <h2 class="subheading">简要的一句话说明</h2>
                     
                     <span class="meta">
                          作者 duyang sir
@@ -257,30 +273,17 @@
                 <hr>
 
                 <!-- 分享 -->
-                <div class="ds-share"
-                     style="text-align: right"
-                     data-thread-key="2016/05/26/测试文章001/"
-                     data-title="处于测试阶段，还未正式发布，完善中"
-                     data-url="http://www.jzyhn.com/2016/05/26/测试文章001/"
-                     data-images=""
-                     data-content="                    标题块测试你好 haha 
-一级标题03 表单元素in... | 为同在天堂的5年行程 ">
-                    <div class="ds-share-inline">
-                        <ul class="ds-share-icons-16">
-                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                        </ul>
-                        <div class="ds-share-icons-more">
-                        </div>
-                    </div>
-                    <hr>
-                </div>
+                
 
 
                 <!--下面是每一篇文章的上一篇下一篇，更改为显示名称内容，鼠标移上去显示全部的内容20170324-->
                 <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/04/04/诗歌模板测试/" data-toggle="tooltip" data-placement="top"
+                           title="歌曲模板测试">
+                            <i class="glyphicon glyphicon-triangle-left"></i><span>歌曲模板测试</span></a>
+                    </li>
                     
                     
                     <li class="next">
@@ -466,14 +469,14 @@
                 display: "block"
             })
             $('.progress-bar').css({
-                display: "block"
+                opacity: '1',
             })
 
             //进度条
             var winH = $(window).height();
             var progressbarW = ((winH + winT - pbc) * 100 /pagelong).toFixed(2);
 
-            console.log(winH + winT , pagelong ,progressbarW);
+//            console.log(winH + winT , pagelong ,progressbarW);
 
             $('.progress-bar span').css({
                 width : progressbarW + '%'
@@ -485,7 +488,7 @@
                 display: "none"
             })
             $('.progress-bar').css({
-                display: "none"
+                opacity: '0',
             })
 
         }

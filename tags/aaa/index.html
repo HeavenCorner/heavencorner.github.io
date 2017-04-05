@@ -190,6 +190,42 @@
 				
 					
 					
+					<div class="archive archive-year" data-date="2017">
+						<h2 class="archive-title">
+						<span class="fa fa-archive">
+							<a href="/archives/2017">2017</a>
+						</span>
+						</h2>
+				
+				
+					
+					
+					<div class="archive archive-month" data-date="201704">
+						<h3 class="archive-title">
+							<a href="/archives/2017/04">04</a>
+						</h3>
+				
+				<div class="one-tag-list">
+                <div class="post-preview">
+                    <a href="/2017/04/04/诗歌模板测试/">
+                        <h4 class="post-title">
+                            歌曲模板测试
+                        </h4>
+                        
+                    </a>
+                </div>
+				<hr>
+				</div>
+            
+				
+				
+				
+					
+					</div><!--month-->
+					</div><!--year-->
+					
+					
+					
 					<div class="archive archive-year" data-date="2016">
 						<h2 class="archive-title">
 						<span class="fa fa-archive">
@@ -213,7 +249,7 @@
                         </h4>
                         
                         <h4 class="post-subtitle">
-                            hi, duyang
+                            简要的一句话说明
                         </h4>
                         
                     </a>
@@ -452,14 +488,14 @@
                 display: "block"
             })
             $('.progress-bar').css({
-                display: "block"
+                opacity: '1',
             })
 
             //进度条
             var winH = $(window).height();
             var progressbarW = ((winH + winT - pbc) * 100 /pagelong).toFixed(2);
 
-            console.log(winH + winT , pagelong ,progressbarW);
+//            console.log(winH + winT , pagelong ,progressbarW);
 
             $('.progress-bar span').css({
                 width : progressbarW + '%'
@@ -471,7 +507,7 @@
                 display: "none"
             })
             $('.progress-bar').css({
-                display: "none"
+                opacity: '0',
             })
 
         }

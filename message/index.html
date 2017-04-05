@@ -565,14 +565,14 @@
                 display: "block"
             })
             $('.progress-bar').css({
-                display: "block"
+                opacity: '1',
             })
 
             //进度条
             var winH = $(window).height();
             var progressbarW = ((winH + winT - pbc) * 100 /pagelong).toFixed(2);
 
-            console.log(winH + winT , pagelong ,progressbarW);
+//            console.log(winH + winT , pagelong ,progressbarW);
 
             $('.progress-bar span').css({
                 width : progressbarW + '%'
@@ -584,7 +584,7 @@
                 display: "none"
             })
             $('.progress-bar').css({
-                display: "none"
+                opacity: '0',
             })
 
         }

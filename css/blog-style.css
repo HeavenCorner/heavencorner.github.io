@@ -528,8 +528,8 @@ article blockquote cite:before{
     width: 100%;
     margin-bottom: 20px;
 }
-
-/*###博文下的title设置低一点*/
+/*博文样式*/
+/*博文下的title设置低一点*/
 .intro-header-text{
     height: 280px;
 }
@@ -597,12 +597,15 @@ article blockquote cite:before{
 }
 
 .intro-header .post-heading .meta {
+    text-shadow: 0 0 6px black;
     font-weight: 300;
     font-size: 14px;
     color: #eee;
 }
 
 .intro-header .post-heading .meta span {
+
+
     padding-left: 1em;
 }
 /*pc*/
@@ -1904,10 +1907,13 @@ img::-moz-selection {
     position: fixed;
     bottom: 0px;
     z-index: 9999;
-    display: none;
+    /*display: none;*/
+    opacity: 0;
     height: 4px;
     background: transparent;
     width: 100%;
+    transition: all .8s;
+
 }
 
 .progress-bar span{

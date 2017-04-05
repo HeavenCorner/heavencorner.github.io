@@ -48,12 +48,26 @@ function isPages(attr){
         3 触发的高度 (可选项,如果不指定高度,会将DOM的高度作为触发高度)
 */
 function scrollCheck(scrollTarget, toggleClass, scrollHeight){
+    // if($('.poetry-page').length > 0){return}
+
     document.addEventListener('scroll',function(){
     var currentTop = window.pageYOffset;
-        currentTop > (scrollHeight||scrollTarget.clientHeight)
-        ?scrollTarget.classList.add(toggleClass)
-        :scrollTarget.classList.remove(toggleClass)
+
+        // if($('.poetry-page').length > 0){
+        //     currentTop > (scrollHeight||scrollTarget.clientHeight)
+        //         ?scrollTarget.classList.add(toggleClass)
+        //         :scrollTarget.classList.remove(toggleClass)
+        // }else{
+            currentTop > (scrollHeight||scrollTarget.clientHeight)
+                ?scrollTarget.classList.add(toggleClass)
+                :scrollTarget.classList.remove(toggleClass)
+        // }
+
+
+
     })
+
+
 }
 
 //主页
@@ -76,7 +90,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 */
 
 (function(){
-    if (isPages('data-ispost')){
+    if (isPages('data-ispost') && ($('.data-ispost-is').length > 0)){
         //title变低
         $('.intro-header').addClass('intro-header-text');
 
@@ -400,15 +414,17 @@ $(function(){
                     $('.titleouttimes').html('In order to in heaven, Five years of effort');
 
                 }else{
-                    $('.titleouttimes').html('为同在天堂的5年行程');
-
+                    if($('.titleouttimes').html() != '为同在天堂的5年行程'){ //减少dom操作
+                        $('.titleouttimes').html('为同在天堂的5年行程');
+                    }
                 }
             }else if(times < 201){
                 if(en){
                     // $('.titleouttimes').html(day + " day " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " h " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " m " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " s ");
                 }else{
-                    $('.titleouttimes').html(day + " 天 " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " 时 " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " 分 " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " 秒 ");
-
+                    if($('.titleouttimes').html() == '为同在天堂的5年行程') {
+                        $('.titleouttimes').html(day + " 天 " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " 时 " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " 分 " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " 秒 ");
+                    }
                 }
 
             }else if(times > 201){
