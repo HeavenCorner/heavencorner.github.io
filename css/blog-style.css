@@ -1411,6 +1411,8 @@ img::-moz-selection {
     background: #ffffff;
 }
 .post-title-haojen{
+    color: #0fa9c3;
+    text-shadow: 0 0 12px #ffffff;
     display: none;
 }
 
