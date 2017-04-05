@@ -422,9 +422,7 @@ $(function(){
                 if(en){
                     // $('.titleouttimes').html(day + " day " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " h " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " m " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " s ");
                 }else{
-                    if($('.titleouttimes').html() == '为同在天堂的5年行程') {
                         $('.titleouttimes').html(day + " 天 " + "<span style='display: inline-block'>" + o(hours) + "</span>" + " 时 " + "<span style='display: inline-block'>" + o(minutes) + "</span>" + " 分 " + "<span style='display: inline-block'>" + o(seconds) + "</span>" + " 秒 ");
-                    }
                 }
 
             }else if(times > 201){
