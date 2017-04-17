@@ -117,6 +117,19 @@ a {
     -webkit-transition: all .5s;
 }
 
+a:link{
+    text-decoration:none;
+}
+a:visited{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:none;
+}
+a:active{
+    text-decoration:none;
+}
+
 a:hover,
 a:focus {
     color: #0085a1;
@@ -1873,11 +1886,26 @@ img::-moz-selection {
 
 .shan span{
     position: absolute;
-    top:9px;
+    top:13px;
     left: -18px;
     color: #ffffff;
     font-size: 20px;
 }
+
+
+@media screen and (max-width: 768px) {
+
+    .shan span{
+        position: absolute;
+        top:13px;
+        left: 0px;
+        color: #ffffff;
+        font-size: 20px;
+    }
+
+}
+
+
 /*js代替，有闪现阴影bug*/
 /*@keyframes shan {*/
     /*from {*/
