@@ -1053,21 +1053,37 @@ function addShan(i,arrAll,box,y){
 }
 
 //背景音乐，检测到小屏幕时不自动播放
+
+//2017-04-24优化点击，如果用户点击进入主页之后再跳转到其它界面，
+// 主页音乐持续播放，如果此时在其他页面再跳转到主页，不自动播放，防止重音
+
 if($(window).width() < 768) {
+//移动端不自动播放
+
 //主页
-$('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=29947420&auto=0&height=66')
+$('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=29947420&auto=0&height=66');
 
 //工作
-$('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=437597650&auto=0&height=32')
+$('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=437597650&auto=0&height=32');
 
 }else if($(window).width() > 768){
-    //自动播放
 
-//主页
-    $('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=29947420&auto=1&height=66')
+    if(sessionStorage.getItem('indexmusic') == null ){
+        //自动播放
+        //主页
+        $('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=29947420&auto=1&height=66');
+        sessionStorage.indexmusic = 'play';
 
-//工作
-    $('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=437597650&auto=0&height=32')
+    }else if(sessionStorage.getItem('indexmusic') == 'play'){
+
+        //主页
+        $('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=29947420&auto=0&height=66');
+        sessionStorage.indexmusic = 'play';
+
+    }
+
+    //工作
+    $('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=437597650&auto=0&height=32');
 
 }
 
