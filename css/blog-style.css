@@ -624,7 +624,7 @@ article blockquote cite:before{
 
     padding-left: 1em;
 }
-/*pc*/
+/*******************************pc适应样式集合********************************/
 @media only screen and (min-width: 768px) {
 
     .intro-header .post-heading h1,
@@ -1298,7 +1298,7 @@ img::-moz-selection {
 
 }
 
-/*app*/
+/*******************************app适应样式集合********************************/
 @media screen and (max-width: 768px) {
     .intro-header .post-heading .subheading {
         font-size: 19px;
@@ -1318,7 +1318,7 @@ img::-moz-selection {
         display: none !important;
     }
 }
-/*pc*/
+/*******************************pc适应样式集合********************************/
 @media screen and (min-width: 768px) {
     .navbar .container-fluid {
         padding: 0 5%;
@@ -1963,6 +1963,7 @@ img::-moz-selection {
 /*主页显示*/
 .post-subtitle{
 	color: #0085a1 !important;
+	opacity: .6;
 }
 
 

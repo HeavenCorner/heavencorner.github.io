@@ -445,7 +445,7 @@ $(function(){
         $('.lastTimeS').html(disTime2);
 
 
-        //白色发光
+        //白色发光或者黑色阴影
         wsn ++;
 
         if(wsn % 2 == 0){

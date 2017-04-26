@@ -599,7 +599,7 @@
 
         </section>
 
-        <div>
+        <div class="app-golab">
             <h3 class="animated infinite pulse"><a href="../lab/">进入前端实验室</a></h3>
         </div>
 
@@ -607,6 +607,43 @@
     </div>
 </div>
 
+<div class="pc-golab fixed">
+     <h2 class="animated infinite tada"><a href="../lab/">进入前端实验室</a></h3>
+</div>
+
+<style type="text/css">
+	/*pc*/
+@media only screen and (min-width: 768px) {
+	.app-golab{
+		display: none;
+	}
+	.pc-golab{
+		cursor: pointer;
+		display: block;
+		
+	}
+	.pc-golab h2{
+		margin: 0;
+		padding: 0;
+	}
+	.pc-golab.fixed{
+		position: fixed;
+		bottom: 30px;
+		left: 4vw;
+		z-index: 999;
+	}
+	
+}
+/*app*/
+@media screen and (max-width: 768px) {
+	.app-golab{
+		display: block;
+	}
+	.pc-golab{
+		display: none;
+	}
+}
+</style>
 
 
 <!-- Footer -->
