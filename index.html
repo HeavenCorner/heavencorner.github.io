@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="我是DuyangSir，一名前端工程师，对前端和编程技术非常热爱">
-    <meta name="keyword" content="web前端工程师,个人博客,为同在天堂的5年行程,初恋,信仰前端工程师">
+    <meta name="keyword" content="web前端工程师,个人博客,为同在天堂的5年行程,初恋,信仰前端工程师,个人网站">
     <meta name="author" content="DuyangSir">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="/css/syntax.css">
 
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/animate.min.css">
 
     <script>
         var _hmt = _hmt || [];
@@ -714,7 +714,8 @@
                     经历了个页面的样式测试和效果调试，上上上线了！    此处是欢呼生    激动的字都打错了，是“声”，看标题，我使用了喜庆的中国红 O(∩_∩)O    
 
 
-V-mx 个人网站的第二 ...
+
+本站指南V-mxV-m ...
             </p>
         </div>
     </a>
@@ -959,15 +960,23 @@ V-mx 个人网站的第二 ...
             })
 
         }
+        
         $('.toc-wrap.toc-fixed').css({
             width: $('.hidden-xs.col-sm-3.toc-col').css('width')
         })
 
-
-
-
-
     });
+    
+    
+//获取当前时间，动态写入
+	var date = new Date;
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	month =(month < 10 ? "0"+month:month);
+
+    $('.wyear').html(year);
+    $('.month').html(month);
+    
 
     function async(u, c) {
       var d = document, t = 'script',

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="我是DuyangSir，一名前端工程师，对前端和编程技术非常热爱">
-    <meta name="keyword" content="web前端工程师,个人博客,为同在天堂的5年行程,初恋,信仰前端工程师">
+    <meta name="keyword" content="web前端工程师,个人博客,为同在天堂的5年行程,初恋,信仰前端工程师,个人网站">
     <meta name="author" content="DuyangSir">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
@@ -46,7 +46,7 @@
     <link rel="stylesheet" href="/css/syntax.css">
 
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/animate.min.css">
 
     <script>
         var _hmt = _hmt || [];
@@ -513,16 +513,16 @@
             <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text huyan box-shadows">
                 <h3>Every thing...ing</h3>
                 <h4><i><span>V</span>ector <span>-</span> <span>M</span>a<span>x</span>imum</i></h4>
+                <h4>保持饥饿感</h4>
 
                 <!--<h5>&#45;&#45; 把细节做到极致</h5>-->
 
 
-                <div class="iframe-box" id="work-bgm">
-                    <!--<span>Costly process</span>-->
+                <!--<div class="iframe-box" id="work-bgm">
                     <span>把细节做到极致</span>
                     <i class="glyphicon glyphicon-music"></i>
                     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=437597650&auto=0&height=32"></iframe>
-                </div>
+                </div>-->
 
 
                 <div class="container-text huyan">
@@ -572,11 +572,16 @@
                         <br>
 
                         <i class="em1-2">
-                            v-mx.com 第二版，自适应移动和PC端，移动端自动更换护眼背景色，后期主要继续针对移动端的再优化，第一版为个人展示动态网站（之后会放出展示链接），的确为求职立下了不少功劳，很好。
+                            V-mx.com 第二版，自适应移动和PC端，更好的交互和视觉体验请使用电脑浏览器访问，
+                            移动端自动更换护眼背景色，后期主要继续针对移动端的再优化，第一版为个人展示动态网站，
+                            的确为求职立下了不少功劳（之后会更改为静态页面，放到实验室作为页面demo展示），很好。
+                            <br>
                             <br>
                             第一版涉及技术：html5 css3 js jq Bootstrap(简历页面) canvas php Ps
                             <br>
-                            第二版涉及技术：html5 css3 js jq Bootstrap canvas Node.js Hexo Ps
+                            第二版涉及技术：html5 css3 js jq Bootstrap canvas Node.js Ps
+                            <br>
+                            	实验室设计技术：同上 + three.js (持续更新...)
                         </i>
                         <br>
                     </blockquote>
@@ -586,7 +591,7 @@
                     <blockquote  class="em1-2">
                         <br>
                         <i>
-                            本次版本是搭建的静态网站，仿照hexo原有架构做了深度优化，
+                            本次版本是搭建的静态网站，仿照博客原有排版做了深度优化，
                             故未启用数据库，也没有使用第三方评论插件不可以留言或者评论。
                         </i>
                         <br>
@@ -796,15 +801,23 @@
             })
 
         }
+        
         $('.toc-wrap.toc-fixed').css({
             width: $('.hidden-xs.col-sm-3.toc-col').css('width')
         })
 
-
-
-
-
     });
+    
+    
+//获取当前时间，动态写入
+	var date = new Date;
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	month =(month < 10 ? "0"+month:month);
+
+    $('.wyear').html(year);
+    $('.month').html(month);
+    
 
     function async(u, c) {
       var d = document, t = 'script',

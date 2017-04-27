@@ -476,6 +476,13 @@
   		height: 280px;
   		background: #ff8833;
   	}
+  	/*实验室内容*/
+  	.abl-box{
+  		min-height: 500px;
+  	}
+  	
+  	
+  	
 </style>
 
 <!--<link rel="stylesheet" href="../css/lion-style.css">-->
@@ -519,7 +526,7 @@
     <!--关于工作方面的内容-->
     <div class="container huyan" >
         <section class="row ">
-            <div class="col-sm-12 col-md-12 col-md-offset-0 text huyan box-shadows">
+            <div class="col-sm-12 col-md-12 col-md-offset-0 text huyan box-shadows abl-box">
                 	
 
 				<h1>正在建设中 ...</h1>
@@ -561,12 +568,9 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 text-center">
                 <br>
-                <ul class="list-inline text-center">
+                <!--<ul class="list-inline text-center">
                 
-                
-                
-
-                
+           
                     <li>
                         <a target="_blank" href="http://weibo.com/u/2986295253">
                             <span class="fa-stack fa-lg">
@@ -575,18 +579,14 @@
                             </span>
                         </a>
                     </li>
-                
-
-                
-
-                
-
-                
-
-                </ul>
+               
+                </ul>-->
 
                 <p class="copyright text-muted">
-                    Copyright &copy; 为同在天堂的5年行程 2017
+                    Copyright &copy; 
+                    <a target="_blank" href="http://weibo.com/u/2986295253">
+                    	为同在天堂的5年行程
+                    </a> <span class="wyear"></span>
                 </p>
 
             </div>
@@ -688,12 +688,18 @@
             width: $('.hidden-xs.col-sm-3.toc-col').css('width')
         })
 
-
-
-
-
     });
+    
+    
+    //获取当前时间，动态写入
+	var date = new Date;
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	month =(month < 10 ? "0"+month:month);
 
+    $('.wyear').html(year);
+    $('.month').html(month);
+    
     function async(u, c) {
       var d = document, t = 'script',
           o = d.createElement(t),
