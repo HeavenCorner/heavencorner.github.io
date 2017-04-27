@@ -109,7 +109,7 @@ $(".logo").on("mouseenter", function() {
 //倒计时
 var times = document.getElementById("times");
 var timesC = 0;
-setInterval(function() {
+/*setInterval(function() {
 		timesC++;
 		var nowTime = new Date().getTime();
 		var tarTime = new Date(2021, 5, 2).getTime();
@@ -124,7 +124,7 @@ setInterval(function() {
 			timesC = 0;
 			//			times.style.color = "rgba(" + getRandom(0, 255) + "," + getRandom(0, 255) + "," + getRandom(0, 255) + ",1)";
 		}
-	}, 50)
+	}, 50)*/
 	//补两位函数
 function addZero(n) {
 	if(n < 10) {
