@@ -1,765 +1,984 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="我是DuyangSir，一名前端工程师，对前端和编程技术非常热爱">
-    <meta name="keyword" content="web前端工程师,个人博客,为同在天堂的5年行程,初恋,信仰前端工程师">
-    <meta name="author" content="DuyangSir">
-    <meta name="theme-color" content="#600090">
-    <meta name="msapplication-navbutton-color" content="#600090">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    
-    <link rel="alternate" type="application/atom+xml" title="为同在天堂的5年行程" href="/atom.xml">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <title>
-        
-
-
-            
-            
-            欢迎进入前端实验室｜为同在天堂的5年行程
-
-            
-
-
-  
-    </title>
-
-    <link rel="canonical" href="http://www.v-mx.com/work/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/blog-style.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?1e726c08a716ac50c0691a8a2be30b3b";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    
-
-
-</head>
-
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="" class="animated fadeIn">
-<!-- Navigation -->
-<!-- 滑块 -->
-<style>
-    nav {
-        background-color: rgba(0,0,0,0.2);
-    }
-    .nav-fly {
-        position: absolute;
-        top: 52px;
-        left: 0px;
-        display: block;
-        height: 3px;
-        background: #FFFFFF;
-        width: 0;
-    }
-    .titleouttimes {
-        display: inline-block;
-        overflow: hidden;
-    }
-    .titleouttimes span {
-
-        width: 2.2rem;
-    }
-</style>
-<nav class="navbar shadow navbar-default navbar-custom navbar-customs navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
-" data-ishome = "false" >
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand animated pulse" href="/">
-                <span class="brand-logo" class="cssgo">
-                    前端实验室
-                </span>
-            </a>
-        </div>
-
-        <div id="blog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-
-                    
-
-
-                        <li>
-                            <a href="/" class="nav-li1 nav-li" target="_self">回到主页</a>
-                        </li>
-                        <!-- <li>
-                            <a href="/about/" class="nav-li2 nav-li" target="_self">关于</a>
-                        </li>
-                        <li>
-                            <a href="/work/" class="nav-li3 nav-li" target="_self">在职</a>
-                        </li>
-                        <li>
-                            <a href="/tags/" class="nav-li4 nav-li" target="_self">标签云</a>
-                        </li>
-                        <li>
-                            <a href="/message/" class="nav-li5 nav-li" target="_self">寄语墙</a>
-                        </li> -->
-
-
-                    
-
-                    <!--滑块-->
-                    <i class="nav-fly"></i>
-
-                </ul>
-            </div>
-        </div>
-
-    </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-//    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#blog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-//
-</script>
-
-<!-- Main Content -->
-
-<!--  -->
-<style>
-    * {
-        /*border: thin red solid;*/
-    }
-
-    header .bg-header {
-        position: relative;
-        height: 440px;
-        background-color: #0fa9c3;
-    }
-
-    /*头像*/
-    .bg-header .avatar img {
-        border-radius: 50%;
-        margin-top: 100px;
-        margin-bottom: 20px;
-        max-width: 170px;
-        height: 170px;
-    }
-
-    .bg-header h1,
-    .bg-header h2 {
-        color: white;
-    }
-
-    /*姓名*/
-    .bg-header h1 {
-        letter-spacing: 2px;
-        text-shadow: 0 0 10px rgba(15, 15, 15, .3);
-    }
-
-    /*描述*/
-    .bg-header h2 {
-        font-size: 18px;
-        margin-top: 12px;
-    }
-
-    /*整个作品展示区*/
-    section .works-area {
-        margin-top: -150px;
-    }
-
-    .works-area .works-item {
-        border-radius: 2px;
-        border: 1px solid #eee8d5;
-        margin-bottom: 50px;
-        box-shadow: 8px 5px 10px rgba(0, 0, 0, .2);
-    }
-
-    .works-item-img {
-        margin: auto -26px;
-    }
-
-    .works-item-img img {
-        width: 100%;
-    }
-
-    .works-area .works-item {
-        background: white;
-        padding: 5px 25px;
-    }
-
-    .works-area .footer {
-        padding-top: 10px;
-        border-top: thin #eee solid;
-    }
-
-    .works-area .footer .btn {
-        padding: 7px 9px;
-        border-radius: 2px;
-        float: right;
-        margin: 8px 0;
-        text-transform: none;
-        font-size: 12px;
-        font-style: italic;
-        background: #0fa9c3;
-        border: none;
-        color: #fff;
-    }
-
-    .works-item .works-content {
-        padding-top: 15px;
-    }
-
-    .works-item .title {
-        padding-top: 6px;
-    }
-
-    .works-item .title h3 {
-        display: inline-block;
-        margin: 0 15px;
-        height: 33px;
-        font-size: 18px;
-        font-weight: 400;
-    }
-
-    .works-item .title .title-date {
-        float: right;
-        font-size: 18px;
-    }
-
-    .works-item .use span {
-        display: inline-block;
-        font-size: 12px;
-        border-radius: 3px;
-        padding: 0 4px;
-        border: thin solid #795548;
-    }
-
-    .works-item .subtitle {
-        margin: 0;
-        font-size: 17px;
-    }
-
-
-    h2 {
-        padding-top: 20px;
-    }
-    h6 {
-        text-align: center;
-    }
-    /*增加一个旋转的canvas*/
-    .profile {
-        position: relative;
-    }
-
-    .title-wrap {
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        width: 200px;
-    }
-
-    .title-ctx-wrap {
-        position: absolute;
-        left: -20px;
-        top: 65px;
-        display: inline-block;
-        vertical-align: middle;
-        width: 240px;
-        height: 240px;
-        opacity: 0.5;
-        /*background-color: rgba(0,0,0,0.3);*/
-    }
-
-    header {
-        position: relative;
-    }
-
-    #snow-wrap {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    /*移动端*/
-    @media screen and (max-width: 768px) {
-        .personal-profile h1{
-            font-size: 18px !important;
-        }
-    }
-    /*目录高亮*/
-    .nav-li3 {
-        color: #62A4FF !important;
-    }
-    .container.huyan,.personal-profile{
-        position: relative;
-        z-index: 4;
-    }
-
-    .iframe-box{
-        height: 32px;
-        position: relative;
-        left: 50%;
-
-        width: 300px;
-        margin-left: -150px;
-    }
-
-    .iframe-box span{
-        position: absolute;
-        top: 12px;
-        left: 46px;
-        display: block;
-        width: 183px;
-        text-align: center;
-
-        padding-left: 20px;
-        /*min-width: 149px;*/
-        height: 18px;
-        background-color: #ffffff;
-        font-size: 12px;
-        line-height: 18px;
-    }
-
-    .iframe-box i{
-        position: absolute;
-        top: 16px;
-        left: 16px;
-        display: block;
-        width: 23px;
-        /*min-width: 149px;*/
-        height: 23px;
-        background-color: #f3f3f4;
-        font-size: 21px;
-    }
-
-    #path-wrap{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        /*background: rgba(0,0,0,0.3);*/
-        z-index: 3;
-        overflow: hidden;
-    }
-    .bg-header .avatar img{
-        position: relative;
-        z-index: 4;
-
-    }
-
-
-    iframe {
-
-    }
-
-
-    blockquote{
-        border-color: #0fa9c3;
-    }
-    .em1 {
-        font-size: 1rem !important;
-    }
-    .em1-2 {
-        font-size: 1.2rem !important;
-    }
-    .xieti{
-        font-style: oblique;
-    }
-    .grey{
-        color: grey;
-    }
-    /*<!--手机端-->*/
-    @media only screen and (max-width: 767px) {
-        .container .text {
-            top: 0px !important;
-        }
-        header .bg-header {
-            height: 380px;
-        }
-
-    }
-
-    .container h3{
-        text-align: center;
-        font-size: 2.5rem;
-    }
-    .container h4{
-        padding-top: 10px;
-        text-align: center;
-    }
-    .container h4 i span {
-        color: red;
-    }
-    .container h5{
-        padding-top: 10px;
-        padding-right: 10px;
-        text-align: right;
-    }
-
-    .container .text{
-        padding: 10px 20px 20px;
-        top: -58px;
-        background-color: #ffffff;
-        /*height: 300px;*/
-    }
-    .container-text > p{
-        text-indent: 2rem;
-        font-size: 1.3rem;
-    }
-    .text-indents{
-        text-indent: 2rem;
-    }
-    .lastTimeS {
-        display: inline-block;
-        width: 76px;
-        text-indent: 0rem;
-
-    }
-    hr{
-        margin: 10px 0 20px;
-    }
-    /*标题*/
-    .title{
-    	margin: 0;
-    	padding-top: 96px;
-    }
-  	/*title*/
-  	#work-page-bgheader{
-  		height: 280px;
-  		background: #ff8833;
-  	}
-  	/*实验室内容*/
-  	.abl-box{
-  		min-height: 500px;
-  	}
-  	
-  	
-  	
-</style>
-
-<!--<link rel="stylesheet" href="../css/lion-style.css">-->
-
-
-
-
-<div class="works-container" style="background-color: #fafafa">
-
-    <header>
-
-        <!--路径画板-->
-       
-
-        <div class="bg-header text-center" id="work-page-bgheader">
-
-
-
-            <div class="profile">
-
-                <!-- <div class="avatar">
-                    <div class="title-wrap">
-                        <div class="title-ctx-wrap">
-                        </div>
-                        <img class="op" src="/img/tx-grey.jpg">
-                    </div>
-                </div> -->
-
-                <div class="personal-profile">
-                    <h1 class="title">
-                        欢迎来到前端实验室
-                    </h1>
-                    <!--svg时钟-->
-                    
-                    
-                    
-                </div>
-            </div>
-        </div>
-    </header>
-    <!--关于工作方面的内容-->
-    <div class="container huyan" >
-        <section class="row ">
-            <div class="col-sm-12 col-md-12 col-md-offset-0 text huyan box-shadows abl-box">
-                	
-
-				<h1>正在建设中 ...</h1>
-
-            </div>
-
-        </section>
-
-       
-    </div>
-</div>
-
-
-
-<!-- Footer -->
-<!-- Footer -->
-<footer>
-
-    <!--背景色菜单-->
-    <div id="bgc">
-        <!--<a href="###">
-            <span>选择<br>背景</span>
-        </a>-->
-        <!--选择框-->
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-    <div id="totop">
-        <a href="###">
-            <i class="glyphicon glyphicon-menu-up"></i>
-            <span>回到<br>顶部</span>
-        </a>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 text-center">
-                <br>
-                <!--<ul class="list-inline text-center">
-                
-           
-                    <li>
-                        <a target="_blank" href="http://weibo.com/u/2986295253">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-               
-                </ul>-->
-
-                <p class="copyright text-muted">
-                    Copyright &copy; 
-                    <a target="_blank" href="http://weibo.com/u/2986295253">
-                    	为同在天堂的5年行程
-                    </a> <span class="wyear"></span>
-                </p>
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- jQuery -->
-<script src="/js/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/blog.js"></script>
-
-<!-- async load function -->
-<script>
-//    <!--变量-->
-    var initTop = 360;
-//    进度条调试显示差量
-
-    var pbc = parseInt($(window).height() / 1.5);
-//        pbc = 0;
-
-//    <!--返回顶部-->
-    $("#totop").click(function() {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 500);
-        $('#totop i').css({
-            display: "inline-block"
-        })
-        $('#totop span').css({
-            display: "none"
-        })
-//        app点击优化
-        $('#totop').css('background-color','rgba(0,0,0,0.15)')
-
-        return false;
-    });
-
-    $("#totop").on("mouseenter",function(){
-        $('#totop a span').css({
-            display: 'inline-block'
-        })
-        $('#totop a i').css({
-            display: 'none'
-        })
-        $('#totop').css('background-color','rgba(0,0,0,0.5)')
-
-    })
-    $("#totop").on("mouseleave",function(){
-        $('#totop a span').css({
-            display: 'none'
-        })
-        $('#totop a i').css({
-            display: 'inline-block'
-        })
-        $('#totop').css('background-color','rgba(0,0,0,0.15)')
-    })
-
-    $(window).scroll(function(){
-
-        var winT = $(window).scrollTop();
-        var pagelong = $(document.body).outerHeight(true) - pbc;
-
-
-        if(winT > initTop){
-
-            $('#totop').css({
-                display: "block"
-            })
-            $('.progress-bar').css({
-                opacity: '1',
-            })
-
-            //进度条
-            var winH = $(window).height();
-            var progressbarW = ((winH + winT - pbc) * 100 /pagelong).toFixed(2);
-
-//            console.log(winH + winT , pagelong ,progressbarW);
-
-            $('.progress-bar span').css({
-                width : progressbarW + '%'
-            })
-
-
-        }else{
-            $('#totop').css({
-                display: "none"
-            })
-            $('.progress-bar').css({
-                opacity: '0',
-            })
-
-        }
-        $('.toc-wrap.toc-fixed').css({
-            width: $('.hidden-xs.col-sm-3.toc-col').css('width')
-        })
-
-    });
-    
-    
-    //获取当前时间，动态写入
-	var date = new Date;
-	var year = date.getFullYear();
-	var month = date.getMonth() + 1;
-	month =(month < 10 ? "0"+month:month);
-
-    $('.wyear').html(year);
-    $('.month').html(month);
-    
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://www.v-mx.com/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-<!-- Google Analytics -->
-
-
-
-
-<!-- swiftype -->
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','null','2.0.0');
-</script>
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-<!--本页的js -- 实验室 -->
-
-<script>
-//<!--如果屏幕小于1000点击了pc端的页面，就报警提示使用PC浏览器浏览-->
-
-
-</script>
-
-
-
-</body>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="我是DuyangSir，一名前端工程师，对前端和编程技术非常热爱">
+		<meta name="keyword" content="web前端工程师,个人博客,为同在天堂的5年行程,初恋,信仰前端工程师">
+		<meta name="author" content="DuyangSir">
+
+		<meta name="theme-color" content="#600090">
+		<meta name="msapplication-navbutton-color" content="#600090">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+
+		<title>
+
+			欢迎进入前端实验室｜为同在天堂的5年行程
+
+		</title>
+
+		<link rel="shortcut icon" href="Vmxindex/img/favicon.ico" type="image/x-icon">
+
+		<link rel="stylesheet" type="text/css" href="Vmxindex/css/index-all.css" />
+		<link rel="stylesheet" type="text/css" href="Vmxindex/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="Vmxindex/css/animate-all.css" />
+		<link rel="stylesheet" type="text/css" href="Vmxindex/css/animate.css" />
+		<script src="Vmxindex/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--百度统计-->
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?1e726c08a716ac50c0691a8a2be30b3b";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+
+	</head>
+
+	<body>
+		<div class="big-box" id="top">
+			<!--<a href="http://info.flagcounter.com/Nq4h"><img src="http://s10.flagcounter.com/count2/Nq4h/bg_FFFFFF/txt_000000/border_CCCCCC/columns_3/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>-->
+			<!--header-->
+			<header class="index">
+
+				<!--翻页点-->
+				<ul class="slick-dots" style="display: block;" role="tablist">
+					<li class="dots" id="slick-slide00">
+						<span class="dot active"></span>
+					</li>
+					<li class="dots" id="slick-slide01" class="">
+						<span class="dot"></span>
+					</li>
+					<li class="dots" id="slick-slide01" class="">
+						<span class="dot"></span>
+					</li>
+				</ul>
+				<!--首页的添加信息-->
+				<div class="inner">
+					<!--轮播-->
+					<div class="lunbo-wrap">
+						<div class="lunbo-wrap2">
+
+							<ul class="index-lunbo">
+								<li class="bg bg3  h-ani3">
+
+									<div class="slogan-wrapper">
+										<span class="flys-ani">&#xe602;</span>
+
+										<!--轮播点击进入-->
+										<a href="" class="click-go"></a>
+										<div class="slogan text">
+											<span class=""> V-mx </span><span class="bc-color-dribbble-5 t"> 俱乐部 </span>
+
+										</div>
+										<div class="version text">
+											童年的那个纸飞机，从二维到三维
+
+										</div>
+									</div>
+
+								</li>
+								<li class="bg bg1 h-ani1">
+									<div class="slogan-wrapper">
+										<span class="flys-ani">&#xe60c;</span>
+
+										<!--轮播点击进入-->
+										<a href="Vmxindex/Zresume/index.html" target="_blank" class="click-go"></a>
+										<div class="slogan text">
+											<a href="Vmxindex/Zresume/index.html" target="_blank">
+												前端工程师 <span class="bc-color-dribbble-2 t">简历</span>
+											</a>
+										</div>
+										<div class="version text">
+											喜爱编程，热爱挑战
+										</div>
+
+									</div>
+								</li>
+								<li class="bg bg2  h-ani2">
+
+									<div class="slogan-wrapper">
+										<span class="flys-ani flys-ani-2">&#xe609;</span>
+										<!--轮播点击进入-->
+										<a href="Vmxindex/picture/picture.php" target="_blank" class="click-go"></a>
+										<div class="slogan text">
+											<a href="Vmxindex/picture/picture.php" target="_blank">
+												<span class="bc-color-dribbble-5 t">贴图墙</span>，工作之外的新世界
+											</a>
+										</div>
+										<div class="version text">
+											记录点滴，诠释生活
+										</div>
+									</div>
+
+								</li>
+								<li class="bg bg3  h-ani3">
+
+									<div class="slogan-wrapper">
+										<!--飞机-->
+										<span class="flys-ani">&#xe602;</span>
+										<!--轮播点击进入-->
+										<a href="javascript:void(0);" class="click-go"></a>
+										<div class="slogan text">
+											<span class=""> V-mx </span><span class="bc-color-dribbble-5 t"> 俱乐部 </span>
+
+										</div>
+
+										<div class="version text">
+											童年的那个纸飞机，从二维到三维
+										</div>
+									</div>
+
+								</li>
+								<li class="bg bg1 h-ani1">
+									<div class="slogan-wrapper">
+										<span class="flys-ani">&#xe60c;</span>
+
+										<!--轮播点击进入-->
+										<a href="Vmxindex/Zresume/index.html" target="_blank" class="click-go"></a>
+										<div class="slogan text">
+											<a href="Vmxindex/Zresume/index.html" target="_blank">
+												前端工程师 <span class="">简历</span>
+											</a>
+										</div>
+										<div class="version text">
+											喜爱编程，热爱挑战
+										</div>
+
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- 导航列表公用!!!!!!!!!!!!!!!!!!!!!! -->
+					<div class="nav-wrapper clearfix">
+						<div class="logo animated infinite flipInx">
+
+						</div>
+
+						<nav class="nav">
+							<a href="javascript:void(0);" class="active">
+								首页
+							</a>
+							<a href="Vmxindex/Zresume/index.html" target="_blank">
+								我的简历
+							</a>
+							<a href="Vmxindex/picture/picture.html" target="_blank">
+								贴图日志
+							</a>
+							<a href="https://duyangsir.github.io/" target="_blank">
+								博客
+							</a>
+							<a href="javascript:void(0);" target="_blank">
+								V-mx俱乐部
+							</a>
+
+							<a href="javascript:void(0);" class="btn personal org open logons">
+								快速注册
+							</a>
+							<a href="javascript:void(0);" class="login btn open logins">
+								登录网站
+							</a>
+
+							<!--滑块-->
+							<i class="nav-fly"></i>
+						</nav>
+					</div>
+					<!--首页添加的样式-->
+					<div class="bd">
+						<div class="buttons">
+
+							<a href="javascript:void(0);" class="btn personal open logons">
+								快速注册
+							</a>
+							<a href="javascript:void(0);" class="btn org logins fkliuyan">
+								给我留言
+							</a>
+							<a href="javascript:void(0);" class="btned" id="cancel">
+								您已登录，点击注销
+							</a>
+						</div>
+
+					</div>
+
+				</div>
+			</header>
+			<!--留言悬浮框-->
+			<!--提示框-->
+			<div class="reminder-wrap">
+				<p class="reminder2"></p>
+			</div>
+
+			<section class="liuyan-box">
+
+				<!--关闭-->
+				<div class="liuyan-close">
+					<span>&#xe600;</span>
+				</div>
+				<!--输入区-->
+				<div class="w-box">
+					<input type="text" name="liuyan-name" id="liuyan-name" value="" maxlength="12" placeholder="请输入留言标题或昵称等自定义信息" />
+					<textarea name="liuyan-c" rows="" cols="" id="liuyan-c" maxlength="300" placeholder="访客你好~请输入留言内容~"></textarea>
+
+					<!--提交-->
+					<button class="liuyan-btn">
+					提交留言
+					</button>
+
+				</div>
+
+			</section>
+			<!--==========注册悬浮框===============-->
+			<div class="wrap-login forwards">
+				<!--存储id-->
+				<input type="hidden" name="" id="ids" value="<?php
+				if (isset($_SESSION[" Vmxid "])) {
+					echo $_SESSION["Vmxid "];
+				} else {
+					echo "nologin ";
+				}
+				?>"/>
+				<!--存储ip-->
+				<input type="hidden" name="" id="ips" value="<?php
+
+				echo $ip;
+				?>" />
+				<section class="user-box">
+					<section class="login " id="login-box">
+						<h3>快速登录</h3>
+
+						<p>
+							<input type="text" name="name" class="intext" id="name1" maxlength="12" value="" onchange="ajaxPostY()" placeholder="用户名" />
+						</p>
+						<p>
+							<input type="password" name="pass" class="intext" id="pass1" maxlength="12" value="" placeholder="密码" />
+						</p>
+
+						<input type="button" name="login" class="btns loginbtn" id="login1" value="登录" />
+						<input type="button" name="logon" class="btns logonbtn" id="logon1" value="注册" />
+					</section>
+					<section class="logon" id="logon-box">
+						<h3>注册登录</h3>
+
+						<p>
+							<input type="text" name="name" class="intext" id="name2" maxlength="12" value="" onchange="ajaxPostY()" placeholder="用户名（注册）" />
+						</p>
+						<p>
+							<input type="password" name="pass" class="intext" id="pass2" maxlength="12" value="" placeholder="密码（注册）" />
+						</p>
+						<!--验证码-->
+						<div class="code-box">
+							<img src="Vmxindex/php/code.php" class="code-img" />
+							<input type="text" name="content" maxlength="4" id="code-content" value="" placeholder="输入验证码" />
+							<span>看不清？点击图片更换</span>
+						</div>
+						<input type="button" name="login" class="btns loginbtn" id="login2" value="登录" />
+
+						<input type="button" name="logon" class="btns logonbtn" id="logon2" onclick="ajaxPostR()" value="注册" />
+					</section>
+
+					<p class="reminder">
+						请选择登录或注册
+					</p>
+				</section>
+				<!--关闭-->
+				<div class="login-close">
+					<span>&#xe600;</span>
+				</div>
+			</div>
+			<!--倒计时-->
+			<section class="down-time">
+				<div class="time-wrap">
+					<div class="box-wrap">
+						<!--动画帧-->
+						<span id="fpsbox"> FPS: <span id="fps"></span> </span>
+
+						<!--碰撞-->
+						<div class="wrap-time-pz">
+							<div class="inner inner1-times">
+								<span>&#xe60e;</span>
+							</div>
+							<div class="inner inner2-times">
+								<span>&#xe60d;</span>
+							</div>
+						</div>
+						<div class="times-box">
+							<p>
+								V-mx Year
+							</p>
+							<span id="times"></span>
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!--返回顶部-->
+			<div class="go-top">
+				<span>&#xe603;</span>
+			</div>
+			<!--侧边目录选择-->
+			<div class="click-menu">
+				<ul class="menus">
+					<li class="menu">
+						<a href="javascript:void(0);">
+							<span id=""> TOP </span>
+							<i class="active"></i>
+						</a>
+					</li>
+					<li class="menu">
+						<a href="javascript:void(0);">
+							<span id=""> 前端简历 </span>
+							<i></i>
+						</a>
+					</li>
+					<li class="menu">
+						<a href="javascript:void(0);">
+							<span id=""> 贴图留言 </span>
+							<i></i>
+						</a>
+					</li>
+					<li class="menu">
+						<a href="javascript:void(0);">
+							<span id=""> CSS3展示 </span>
+							<i></i>
+						</a>
+					</li>
+					<li class="menu">
+						<a href="javascript:void(0);">
+							<span id=""> V-mx俱乐部 </span>
+							<i></i>
+						</a>
+					</li>
+					<li class="menu">
+						<a href="javascript:void(0);">
+							<span id=""> HTML5 </span>
+							<i></i>
+						</a>
+					</li>
+					<li class="menu">
+						<a href="javascript:void(0);">
+							<span id=""> 我的世界 </span>
+							<i></i>
+						</a>
+					</li>
+					<li class="menu">
+						<a href="javascript:void(0);">
+							<span id=""> 联系我 </span>
+							<i></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!--简历-->
+			<section class="tronclass" id="a">
+				<div class="bg"></div>
+				<div class="bd">
+					<div class="title sub-title text">
+						前端工程师 简历
+					</div>
+					<div class="desc text">
+						<!--直接写入文档在新浪云的url-->
+						<a href="#########" class="downfile">
+							点此处下载详细简历文档
+						</a>
+					</div>
+					<div class="css-wrapper">
+						<a href="Vmxindex/Zresume/index.html" target="_blank">
+							<span>&#xe60e;点击进入查看项目展示</span>
+						</a>
+						<div class="jl-show">
+
+						</div>
+					</div>
+
+				</div>
+
+			</section>
+
+			<!--贴图墙-->
+			<section class="college" id="b">
+				<div class="bd">
+					<div class="title text">
+						贴图墙
+					</div>
+					<div class="sub-title text">
+						前端生涯的零碎记忆，登录可评论（
+						<a href="Vmxindex/picture/picture.php" target="_blank">
+							点击进入
+						</a>
+						）
+					</div>
+					<div class="Message-show">
+						<span>&#xe613;</span>
+						<a href="Vmxindex/picture/picture.php" class="pic-show-box"></a>
+						<a href="Vmxindex/picture/picture.php" class="pic-show-box"></a>
+						<a href="Vmxindex/picture/picture.php" class="pic-show-box"></a>
+						<a href="Vmxindex/picture/picture.php" class="pic-show-box"></a>
+						<a href="Vmxindex/picture/picture.php" class="pic-show-box"></a>
+						<a href="Vmxindex/picture/picture.php" class="pic-show-box"></a>
+						<a href="Vmxindex/picture/picture.php" class="pic-show-box"></a>
+						<a href="Vmxindex/picture/picture.php" class="pic-show-box"></a>
+
+					</div>
+
+				</div>
+			</section>
+			<!--css3-->
+			<section class="train css3" id="c">
+				<div class="bd">
+					<div class="title text">
+						CSS3
+					</div>
+					<div class="sub-title text">
+						展现立体，CSS3的强大渲染
+					</div>
+					<div class="inner" id="cssshow-box">
+
+						<!--左右按钮-->
+						<span class="next btn-s"> <s class="change-page"></s> </span>
+						<span class="prev btn-s"> <s class="change-page"></s> </span>
+
+						<ul class="page-move">
+							<li>
+								<iframe class="css-show" src="Vmxindex/game/Css3D/GRID/GRID.html" scrolling="no">
+
+								</iframe>
+							</li>
+
+							<li>
+								<iframe class="css-show" src="Vmxindex/game/Css3D/3Df/3D.html" scrolling="no">
+
+								</iframe>
+							</li>
+							<li>
+								<iframe class="css-show" src="Vmxindex/game/Css3D/SPHERE/sphere.html" scrolling="no">
+
+								</iframe>
+							</li>
+							<li>
+								<iframe class="css-show" src="Vmxindex/game/Css3D/GRID/GRID.html" scrolling="no">
+
+								</iframe>
+							</li>
+							<li>
+								<iframe class="css-show" src="Vmxindex/game/Css3D/3Df/3D.html" scrolling="no">
+
+								</iframe>
+							</li>
+
+						</ul>
+						<a href="javascript:void(0);"></a>
+
+					</div>
+				</div>
+			</section>
+			<!--点击重新加载-->
+			<script type="text/javascript">
+				$(".inner").on("click", function() {
+					$(".css-show").eq(2).attr("src", "Vmxindex/game/Css3D/SPHERE/sphere.html");
+					$(".css-show").eq(4).attr("src", "Vmxindex/game/Css3D/3Df/3D.html");
+					$(".css-show").eq(1).attr("src", "Vmxindex/game/Css3D/3Df/3D.html");
+
+					$(".css-show").eq(3).attr("src", "Vmxindex/game/Css3D/GRID/GRID.html");
+					$(".css-show").eq(0).attr("src", "Vmxindex/game/Css3D/GRID/GRID.html");
+
+				})
+			</script>
+
+			<!--展示-->
+			<section class="journal" id="d">
+				<div class="bd">
+					<div class="title text">
+						V-mx俱乐部
+					</div>
+					<div class="sub-title text">
+						生活，工作
+					</div>
+					<div class="log-show">
+						<a href="javascript:void(0);">
+							<span id="flyss">&#xe602;</span>
+
+						</a>
+
+					</div>
+
+				</div>
+			</section>
+
+			<!--游戏-->
+			<section class="train" id="e">
+				<div class="bd">
+					<div class="title text">
+						HTML5
+					</div>
+					<div class="sub-title text">
+						活跃在银幕上的，是一行行的代码
+					</div>
+					<div class="inner">
+						<div class="game-show">
+							<div class="index-game">
+
+								<!--游戏区域-->
+								<div class="wrap">
+
+									<div class="fen">
+										<span id="indexGamefens" style="font-size: 50px;">点击开始游戏
+										<br />
+										按Shift加速
+										<br />
+										方向键控制移动</span>
+									</div>
+									<!--<div id="bg">
+
+									</div>-->
+									<!--食物-->
+									<div class="food" style="opacity: 1;"></div>
+									<!--本体-->
+									<ul class="sbody">
+										<!--头部-->
+										<li class="hand li"></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="games-show">
+
+						</div>
+					</div>
+					<!--<div class="title text games" style="">
+					更多游戏展示
+					</div>-->
+				</div>
+			</section>
+			<script type="text/javascript">
+				$(".games").on("click", function() {
+					$(".games-show").css({
+						display: "block"
+					})
+					$(".game-show").css({
+						display: "none"
+					})
+				})
+			</script>
+
+			<!--圣经-->
+
+			<section class="client-comments" id="f">
+				<a href="javascript:void(0);">
+					<!--世界地图-->
+					<div class="word-bg-box">
+						<span class="word-bg">&#xe60f;</span>
+
+					</div>
+
+					<div class="bd">
+						<div class="title text">
+							世界那么大，做好准备去看看
+						</div>
+						<ul class="comments clearfix">
+							<li class="comment">
+								<span class="icon icon-rocket">&#xe611;</span>
+								<div class="desc text">
+									若是你的右眼叫你跌倒，就剜出来丢掉，宁可失去百体中的一体，不叫全身丢在地狱里。
+									<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 若是右手叫你跌倒，就砍下来丢掉，宁可失去百体中的一体，不叫全身下入地狱。
+								</div>
+								<div class="school text">
+									马太福音 5:29-30
+								</div>
+							</li>
+							<li class="comment">
+								<span class="icon icon-drink">&#xe610;</span>
+								<div class="desc text desc2">
+									你们要进窄门，因为引到灭亡，那门是宽的，路是大的，进去的人也多；引到永生，那门是窄的，路是小的，找着的人也少。
+								</div>
+								<div class="school text">
+									马太福音 7:13-14
+								</div>
+							</li>
+							<li class="comment">
+								<span class="icon icon-airplane">&#xe612;</span>
+								<div class="desc text">
+									爱是恒久忍耐，又有恩慈。爱是不嫉妒。爱是不自夸。不张狂。不做害羞的事。不求自己的益处。不轻易发怒。不计算人的恶。不喜欢不义。只喜欢真理。凡事包容。凡事相信。凡事盼望。凡事忍耐。爱是永不止息。
+								</div>
+								<div class="school text">
+									哥林多前书 13:4-8
+								</div>
+							</li>
+						</ul>
+					</div>
+				</a>
+			</section>
+
+			<!--底部公用---------------------------------------------------------------开始--------->
+			<footer id="footer">
+				<section class="register-wrapper">
+					<div class="bd">
+						<div class="buttons">
+							<a href="javascript:void(0);" class="btn open personal logons">
+								注册登录
+							</a>
+							<a href="javascript:void(0);" class="btn org logins fkliuyan">
+								给我留言
+							</a>
+						</div>
+
+					</div>
+				</section>
+
+				<section class="footer-bd">
+					<div class="bd">
+						<div class="title">
+							<a href="#top" class="logo"></a>
+							这里是前端实验室
+						</div>
+
+						<!--暂时删除不显示 display: none-->
+						<ul class="inner clearfix" style="display: none;">
+							<li class="column">
+								<a href="javascript:void(0);">
+									<span class="icon icon-about-me">&#xe60e;</span>
+								</a>
+
+								<span class="desc text">联系我</span>
+								<div class="links">
+									<a href="javascript:void(0);" class="link text">
+										TEL:15649032317
+									</a>
+									<a href="javascript:void(0);" class="link text">
+										QQ:55644146
+									</a>
+									<a href="" class="link text">
+										<!--15649032317@163.com-->
+									</a>
+								</div>
+							</li>
+							<li class="column">
+								<a href="javascript:void(0);">
+									<span class="icon icon-wx">&#xe607;</span>
+								</a>
+
+								<span class="desc text">微信</span>
+								<div class="pic pic1">
+
+								</div>
+							</li>
+							<li class="column">
+								<a href="javascript:void(0);">
+									<span class="icon icon-qq">&#xe608;</span>
+								</a>
+
+								<span class="desc text">微博</span>
+								<a class="wbpic" href="http://weibo.com/2986295253?refer_flag=1001030102_" target="_blank">
+									<div class="pic pic2">
+
+									</div>
+								</a>
+							</li>
+							<li class="column">
+
+								<a href="javascript:void(0);">
+									<span class="icon icon-share">&#xe60b;</span>
+								</a>
+
+								<span class="desc text">分享到</span>
+
+								<div class="link-share text">
+									<a target="_blank" class="icon-qq" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.jzyhn.com/v.php&title=V-mx主页">
+										<span class="icon icon-qq">&#xe605;</span>
+									</a>
+									<a target="_blank" class="icon-wx" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.jzyhn.com/v.php&title=V-mx主页">
+										<span class="icon icon-wx">&#xe604;</span>
+									</a>
+									<a target="_blank" class="icon-xl" href="http://v.t.sina.com.cn/share/share.php?url=http://www.jzyhn.com/v.php&title=V-mx主页">
+										<span class="icon icon-xl">&#xe608;</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+
+						<div class="copyright">
+
+							Copyright &copy; <span class="wyear"></span> DuyangSir. 一个前端工程师
+
+						</div>
+					</div>
+				</section>
+			</footer>
+
+			<!--底部公用---------------------------------------------------------------结束--------->
+
+		</div>
+		<!--js-->
+
+		<script type="text/javascript" src="Vmxindex/js/index.js"></script>
+		<script type="text/javascript">
+			//获取当前时间，动态写入
+			var date = new Date;
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			month = (month < 10 ? "0" + month : month);
+
+			$('.wyear').html(year);
+			$('.month').html(month);
+			//轮播
+
+			//header动画
+			//hAni();
+			//随机数
+			function getRandom(min, max) {
+				return Math.round(Math.random() * (max - min) + min);
+			}
+
+			function hAni() {
+
+				$(".bg").on("mouseenter", function() {
+					$(".flys-ani").addClass("animated rotateInUpRight");
+
+				})
+				$(".bg").on("mouseleave", function() {
+					$(".flys-ani").removeClass("animated rotateInUpRight");
+
+				})
+
+				$(".h-ani1").on("mouseenter", function() {
+					$(".h-ani1 .slogan").addClass("animated tada ");
+
+				});
+				$(".h-ani1").on("mouseleave", function() {
+					$(".h-ani1 .slogan").removeClass("animated tada ");
+
+				});
+				$(".h-ani2").on("mouseenter", function() {
+					$(".h-ani2 .slogan").addClass("animated jello ");
+				});
+				$(".h-ani2").on("mouseleave", function() {
+					$(".h-ani2 .slogan").removeClass("animated jello ");
+				});
+				$(".h-ani3").on("mouseenter", function() {
+					$(".h-ani3 .slogan").addClass("animated rubberBand ");
+				});
+				$(".h-ani3").on("mouseleave", function() {
+					$(".h-ani3 .slogan").removeClass("animated rubberBand ");
+				});
+			}
+			//滑块消失
+
+			$(".nav").on("mouseleave", function() {
+				$(".nav-fly").stop().animate({
+					width: 0
+				}, 300)
+			})
+			//滑块移动
+			$(".nav a").on("mouseenter", function() {
+
+				$index2 = $(this).index();
+				if($index2 > 4) {
+					return
+				}
+				//上一个的宽
+				$width = parseInt($(".nav a").eq($index2).css("width"));
+
+				$left = $(this).position().left + 20;
+				$(".nav-fly").stop().animate({
+					width: $(this).css("width"),
+					left: $left + "px"
+				}, 300)
+			})
+			//正在建设提示
+			$(".nav a").on("click", function() {
+				$index3 = $(this).index();
+				if($index3 == 4) {
+					$(".reminder2").css("color", "aqua");
+					$(".reminder2").html("成长中...");
+					reminderbox2();
+
+				}
+
+			})
+
+			$("#flyss").on("click", function() {
+				$(".reminder2").css("color", "aqua");
+				$(".reminder2").html("成长中...");
+				reminderbox2();
+			})
+			//监视页面上边距
+			$(window).on("scroll", function() {
+				//	console.log($("body").scrollTop());
+				var bodyST = parseInt($("body").scrollTop());
+				var a = 0,
+					n = 200;
+
+				if(bodyST < (($("#a").offset().top) - n)) {
+					a = 0;
+				}
+				if(bodyST >= (($("#a").offset().top) - n)) {
+					a = 1;
+				}
+				if(bodyST >= (($("#b").offset().top) - n)) {
+					a = 2;
+				}
+				if(bodyST >= (($("#c").offset().top) - n)) {
+					a = 3;
+				}
+				if(bodyST >= (($("#d").offset().top) - n)) {
+					a = 4;
+				}
+				if(bodyST >= (($("#e").offset().top) - n)) {
+					a = 5;
+				}
+				if(bodyST >= (($("#f").offset().top) - n)) {
+					a = 6;
+				}
+
+				if(bodyST >= (($("#footer").offset().top) - 500)) {
+					a = 7;
+				}
+
+				$(".click-menu .menus .menu i").removeClass("active");
+
+				$(".click-menu .menus .menu i").eq(a).addClass("active");
+
+			})
+			//留言板展示随机位置
+
+			$(".Message-show").on("mouseenter", function() {
+				liuyanshowbox();
+			})
+
+			liuyanshowbox();
+
+			function liuyanshowbox() {
+				for(var i = 0; i < 4; i++) {
+					$(".pic-show-box")[i].style.left = getRandom(-100, 400) + "px";
+					$(".pic-show-box")[i].style.top = getRandom(-50, 300) + "px";
+					$(".pic-show-box")[i].style.transform = "rotate(" + getRandom(0, 360) + "deg)";
+				}
+				for(var i = 4; i < 8; i++) {
+					$(".pic-show-box")[i].style.left = getRandom(450, 800) + "px";
+					$(".pic-show-box")[i].style.top = getRandom(-50, 300) + "px";
+					$(".pic-show-box")[i].style.transform = "rotate(" + getRandom(0, 360) + "deg)";
+				}
+			}
+		</script>
+		<!--登录动态-->
+		<script type="text/javascript" src="Vmxindex/js/login.js"></script>
+		<!---->
+		<script type="text/javascript" src="Vmxindex/js/pengzhuang.js">
+		</script>
+		<!--主页的访客留言，不需要登录-->
+		<script type="text/javascript">
+			//点击留言按钮
+
+			$(".fkliuyan").on("click", function() {
+
+				//弹出留言框
+				$(".liuyan-box").css("display", "block");
+
+				$(".liuyan-box").removeClass("animated bounceOutUp");
+
+				$(".liuyan-box").addClass("animated bounceInDown");
+
+			})
+
+			//留言框打开关闭
+			//关闭登录页
+			$(".liuyan-close").on("mouseenter", function() {
+				$(".liuyan-close").css({
+					color: "red"
+				})
+				$(".liuyan-close").addClass("animated flash");
+
+			})
+
+			$(".liuyan-close").on("mouseleave", function() {
+				$(".liuyan-close").css({
+					color: "#ffffff"
+				})
+				$(".liuyan-close").removeClass("animated flash")
+
+			})
+
+			$(".liuyan-close").on("click", function() {
+
+				$(".liuyan-box").addClass("animated bounceOutUp ")
+			})
+
+			$(".liuyan-btn").on("click", function() {
+				if($("#liuyan-name").val() == "" || $("#liuyan-c").val() == "") {
+					//		alert("请填写完整的信息");
+					$(".reminder2").css("color", "aqua");
+					$(".reminder2").html("请填写完整的信息~");
+					reminderbox2();
+				} else {
+					//提交留言
+					$.ajax({
+
+						type: "post",
+						url: "Vmxindex/php/fkliuyan.php",
+						async: true,
+						data: {
+							ip: $("#ips").val(),
+							c: $("#liuyan-c").val(),
+							t: $("#liuyan-name").val(),
+							a: 1
+						},
+						dataType: "json",
+						success: mainLy2,
+						error: errorsLy2
+					});
+				}
+
+			})
+
+			function mainLy2(data) {
+				//	$(".reminder").html(data.msg);
+				if(data.color) {
+					$(".reminder2").css("color", data.color);
+				}
+				//关闭留言板，清除内容
+				if(data.msg == 1) {
+					$(".reminder2").html("提交成功，谢谢~");
+					$(".reminder-wrap").slideDown("normal");
+					setTimeout(function() {
+						$(".reminder-wrap").slideUp("normal");
+						$("#liuyan-c").val("");
+						$("#liuyan-name").val("");
+						$(".liuyan-box").addClass("animated bounceOutUp ");
+
+					}, 1200)
+				} else {
+					$(".reminder2").html("数据库读取错误，请重试~");
+					reminderbox2();
+				}
+
+			}
+
+			function errorsLy2(data) {
+				$(".reminder2").css("color", "pink");
+				$(".reminder2").html("服务器无响应，请重试~");
+				console.log(data);
+				reminderbox2();
+
+			}
+
+			function reminderbox2() {
+				$(".reminder-wrap").slideDown("normal");
+				setTimeout(function() {
+					$(".reminder-wrap").slideUp("normal");
+				}, 1200)
+			}
+		</script>
+		<script type="text/javascript" src="Vmxindex/game/sssss/js/indexsss.js">
+		</script>
+	</body>
 
 </html>

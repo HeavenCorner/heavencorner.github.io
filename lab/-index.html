@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="我是DuyangSir，一名前端工程师，对前端和编程技术非常热爱">
-    <meta name="keyword" content="web前端工程师,个人博客,为同在天堂的5年行程,初恋,信仰前端工程师,个人网站">
+    <meta name="keyword" content="web前端工程师,个人博客,为同在天堂的5年行程,初恋,信仰前端工程师">
     <meta name="author" content="DuyangSir">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
@@ -21,18 +21,14 @@
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>
-        
+     
+            欢迎进入前端实验室｜为同在天堂的5年行程
 
-
-            
-            
-            关于工作｜为同在天堂的5年行程
-
-            
-
-
-        
     </title>
+    
+    
+    
+    
 
     <link rel="canonical" href="http://www.v-mx.com/work/">
 
@@ -44,9 +40,6 @@
 
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="/css/animate.min.css">
 
     <script>
         var _hmt = _hmt || [];
@@ -100,8 +93,8 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand animated pulse" href="/">
-                <span class="brand-logo titleouttimes" class="cssgo">
-                    为同在天堂的5年行程
+                <span class="brand-logo" class="cssgo">
+                    前端实验室
                 </span>
             </a>
         </div>
@@ -114,9 +107,9 @@
 
 
                         <li>
-                            <a href="/" class="nav-li1 nav-li" target="_self">首页</a>
+                            <a href="/" class="nav-li1 nav-li" target="_self">回到主页</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="/about/" class="nav-li2 nav-li" target="_self">关于</a>
                         </li>
                         <li>
@@ -127,7 +120,7 @@
                         </li>
                         <li>
                             <a href="/message/" class="nav-li5 nav-li" target="_self">寄语墙</a>
-                        </li>
+                        </li> -->
 
 
                     
@@ -169,10 +162,7 @@
             $navbar.className += " in";
         }
     }
-
-
-
-
+//
 </script>
 
 <!-- Main Content -->
@@ -348,7 +338,6 @@
     .container.huyan,.personal-profile{
         position: relative;
         z-index: 4;
-        padding-bottom: 20px;
     }
 
     .iframe-box{
@@ -453,7 +442,7 @@
 
     .container .text{
         padding: 10px 20px 20px;
-        top: -58px;
+        top: 20px;
         background-color: #ffffff;
         /*height: 300px;*/
     }
@@ -473,7 +462,28 @@
     hr{
         margin: 10px 0 20px;
     }
+    /*标题*/
+    .title{
+    	margin: 0;
+    	padding-top: 96px;
+    }
+  	/*title*/
+  	#work-page-bgheader{
+  		height: 280px;
+  		background: #ff8833;
+  	}
+  	/*实验室内容*/
+  	.abl-box{
+  		min-height: 500px;
+  	}
+  	
+  	
+  	
 </style>
+
+<!--<link rel="stylesheet" href="../css/lion-style.css">-->
+
+
 
 
 <div class="works-container" style="background-color: #fafafa">
@@ -481,9 +491,7 @@
     <header>
 
         <!--路径画板-->
-        <div id="path-wrap">
-            <canvas id="path-canvas" width="" height=""></canvas>
-        </div>
+       
 
         <div class="bg-header text-center" id="work-page-bgheader">
 
@@ -491,18 +499,22 @@
 
             <div class="profile">
 
-                <div class="avatar">
+                <!-- <div class="avatar">
                     <div class="title-wrap">
                         <div class="title-ctx-wrap">
                         </div>
                         <img class="op" src="/img/tx-grey.jpg">
                     </div>
-                </div>
+                </div> -->
 
                 <div class="personal-profile">
-                    <h1>
-                        <i>V-mx</i> 一个前端工程师的行程站点
+                    <h1 class="title">
+                        欢迎来到前端实验室
                     </h1>
+                    <!--svg时钟-->
+                    
+                    
+                    
                 </div>
             </div>
         </div>
@@ -510,145 +522,18 @@
     <!--关于工作方面的内容-->
     <div class="container huyan" >
         <section class="row ">
-            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text huyan box-shadows">
-                <h3>Every thing...ing</h3>
-                <h4><i><span>V</span>ector <span>-</span> <span>M</span>a<span>x</span>imum</i></h4>
-                <h4>保持饥饿感</h4>
+            <div class="col-sm-12 col-md-12 col-md-offset-0 text huyan box-shadows abl-box">
+                	
+				<h1>正在建设中 ...</h1>
 
-                <!--<h5>&#45;&#45; 把细节做到极致</h5>-->
-
-
-                <!--<div class="iframe-box" id="work-bgm">
-                    <span>把细节做到极致</span>
-                    <i class="glyphicon glyphicon-music"></i>
-                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=437597650&auto=0&height=32"></iframe>
-                </div>-->
-
-
-                <div class="container-text huyan">
-                    <blockquote  class="em1-2">
-                        <br>
-
-                        <i class="em1-2">web前端工程师<br>你好 </i>
-                        <br>
-
-                    </blockquote>
-
-                    <p>
-                        是的，这就是现在的职业，在一个互联网金融公司做前端，两年前，我还铁了心的毕业后成为一个嵌入式硬件工程师，
-                        以此不辜负了自己的动手能力和在学校实验室苦练的电路板绘制和参加的国家级比赛，
-                        但是尝试过此专业的工作之后，我打算放弃，原因有以下三点：
-                    </p>
-                    <p>
-                        1、做硬件需要经常接触电路板，而电路板的加工工艺离不开助焊剂和洗板水，而助焊剂含有重金属--铅，
-                        经常触摸和洗板，或者焊接调试改个线什么的，都通过皮肤和呼吸道进入体内了，
-                        刚开始没那么电路板要画，所以焊接调试也有我的份。
-                        开始每天嗓子疼，晚上回去一头的油。后来意识到，铅，是重金属，不是贵金属，剧毒。
-                    </p>
-                    <p>
-                        2、同上。
-                    </p>
-                    <p>
-                        3、同上。
-                    </p>
-                    <blockquote>
-                        <br>
-
-                        <i class="em1-2">以上原由，还在做硬件的同学请忽略...毕竟分支不一样嘛。</i>
-                        <br>
-
-                    </blockquote>
-                    <hr>
-                    <p>
-                        2016年5月2日晚，距离现在<span class="lastTimeDay">此处会自动填入天数</span>，
-                        确切点说就是<span class="lastTimeS">此处会自动填入秒</span>秒，
-                        来到这儿，SH，需要重新整理强化技能，一个小目标，在路上；倒计时，走起。
-                    </p>
-                    <p>
-                        关于本站，本来应该在"关于"页面描述的，显然被主题占了，那也就是属于主题的关于了，所以，关于本站：
-                    </p>
-
-                    <blockquote  class="em1-2">
-                        <br>
-
-                        <i class="em1-2">
-                            V-mx.com 第二版，自适应移动和PC端，更好的交互和视觉体验请使用电脑浏览器访问，
-                            移动端自动更换护眼背景色，后期主要继续针对移动端的再优化，第一版为个人展示动态网站，
-                            的确为求职立下了不少功劳，很好。
-                            <br>
-                            <br>
-                            第一版涉及技术：html5 css3 js jq Bootstrap(简历页面) canvas php Ps
-                            <br>
-                            第二版涉及技术：html5 css3 js jq Bootstrap canvas Node.js Ps
-                            <br>
-                            	实验室设计技术：同上 + three.js (持续更新...)
-                        </i>
-                        <br>
-                    </blockquote>
-                        <p>
-                            纯净的页面，不需要被改动，包括留言或评论。
-                        </p>
-                    <blockquote  class="em1-2">
-                        <br>
-                        <i>
-                            本次版本是搭建的静态网站，仿照博客原有排版做了深度优化，
-                            故未启用数据库，也没有使用第三方评论插件不可以留言或者评论。
-                        </i>
-                        <br>
-
-                    </blockquote>
-
-
-                </div>
             </div>
 
         </section>
 
-        <div class="app-golab">
-            <h3 class="animated infinite pulse"><a href="../lab/">进入前端实验室</a></h3>
-        </div>
-
-
+       
     </div>
 </div>
 
-<div class="pc-golab fixed">
-     <h2 class="animated infinite tada"><a href="../lab/">进入前端实验室</a></h3>
-</div>
-
-<style type="text/css">
-	/*pc*/
-@media only screen and (min-width: 768px) {
-	.app-golab{
-		display: none;
-	}
-	.pc-golab{
-		cursor: pointer;
-		display: block;
-		
-	}
-	.pc-golab h2{
-		margin: 0;
-		padding: 0;
-	}
-	.pc-golab.fixed{
-		position: fixed;
-		bottom: 30px;
-		left: 4vw;
-		z-index: 999;
-	}
-	
-}
-/*app*/
-@media screen and (max-width: 768px) {
-	.app-golab{
-		display: block;
-	}
-	.pc-golab{
-		display: none;
-	}
-}
-</style>
 
 
 <!-- Footer -->
@@ -657,9 +542,9 @@
 
     <!--背景色菜单-->
     <div id="bgc">
-        <a href="###">
+        <!--<a href="###">
             <span>选择<br>背景</span>
-        </a>
+        </a>-->
         <!--选择框-->
         <ul>
             <li></li>
@@ -678,12 +563,9 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 text-center">
                 <br>
-                <ul class="list-inline text-center">
+                <!--<ul class="list-inline text-center">
                 
-                
-                
-
-                
+           
                     <li>
                         <a target="_blank" href="http://weibo.com/u/2986295253">
                             <span class="fa-stack fa-lg">
@@ -692,18 +574,14 @@
                             </span>
                         </a>
                     </li>
-                
-
-                
-
-                
-
-                
-
-                </ul>
+               
+                </ul>-->
 
                 <p class="copyright text-muted">
-                    Copyright &copy; 为同在天堂的5年行程 2017
+                    Copyright &copy; 
+                    <a target="_blank" href="http://weibo.com/u/2986295253">
+                    	为同在天堂的5年行程
+                    </a> <span class="wyear"></span>
                 </p>
 
             </div>
@@ -801,7 +679,6 @@
             })
 
         }
-        
         $('.toc-wrap.toc-fixed').css({
             width: $('.hidden-xs.col-sm-3.toc-col').css('width')
         })
@@ -809,7 +686,7 @@
     });
     
     
-//获取当前时间，动态写入
+    //获取当前时间，动态写入
 	var date = new Date;
 	var year = date.getFullYear();
 	var month = date.getMonth() + 1;
@@ -818,7 +695,6 @@
     $('.wyear').html(year);
     $('.month').html(month);
     
-
     function async(u, c) {
       var d = document, t = 'script',
           o = d.createElement(t),
@@ -868,8 +744,17 @@
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<!--wechat title img-->
-<img class="wechat-title-img" src="/img/tx.jpg">
+
+<!--本页的js -- 实验室 -->
+
+<script>
+//<!--如果屏幕小于1000点击了pc端的页面，就报警提示使用PC浏览器浏览-->
+
+
+</script>
+
+
+
 </body>
 
 </html>
