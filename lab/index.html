@@ -25,7 +25,15 @@
 		<link rel="stylesheet" type="text/css" href="Vmxindex/css/index.css" />
 		<link rel="stylesheet" type="text/css" href="Vmxindex/css/animate-all.css" />
 		<link rel="stylesheet" type="text/css" href="Vmxindex/css/animate.css" />
+		
+		<!--lion-->
+		<!--<link rel="stylesheet" type="text/css" href="Vmxindex/demo/lion/css/lion-style.css"/>-->
+		<!--<link rel="stylesheet" type="text/css" href="Vmxindex/demo/lion/css/reset.min.css"/>-->
+		
+		
+		
 		<script src="Vmxindex/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		
 
 		<!--百度统计-->
 		<script>
@@ -163,7 +171,7 @@
 						</div>
 
 						<nav class="nav">
-							<a href="javascript:void(0);" class="active">
+							<a href="../index.html" class="active">
 								首页
 							</a>
 							<!--<a href="Vmxindex/Zresume/index.html" target="_blank">
@@ -370,8 +378,8 @@
 					<div class="inner" id="cssshow-box">
 
 						<!--左右按钮-->
-						<span class="next btn-s"> <s class="change-page"></s> </span>
-						<span class="prev btn-s"> <s class="change-page"></s> </span>
+						<span class="next btn-s animated infinite fadeOutRight"> <i class="change-page"></i> </span>
+						<span class="prev btn-s animated infinite fadeOutLeft"> <i class="change-page"></i> </span>
 
 						<ul class="page-move">
 							<li>
@@ -546,7 +554,7 @@
 
 			<!--底部公用---------------------------------------------------------------开始--------->
 			<footer id="footer">
-				<section class="register-wrapper">
+				<!--<section class="register-wrapper">
 					<div class="bd">
 						<div class="buttons">
 							<a href="javascript:void(0);" class="btn open personal logons">
@@ -558,14 +566,22 @@
 						</div>
 
 					</div>
-				</section>
+				</section>-->
 
-				<section class="footer-bd">
+				<section class="footer-bd" style="height: 850px;position: relative;">
 					<div class="bd">
 						<div class="title">
 							<a href="#top" class="logo"></a>
-							这里是V-mx前端实验室
+							<i> 前端实验室</i>
+						
 						</div>
+						
+						<!--3D动画-->
+						<iframe class="" 
+							style="margin-left: -40px;"
+							src="Vmxindex/demo/lion/index.html" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" width="1080px" height="680px"></iframe>
+						<!--<div id="world" style="height: 500px;width: 100%;"></div>-->
+
 
 						<!--暂时删除不显示 display: none-->
 						<ul class="inner clearfix" style="display: none;">
@@ -796,14 +812,14 @@
 			}
 		</script>
 		<!--登录动态-->
-		<script type="text/javascript" src="Vmxindex/js/login.js"></script>
+		<!--<script type="text/javascript" src="Vmxindex/js/login.js"></script>-->
 		<!---->
 		<script type="text/javascript" src="Vmxindex/js/pengzhuang.js">
 		</script>
 		<!--主页的访客留言，不需要登录-->
 		<script type="text/javascript">
 			//点击留言按钮
-
+			/*
 			$(".fkliuyan").on("click", function() {
 
 				//弹出留言框
@@ -902,9 +918,16 @@
 					$(".reminder-wrap").slideUp("normal");
 				}, 1200)
 			}
+			*/
 		</script>
-		<script type="text/javascript" src="Vmxindex/game/sssss/js/indexsss.js">
-		</script>
+		
+		
+		<script type="text/javascript" src="Vmxindex/game/sssss/js/indexsss.js"></script>
+		<!--lion-->
+		<!--<script type="text/javascript" src="../js/three.min.js"></script>
+		<script type="text/javascript" src="Vmxindex/demo/lion/js/lion-index.js"></script>
+		<script type="text/javascript" src="Vmxindex/demo/lion/js/lion-OrbitControls.js"></script>-->
+		
 	</body>
 
 </html>

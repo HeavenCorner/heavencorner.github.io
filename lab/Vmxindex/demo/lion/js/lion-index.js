@@ -31,8 +31,8 @@ var HEIGHT,
 
 function init(){
   scene = new THREE.Scene();
-  HEIGHT = 600;
-  WIDTH = 1000;
+  HEIGHT = window.innerHeight;
+  WIDTH = window.innerWidth;
   aspectRatio = WIDTH / HEIGHT;
   fieldOfView = 60;
   nearPlane = 1;

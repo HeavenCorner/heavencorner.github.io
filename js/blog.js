@@ -443,7 +443,8 @@ $(function(){
         //正计时
         $('.lastTimeDay').html(day2 + "天");
         $('.lastTimeS').html(disTime2);
-
+		//倒计时天
+		$('.outtimesday').html(day + "天")
 
         //白色发光或者黑色阴影
         wsn ++;
@@ -546,54 +547,72 @@ function o(s) {
     return s < 10 ? '0' + s: s;
 }
 
-<!--canvas-->
+//<!--canvas-->
+var timen = 300; //设置产生球的速度
+var arcsLengthn = 0; //设置球的个数
+var s = {};
 
 //    <!-- 头像旋转圈 -->
 var canvas=document.getElementById("title-canvas");
 
 //特效：鼠标移到头像上会出现红色球的标记位
 var aboutred = false;
-//白色
-$("#about-img").on("mouseleave", function() {
-    //清空
-    clearInterval(cotime);
-    for(var i = 0;i < arrsn.length;i++){
-        arrsn[i].color = '#ffffff';
-    }
-    aboutred = false;
-    $('#about-name').css('color','#ffffff');
+//仅pc可以
+if($(window).width() > 768) {
 
-    //转圈
-    for(var j=0;j<4;j++){
+	//白色
+	$("#about-img").on("mouseleave", function() {
+		timen = 150;
+		arcsLengthn = 76;
+		s.minSpeed = 5;
+		s.speed = 90;
 
-        arrs[j].timestop = timestop;
-        arrs[j].dsp = asp[j]/100;
-    }
+		//清空
+		clearInterval(cotime);
+		for(var i = 0; i < arrsn.length; i++) {
+			arrsn[i].color = '#ffffff';
+		}
+		aboutred = false;
+		$('#about-name').css('color', '#ffffff');
 
-})
-//红色
-var cotime = null;
-$("#about-img").on("mouseenter", function() {
+		//转圈
+		for(var j = 0; j < 4; j++) {
 
-     cotime = setInterval(function () {
-        console.log(1);
-        for(var i = 0;i < arrsn.length;i++){
-            arrsn[i].color = getRanColor();
-        }
-         $('#about-name').css('color',getRanColor());
+			arrs[j].timestop = timestop;
+			arrs[j].dsp = asp[j] / 100;
+		}
 
-     },100);
+	})
+	//彩色
+	var cotime = null;
+	$("#about-img").on("mouseenter", function() {
+		//提速
+		timen = 10;
+		//增加数量
+		arcsLengthn = 200;
+		s.minSpeed = 100;
+		s.speed = 200;
+		cotime = setInterval(function() {
+			//      console.log(1);
+			for(var i = 0; i < arrsn.length; i++) {
+				arrsn[i].color = getRanColor();
+			}
+			$('#about-name').css('color', getRanColor());
 
-     //转圈
-     for(var j=0;j<4;j++){
+		}, 100);
 
-         arrs[j].timestop = 'fast';
-         arrs[j].dsp = asp2[j]/20;
-     }
+		//转圈
+		for(var j = 0; j < 4; j++) {
 
-    aboutred = true;
+			arrs[j].timestop = 'fast';
+			arrs[j].dsp = asp2[j] / 20;
+		}
 
-});
+		aboutred = true;
+
+	});
+
+}
 //在其他的页面没有就跳出
 if(canvas) {
 
@@ -757,8 +776,8 @@ if(canvas) {
         this.x += this.speedX;
         this.y += this.speedY;
     }
-    var arcsLengthn = 0;//设置球的个数
-    var timen = 300;
+//  var arcsLengthn = 0;//设置球的个数
+//  timen = 300;
 
     if ($(window).width() < 768) {
         arcsLengthn = 16;//设置球的个数
@@ -776,7 +795,7 @@ if(canvas) {
     var stop = null;
     var firstTime;
 
-    var s = {
+    s = {
         minSpeed: 5,//设置最小速度
         speed: 90, //设置最大速度
         minSpeedy: 1,//设置最小速度
