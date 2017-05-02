@@ -520,10 +520,32 @@
     		z-index: -1;
     		opacity: .4;
     }
-    .post-container{
-    		background-color: rgba(255,255,255,.8);
+    	#c{
+    		display: none;
+    	}
+    @media (min-width: 768px) {
+    	#c{
+    		display: block;
+    	}
+    	.post-container,
+    	.short-about h5,.short-about p,.short-about ul,.tags-box{
+    		background-color: rgba(255, 255, 255, .9);
     		padding-bottom: 15px;
+    		cursor: Default;
+    	}
+    	.short-about h5,.short-about ul{
+    		padding-top: 10px;
+    		margin: 0;
+    	}
+    	.tags-box{
+    		margin: 0 18px;
+    	}
     }
+    
+    /*鼠标样式*/
+   body{
+   		cursor: sw-resize;
+   }
 </style>
 
 
@@ -779,39 +801,6 @@ Grander earth h ...
 
 
 
-<!--  -->
-<div class="post-preview   ">
-    <a href="/2017/04/26/正式发布公布/" target="_blank" class="index-page-alist">
-        <h2 class="post-title">
-            V-mx 正式发布 
-            
-            <!--<i class="glyphicon glyphicon-cloud"></i>
-            <i class="t2 glyphicon glyphicon-cloud"></i>-->
-            <i class="t3 glyphicon glyphicon-cloud"></i>
-           
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2017-04-26
-        </p>
-        
-        <h3 class="post-subtitle">
-            2017年04月26日，这一天
-        </h3>
-        
-        <div class="post-content-preview">
-            <p>
-                    在每个页面的样式测试和效果调试，上上上线了！    此处是欢呼生    激动的字都打错了，是“声”，看标题，我使用了喜庆的中国红 O(∩_∩)O    
-
-
-
-本站指南V-mxV-mx ...
-            </p>
-        </div>
-    </a>
-
-</div>
-<hr class="fenge">
-
 
 
 
@@ -880,8 +869,8 @@ Grander earth h ...
 
             <!-- Featured Tags  首页标签云 -->
             
-            <section>
-                <p class="index-tage-title"><a href="/tags/">标签云，快速跳转</a></p>
+            <section class="tags-box">
+                <p class="index-tage-title animated infinite"><a href="/tags/">标签云，快速跳转</a></p>
                 <div class="tags" id="index_tags">
                     
                     
@@ -890,13 +879,13 @@ Grander earth h ...
                     
                     
                     
-                    <a href="/tags/#关于本站" title="关于本站"
-                       rel="1">关于本站</a>
-                    
-                    
-                    
                     <a href="/tags/#隐形日志" title="隐形日志"
                        rel="2">隐形日志</a>
+                    
+                    
+                    
+                    <a href="/tags/#关于本站" title="关于本站"
+                       rel="1">关于本站</a>
                     
                     
                 </div>
@@ -1071,29 +1060,45 @@ function aa() {
 		w = world.physicalProperties.width = c.width = window.innerWidth;
 		h = world.physicalProperties.height = c.height = window.innerHeight;
 		$.globalCompositeOperation = 'lighter';
-	});
+});
 
-	window.addEventListener('mousemove', function(e) {
-		for (var i = 0; i < world.objects.length; i++) {
-			if ((world.objects[i] instanceof Bubble) && (e.clientX > world.objects[i].x - world.objects[i].radius && e.clientX < world.objects[i].x + world.objects[i].radius && e.clientY < world.objects[i].y + world.objects[i].radius && e.clientY > world.objects[i].y - world.objects[i].radius)) {
-				world.objects[i].pop(world);
+window.addEventListener('mousemove',
+function(e) {
+	for(var i = 0; i < world.objects.length; i++) {
+		if((world.objects[i] instanceof Bubble) && (e.clientX > world.objects[i].x - world.objects[i].radius && e.clientX < world.objects[i].x + world.objects[i].radius && e.clientY < world.objects[i].y + world.objects[i].radius && e.clientY > world.objects[i].y - world.objects[i].radius)) {
+			world.objects[i].pop(world);
+//			console.log(world.objects.length)
+//			console.log(bubblesNumber);
+			if(world.objects.length < bubblesNumber) {
+
+				for(i = 0; i < bubblesNumber - world.objects.length; i++) {
+					objects.push(new Bubble(Math.random() * w, -Math.random() * h, -randomInRange(0.5, maxYVelocity), randomInRange(5, maxRadius), randomInRange(7, 10), randomInRange(-40, 40), randomInRange(0, 360)));
+				}
 			}
 		}
-	});
+	}
+});
 
-	window.addEventListener('touchmove', function(e) {
-		for (var i = 0; i < world.objects.length; i++) {
-			if ((world.objects[i] instanceof Bubble) && (e.touches[0].clientX > world.objects[i].x - world.objects[i].radius && e.touches[0].clientX < world.objects[i].x + world.objects[i].radius && e.touches[0].clientY < world.objects[i].y + world.objects[i].radius && e.touches[0].clientY > world.objects[i].y - world.objects[i].radius)) {
-				world.objects[i].pop(world);
+window.addEventListener('touchmove', function(e) {
+	for(var i = 0; i < world.objects.length; i++) {
+		if((world.objects[i] instanceof Bubble) && (e.touches[0].clientX > world.objects[i].x - world.objects[i].radius && e.touches[0].clientX < world.objects[i].x + world.objects[i].radius && e.touches[0].clientY < world.objects[i].y + world.objects[i].radius && e.touches[0].clientY > world.objects[i].y - world.objects[i].radius)) {
+			world.objects[i].pop(world);
+			
+			if(world.objects.length < bubblesNumber) {
+
+				for(i = 0; i < bubblesNumber - world.objects.length; i++) {
+					objects.push(new Bubble( Math.random() * w, -Math.random() * h, -randomInRange(0.5, maxYVelocity), randomInRange(5, maxRadius), randomInRange(7, 10), randomInRange(-40, 40), randomInRange(0, 360)));
+				}
 			}
+			
+			
 		}
-	});
+		
+	}
+});
 
 };
-aa();
-
-
-</script>
+aa();</script>
 
 
 <!-- Footer -->
