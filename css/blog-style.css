@@ -696,19 +696,23 @@ article blockquote cite:before{
     text-decoration: none;
     outline: none;
 }
+/*鼠标移动效果*/
+.post-preview > a:hover{
+	background-color: rgba(0,133,161,.3);
+}
 a:focus {
     outline: none;
 }
 .post-preview > a > h2{transition: color .3s;}
 .post-preview > a:hover > h2{
-    color: #FC7097;
+    /*color: #FC7097;*/
 }
 
 .post-preview > a > .post-title {
     font-size: 21px;
     line-height: 1.3;
     margin-top: 30px;
-     margin-bottom:0;
+    margin-bottom:0;
 }
 
 .post-preview > a > .post-subtitle {
