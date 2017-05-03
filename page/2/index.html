@@ -576,7 +576,11 @@
                             <img class="hdani centerz white-shadow-s-js" src="/img/tx.jpg"/>
                             <h5><a href="/about/">DuyangSir</a></h5>
 
-                            <h4><a href="/about/" class="black-shadow-text">为同在天堂的5年行程</a></h4>
+                            <h4 >
+                            		<p class="triggerAnimation-flip" style="margin: 0;padding: 0;">
+                            			<a href="/about/" class="black-shadow-text ">为同在天堂的5年行程</a>
+                        			</p>
+							</h4>
 
                             <p class="black-shadow-text">就像初次见面的那天一样，你并不在我的记忆里
                                 <br>
@@ -822,7 +826,7 @@ function aa() {
 		w = c.width = window.innerWidth,
 		h = c.height = window.innerHeight;
 
-	var i, bubblesNumber = w * h > 750000 ? 200 : 150,
+	var i, bubblesNumber = w * h > 750000 ? 35 : 20,
 		objects = [],
 		maxRadius = w * h > 500000 ? 50 : 35,
 		maxYVelocity = 2;
@@ -981,10 +985,10 @@ function(e) {
 		if((world.objects[i] instanceof Bubble) && (e.clientX > world.objects[i].x - world.objects[i].radius && e.clientX < world.objects[i].x + world.objects[i].radius && e.clientY < world.objects[i].y + world.objects[i].radius && e.clientY > world.objects[i].y - world.objects[i].radius)) {
 			world.objects[i].pop(world);
 //			console.log(world.objects.length)
-//			console.log(bubblesNumber);
+//			console.log(Math.abs(bubblesNumber - world.objects.length));
 			if(world.objects.length < bubblesNumber) {
 
-				for(i = 0; i < bubblesNumber - world.objects.length; i++) {
+				for(i = 0; i < Math.abs(bubblesNumber - world.objects.length); i++) {
 					objects.push(new Bubble(Math.random() * w, -Math.random() * h, -randomInRange(0.5, maxYVelocity), randomInRange(5, maxRadius), randomInRange(7, 10), randomInRange(-40, 40), randomInRange(0, 360)));
 				}
 			}
