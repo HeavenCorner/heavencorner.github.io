@@ -1977,5 +1977,14 @@ img::-moz-selection {
 	opacity: .6;
 }
 
-
+.nohover:hover{
+	background: transparent !important;
+}
+a.nohover{
+	cursor: not-allowed;
+}
+a.nohover h2,a.nohover h3{
+	color: #000000 !important;
+	opacity: .5;
+}
 
