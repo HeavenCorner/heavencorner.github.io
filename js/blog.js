@@ -1117,15 +1117,15 @@ $('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=4375
 //animetion.css
 function testAnim(x) {
 	console.log(22);
-	$('.triggerAnimation-flip').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+	$('.triggerAnimation-1').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
 		$(this).removeClass();
-		$(this).addClass('triggerAnimation-flip');
+		$(this).addClass('triggerAnimation-1');
 	});
 };
 
 $(document).ready(function() {
 	var a = 'flip';
-	$('.triggerAnimation-flip').mouseenter(function(e) {
+	$('.triggerAnimation-1').mouseenter(function(e) {
 		e.preventDefault();
 		
 		var anim = a;

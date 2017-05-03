@@ -367,7 +367,7 @@
 				</div>
 			</section>
 			<!--css3-->
-			<section class="train css3" id="c">
+			<section class="train css3" id="c" style="height: auto;">
 				<div class="bd">
 					<div class="title text">
 						CSS3
@@ -378,8 +378,8 @@
 					<div class="inner" id="cssshow-box">
 
 						<!--左右按钮-->
-						<span class="next btn-s animated infinite fadeOutRight"> <i class="change-page"></i> </span>
-						<span class="prev btn-s animated infinite fadeOutLeft"> <i class="change-page"></i> </span>
+						<span class="next btn-s animated infinite fadeOutRight" title="下一个动画"> <i class="change-page"></i> </span>
+						<span class="prev btn-s animated infinite fadeOutLeft" title="上一个动画"> <i class="change-page"></i> </span>
 
 						<ul class="page-move">
 							<li>
@@ -410,10 +410,16 @@
 							</li>
 
 						</ul>
-						<a href="javascript:void(0);"></a>
+						<a href="javascript:void(0);" title="点击重新开始动画，点击两侧按钮切换"></a>
 
 					</div>
+					
+					<!--菜单-->
+					<div style="height: 500px;width: 100%;background: white;margin:40px 0 60px;">
+						开发中...
+					</div>
 				</div>
+				
 			</section>
 			<!--点击重新加载-->
 			<script type="text/javascript">
@@ -425,6 +431,7 @@
 					$(".css-show").eq(3).attr("src", "Vmxindex/game/Css3D/GRID/GRID.html");
 					$(".css-show").eq(0).attr("src", "Vmxindex/game/Css3D/GRID/GRID.html");
 				})
+				
 			</script>
 
 			<!--展示-->
