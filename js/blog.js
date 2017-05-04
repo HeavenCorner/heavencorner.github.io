@@ -936,14 +936,7 @@ function pathshancanvas() {
 
         var slen = 6; //闪点数量
 
-        // if ($(window).width() < 768) {
-        //
-        //     slen = 5; //闪点数量
-        //
-        // }else {
-        //     slen = 30; //闪点数量
-        //
-        // }
+     
 
 
             for (var i = 0; i < slen; i++) {
@@ -1115,11 +1108,17 @@ $('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=4375
 
 
 //animetion.css
-function testAnim(x) {
-	console.log(22);
-	$('.triggerAnimation-1').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+function testAnim(x,obj,y) {
+	
+	var cn = $(obj).attr('class');
+//	alert(cn)
+	
+	$(obj).addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
 		$(this).removeClass();
-		$(this).addClass('triggerAnimation-1');
+		
+		$(this).addClass(cn);
+		
+
 	});
 };
 
@@ -1129,7 +1128,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		
 		var anim = a;
-		testAnim(anim);
+		testAnim(anim,$('.triggerAnimation-1'),'triggerAnimation-1');
 	});
 //	$('.triggerAnimation-flip').mouseleave(function(e) {
 //		
@@ -1142,4 +1141,14 @@ $(document).ready(function() {
 });
 
 
+//<!--点击相应闪烁-->
 
+$('.tags-c').on('click',function(){
+	var ids = $(this).html().replace(/(^\s*)|(\s*$)/g, '');
+	setTimeout(function(){
+		testAnim('shake',$('#' + ids).parent(),'');
+	},600);
+
+	
+	
+})
