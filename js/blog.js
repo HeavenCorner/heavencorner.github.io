@@ -253,7 +253,7 @@ if($(window).width() < 768){
 //从主页的标签云跳转到标签云里不会滚动，所以给页面（所有的）加上只要不是距离上边大于300就自动向下滑动60 20170324
 (function(){
     setTimeout(function(){
-        if($(document).scrollTop() > 200){
+        if($(document).scrollTop() > 300){
             var top = $(document).scrollTop() - 60;
             $('body').animate({
                 scrollTop: top
@@ -1108,24 +1108,25 @@ $('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=4375
 
 
 //animetion.css
-function testAnim(x,obj) {
+function testAnim(x,obj,z) {
 	
 	var cn = $(obj).attr('class');
-//	alert(cn)
-	
+	console.log(cn);
 	$(obj).addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-		$(this).removeClass();
-		$(this).addClass(cn);
+		$(this).removeClass(x + ' animated');
+		if(z){
+			$(this).addClass(z);
+		}else{
+			$(this).addClass(cn);
+		}
+
 	});
 };
 
 $(document).ready(function() {
-	var a = 'flip';
 	$('.triggerAnimation-1').mouseenter(function(e) {
 		e.preventDefault();
-		
-		var anim = a;
-		testAnim(anim,$('.triggerAnimation-1'));
+		testAnim('flip',$('.triggerAnimation-1'),'triggerAnimation-1');
 	});
 });
 
@@ -1138,3 +1139,4 @@ $('.tags-c').on('click',function(){
 		testAnim('shake',$('#' + ids).parent());
 	},600);
 })
+
