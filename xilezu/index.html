@@ -206,7 +206,7 @@
             height: 100%;
             text-align: center;
             color: #1B242F;
-            transition: all .5s;
+            /*transition: all .2s;*/
 
         }
         footer ul li i{
@@ -513,6 +513,7 @@
                             <br>
                             <b>没有发代祷事项的看到记得联系我，随时更新补上</b>
                             <p></p>
+                            <i style="font-size: 12px;">* 页面可左右滑动切换</i>
                         </div>
 
 
@@ -601,21 +602,10 @@
                 $('footer ul li').removeClass('archive');
                 $('footer ul li').eq(mue - 1).addClass('archive');
 
+
+
             }
         });
-
-
-//        $('footer ul li').on('click',function () {
-//
-//            $('footer ul li').removeClass('archive');
-//
-//            console.log($(this).index());
-//            mue = $(this).index();
-//
-//            $('footer ul li').eq(mue).addClass('archive');
-//        })
-
-
 
     </script>
 </body>
