@@ -19,7 +19,6 @@
     <!-- Demo styles -->
     <style>
         body{
-
             /*color: #000;*/
         }
 
@@ -106,9 +105,8 @@
         /*音乐box*/
 
         .musicbox {
+            display: none;
             position: relative;
-            height: 0px;
-            overflow: hidden;
             text-align: center;
             background-color: rgba(0,133,161,0);
             /*box-shadow: 0 0 5px rgba(0,0,0,0.2);*/
@@ -130,16 +128,20 @@
         .musicbox .play {
             display: none;
         }
+
         .musicbox h5 {
             font-size: 20px;
         }
+
         .musicbox h5 span {
             font-size: 14px;
         }
+
         .musicbox h5 i {
             /*color: #FC7097;*/
             font-size: 18px;
         }
+
         .musicbox h5 b{
             color: #000;
         }
@@ -199,7 +201,7 @@
             max-width: 750px;
             height: 46px;
             z-index: 50;
-            background-color: rgba(255,255,255,.7);
+            background-color: rgba(255,255,255,.8);
             /*border-top: 1px darkgray solid;*/
         }
         footer ul{
@@ -289,19 +291,6 @@
         /*font-size: 18px;*/
         background: #fff;
 
-        /* Center slide text vertically */
-        /*display: -webkit-box;*/
-        /*display: -ms-flexbox;*/
-        /*display: -webkit-flex;*/
-        /*display: flex;*/
-        /*-webkit-box-pack: center;*/
-        /*-ms-flex-pack: center;*/
-        /*-webkit-justify-content: center;*/
-        /*justify-content: center;*/
-        /*-webkit-box-align: center;*/
-        /*-ms-flex-align: center;*/
-        /*-webkit-align-items: center;*/
-        /*align-items: center;*/
         overflow: auto;
     }
     .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets{
@@ -332,6 +321,7 @@
         }
         .wrap-con-li h3{
             padding-top: 30%;
+
         }
 
         .swiper-container{
@@ -349,8 +339,6 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-
-                    <!--<h3 class="con">喜乐组每周代祷事项（0417-0422）</h3>-->
                     <div class="con">
                         <div>
                             <div class="musicbox" id="index-bgm">
