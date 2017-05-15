@@ -187,6 +187,16 @@
 	.navbar-brand{
 		/*display: none;*/
 	}
+    .goto{
+        display: inline-block;
+        height: 30px;
+        width: 100px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 15px;
+        background: white;
+        margin: 0 10px;
+    }
 </style>
 <!-- Page Header -->
 <!--<header class="intro-header">-->
@@ -206,7 +216,13 @@
 <div id="container">
     <img class="png" src="images/404.png" />
     <img class="png msg" src="images/404_msg.png" />
-    <p><a href="http://www.v-mx.com/" target=""><img class="png" src="images/404_to_index.png" /></a> </p>
+    <p>
+        <!--<a href="http://www.v-mx.com/" target=""><img class="png" src="images/404_to_index.png" /></a>-->
+        <a class="goto" href="http://www.v-mx.com/" target="">返回主页</a>
+        <a class="goto" href="###" onclick="window.history.back();" target="">返回上一页</a>
+
+
+    </p>
 </div>
 
 <div id="cloud" class="png"></div>
