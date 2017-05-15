@@ -239,6 +239,7 @@ if($(window).width() < 768){
 
 
 //首页和标签云下下的a标签都绑定点击事件，跳转后在向下滑动一定的距离，20170324
+//20170515 增加优化方案，如果已经滑动到底部，就不再向上滚动（暂未添加）
 (function(){
     $('#tag_cloud a').on('click',function(){
         setTimeout(function(){
@@ -613,7 +614,7 @@ if($(window).width() > 768) {
 	});
 
 }
-//在其他的页面没有就跳出
+
 if(canvas) {
 
 

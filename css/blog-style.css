@@ -1301,7 +1301,7 @@ img::-moz-selection {
 */
 
 .intro-header .site-heading .subheading {
-    margin-top: 15px;
+    margin-top: 33px;
 }
 
 .sidebar-container .short-about {
@@ -1988,3 +1988,9 @@ a.nohover h2,a.nohover h3{
 	opacity: .5;
 }
 
+
+
+/*样式群*/
+.mb100{
+    margin-bottom: 100px;
+}
