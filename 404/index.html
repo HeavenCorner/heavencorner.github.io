@@ -219,7 +219,7 @@
     <p>
         <!--<a href="http://www.v-mx.com/" target=""><img class="png" src="images/404_to_index.png" /></a>-->
         <a class="goto" href="http://www.v-mx.com/" target="">返回主页</a>
-        <a class="goto" href="javascript:void(0);" onclick="window.history.back();" target="">返回上一页</a>
+        <a class="goto" href="javascript:void(0);" onclick="back()" target="">返回上一页</a>
 
 
     </p>
@@ -230,6 +230,9 @@
 
 <script>
 //    document.body.classList.add('page-fullscreen');
+    var back = function () {
+        window.history.back();
+    }
 </script>
 
 <!-- Footer -->
