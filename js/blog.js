@@ -1109,17 +1109,33 @@ $('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=4375
 
 
 //animetion.css
-function testAnim(x,obj,z) {
+function testAnim(x,obj,z,display) {
 	
 	var cn = $(obj).attr('class');
-	console.log(cn);
+    $(this).removeClass();
+
 	$(obj).addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-		$(this).removeClass(x + ' animated');
-		if(z){
+
+	    $(this).removeClass();
+
+
+
+        console.log(x);
+        console.log(cn);
+
+        if(z){
 			$(this).addClass(z);
 		}else{
 			$(this).addClass(cn);
 		}
+
+        $(this).removeClass(x);
+		if(display){
+            $(obj).css({
+                'display': display
+            })
+        }
+
 
 	});
 };
@@ -1139,5 +1155,22 @@ $('.tags-c').on('click',function(){
 	setTimeout(function(){
 		testAnim('shake',$('#' + ids).parent());
 	},600);
+})
+
+
+//模态框
+
+$('.modal-open-me').on('click',function(){
+
+    testAnim('flipInY',$('.modal-box'));
+
+    $('.modal-box').css({
+        'display':'block',
+    })
+
+    $('.modal-close-box').on('click',function(){
+        testAnim('flipOutY',$('.modal-box'),'','none');
+    })
+
 })
 

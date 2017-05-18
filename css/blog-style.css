@@ -690,6 +690,7 @@ article blockquote cite:before{
     color: #404040;
     display: block;
     height: 100%;
+    padding-right: 12px;
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
@@ -699,6 +700,8 @@ article blockquote cite:before{
 /*鼠标移动效果*/
 .post-preview > a:hover{
 	background-color: rgba(0,133,161,.3);
+    padding-left: 12px;
+    padding-right: 0px;
 }
 a:focus {
     outline: none;

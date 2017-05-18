@@ -473,6 +473,62 @@
 
 <!-- Footer -->
 <!-- Footer -->
+<style>
+    .modal-box{
+        display: none;
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,.8);
+        z-index: 9999;
+    }
+
+
+    /*pc*/
+    /*@media screen and (min-width: 768px) {*/
+        /*.modal-bg .con-box{*/
+            /*width: 600px;*/
+        /*}*/
+
+        .modal-box img{
+            width: 300px;
+            height: 300px;
+        }
+
+        .modal-box .img-box{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            margin-left: -150px;
+            margin-top: -150px;
+        }
+
+    /*}*/
+
+    /*app*/
+    /*@media screen and (max-width: 768px) {*/
+        /*.modal-box img{*/
+            /*width: 300px;*/
+            /*height: 300px;*/
+
+        /*}*/
+        /*.modal-box .img-box{*/
+            /*width: 300px;*/
+            /*height: 300px;*/
+
+            /*position: absolute;*/
+            /*left: 50%;*/
+            /*top:50%;*/
+            /*margin-left: -150px;*/
+            /*margin-top: -150px;*/
+        /*}*/
+
+    /*}*/
+</style>
 <footer>
 
     <!--背景色菜单-->
@@ -495,8 +551,19 @@
     </div>
 
     <!--模态框-->
-    <div class="">
+    <div class="modal-box animated  modal-close-box">
         <div class="con-box">
+
+        </div>
+
+        <div class="img-box">
+            <img src="../img/Wechat.jpeg" alt="微信二维码">
+        </div>
+
+
+
+
+        <div class="">
 
         </div>
     </div>
@@ -522,7 +589,7 @@
 
                     <!--微信-new-->
 
-                    <li>
+                    <li class="modal-open-me">
                         <a target="_blank" href="javascript:void(0);">
                             <span class="fa-stack fa-lg">
                                 <i class="icon iconfont icon-weixin" style="font-size: 50px"></i>
