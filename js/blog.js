@@ -239,15 +239,19 @@ if($(window).width() < 768){
 
 
 //首页和标签云下下的a标签都绑定点击事件，跳转后在向下滑动一定的距离，20170324
-//20170515 增加优化方案，如果已经滑动到底部，就不再向上滚动（暂未添加）
+//20170515 增加优化方案，如果已经滑动到底部，就不再向上滚动（调试中）
 (function(){
-    $('#tag_cloud a').on('click',function(){
-        setTimeout(function(){
-            var top = $(document).scrollTop() - 60;
-            $('body').animate({
-                scrollTop: top
-            }, 800)
-        },100)
+    $('.tag_cloud_scroll a').on('click',function(){
+        // console.log(getScrollBottom())
+        // if(getScrollBottom() > 60){
+            setTimeout(function(){
+                var top = $(document).scrollTop() - 60;
+                $('body').animate({
+                    scrollTop: top
+                }, 800)
+            },100)
+        // }
+
     })
 })();
 
@@ -945,7 +949,7 @@ function pathshancanvas() {
                 var x = parseInt(arrlw / slen);
                 //每次生成1/n的区域x坐标,y坐标
                 arrAss[0] = getRandom(arrlw/40 + (x * i), parseInt((arrlw) * i / slen + arrlw/30));
-                arrAss[1] = getRandom(parseInt(20), parseInt(arrlh - 135));
+                arrAss[1] = getRandom(parseInt(20), parseInt(arrlh - 165));
                 // arrAss[0] = getRandom(parseInt(40), parseInt(arrlw));
                 // arrAss[1] = getRandom(parseInt(20), parseInt(arrlh));
                 arrA3[i] = arrAss;
@@ -1071,13 +1075,13 @@ function addShan(i,arrAll,box,y){
 // 主页音乐持续播放，如果此时在其他页面再跳转到主页，不自动播放，防止重音
 
 if($(window).width() < 768) {
-//移动端不自动播放
+    //移动端不自动播放
 
-//主页
-$('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=29947420&auto=0&height=66');
+    //主页
+    $('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=29947420&auto=0&height=66');
 
-//工作
-$('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=437597650&auto=0&height=32');
+    //工作
+    $('#work-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=437597650&auto=0&height=32');
 
 }else if($(window).width() > 768){
 
@@ -1119,10 +1123,6 @@ function testAnim(x,obj,z,display) {
 	    $(this).removeClass();
 
 
-
-        console.log(x);
-        console.log(cn);
-
         if(z){
 			$(this).addClass(z);
 		}else{
@@ -1148,13 +1148,20 @@ $(document).ready(function() {
 });
 
 
-//<!--点击相应闪烁-->
+//点击标签
 
 $('.tags-c').on('click',function(){
 	var ids = $(this).html().replace(/(^\s*)|(\s*$)/g, '');
 	setTimeout(function(){
 		testAnim('shake',$('#' + ids).parent());
 	},600);
+})
+
+$('.tags-c').on('mouseenter',function(){
+    var ids = $(this).html().replace(/(^\s*)|(\s*$)/g, '');
+    // setTimeout(function(){
+        testAnim('shake',$('#' + ids).parent());
+    // },100);
 })
 
 
@@ -1174,3 +1181,63 @@ $('.modal-open-me').on('click',function(){
 
 })
 
+
+//>>>>>>>>>>>scroll     0VVVVVVV
+
+//滚动条在Y轴上的滚动距离
+
+function getScrollTop(){
+    var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+    if(document.body){
+        bodyScrollTop = document.body.scrollTop;
+    }
+    if(document.documentElement){
+        documentScrollTop = document.documentElement.scrollTop;
+    }
+    scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+    return scrollTop;
+}
+
+
+//文档的总高度
+
+function getScrollHeight(){
+    var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+    if(document.body){
+        bodyScrollHeight = document.body.scrollHeight;
+    }
+    if(document.documentElement){
+        documentScrollHeight = document.documentElement.scrollHeight;
+    }
+    scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+    return scrollHeight;
+}
+
+//浏览器视口的高度
+
+function getWindowHeight(){
+    var windowHeight = 0;
+    if(document.compatMode == "CSS1Compat"){
+        windowHeight = document.documentElement.clientHeight;
+    }else{
+        windowHeight = document.body.clientHeight;
+    }
+    return windowHeight;
+}
+
+//距离底部的距离
+function getScrollBottom(){
+    return getScrollHeight(),getScrollHeight() - (getScrollTop() + getWindowHeight());
+}
+
+// window.onscroll = function(){
+//     console.log(getScrollTop(),getWindowHeight(),getScrollHeight(),getScrollHeight() - (getScrollTop() + getWindowHeight()));
+//
+//
+//     if(getScrollTop() + getWindowHeight() == getScrollHeight()){
+//         // alert("已经到最底部了！!");
+//     }
+// };
+
+
+//>>>>>>>>>>>scroll     1^^^^^^^^

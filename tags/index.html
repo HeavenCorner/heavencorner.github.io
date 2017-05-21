@@ -247,11 +247,7 @@
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 			<!-- 标签云JQ插件 -->
 
-			<div id='tag_cloud' class="tags">
-				
-				<a href="#关于本站" title=""  class="tags-c" rel="1">
-					关于本站
-				</a>
+			<div id='tag_cloud' class="tags tag_cloud_scroll">
 				
 				<a href="#歌曲" title=""  class="tags-c" rel="2">
 					歌曲
@@ -259,6 +255,10 @@
 				
 				<a href="#杂文" title=""  class="tags-c" rel="1">
 					杂文
+				</a>
+				
+				<a href="#关于本站" title=""  class="tags-c" rel="1">
+					关于本站
 				</a>
 				
 				<a href="#行程日志" title=""  class="tags-c" rel="1">
@@ -270,37 +270,7 @@
 			<!-- 标签列表 -->
 			
 
-			<div class="one-tag-list">
-
-				<span class="fa fa-tag listing-seperator" id="关于本站">
-	                    <span class="tag-text">关于本站</span>
-				</span>
-
-				
-
-				
-				<div class="post-preview">
-					<a href="/2017/04/26/正式发布公布/">
-						<h2 class="post-title">
-                            V-mx 正式发布
-                        </h2>
-						
-						<h3 class="post-subtitle">
-                            2017年04月26日，这一天
-                        </h3>
-						
-					</a>
-				</div>
-				<hr>
-				
-
-				
-
-			</div>
-
-			
-
-			<div class="one-tag-list">
+			<div class="one-tag-list ">
 
 				<span class="fa fa-tag listing-seperator" id="歌曲">
 	                    <span class="tag-text">歌曲</span>
@@ -344,7 +314,7 @@
 
 			
 
-			<div class="one-tag-list">
+			<div class="one-tag-list ">
 
 				<span class="fa fa-tag listing-seperator" id="杂文">
 	                    <span class="tag-text">杂文</span>
@@ -374,7 +344,37 @@
 
 			
 
-			<div class="one-tag-list">
+			<div class="one-tag-list ">
+
+				<span class="fa fa-tag listing-seperator" id="关于本站">
+	                    <span class="tag-text">关于本站</span>
+				</span>
+
+				
+
+				
+				<div class="post-preview">
+					<a href="/2017/04/26/正式发布公布/">
+						<h2 class="post-title">
+                            V-mx 正式发布
+                        </h2>
+						
+						<h3 class="post-subtitle">
+                            2017年04月26日，这一天
+                        </h3>
+						
+					</a>
+				</div>
+				<hr>
+				
+
+				
+
+			</div>
+
+			
+
+			<div class="one-tag-list ">
 
 				<span class="fa fa-tag listing-seperator" id="行程日志">
 	                    <span class="tag-text">行程日志</span>
@@ -414,6 +414,29 @@
 
 			
 
+			<!-- 标签云JQ插件 -->
+
+			<div class="tags mt50 tags-style-bottom tag_cloud_scroll">
+                
+				<a href="#歌曲" title=""  class="tags-c" rel="2">
+                    歌曲
+				</a>
+                
+				<a href="#杂文" title=""  class="tags-c" rel="1">
+                    杂文
+				</a>
+                
+				<a href="#关于本站" title=""  class="tags-c" rel="1">
+                    关于本站
+				</a>
+                
+				<a href="#行程日志" title=""  class="tags-c" rel="1">
+                    行程日志
+				</a>
+                
+			</div>
+
+
 		</div>
 	</div>
 </div>
@@ -431,6 +454,7 @@
         height: 100vh;
         background: rgba(0,0,0,.8);
         z-index: 9999;
+        cursor: crosshair;
     }
 
 
@@ -504,13 +528,14 @@
 
         </div>
 
-        <div class="img-box">
+
+        <!--footer-click-->
+
+        <div class="img-box" title="扫描二维码加我微信">
 
             <img src="/img/Wechat.jpeg" alt="微信二维码">
 
         </div>
-
-
 
 
         <div class="">

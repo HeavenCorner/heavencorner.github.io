@@ -13,8 +13,12 @@
     <link rel="stylesheet" href="animate.css">
     <!--图标-->
     <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="font/iconfont-2.css">
+
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="css/swiper.min.css">
+    <!--<link rel="stylesheet" href="/css/bootstrap.min.css">-->
+
 
     <!-- Demo styles -->
     <style>
@@ -41,12 +45,17 @@
         h3{
             text-align: center;
         }
-        div{
-            /*padding: 10px 20px;*/
+        .msg-box{
+            padding: 18px;
+            height: 86vw;
+            overflow: hidden;
+            margin-bottom: 30%;
         }
         .msg{
             width: 100%;
             opacity: 1;
+            /*box-shadow: 5px 5px 5px rgba(0,0,0,.5);*/
+
         }
         .bg{
             position: fixed;
@@ -108,7 +117,7 @@
         /*音乐box*/
 
         .musicbox {
-            display: none;
+            display: block;
             position: relative;
             text-align: center;
             background-color: rgba(0,133,161,0);
@@ -205,7 +214,6 @@
             height: 46px;
             z-index: 50;
             background-color: rgba(255,255,255,.8);
-            /*border-top: 1px darkgray solid;*/
         }
         footer ul{
             width: 100%;
@@ -366,6 +374,8 @@
                                         <!--src="//music.163.com/outchain/player?type=2&id=5270588&auto=0&height=66"></iframe>-->
 
                             <!--</div>-->
+
+
 
                             <p>
                                 <img src="congzhou.jpg" alt="">
@@ -531,7 +541,6 @@
                             <br>
                             <b>没有发代祷事项的看到记得联系我，随时更新补上</b>
                             <p></p>
-                            <i style="font-size: 12px;">* 页面可左右滑动切换</i>
                         </div>
 
 
@@ -619,8 +628,17 @@
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="wrap-con-li">
-                    <h3>开发中</h3>
+                <div class="wrap-con-li" style="">
+                    <div class="msg-box">
+                        <img class="msg" src="a.jpeg" alt="">
+
+                    </div>
+
+
+                    <div class="musicbox">
+                    <!--<span class="music-b">祝王子生日快乐~</span>-->
+                        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=90% height=86 src="//music.163.com/outchain/player?type=2&id=29542772&auto=0&height=66"></iframe>
+                    </div>
 
                 </div>
             </div>
@@ -639,14 +657,14 @@
         <footer>
             <ul>
                 <li class="archive">
-                    <i class="iconfont icon-zhufu" ></i>
+                    <i class="iconfont icon-shouye" ></i>
                 </li>
 
                 <li>
-                    <i class="iconfont icon-richeng" ></i>
+                    <i class="iconfont icon-tongxunlu_tongxunlu" ></i>
                 </li>
                 <li>
-                    <i class="iconfont icon-yinle" ></i>
+                    <i class="iconfont icon-music" style="font-size: 26px"></i>
                 </li>
                 <li>
                     <i class="iconfont icon-shipin" ></i>
