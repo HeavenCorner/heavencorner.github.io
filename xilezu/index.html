@@ -237,9 +237,10 @@
         .iconfont{
             font-size: 34px;
         }
-        .archive{
-            color: #00b6e3;
+        .archive,.active{
+            color: #00b6e3 !important;
         }
+
 
 
         /*返回顶部样式，在footer里*/
@@ -293,13 +294,13 @@
         margin: 0;
         padding: 0;
     }
-    .swiper-container {
+        body >.swiper-container {
         width: 100%;
         height: 100%;
         margin-left: auto;
         margin-right: auto;
     }
-    .swiper-slide {
+        .swiper-slide {
         /*text-align: center;*/
         /*font-size: 18px;*/
         background: #fff;
@@ -307,7 +308,7 @@
 
         overflow: auto;
     }
-    .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets{
+    body > .swiper-container .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets{
         position: fixed;
         left: 0;
         bottom: 0;
@@ -317,7 +318,7 @@
         z-index: 999;
 
     }
-        .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets span{
+        body > .swiper-container .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets span{
             display: block;
             height: 100%;
             width: 33.333333333333%;
@@ -343,11 +344,11 @@
 
         }
 
-        .swiper-container{
+        body >.swiper-container{
             background-image: url("bg.jpeg");
             background-size: 100% 100%;
         }
-        .swiper-slide{
+        body >.swiper-slide{
             background: rgba(255,255,255,.8);
         }
 
@@ -364,27 +365,28 @@
             position: fixed;
             top:0;
             left: 0;
-            /*width: 100vw;*/
+            width: 100vw;
             height: 100vh;
             background: rgba(0,0,0,.6);
             z-index: 9999;
             cursor: crosshair;
-            padding: 10%;
-            padding-top: 38%;
+            /*padding: 10%;*/
+            /*padding-top: 38%;*/
         }
 
         .modal-box .con-box{
             /*width: 80%;*/
-            min-height: 25%;
-            background-color: rgba(0,0,0,.5);
-            border-radius: 10px;
-            padding: 10px;
+            height: 100%;
+            background-color: rgba(0,0,0,0);
+            padding-top: 50px;
         }
 
-        .modal-box .con-box p{
+        .modal-box p{
             color: #FFFFFF;
             font-size: 16px;
             text-indent: 32px;
+            margin: 0;
+            padding: 50px 20px;
         }
 
         .teshu{
@@ -394,6 +396,35 @@
             bottom: 52px;
             z-index: 999999;
             color: #890018;
+        }
+
+        .modal-box > .swiper-container{
+            position: absolute;
+            top:20%;
+            left: 0;
+            width: 100%;
+            height: 53%;
+            /*background-color: rgba(0,0,0,.5);*/
+        }
+
+        .modal-box > .swiper-container .swiper-slide{
+            position: relative;
+            z-index: 2;
+            background-color: rgba(0,0,0,.3);
+
+        }
+        .modal-box .swiper-pagination-bullet{
+            position: relative;
+            background: #FFFFFF;
+            border:2px #00b6e3 solid;
+            z-index: 9999999;
+        }
+
+        .modal-box img{
+            width: 100vw;
+            -webkit-transform:scale(1.2);
+            -moz-transform:scale(1.2);
+            transform:scale(1.2);
         }
 
 
@@ -407,15 +438,32 @@
 
     <!--模态框-->
     <div class="modal-box animated  modal-close-box">
-        <div class="con-box">
-            <p>
-                请大家为在A国服侍的XJS们祷告，昨天凌晨接到J姐妹的消息。一位同在A国服侍的德国的JM被杀害了，还有一位芬兰的姐妹被绑架了...
-                他们都是和姐妹同一个小组的...请大家迫切的为这些我们在前方的工人举手，特别为芬兰姐妹的安全...
-            </p>
+
+
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+
+                    <!--<div class="con-box">-->
+                    <p>
+
+                    请大家为在A国服侍的XJS们祷告，昨天凌晨接到J姐妹的消息。一位同在A国服侍的德国的JM被杀害了，还有一位芬兰的姐妹被绑架了...
+                    他们都是和姐妹同一个小组的...请大家迫切的为这些我们在前方的工人举手，特别为芬兰姐妹的安全...
+                    </p>
+                    <!--</div>-->
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="modalimg.jpeg" alt="" class="modal-img" style="width:100vw;">
+                </div>
+
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
         </div>
-
-
-        <!--footer-click-->
 
 
 
@@ -718,14 +766,8 @@
 
                 </div>
             </div>
-            <!--<div class="swiper-slide">-->
-                <!--<div class="wrap-con-li">-->
-                    <!--<h3>开发中</h3>-->
 
-                <!--</div>-->
-            <!--</div>-->
         </div>
-
 
         <div class="swiper-pagination"></div>
 
@@ -769,7 +811,7 @@
     <script>
         var mue = 1;
 
-        var swiper = new Swiper('.swiper-container', {
+        var swiper = new Swiper('body > .swiper-container', {
             pagination: '.swiper-pagination',
             slidesPerView: 1,
             paginationClickable: true,
@@ -823,6 +865,19 @@
 
             }
         });
+
+        var swiper2 = new Swiper('.modal-box .swiper-container', {
+//            autoplay: 4500,
+            prevButton: '.swiper-button-prev',
+            nextButton: '.swiper-button-next',
+            pagination: '.modal-box .swiper-pagination',
+            slidesPerView: 1,
+            paginationClickable: true,
+            spaceBetween: 30,
+            loop: true,
+        });
+
+
 
 
         //animetion.css
