@@ -90,6 +90,7 @@
 
         }
         .con p{
+            /*color: #949494;*/
             margin: 10px 0;
         }
         .con i{
@@ -357,13 +358,73 @@
             text-align: center;
         }
 
+        .modal-box{
+            display: block;
+            position: fixed;
+            top:0;
+            left: 0;
+            /*width: 100vw;*/
+            height: 100vh;
+            background: rgba(0,0,0,.6);
+            z-index: 9999;
+            cursor: crosshair;
+            padding: 10%;
+            padding-top: 38%;
+        }
+
+        .modal-box .con-box{
+            /*width: 80%;*/
+            min-height: 25%;
+            background-color: rgba(0,0,0,.5);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .modal-box .con-box p{
+            color: #FFFFFF;
+            font-size: 16px;
+            text-indent: 32px;
+        }
+
+        .teshu{
+            position: fixed;
+            font-size: 46px;
+            right: 18px;
+            bottom: 52px;
+            z-index: 999999;
+            color: #890018;
+        }
+
+
     </style>
 </head>
 <body>
 
-    <div style="position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;background-color: rgba(0,0,0,.7);z-index: 9999999;">
-        <h2 style="padding-top: 45%;color: #FFFFFF;" class="animated tada">抱歉，暂未更新，请稍等一下</h2>
+    <!--<div style="position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;background-color: rgba(0,0,0,.7);z-index: 9999999;">-->
+        <!--<h2 style="padding-top: 45%;color: #FFFFFF;" class="tadas">抱歉，暂未更新，请稍等一下</h2>-->
+    <!--</div>-->
+
+    <!--模态框-->
+    <div class="modal-box animated  modal-close-box">
+        <div class="con-box">
+            <p>
+                请大家为在A国服侍的XJS们祷告，昨天凌晨接到J姐妹的消息。一位同在A国服侍的德国的JM被杀害了，还有一位芬兰的姐妹被绑架了...
+                他们都是和姐妹同一个小组的...请大家迫切的为这些我们在前方的人工举手，特别为芬兰姐妹的安全...
+            </p>
+        </div>
+
+
+        <!--footer-click-->
+
+
+
+        <div class="">
+
+        </div>
     </div>
+
+    <span class="icon iconfont icon-zhufu teshu animated infinite pulse modal-open-me"></span>
+
 
     <!-- Swiper -->
     <div class="swiper-container">
@@ -385,14 +446,16 @@
                             <p>
                                 <img src="congzhou.jpg" alt="">
                                 <i>从舟：</i><br>
-                                1、为周三周四的月考祷告。
+                                1、为月考的成绩感恩，为接下来的两个礼拜学习祷告。
+                                <br>
+                                2、为家庭营司琴的侍奉祷告。
                                 <br></p>
 
                             <p>
                                 <img src="congzhoumama.jpg" alt="">
 
                                 <i>从舟妈妈：</i><br>
-                                1、为爸爸的睡眠祷告，求主加添他信心，使他学习凡事交托神。
+                                1、为爸爸的情绪祷告，求主加添他信心，使他学习凡事交托神。
                                 <br>
                                 2、为我渴慕神话语并亲近神祷告。
                                 <br></p>
@@ -405,9 +468,9 @@
 
                                 <i>栋夷：</i>
                                 <br>
-                                1、继续操练安静等候神的功课；
+                                1、继续安静，等候神; 求神帮助，不要看自己没有的，而是看自己有的，专一爱主。
                                 <br>
-                                2、求神帮助合理分配时间。
+                                2、求神带领工作前面的方向
                                 <br>
                             </p>
 
@@ -418,7 +481,7 @@
 
                                 <i>段段：</i>
                                 <br>
-                                1、为去校友会预备心。
+                                1、清心。
                                 <br>
                                 <!--2、离去厦门合唱营还有一个星期，求神预备足够的时间熟悉曲目；
                                 <br>
@@ -431,7 +494,7 @@
 
                                 <i>蒙恩：</i>
                                 <br>
-                                1、为下周和一个同事分享福音，求主预备她的心，也恳求圣灵感动她，除去阻拦我们一起分享的各种因素。
+                                1、更多亲近主，明白主的心。
                                 <br></p>
 
 
@@ -441,7 +504,7 @@
 
                                 <i>浩然：</i>
                                 <br>
-                                1、靠主学习专注力，操练一颗单纯的心。
+                                1、求主施恩于我，为我建立家室，一同承受生命之恩。
                                 <!--<br>
                                 2、专业学习；
                                 <br>
@@ -456,13 +519,13 @@
 
                                 <i>晶晶：</i>
                                 <br>
-                                1、亲近神，在找工作的事上寻求神的带领；
+                                1、求神安静我的心，在工作上寻求神的带领。
                                 <br>
-                                2、男朋友与神的关系——渴慕神，更多认识和经历神；
+
+                                2、家人与神的关系更亲近。
                                 <br>
-                                3、下周末回家，求神带领；
-                                <br>
-                                4、家人在凡事上依靠神。
+
+                                3、求神预备男朋友的心，每天甘心花时间来认识神。
                                 <br></p>
 
 
@@ -472,7 +535,7 @@
 
                                 <i>蓓静：</i>
                                 <br>
-                                1、为下周出差顺利，与主同在。
+                                1、保守与领导关系在主的里面，公司搬迁。
                                 <br></p>
 
                             <!--<p>
@@ -485,7 +548,7 @@
                             <br></p>-->
 
 
-                            <p>
+                            <p class="grey">
                                 <img src="jinyan.jpg" alt="">
 
 
@@ -505,7 +568,7 @@
 
                                 <i>申元：</i>
                                 <br>
-                                1、为刚出生的王子和宝宝的妈妈祝福祈祷，健康成长。
+                                1、为我们家宝宝祷告，近期有点闹腾，求神膀臂护佑，一生走在神的家中。
                                 <br></p>
 
                             <p class="">
@@ -514,10 +577,10 @@
 
                                 <i>炳林：</i>
                                 <br>
-                                1、为最近服侍状态祷告，状态不太好，服侍没有力量，希望神加添力量让状态早点好起来。
+                                1、状态早点恢复起来祷告，之前一段一直状态不佳，希望这周能完全好起来。
                                 <br></p>
 
-                            <p>
+                            <p class="grey">
 
                                 <img src="huangting.jpeg" alt="">
 
@@ -546,6 +609,9 @@
                             <br>
                             <b>没有发代祷事项的看到记得联系我，随时更新补上</b>
                             <p></p>
+
+
+
                         </div>
 
 
@@ -662,13 +728,13 @@
         <footer>
             <ul>
                 <li class="archive">
-                    <i class="iconfont icon-shouye" ></i>
+                    <i class="iconfont icon-zhufu" style="font-size: 46px" ></i>
                 </li>
 
                 <li>
                     <i class="iconfont icon-tongxunlu_tongxunlu" ></i>
                 </li>
-                <li class="animated tada">
+                <li class=" tadas">
                     <i class="iconfont icon-music " style="font-size: 26px"></i>
                 </li>
                 <li>
@@ -712,10 +778,79 @@
                 $('footer ul li').removeClass('archive');
                 $('footer ul li').eq(mue - 1).addClass('archive');
 
+                if(mue == 1 || mue == 5){
+                    $('.modal-open-me').css({
+                        'display':'block',
+                    })
+                }else{
+                    $('.modal-open-me').css({
+                        'display':'none',
+                    })
+                }
+
 
 
             }
         });
+
+
+        //animetion.css
+        function testAnim(x,obj,z,display) {
+
+            console.log("123");
+
+            var cn = $(obj).attr('class');
+            $(this).removeClass();
+
+            $(obj).addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+
+                $(this).removeClass();
+
+
+                if(z){
+                    $(this).addClass(z);
+                }else{
+                    $(this).addClass(cn);
+                }
+
+                $(this).removeClass(x);
+                if(display){
+                    $(obj).css({
+                        'display': display
+                    })
+                }
+
+
+            });
+        };
+
+        setTimeout(function(){
+            testAnim('tada',$('.tadas'))
+        },1500)
+
+        //模态框
+        $('.modal-open-me').css({
+            'display':'none',
+        })
+        $('.modal-open-me').on('click',function(){
+
+            $('.modal-open-me').css({
+                'display':'none',
+            })
+
+            testAnim('flipInY',$('.modal-box'));
+
+            $('.modal-box').css({
+                'display':'block',
+            })
+        })
+
+        $('.modal-close-box').on('click',function(){
+            testAnim('flipOutY',$('.modal-box'),'','none');
+            $('.modal-open-me').css({
+                'display':'block',
+            })
+        })
 
     </script>
 </body>
