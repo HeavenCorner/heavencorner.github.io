@@ -344,7 +344,7 @@
 
         }
 
-        body >.swiper-container{
+        .bg-img{
             background-image: url("bg.jpeg");
             background-size: 100% 100%;
         }
@@ -426,11 +426,13 @@
             -moz-transform:scale(1.2);
             transform:scale(1.2);
         }
-
+        .swiper-index .swiper-slide {
+            background-color: rgba(255,255,255,.3);
+        }
 
     </style>
 </head>
-<body>
+<body class="bg-img">
 
     <!--<div style="position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;background-color: rgba(0,0,0,.7);z-index: 9999999;">-->
         <!--<h2 style="padding-top: 45%;color: #FFFFFF;" class="tadas">抱歉，暂未更新，请稍等一下</h2>-->
@@ -476,7 +478,7 @@
 
 
     <!-- Swiper -->
-    <div class="swiper-container">
+    <div class="swiper-container swiper-index">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
 
