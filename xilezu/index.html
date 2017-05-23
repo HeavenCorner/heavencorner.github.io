@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>东塔喜乐组</title>
 
-    <meta name="viewport" content="width=640,target-densitydpi=device-dpi,user-scalable=no" />
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+    <!--<meta name="viewport" content="width=640,target-densitydpi=device-dpi,user-scalable=no" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <!--<meta name="viewport" content="width=640, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
 
 
@@ -446,7 +446,7 @@
             left: 0;
             z-index: 999999;
             /*background-color: #0baae4;*/
-            background-color: #00b6e3;
+            background-color: rgba(255,255,255,1);
         }
 
 
@@ -459,8 +459,10 @@
         <!--<h2 style="padding-top: 45%;color: #FFFFFF;" class="tadas">抱歉，暂未更新，请稍等一下</h2>-->
     <!--</div>-->
 
+    <span class="cube"></span>
+
     <!--进入动画-->
-    <div class="animate-box modal-box animated  modal-close-box">
+    <div class="animate-box modal-box animated  modal-close-box-2">
         <div class="p3d">
             <ul class="space cross space-1">
                 <li class="cover-1-1 ad cover-1-1-animate"><span class="con-font">忍耐</span></li>
@@ -478,6 +480,7 @@
             </ul>
 
         </div>
+        <p id="msg-font" class="animated tada ad10">哈利路亚，早安~</p>
     </div>
 
     <!--模态框-->
@@ -981,6 +984,15 @@
             setTimeout(function(){
                 testAnim('tada',$('.tadas'))
             },1000)
+        })
+        $('.modal-close-box-2').on('click',function(){
+            testAnim('flipOutY',$('.modal-close-box-2'),'','none');
+//            $('.modal-open-me').css({
+//                'display':'block',
+//            })
+//            setTimeout(function(){
+//                testAnim('tada',$('.tadas'))
+//            },1000)
         })
 
     </script>
