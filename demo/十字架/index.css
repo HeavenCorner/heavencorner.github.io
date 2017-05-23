@@ -77,8 +77,8 @@ ul{
 
 /*space-1*/
 .space-1{
-	-webkit-animation: space-1 6s 1 linear 0s;
-	animation: space-1 6s 1 linear 0s;
+	-webkit-animation: space-1 7s 1 ease-out 0s;
+	animation: space-1 7s 1 ease-out 0s;
 
 	-webkit-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
@@ -977,7 +977,8 @@ ul{
 
 .con-font{
 	color: #ffffff;
-	font-size: 24px;
+	font-size: 40px;
+	line-height: 46px;
 
 
 
@@ -986,6 +987,11 @@ ul{
 
 	-webkit-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
+}
+
+.fz24{
+	font-size: 24px;
+
 }
 
 @keyframes con-color{
