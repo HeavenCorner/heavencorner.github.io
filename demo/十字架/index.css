@@ -28,28 +28,40 @@ ul{
 }
 .p3d{
 	perspective:500px;
-	margin-top:100px;
+	/*margin-top:100px;*/
 	perspective-origin:50% 50%;
 	-webkit-perspective:500px;
 	-webkit-perspective-origin:50% 50%;
 }
 .space{
-	width:250px;
-	height:600px;
+	width:350px;
+	height:640px;
 	transform-style:preserve-3d;/**flat**/
 	margin:0 auto;
 	position: relative;
-	padding-top: 100px;
+	padding-top: 50px;
 
 	-webkit-transition:all 1.5s;
 	transition:all 1.5s;
 	
 	-webkit-transform-origin:50% 50% 200px;
-	transform-origin:50% 50% 200px;
+	transform-origin:50% 50% 25px;
+
+	animation: haha 3s infinite linear 0s;
+
+
+	/*-webkit-transform:rotateY(40deg);*/
+	/*transform:rotateY(40deg);*/
 	
-	-webkit-transform:rotateY(40deg);
-	transform:rotateY(40deg);
-	
+}
+
+@keyframes haha{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(360deg);
+	}
 }
 
 .space li{
@@ -64,7 +76,8 @@ ul{
 	text-align: center;
 	line-height: 50px;
 	/*color: #ffffff;*/
-	/*background-color: darkred;*/ 
+	background-color: darkred;
+
 }
 
 
