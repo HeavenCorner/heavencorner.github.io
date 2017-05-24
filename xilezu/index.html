@@ -1160,7 +1160,7 @@
             canvasbgcolor = '#E8E8E8';
             $('#msg-font').html(arrmsg[0]);
 
-        }else
+        }
 
 //2        >8<=11  上午好 关闭星空
         if((nowHours > 8) && (nowHours == 11 || nowHours < 11)) {
@@ -1170,7 +1170,7 @@
             $('#msg-font').html(arrmsg[1]);
 
 
-        }else
+        }
 
 
 
@@ -1183,7 +1183,7 @@
             $('#msg-font').html(arrmsg[8]);
 
 
-        }else
+        }
 
 
 //3       >12<=14     午安
@@ -1192,7 +1192,7 @@
 
             $('#msg-font').html(arrmsg[2]);
 
-        }else
+        }
 
 //4        >14<=18     下午好
         if((nowHours > 14) && (nowHours == 18 || nowHours < 18)){
@@ -1201,7 +1201,7 @@
             $('#msg-font').html(arrmsg[3]);
 
 
-        }else
+        }
 
 //5        >18<=20   晚上好    背景变化启动canvas  深灰色
 
@@ -1216,7 +1216,7 @@
             $('.p3d').css({opacity: '.9'})
 
 
-        }else
+        }
 
 //6        >20<23   晚安
         if((nowHours > 20) && (nowHours < 23)){
@@ -1229,7 +1229,7 @@
             $('.p3d').css({opacity: '.6'})
 
 
-        }else
+        }
 
 //7        =23  深夜好
         if(nowHours == 23){
@@ -1242,7 +1242,7 @@
 
 
 
-        }else
+        }
 
 //8        >=0<5  凌晨好
 
