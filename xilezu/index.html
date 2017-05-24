@@ -437,7 +437,7 @@
             background-color: rgba(255,255,255,.3);
         }
 
-/*开始动画*/
+        /*开始动画*/
         .animate-box{
             width: 100vw;
             height: 100vh;
@@ -969,7 +969,7 @@
                 'display':'none',
             })
 
-            testAnim('flipInY',$('.modal-box'));
+            testAnim('fadeInDown',$('.modal-box'));
 
             $('.modal-box').css({
                 'display':'block',
@@ -977,16 +977,17 @@
         })
 
         $('.modal-close-box').on('click',function(){
-            testAnim('flipOutY',$('.modal-box'),'','none');
-            $('.modal-open-me').css({
-                'display':'block',
-            })
+            testAnim('fadeOutUp',$('.modal-box'),'','none');
+
             setTimeout(function(){
+                $('.modal-open-me').css({
+                    'display':'block',
+                })
                 testAnim('tada',$('.tadas'))
             },1000)
         })
         $('.modal-close-box-2').on('click',function(){
-            testAnim('flipOutY',$('.modal-close-box-2'),'','none');
+            testAnim('fadeOutUp',$('.modal-close-box-2'),'','none');
 //            $('.modal-open-me').css({
 //                'display':'block',
 //            })
