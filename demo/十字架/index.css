@@ -475,8 +475,8 @@ ul{
 
 
 
-	-webkit-transform:translateZ(350px) translateY(-150px) translateX(150px);
-	transform:translateZ(350px) translateY(-150px) translateX(150px);
+	-webkit-transform:translateZ(350px) translateY(-150px) translateX(150px)  rotateX(-100deg);
+	transform:translateZ(350px) translateY(-150px) translateX(150px)  rotateX(-100deg);
 }
 /*6*/
 .space.cross .cover-2-6{
@@ -492,7 +492,7 @@ ul{
 	transform:translateZ(-300px) translateX(150px) translateY(-150px);
 }
 
-/*开始组合十字时的位置    结束*/
+/*开始组合十字时的位置    结束*************************************************************^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
 
 
@@ -853,26 +853,32 @@ to{
 .cover-2-5-animate{
 	-webkit-animation: cover-2-5 3s 1 linear 5s;
 	animation: cover-2-5 3s 1 linear 5s;
+
+	-webkit-transform-origin:100% 50% 200px;
+	transform-origin:100% 50% 25px;
+
+	transform:translateZ(350px) translateY(-150px) translateX(150px) rotateX(-100deg);
+
 }
 
 
 @keyframes cover-2-5{
 	from{
 
-		-webkit-transform:translateZ(350px) translateY(-150px) translateX(150px);
-		transform:translateZ(350px) translateY(-150px) translateX(150px);
+		-webkit-transform:translateZ(350px) translateY(-150px) translateX(150px)  rotateX(-100deg);
+		transform:translateZ(350px) translateY(-150px) translateX(150px) rotateX(-100deg);
 	}
 	90%{
 
-		-webkit-transform:translateZ(50px) translateY(-150px) translateX(150px);
-		transform:translateZ(50px) translateY(-150px) translateX(150px);
+		-webkit-transform:translateZ(50px) translateY(-150px) translateX(150px)  rotateX(-2deg);
+		transform:translateZ(50px) translateY(-150px) translateX(150px)  rotateX(-2deg);
 		background-color: rgba(137,0,24,.8);
 
 	}
 	100%{
 
-		-webkit-transform:translateZ(50px) translateY(-150px) translateX(150px);
-		transform:translateZ(50px) translateY(-150px) translateX(150px);
+		-webkit-transform:translateZ(50px) translateY(-150px) translateX(150px)  rotateX(0deg);
+		transform:translateZ(50px) translateY(-150px) translateX(150px) rotateX(0deg);
 		background-color: rgba(137,0,24,1);
 
 	}
@@ -881,20 +887,20 @@ to{
 @-webkit-keyframes cover-2-5{
 	from{
 
-		-webkit-transform:translateZ(350px) translateY(-150px) translateX(150px);
-		transform:translateZ(350px) translateY(-150px) translateX(150px);
+		-webkit-transform:translateZ(350px) translateY(-150px) translateX(150px)  rotateX(-100deg);
+		transform:translateZ(350px) translateY(-150px) translateX(150px) rotateX(-100deg);
 	}
 	90%{
 
-		-webkit-transform:translateZ(50px) translateY(-150px) translateX(150px);
-		transform:translateZ(50px) translateY(-150px) translateX(150px);
+		-webkit-transform:translateZ(50px) translateY(-150px) translateX(150px)  rotateX(-2deg);
+		transform:translateZ(50px) translateY(-150px) translateX(150px)  rotateX(-2deg);
 		background-color: rgba(137,0,24,.8);
 
 	}
 	100%{
 
-		-webkit-transform:translateZ(50px) translateY(-150px) translateX(150px);
-		transform:translateZ(50px) translateY(-150px) translateX(150px);
+		-webkit-transform:translateZ(50px) translateY(-150px) translateX(150px)  rotateX(0deg);
+		transform:translateZ(50px) translateY(-150px) translateX(150px) rotateX(0deg);
 		background-color: rgba(137,0,24,1);
 
 	}
@@ -1162,6 +1168,8 @@ to{
 	animation-delay: 1.1s;
 	-webkit-animation-duration: 5s;
 	animation-duration: 5s;
+	-webkit-animation-timing-function: ease-out;
+	animation-timing-function: ease-out;
 }
 
 #msg-font{
