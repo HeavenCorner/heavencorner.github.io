@@ -268,7 +268,7 @@ ul{
 	text-align: center;
 	line-height: 50px;
 	color: #ffffff;
-	background-color: rgba(137,0,24,.8);
+	background-color: rgba(137,0,24,.7);
 
 	-webkit-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
@@ -363,6 +363,9 @@ ul{
 
 .space.cross .cover-1-6{
 
+	border-color: rgba(137,0,24,.7);
+
+
 	-webkit-transform:rotateY(0deg) translateZ(-500px) translateY(0px) translateX(0px);
 	transform:rotateY(0deg) translateZ(-500px) translateY(0px) translateX(0px);
 }
@@ -407,6 +410,7 @@ ul{
 	-webkit-transform-origin:50% 0;
 	transform-origin:50% 0;
 
+	border-top-color: rgba(137,0,24,.7);
 
 
 	-webkit-transform:rotateX(90deg) translateZ(-750px) translateY(0px) translateX(150px);
@@ -444,6 +448,7 @@ ul{
 	width: 50px;
 	height: 600px;
 
+	border-width: 0px;
 
 
 	-webkit-transform:translateZ(-300px) translateX(150px) translateY(-150px);
@@ -1140,7 +1145,7 @@ to{
 	animation-fill-mode:forwards;
 }
 
-
+/*字消失*/
 
 .con-font{
 	color: #ffffff;
