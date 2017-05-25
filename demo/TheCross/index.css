@@ -53,8 +53,8 @@ ul{
 	-webkit-animation: scale3d-1 6s 1 linear 0s;
 	animation: scale3d-1 6s 1 linear 0s;
 
-	-webkit-transform:scale3d(2.0,2.0,2.0);
-	transform:scale3d(2.0,2.0,2.0);
+	-webkit-transform:scale3d(1.6,1.6,1.6);
+	transform:scale3d(1.6,1.6,1.6);
 
 	-webkit-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
@@ -63,8 +63,8 @@ ul{
 @keyframes scale3d-1{
 	from{
 
-		-webkit-transform:scale3d(2,2,2);
-		transform:scale3d(2.0,2.0,2.0);
+		-webkit-transform:scale3d(1.6,1.6,1.6);
+		transform:scale3d(1.6,1.6,1.6);
 
 	}
 	to{
