@@ -384,6 +384,8 @@
         /*}*/
 
     /*}*/
+
+
 </style>
 <footer>
 
@@ -404,6 +406,16 @@
             <i class="glyphicon glyphicon-menu-up"></i>
             <span>回到<br>顶部</span>
         </a>
+    </div>
+
+    <div class="animate-box animate-box-1 animated modal-close-box-2">
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=100%
+                src="../demo/TheCross/index.html">
+        </iframe>
+
+        <div class="animate-box-mark"></div>
+
     </div>
 
     <!--模态框-->
@@ -591,6 +603,26 @@
       if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
       s.parentNode.insertBefore(o, s);
     }
+
+
+//    开场动画
+//设置需要开启的页面
+//alert($('.about-page').length);
+//if($('.about-page').length){
+//        $('.animate-box-1').css({
+//            display:'block'
+//        })
+//
+//}
+
+
+//        点击关闭开场动画
+
+$('.modal-close-box-2').on('click',function(){
+    console.log(2)
+    testAnim('fadeOutUp',$('.animate-box-1'),'','none');
+})
+
 </script>
 
 <!-- jquery.tagcloud.js -->
