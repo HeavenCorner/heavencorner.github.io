@@ -1243,5 +1243,17 @@ function getScrollBottom(){
 //>>>>>>>>>>>scroll     1^^^^^^^^
 
 
+//    开场动画
+//设置需要开启的页面
+//alert($('.about-page').length);
+if($('.about-page').length){
+    $('.animate-box-1').css({
+        display:'block'
+    })
 
+}else{
+    $('.animate-box-1').css({
+        display:'none'
+    })
+}
 
