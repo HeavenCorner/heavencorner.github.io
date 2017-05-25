@@ -2054,6 +2054,7 @@ a.nohover h2,a.nohover h3{
 }
 
 .animate-box-mark{
+    cursor: pointer;
     position: absolute;
     top: 0;
     left: 0;
