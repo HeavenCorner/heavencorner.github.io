@@ -1077,12 +1077,12 @@ function addShan(i,arrAll,box,y){
 // 主页音乐持续播放，如果此时在其他页面再跳转到主页，不自动播放，防止重音
 
 if($(window).width() < 768) {
-    //视频以高为主
 
-    // $('.video-player').attr('height','100%')
+    //移动端删除vedio标签
+
+    $('.video-player-box').remove();
 
 
-    //移动端不自动播放
 
     //主页
     $('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=29947420&auto=0&height=66');
