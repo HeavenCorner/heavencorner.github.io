@@ -185,18 +185,23 @@
 	* {
 		/*border: thin red solid;*/
 	}
+
+	header{
+		position: relative;
+		overflow: hidden;
+	}
 	
 	header .bg-header {
 		position: relative;
-		height: 440px;
-		background-color: #0fa9c3;
+		height: 500px;
+		/*background-color: #0fa9c3;*/
 	}
 	/*头像*/
 	
 	.bg-header .avatar img {
 		border-radius: 50%;
 		margin-top: 100px;
-		margin-bottom: 20px;
+		margin-bottom: 70px;
 		max-width: 170px;
 		height: 170px;
 	}
@@ -438,6 +443,9 @@
 			height: 380px;
 		}
 	}
+
+
+
 	
 	.container h3 {
 		text-align: center;
@@ -461,7 +469,7 @@
 	
 	.container .text {
 		padding: 10px 20px 20px;
-		top: -58px;
+		top: -75px;
 		background-color: #ffffff;
 		/*height: 300px;*/
 	}
@@ -545,7 +553,60 @@
  	.pc-golab {
  		display: none;
  	}
+	.personal-profile h1{
+		position: relative;
+		top: -20px;
+	}
+	/*视频*/
  }
+
+.video-player-box{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*background: #000000;*/
+}
+
+.video-player{
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	z-index: 2;
+	box-shadow: 0 0 20px rgba(0,0,0,.9);
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,.9);
+}
+
+	.video-player-bg{
+		display: block;
+		position: absolute;
+		top:0;
+		left: 0;
+		z-index: 0;
+		/*width: 100%;*/
+	}
+	.video-player-mark-p{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background-color: rgba(0,0,0,.6);
+	}
+
+.video-player-mark{
+	/*display: none;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #0fa9c3;
+	opacity: .4;
+	z-index: 3;
+}
 
 
  
@@ -554,6 +615,33 @@
 <div class="works-container work-page" style="background-color: #fafafa">
 
 	<header>
+
+		<!--视频-->
+		<div class="video-player-box">
+
+			<video class="video-player-bg" width="100%" height="" loop autoplay>
+				<source src="/video/work.mp4" type="video/mp4">
+				<source src="" type="video/mkv" />
+				<source src="" type="video/rmvb" />
+			</video>
+
+			<div class="video-player-mark-p"></div>
+
+
+			<video class="video-player" width="" height="" loop autoplay>
+				<source src="/video/work.mp4" type="video/mp4">
+				<source src="" type="video/mkv" />
+				<source src="" type="video/rmvb" />
+			</video>
+		</div>
+
+
+
+		<!--蒙版-->
+		<div class="video-player-mark">
+
+		</div>
+
 
 		<!--路径画板-->
 		<div id="path-wrap">

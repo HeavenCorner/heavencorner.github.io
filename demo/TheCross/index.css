@@ -854,6 +854,8 @@ to{
 	-webkit-animation: cover-2-5 3s 1 linear 5s;
 	animation: cover-2-5 3s 1 linear 5s;
 
+	z-index: 999999;
+
 	-webkit-transform-origin:100% 50% 200px;
 	transform-origin:100% 50% 25px;
 

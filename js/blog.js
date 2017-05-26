@@ -949,7 +949,7 @@ function pathshancanvas() {
                 var x = parseInt(arrlw / slen);
                 //每次生成1/n的区域x坐标,y坐标
                 arrAss[0] = getRandom(arrlw/40 + (x * i), parseInt((arrlw) * i / slen + arrlw/30));
-                arrAss[1] = getRandom(parseInt(20), parseInt(arrlh - 165));
+                arrAss[1] = getRandom(parseInt(60), parseInt(arrlh - 165));
                 // arrAss[0] = getRandom(parseInt(40), parseInt(arrlw));
                 // arrAss[1] = getRandom(parseInt(20), parseInt(arrlh));
                 arrA3[i] = arrAss;
@@ -1069,12 +1069,19 @@ function addShan(i,arrAll,box,y){
     })
 }
 
-//背景音乐，检测到小屏幕时不自动播放
+
+
+//背景音乐和视频，检测到小屏幕时不自动播放
 
 //2017-04-24优化点击，如果用户点击进入主页之后再跳转到其它界面，
 // 主页音乐持续播放，如果此时在其他页面再跳转到主页，不自动播放，防止重音
 
 if($(window).width() < 768) {
+    //视频以高为主
+
+    // $('.video-player').attr('height','100%')
+
+
     //移动端不自动播放
 
     //主页
