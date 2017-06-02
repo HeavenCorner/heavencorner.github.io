@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>点击屏幕数羊睡觉</title>
+
+<style>
+	html{height:100%;overflow:hidden;}
+	body{margin:0;height:100%; background:#ffffff; cursor:pointer;}
+	h1 { margin:0; height:50px; background:#333; line-height:50px; position:relative; z-index:999; filter:alpha(opacity:80); opacity:0.8;}
+	h1 strong { color:#fff; font-family:arial; font-size:18px; position:absolute; top:0px; left:4%; }
+	a { position:absolute; top:0px; right:20px; color:#fff; margin-right:50px; text-decoration:none; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:normal; }
+	a:hover { text-decoration:underline; }
+	h2{ margin:0; width:96%; padding:10px 0 14px 4%; background:#333; position:absolute; bottom:0; left:0; z-index:999; filter:alpha(opacity:80); opacity:0.8; color:#fff; font-size:12px; line-height:20px; font-family:Arial, Helvetica, sans-serif; font-weight:normal; }
+	h2 strong { font-size:14px; }
+</style>
+
+
+<script src="js/script.js"></script>
+<script>
+window.onload=function()
+{
+	var oTimer=null;
+	var iLeft=0;
+	var iTop=0;
+	var iWidth=40;
+	var iHeight=40;
+	var oDiv=document.getElementsByTagName("div")[0];
+	
+	document.oncontextmenu=function()
+	{
+		return false;
+	};
+
+
+    document.addEventListener('touchstart', function(event) {
+
+        var ev=window.event || e;
+        var touch = ev.touches[0]
+        iLeft=touch.clientX;
+        iTop=touch.clientY;
+
+//        alert(iLeft)
+
+        if(oTimer)
+        {
+            clearInterval(oTimer);
+        }
+
+        oTimer=setInterval(function(){toAppend();},50);
+        return false;
+    }, false);
+
+//	document.touchstart=function(e)
+//	{
+//		var ev=e||event;
+//		iLeft=ev.clientX;
+//		iTop=ev.clientY;
+//		if(oTimer)
+//		{
+//			clearInterval(oTimer);
+//		}
+//		oTimer=setInterval(function(){toAppend();},50);
+//		return false;
+//	}
+//	document.touchmove=function(e)
+//	{
+//		var ev=e||event;
+//		iLeft=ev.clientX;
+//		iTop=ev.clientY;
+//		return false;
+//	}
+    document.addEventListener('touchmove', function(event) {
+        var ev=window.event || e;
+        var touch = ev.touches[0]
+        iLeft=touch.clientX;
+        iTop=touch.clientY;
+        return false;
+    }, false);
+    document.addEventListener('touchend', function(event) {
+        clearInterval(oTimer);
+    }, false);
+//	document.touchend=function()
+//	{
+//		clearInterval(oTimer);
+//	}
+	function toAppend()
+	{
+		var oImg=new Image();
+		var sSrc="";
+		var iAngle=parseInt(Math.random()*1000)%360;
+		var iNubLeft=parseInt(Math.random()*100)%2?-parseInt(Math.random()*40):parseInt(Math.random()*40);
+		var iNubTop=parseInt(Math.random()*100)%2?-parseInt(Math.random()*40):parseInt(Math.random()*40);
+		var INub=parseInt(Math.random()*20);
+		var iNubW=INub+iWidth;
+		var iNubH=INub+iHeight;
+		iNubLeft+=iLeft-25;
+		iNubTop+=iTop-25;
+		sSrc="img/"+parseInt(Math.random()*100)%5+".png";
+		oImg.src=sSrc;
+		oImg.onmousemove=function()
+		{
+			return false;
+		};
+		with(oImg.style)
+		{
+			width=iNubW+"px";
+			height=iNubH+"px";
+			position="absolute";
+			left=iLeft-(iNubW/2)+"px";
+			top=iTop-(iNubH/2)+"px";
+		}
+		css(oImg,"transform",iAngle);
+		document.body.appendChild(oImg);
+		starMove(oImg,{left:iNubLeft,top:iNubTop},1);
+	}	
+};
+</script>
+</head>
+<body>
+
+
+
+
+
+</body>
+</html>
