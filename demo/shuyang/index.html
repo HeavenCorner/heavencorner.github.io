@@ -116,6 +116,58 @@ window.onload=function()
 	}	
 };
 </script>
+    <script type="text/javascript">
+        var paper = document.querySelector("p");
+        var wrap = document.querySelector(".wrap");
+        var btn = document.querySelector("button")
+
+        btn.onclick = function(){
+            s.isStart=!s.isStart;
+        }
+        var s={
+            isStart:false,
+            lastx:0,
+            lasty:0,
+            lastz:0,
+            nowx:0,
+            nowy:0,
+            nowz:0,
+            count:10000,//阀值，超过它会执行我的事件
+            differTime:100,//时间间隔
+            lastTime:0,//上次的时间
+            nowTime:0//现在的时间
+
+        }
+        var max=0;
+        if(window.DeviceMotionEvent){
+            window.addEventListener("devicemotion",function(){
+                var e =e||window.event;
+                s.nowTime = new Date().getTime();
+                if(s.nowTime-s.lastTime>s.differTime&&s.isStart==true){
+                    s.nowx = e.acceleration.x;
+                    s.nowy = e.acceleration.y;
+                    s.nowz = e.acceleration.z;
+//				if(max<Math.abs(s.nowx-s.lastx)+Math.abs(s.nowy-s.lasty)+Math.abs(s.nowz-s.lastz)){
+//					max = Math.abs(s.nowx-s.lastx)+Math.abs(s.nowy-s.lasty)+Math.abs(s.nowz-s.lastz);
+//					paper.innerHTML = max;
+
+//				}
+                    //s.nowTime-s.lastTime是>s.differTime的才会触发，假如停了10S才进行下一次，那么s.nowTime-s.lastTime值会很大
+                    //让这个数乘以s.differTime/(s.nowTime-s.lastTime)就可以避免此类事件发生
+                    if(Math.abs(s.nowx-s.lastx)+Math.abs(s.nowy-s.lasty)+Math.abs(s.nowz-s.lastz)/(s.nowTime-s.lastTime)*s.differTime>60){
+                        document.innerHTML = ""
+                    }
+                    s.lastx = s.nowx;
+                    s.lasty = s.nowy;
+                    s.lastz = s.nowz;
+                    s.lastTime = s.nowTime;
+
+                }
+            },false)
+        }else{
+            // alert("设备不支持此效果");
+        }
+    </script>
 </head>
 <body>
 
