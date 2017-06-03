@@ -155,7 +155,7 @@ window.onload=function()
                     //s.nowTime-s.lastTime是>s.differTime的才会触发，假如停了10S才进行下一次，那么s.nowTime-s.lastTime值会很大
                     //让这个数乘以s.differTime/(s.nowTime-s.lastTime)就可以避免此类事件发生
                     if(Math.abs(s.nowx-s.lastx)+Math.abs(s.nowy-s.lasty)+Math.abs(s.nowz-s.lastz)/(s.nowTime-s.lastTime)*s.differTime>60){
-                        document.innerHTML = ""
+                        document.innerHTML = " "
                     }
                     s.lastx = s.nowx;
                     s.lasty = s.nowy;
