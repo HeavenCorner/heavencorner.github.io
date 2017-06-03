@@ -123,9 +123,9 @@ window.onload=function()
     <script type="text/javascript">
         var paper = document.querySelector("p");
         var wrap = document.querySelector(".wrap");
-        var btn = document.querySelector("button")
-        var img = document.querySelector("img")
-
+        var btn = document.querySelector("button");
+        var img = document.querySelector("img");
+        var body = document.querySelector("body");
 //        document.onclick = function(){
 //            s.isStart=!s.isStart;
 //        }
@@ -163,7 +163,7 @@ window.onload=function()
 
                         img.style.top = "100vh";
 
-                        document.innerHTML = " "
+                        body.innerHTML = "";
                     }
                     s.lastx = s.nowx;
                     s.lasty = s.nowy;
