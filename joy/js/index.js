@@ -54,7 +54,7 @@ var dateTime = {
 //成员信息
 var memberList = [
     {
-        name: '从舟',
+        name: 'a',
         prayer: [
             {text: '事件1sahahhdsh撒等候神的劳动手段撒大声地简单来说卡德加撒娇的萨拉'},
             {text: '事件2'},
@@ -64,12 +64,12 @@ var memberList = [
         signature: '每天都是新的，啊哈哈哈哈',
         age: '26',
         head: '',
-        imgsrc: 'img/head/congzhou.jpeg',
+        imgsrc: 'img/head/duqu.jpeg',
         bgc: '',
         id:'congzhou'
     },
     {
-        name: '从舟妈妈',
+        name: 'a',
         prayer: [
             {text: '事件1'},
             {text: '事件2'},
@@ -79,7 +79,7 @@ var memberList = [
         signature: '每天都是新的，啊哈哈哈哈',
         age: '26',
         head: '',
-        imgsrc: 'img/head/congzhou.jpeg',
+        imgsrc: 'img/head/duqu.jpeg',
         bgc: '',
         id: 'duqu'
     },
