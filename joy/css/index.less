@@ -1,0 +1,518 @@
+///*公共样式--开始*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+  margin: 0;
+  padding: 0;
+}
+*{box-sizing: border-box;}
+html, body {
+  min-height: 100%;
+}
+
+body {
+  //font-family: "Microsoft YaHei";
+  font-family: "Avenir","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font-size:14px;
+  color:#585858;
+}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+ul,ol {
+  list-style: none;
+}
+
+img {
+  border: none;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: #585858;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+input, textarea {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  content: ".";
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+  overflow:hidden;
+}
+
+.fl {
+  float: left
+}
+
+.fr {
+  float: right
+}
+
+.tl {
+  text-align: left;
+}
+
+.tc {
+  text-align: center
+}
+
+.tr {
+  text-align: right;
+}
+
+.ellipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.inline{
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+//公共样式 *** 结束
+
+
+
+.wrap-box {
+  width: 750px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  background: pink;
+  overflow: hidden;
+  //  预加载
+  #load-wrap {
+
+  }
+  //  标题头
+  #header-box {
+    //z-index: 9;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 62px 42px 0 42px;
+    ul,.ul {
+      width: 44px;
+      height: 34px;
+      float: left;
+      position: relative;
+      li {
+        width: 100%;
+        height: 2px;
+        background: white;
+      }
+      li:nth-child(2) {
+        margin-top: 14px;
+        margin-bottom: 14px;
+      }
+      li:nth-child(3) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    .ul > span{
+      position: relative;
+      top:-4px;
+      font-size: 40px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .ul-right{
+      float: right;
+      li{
+        -webkit-transition: all .3s;
+                transition: all .3s;
+
+      }
+
+    }
+    .ul-right.close{
+
+      li:first-child{
+        transform-origin: 100% 0%;
+        -webkit-transform-origin: 100% 0%;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+
+      li:last-child{
+        //transform-origin: 100% 0%;
+        -webkit-transform-origin: 100% 0%;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+    }
+    .ul-right.open{
+
+      li:first-child{
+        transform-origin: 100% 0%;
+        -webkit-transform-origin: 100% 0%;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+      }
+
+      li:last-child{
+        transform-origin: 100% 100%;
+        -webkit-transform-origin: 100% 100%;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+      }
+    }
+  }
+
+
+  //蒙版
+  .wrap-mark{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+  }
+
+  //  菜单
+  //切换动画
+  #nav-box.leave{
+    left: -630px;
+  }
+  #nav-box.come{
+    left: 0;
+  }
+  #nav-box {
+    //z-index: 20;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    //left: -630px;
+    width: 630px;
+    height: 100%;
+    padding: 76px 0px 0 52px;
+    background: #ffffff;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    overflow-y: auto;
+
+    //box-shadow: 5px 0 8px #ffffff ;
+    //-webkit-box-shadow: 5px 0 8px #ffffff ;
+
+
+    dl {
+      //padding: 76px 0 0 52px;
+      dt {
+        font-size: 54px;
+        line-height: 76px;
+      }
+      dd {
+        font-size: 22px;
+        line-height: 40px;
+      }
+    }
+    ul {
+      //height: auto;
+      padding-top: 90px;
+      padding-right: 52px;
+
+      li:first-child{
+        border-top: 2px #f3f3f4 solid;
+      }
+
+      li.active{
+        background-color: @bg-1;
+      }
+
+      li {
+        height: 110px;
+        border-bottom: 2px #f3f3f4 solid;
+        color: #1d1d26;
+        overflow: hidden;
+        padding-right: 20px;
+        padding-left: 10px;
+        span {
+          line-height: 110px;
+          float: left;
+
+        }
+        .joyT {
+          color: #bbbbbe;
+          font-size: 46px;
+          padding-right: 50px;
+        }
+        .nav-text {
+          color: #1d1d26;
+          font-size: 30px;
+          display: block;
+
+        }
+        //数量
+        .nav-num {
+          position: relative;
+          top:50%;
+          margin-top: -25px;
+          color: #FFFFFF;
+          float: right;
+          display: block;
+          font-size: 30px;
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          border-radius: 50%;
+          background-color: #50d2c2;
+          text-align: center;
+        }
+      }
+    }
+
+
+  }
+//}
+//  内容 box
+  .content-wrap{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //单页面默认公用
+    .con-page{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      overflow-y: auto;
+      -webkit-transition: all .5s;
+      transition: all .5s;
+    }
+    //切换动画
+    .leave{
+      right: -100vw;
+    }
+    .come{
+      right: 0;
+    }
+    //0、代祷事项
+    #prayer-box{
+      background-color: #ffffff;
+
+      .title{
+        height: 700px;
+        width: 100%;
+        color: #FFFFFF;
+        background-image: url('../img/01-title-bg.jpg');
+        overflow: hidden;
+
+        h2{
+          padding-top: 170px;
+          text-align: center;
+          font-size: @titleSize;
+          line-height: 90px;
+          font-weight: 100;
+        }
+        p{
+          font-size: 36px;
+          padding: 80px 40px 0 40px;
+          text-align: left;
+          text-indent: 72px;
+          span{
+            line-height: 58px;
+            display: block;
+          }
+          i{
+            padding-top: 40px;
+            display: block;
+            text-align: right;
+            font-size: 30px;
+          }
+        }
+        h4{
+          padding-top: 20px;
+          text-align: center;
+          font-size: 40px;
+          color: #ffffff;
+        }
+
+      }
+      //日期
+      .date-box{
+        height: 210px;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 46px 39px 0;
+        border-bottom: 2px solid #f4f4f4;
+
+        ol{
+          height: 44px;
+          width: 100%;
+          overflow: hidden;
+          li{
+            height: 100%;
+            width: 96px;
+            font-size: 28px;
+            float: left;
+            color: #a8a8aa;
+            line-height: 44px;
+            text-align: center;
+
+          }
+        }
+
+        ul{
+          padding-top: 20px;
+          li{
+            width: 96px;
+            float: left;
+            text-align: center;
+            span{
+              text-align: center;
+              line-height: 80px;
+              display: inline-block;
+              width: 80px;
+              height: 80px;
+              border-radius: 50%;
+              font-size: 36px;
+            }
+
+          }
+        }
+
+      }
+
+    //  代祷事项列表
+
+      .prayer-text{
+        width: 100%;
+        ul{
+          min-height: 140px;
+          border-bottom: 2px solid #f4f4f4;
+          .prayer-text-title{
+            padding-left: 40px;
+            height: 140px;
+            width: 100%;
+
+            dl{
+              padding-top: 30px;
+              width: 100%;
+              height: 100%;
+              dt{
+                width: 110px;
+                height: 80px;
+                border-radius: 50%;
+                padding-right: 30px;
+                float: left;
+                img{
+                  display: block;
+                  width: 80px;
+                  height: 80px;
+                  border-radius: 50%;
+                }
+              }
+
+              dd{
+                color: #1d1d26;
+                display: inline-block;
+                line-height: 80px;
+                font-size: 38px;
+              }
+
+            }
+
+
+          }
+
+          .prayer-text-list{
+            min-height: 50px;
+            background-color: #f8f8f9;
+            font-size: 36px;
+            padding: 10px 0 10px 40px;
+            overflow: hidden;
+
+            p{
+              float: left;
+              width: 70px;
+            }
+            .prayer-text-con{
+              width: 610px;
+            }
+          }
+        }
+      }
+
+
+
+    }
+
+    //1、灵粮音乐
+    #spirit-box{
+      background-color: #795da3;
+    }
+  //  2、生日
+    #birthday-box{
+
+    }
+  //  3、通讯录
+    #phone-box{
+
+    }
+
+  }
+}
+
+//模块化公共样式：
+.bgt{
+  background-color: transparent !important;
+}
+.bgr{
+  background-color: #f3f3f4;
+}
+h2{
+  font-weight: 100;
+  color: #ffffff;
+}
+@bg-1:#f8f8f8;
+@titleSize: 80px;
+
+
+//层级
+
+//蒙版
+.wrap-mark{
+  z-index: 20;
+}
+//标题
+#header-box{
+  z-index: 25;
+}
+#nav-box{
+  z-index: 30;
+}
+
+
+
+
+
+

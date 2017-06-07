@@ -1,0 +1,436 @@
+html,
+body,
+div,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ol,
+form,
+input,
+textarea,
+th,
+td,
+select {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100%;
+}
+body {
+  font-family: "Avenir", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-size: 14px;
+  color: #585858;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  border: none;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+  color: #585858;
+}
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+input,
+textarea {
+  outline: none;
+  border: none;
+}
+textarea {
+  resize: none;
+  overflow: auto;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.tl {
+  text-align: left;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.ellipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.inline {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.wrap-box {
+  width: 750px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  background: pink;
+  overflow: hidden;
+}
+.wrap-box #header-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 62px 42px 0 42px;
+}
+.wrap-box #header-box ul,
+.wrap-box #header-box .ul {
+  width: 44px;
+  height: 34px;
+  float: left;
+  position: relative;
+}
+.wrap-box #header-box ul li,
+.wrap-box #header-box .ul li {
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+.wrap-box #header-box ul li:nth-child(2),
+.wrap-box #header-box .ul li:nth-child(2) {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.wrap-box #header-box ul li:nth-child(3),
+.wrap-box #header-box .ul li:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.wrap-box #header-box .ul > span {
+  position: relative;
+  top: -4px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.wrap-box #header-box .ul-right {
+  float: right;
+}
+.wrap-box #header-box .ul-right li {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.wrap-box #header-box .ul-right.close li:first-child {
+  transform-origin: 100% 0%;
+  -webkit-transform-origin: 100% 0%;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.wrap-box #header-box .ul-right.close li:last-child {
+  -webkit-transform-origin: 100% 0%;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.wrap-box #header-box .ul-right.open li:first-child {
+  transform-origin: 100% 0%;
+  -webkit-transform-origin: 100% 0%;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+}
+.wrap-box #header-box .ul-right.open li:last-child {
+  transform-origin: 100% 100%;
+  -webkit-transform-origin: 100% 100%;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+}
+.wrap-box .wrap-mark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.wrap-box #nav-box.leave {
+  left: -630px;
+}
+.wrap-box #nav-box.come {
+  left: 0;
+}
+.wrap-box #nav-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 630px;
+  height: 100%;
+  padding: 76px 0px 0 52px;
+  background: #ffffff;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  overflow-y: auto;
+}
+.wrap-box #nav-box dl dt {
+  font-size: 54px;
+  line-height: 76px;
+}
+.wrap-box #nav-box dl dd {
+  font-size: 22px;
+  line-height: 40px;
+}
+.wrap-box #nav-box ul {
+  padding-top: 90px;
+  padding-right: 52px;
+}
+.wrap-box #nav-box ul li:first-child {
+  border-top: 2px #f3f3f4 solid;
+}
+.wrap-box #nav-box ul li.active {
+  background-color: #f8f8f8;
+}
+.wrap-box #nav-box ul li {
+  height: 110px;
+  border-bottom: 2px #f3f3f4 solid;
+  color: #1d1d26;
+  overflow: hidden;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+.wrap-box #nav-box ul li span {
+  line-height: 110px;
+  float: left;
+}
+.wrap-box #nav-box ul li .joyT {
+  color: #bbbbbe;
+  font-size: 46px;
+  padding-right: 50px;
+}
+.wrap-box #nav-box ul li .nav-text {
+  color: #1d1d26;
+  font-size: 30px;
+  display: block;
+}
+.wrap-box #nav-box ul li .nav-num {
+  position: relative;
+  top: 50%;
+  margin-top: -25px;
+  color: #FFFFFF;
+  float: right;
+  display: block;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  background-color: #50d2c2;
+  text-align: center;
+}
+.wrap-box .content-wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.wrap-box .content-wrap .con-page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow-y: auto;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.wrap-box .content-wrap .leave {
+  right: -100vw;
+}
+.wrap-box .content-wrap .come {
+  right: 0;
+}
+.wrap-box .content-wrap #prayer-box {
+  background-color: #ffffff;
+}
+.wrap-box .content-wrap #prayer-box .title {
+  height: 700px;
+  width: 100%;
+  color: #FFFFFF;
+  background-image: url('../img/01-title-bg.jpg');
+  overflow: hidden;
+}
+.wrap-box .content-wrap #prayer-box .title h2 {
+  padding-top: 170px;
+  text-align: center;
+  font-size: 80px;
+  line-height: 90px;
+  font-weight: 100;
+}
+.wrap-box .content-wrap #prayer-box .title p {
+  font-size: 36px;
+  padding: 80px 40px 0 40px;
+  text-align: left;
+  text-indent: 72px;
+}
+.wrap-box .content-wrap #prayer-box .title p span {
+  line-height: 58px;
+  display: block;
+}
+.wrap-box .content-wrap #prayer-box .title p i {
+  padding-top: 40px;
+  display: block;
+  text-align: right;
+  font-size: 30px;
+}
+.wrap-box .content-wrap #prayer-box .title h4 {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 40px;
+  color: #ffffff;
+}
+.wrap-box .content-wrap #prayer-box .date-box {
+  height: 210px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 46px 39px 0;
+  border-bottom: 2px solid #f4f4f4;
+}
+.wrap-box .content-wrap #prayer-box .date-box ol {
+  height: 44px;
+  width: 100%;
+  overflow: hidden;
+}
+.wrap-box .content-wrap #prayer-box .date-box ol li {
+  height: 100%;
+  width: 96px;
+  font-size: 28px;
+  float: left;
+  color: #a8a8aa;
+  line-height: 44px;
+  text-align: center;
+}
+.wrap-box .content-wrap #prayer-box .date-box ul {
+  padding-top: 20px;
+}
+.wrap-box .content-wrap #prayer-box .date-box ul li {
+  width: 96px;
+  float: left;
+  text-align: center;
+}
+.wrap-box .content-wrap #prayer-box .date-box ul li span {
+  text-align: center;
+  line-height: 80px;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 36px;
+}
+.wrap-box .content-wrap #prayer-box .prayer-text {
+  width: 100%;
+}
+.wrap-box .content-wrap #prayer-box .prayer-text ul {
+  min-height: 140px;
+  border-bottom: 2px solid #f4f4f4;
+}
+.wrap-box .content-wrap #prayer-box .prayer-text ul .prayer-text-title {
+  padding-left: 40px;
+  height: 140px;
+  width: 100%;
+}
+.wrap-box .content-wrap #prayer-box .prayer-text ul .prayer-text-title dl {
+  padding-top: 30px;
+  width: 100%;
+  height: 100%;
+}
+.wrap-box .content-wrap #prayer-box .prayer-text ul .prayer-text-title dl dt {
+  width: 110px;
+  height: 80px;
+  border-radius: 50%;
+  padding-right: 30px;
+  float: left;
+}
+.wrap-box .content-wrap #prayer-box .prayer-text ul .prayer-text-title dl dt img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.wrap-box .content-wrap #prayer-box .prayer-text ul .prayer-text-title dl dd {
+  color: #1d1d26;
+  display: inline-block;
+  line-height: 80px;
+  font-size: 38px;
+}
+.wrap-box .content-wrap #prayer-box .prayer-text ul .prayer-text-list {
+  min-height: 50px;
+  background-color: #f8f8f9;
+  font-size: 36px;
+  padding: 10px 0 10px 40px;
+  overflow: hidden;
+}
+.wrap-box .content-wrap #prayer-box .prayer-text ul .prayer-text-list p {
+  float: left;
+  width: 70px;
+}
+.wrap-box .content-wrap #prayer-box .prayer-text ul .prayer-text-list .prayer-text-con {
+  width: 610px;
+}
+.wrap-box .content-wrap #spirit-box {
+  background-color: #795da3;
+}
+.bgt {
+  background-color: transparent !important;
+}
+.bgr {
+  background-color: #f3f3f4;
+}
+h2 {
+  font-weight: 100;
+  color: #ffffff;
+}
+.wrap-mark {
+  z-index: 20;
+}
+#header-box {
+  z-index: 25;
+}
+#nav-box {
+  z-index: 30;
+}

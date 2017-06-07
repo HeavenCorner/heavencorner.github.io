@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=750, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+    <meta name="viewport" content="width=750,target-densitydpi=device-dpi,user-scalable=no" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+
+    <title>joy</title>
+
+
+    <!--测试部分的样式链接-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <!--上线时的样式链接(min)-->
+</head>
+<body>
+
+<article id="app" class="wrap-box">
+
+
+    <!--预加载页面和开场动画-->
+    <div id="load-wrap" v-if="0">
+
+    </div>
+
+    <!--标题头-->
+    <header id="header-box" class="header-box" v-if="header.seen">
+        <!--点击展开菜单：主页显示两个，其它的左边的显示回到主页-->
+        <ul v-on:click="openMenuList" class="ul-left" v-if="!all.page">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!--返回主页-->
+        <div v-on:click="goHome" class="ul-left ul" v-if="all.page">
+            <span v-bind:class="all.otherIcon[0]"></span>
+        </div>
+
+
+        <ul v-on:click="openMenuList" class="ul-right" v-bind:class="{'open': !menu.seen, 'close': menu.seen}">
+            <li></li>
+            <li class="ul-right" v-bind:class="{'bgt': menu.seen, 'bgw': !menu.seen}"></li>
+            <li></li>
+        </ul>
+
+    </header>
+
+    <!--蒙版-->
+    <div class="wrap-mark" v-if="menu.seen">
+
+    </div>
+
+    <!--菜单-->
+    <nav id="nav-box"  v-bind:class="{'leave': !menu.seen, 'come': menu.seen}" v-on:click="closeMenuList">
+        <dl>
+            <dt>{{menu.title}}</dt>
+            <dd>{{menu.msg}}</dd>
+        </dl>
+        <ul>
+            <li v-for = "li in menu.list" v-bind:class="{'active': all.page == li.id}" v-on:click="goMenu(li.id)">
+                <span v-bind:class="li.icon"></span>
+                <span class="nav-text">{{li.text}}</span>
+
+                <span class="nav-num" v-if="li.num">{{li.num}}</span>
+
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <!--正文内容-->
+
+    <section class="content-wrap">
+        <!--0、主页（代祷事项）-->
+
+        <div id="prayer-box" class="con-page" v-bind:class="{'leave': all.page != '0', 'come': all.page == '0'}">
+            <div class="title">
+                <h2>{{contentpage.prayer.title.msg}}</h2>
+                <p>
+                    <span>{{contentpage.prayer.title.text}}</span>
+                    <i>{{contentpage.prayer.title.chapter}}</i>
+                </p>
+                <h4>{{contentpage.prayer.dateTime.month}}</h4>
+            </div>
+            <div class="date-box">
+                <ol>
+                    <li v-for="week in contentpage.prayer.dateTime.weekName">
+                        {{week}}
+                    </li>
+                </ol>
+
+                <ul>
+                    <li v-for="(dateNum,index) in contentpage.prayer.dateTime.weekDateArr" >
+
+                        <span v-bind:class="{'bgr':contentpage.prayer.dateTime.week == index}">{{dateNum}}</span>
+
+                    </li>
+                </ul>
+
+            </div>
+            <div class="prayer-text">
+                <ul class="member-list" id="" v-for="(member,index) in contentpage.prayer.memberList">
+                    <li id="member.id" class="prayer-text-title">
+                        <dl>
+                            <dt>
+                                <img v-bind:src="member.imgsrc" alt="">
+                            </dt>
+                            <dd>{{member.name}}</dd>
+                            <dd></dd>
+                        </dl>
+                    </li>
+
+                    <li class="prayer-text-list" v-for="(prayer,index) in member.prayer">
+                        <p>
+                            {{index + 1}}、
+                        </p>
+                        <p class="prayer-text-con">
+                            {{prayer.text}}
+                        </p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!--1、灵粮音乐-->
+        <div id="spirit-box"  class="con-page" v-bind:class="{'leave': all.page != '1', 'come': all.page == '1'}">
+
+        </div>
+        <!--2、生日-->
+        <div id="birthday-box"  class="con-page" v-bind:class="{'leave': all.page != '2', 'come': all.page == '2'}">
+
+        </div>
+        <!--3、通讯录-->
+        <div id="phone-box"  class="con-page" v-bind:class="{'leave': all.page != '3', 'come': all.page == '3'}">
+
+        </div>
+        <!--4、其它代祷-->
+        <div id="other-box"  class="con-page" v-bind:class="{'leave': all.page != '4', 'come': all.page == '4'}">
+
+        </div>
+        <!--5、通知-->
+        <div id="msg-box"  class="con-page" v-bind:class="{'leave': all.page != '5', 'come': all.page == '5'}">
+
+        </div>
+        <!--6、帮助-->
+        <div id="help-box"  class="con-page" v-bind:class="{'leave': all.page != '6', 'come': all.page == '6'}">
+
+        </div>
+
+        <!--个人主页-->
+
+    </section>
+
+
+
+</article>
+
+
+<!--js-->
+<script src="js/vue.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
