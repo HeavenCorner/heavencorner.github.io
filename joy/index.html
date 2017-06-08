@@ -265,13 +265,13 @@
             </div>
 
             <div class="open-all" v-bind:class="{'bg-g': !contentpage.prayer.openAll}" v-if="all.page == '0'">
-                <ul v-on:click="openAllPrayerList(contentpage.prayer)" v-bind:class="{'open': contentpage.prayer.openAll, 'close': !contentpage.prayer.openAll}">
+                <ul v-on:click="openAllPrayerList(contentpage.prayer)" v-bind:class="{'open': !contentpage.prayer.openAll, 'close': contentpage.prayer.openAll}">
                     <li></li>
-                    <li class="ul-right" v-bind:class="{'bgt': !contentpage.prayer.openAll, 'bgw': contentpage.prayer.openAll}"></li>
+                    <li class="ul-right" v-bind:class="{'bgt': contentpage.prayer.openAll, 'bgw': !contentpage.prayer.openAll}"></li>
                     <li></li>
                 </ul>
             </div>
-            <h5>我是有底线的</h5>
+            <h6 class="bottom-msg">我是有底线的</h6>
         </div>
 
         <!--1、灵粮音乐-->
@@ -333,7 +333,7 @@
                 <h3>{{contentpage.help.title.text}}</h3>
                 <div class="ball-arr">
 
-                    <dl class="b1 bai">
+                    <dl class="b1">
                         <dt>0</dt>
                         <dd>
                             {{contentpage.help.title.titleMsg[0]}}
@@ -342,16 +342,16 @@
 
 
 
-                    <dl class="b2 bai">
-                        <dt>1</dt>
+                    <dl class="b2 bain">
+                        <dt>{{contentpage.help.title.runDay}}</dt>
                         <dd>
                             {{contentpage.help.title.titleMsg[1]}}
                         </dd>
 
                     </dl>
 
-                    <dl class="b3 bai">
-                        <dt>2</dt>
+                    <dl class="b3">
+                        <dt>{{contentpage.help.title.upLogLength}}</dt>
                         <dd>
                             {{contentpage.help.title.titleMsg[2]}}
                         </dd>
@@ -362,8 +362,21 @@
 
             </div>
 
-            <h5>Joy 2.0 单页面应用思维导图</h5>
+            <h5>{{contentpage.help.upLogTitle}}</h5>
+
+            <ul class="up-log">
+                <li v-for="list in contentpage.help.upLog">
+                    <dl>
+                        <dt>{{list.date}}</dt>
+                        <dd>{{list.text}}</dd>
+                    </dl>
+                </li>
+            </ul>
+
+            <h5>{{contentpage.help.logTitle}}</h5>
             <img src="img/help.png" alt="">
+            <h6 class="bottom-msg">我是有底线的</h6>
+
         </div>
 
         <!--个人主页-->
@@ -426,7 +439,7 @@
 
         newImgT.onload = function(){
             numImg++;
-            loodings = parseInt(numImg/allLength*100);
+//            loodings = parseInt(numImg/allLength*100);
             loodingText.innerHTML = loodings + '%';
         }
 
@@ -441,18 +454,29 @@
         loadTimeNum ++;
         loadTimeNum = loadTimeNum + '';
         var m = loadTimeNum.charAt(loadTimeNum.length - 1);
+
+        console.log(loadTimeNum);
+
+        if(loadTimeNum > 130 && loodings > 90){
+            loadTimeNum = 0;
+            window.clearInterval(loadTime);
+            loadWrap.style.left = '-110vw';
+        }
+
+        var msgs = '首次加载会卡顿，请等待或刷新';
+
         if(m == 0){
 
-            if(loadTimeNum > 100){
-                loodingMsg.innerHTML = '加载异常，请等待或刷新' + ' ' +  loadTimeNum/10 + '.0' + 's';
+            if(loadTimeNum > 80){
+                loodingMsg.innerHTML = msgs + ' ' +  loadTimeNum/10 + '.0' + 's';
             }else{
                 loodingMsg.innerHTML = loadTimeNum/10 + '.0' + 's';
             }
 
         }else {
 
-            if(loadTimeNum > 100){
-                loodingMsg.innerHTML = '加载异常，请等待或刷新' + ' ' +   loadTimeNum/10 + 's';
+            if(loadTimeNum > 80){
+                loodingMsg.innerHTML = msgs + ' ' +   loadTimeNum/10 + 's';
             }else{
                 loodingMsg.innerHTML = loadTimeNum/10 + 's';
 

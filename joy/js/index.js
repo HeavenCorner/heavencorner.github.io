@@ -49,6 +49,23 @@ var dateTime = {
     weekDateArr:[4,5,6,7,8,9,10],
 }
 
+//正计时
+var nowTime = new Date().getTime();
+var tarTime = new Date("2021/5/2 20:00:00").getTime();
+var lastTime = new Date("2017/6/8 20:00:00").getTime();
+
+var disTime = Math.round((tarTime - nowTime) / 1000);
+var seconds = disTime % 60;
+var minutes = (disTime - seconds) / 60 % 60;
+var hours = (disTime - minutes * 60 - seconds) / 3600 % 24;
+var day1 = (disTime - hours * 3600 - minutes * 60 - seconds) / 86400;
+
+var disTime2 = Math.round((nowTime - lastTime) / 1000);
+var seconds2 = disTime2 % 60;
+var minutes2 = (disTime2 - seconds2) / 60 % 60;
+var hours2 = (disTime2 - minutes2 * 60 - seconds2) / 3600 % 24;
+var day2 = (disTime2 - hours2 * 3600 - minutes2 * 60 - seconds2) / 86400;
+
 
 
 
@@ -150,7 +167,7 @@ var app = new Vue({
     el:'#app',
     data:{
         all:{
-            page: 6,
+            page: 0,
             icon: member.icon,
             otherIcon: member.otherIcon,
         },
@@ -240,8 +257,26 @@ var app = new Vue({
                         '正常运行 天',
                         '升级 次'
 
-                    ]
-                }
+                    ],
+                    upLogLength:'0',
+                    runDay:day2,
+
+                },
+                logTitle:'Joy 2.0 单页面应用思维导图 （渐进完善）',
+                upLogTitle:'升级日志',
+                upLog:[
+                    // {
+                    //     date:'2017-06-08',
+                    //     text:'Joy 2.0 测试上线',
+                    // },
+                    {
+                        date:'2017-06-08',
+                        text:'Joy 2.0 测试上线',
+                    }
+                ]
+
+
+
 
             }
 

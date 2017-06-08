@@ -289,11 +289,6 @@ textarea {
 .wrap-box .content-wrap #prayer-box {
   background-color: #ffffff;
 }
-.wrap-box .content-wrap #prayer-box h5 {
-  text-align: center;
-  padding: 20px 0 10px 0;
-  color: #a8a8aa;
-}
 .wrap-box .content-wrap #prayer-box .title {
   height: 700px;
   width: 100%;
@@ -568,13 +563,10 @@ textarea {
 }
 .wrap-box .content-wrap #help-box .ball-arr dl {
   box-sizing: border-box;
-  -webkit-animation: looding .9s infinite linear 0s;
-  animation: looding .9s infinite linear 0s;
-  animation-direction: alternate;
-  -webkit-animation-direction: alternate;
   position: absolute;
   border-radius: 50%;
   border: 7px #FFFFFF solid;
+  border-width: 6px 0;
 }
 .wrap-box .content-wrap #help-box .ball-arr dl dd {
   width: 100%;
@@ -615,9 +607,35 @@ textarea {
   width: 140px;
   height: 140px;
 }
+.wrap-box .content-wrap #help-box .up-log {
+  background-color: #ffffff;
+  width: 100%;
+}
+.wrap-box .content-wrap #help-box .up-log li {
+  background-color: #f8f8f8;
+  padding: 20px 40px;
+  border-bottom: 1px #949494 dashed;
+}
+.wrap-box .content-wrap #help-box .up-log li dl dd {
+  color: #949494;
+}
+.wrap-box .content-wrap #help-box .up-log li:last-child {
+  border-bottom-width: 0;
+}
+.wrap-box .content-wrap #help-box h5 {
+  background-color: #FFFFFF;
+  font-size: 36px;
+  padding: 20px 0 20px 40px;
+}
 .wrap-box .content-wrap #help-box img {
   display: block;
   width: 100%;
+}
+.bain {
+  -webkit-animation: looding .9s infinite linear 0s;
+  animation: looding .9s infinite linear 0s;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
 }
 .bgt {
   background-color: transparent !important;
@@ -681,4 +699,13 @@ h2 {
 .msg dt {
   font-size: 26px;
   line-height: 70px;
+}
+.bottom-msg {
+  background-color: #FFFFFF;
+  text-align: center;
+  padding: 20px 0 10px 0;
+  color: #a8a8aa;
+}
+h2 {
+  font-weight: 100;
 }
