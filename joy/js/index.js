@@ -258,6 +258,7 @@ var app = new Vue({
                         '升级 次'
 
                     ],
+                    titleMsgBottom:'流畅的体验请使用手机浏览器打开',
                     upLogLength:'0',
                     runDay:day2,
 
