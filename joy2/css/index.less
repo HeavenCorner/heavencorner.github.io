@@ -11,7 +11,7 @@ html, body {
 body {
   //font-family: "Microsoft YaHei";
   font-family: "Avenir","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
-  font-size:14px;
+  font-size:28px;
   color:#585858;
 }
 h1, h2, h3, h4, h5, h6{font-weight:normal;}
@@ -92,18 +92,15 @@ textarea {
 //公共样式 *** 结束
 
 
-
+//进入应用
 .wrap-box {
   width: 750px;
   height: 100vh;
   margin: 0 auto;
   position: relative;
-  background: pink;
+  background: #e2e2e2;
   overflow: hidden;
-  //  预加载
-  #load-wrap {
 
-  }
   //  标题头
   #header-box {
     //z-index: 9;
@@ -114,7 +111,7 @@ textarea {
     width: 100%;
     padding: 62px 42px 0 42px;
     ul,.ul {
-      width: 44px;
+      width: 46px;
       height: 34px;
       float: left;
       position: relative;
@@ -159,8 +156,8 @@ textarea {
       }
 
       li:last-child{
-        //transform-origin: 100% 0%;
-        -webkit-transform-origin: 100% 0%;
+        transform-origin: 100% 100%;
+        -webkit-transform-origin: 100% 100%;
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
       }
@@ -191,10 +188,10 @@ textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.7);
+    background-color: @rgba07;
   }
 
-  //  菜单
+  //菜单
   //切换动画
   #nav-box.leave{
     left: -630px;
@@ -207,8 +204,8 @@ textarea {
 
     position: absolute;
     top: 0;
-    left: 0;
-    //left: -630px;
+    //left: 0;
+    left: -630px;
     width: 630px;
     height: 100%;
     padding: 76px 0px 0 52px;
@@ -281,7 +278,7 @@ textarea {
           height: 50px;
           line-height: 50px;
           border-radius: 50%;
-          background-color: #50d2c2;
+          background-color: @green;
           text-align: center;
         }
       }
@@ -318,6 +315,12 @@ textarea {
     //0、代祷事项
     #prayer-box{
       background-color: #ffffff;
+
+      h5{
+        text-align: center;
+        padding: 20px 0 10px 0;
+        color: #a8a8aa;
+      }
 
       .title{
         height: 700px;
@@ -406,13 +409,26 @@ textarea {
 
       .prayer-text{
         width: 100%;
-        ul{
-          min-height: 140px;
+
+        .close{
+            height: 140px;
+        }
+
+        >ul{
+
           border-bottom: 2px solid #f4f4f4;
+          min-height: 140px;
+          height: auto;
+          overflow: hidden;
+
+          -webkit-transition: height .8s;
+          transition: height .8s;
+
           .prayer-text-title{
             padding-left: 40px;
-            height: 140px;
+            min-height: 140px;
             width: 100%;
+
 
             dl{
               padding-top: 30px;
@@ -460,6 +476,84 @@ textarea {
             }
           }
         }
+
+      }
+
+    //打开全部
+      .open-all{
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        height: 110px;
+        width: 110px;
+        border-radius: 50%;
+        background-color: @red;
+        text-align: center;
+
+        -webkit-transition: all .4s;
+        transition: all .4s;
+
+        ul {
+          display: inline-block;
+          width: 46px;
+          height: 40px;
+          position: relative;
+          top:34px;
+          li {
+            width: 100%;
+            height: 4px;
+            background: white;
+              -webkit-transition: all .3s;
+              transition: all .3s;
+          }
+          li:nth-child(2) {
+            margin-top: 14px;
+            margin-bottom: 14px;
+          }
+          li:nth-child(3) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+        }
+
+        .close{
+
+          li:first-child{
+            transform-origin: 100% 0%;
+            -webkit-transform-origin: 100% 0%;
+            transform: translateY(17px);
+            //-webkit-transform: translateY(-45deg);
+          }
+
+          li:last-child{
+            transform-origin: 100% 100%;
+            -webkit-transform-origin: 100% 100%;
+            transform: translateY(-17px);
+
+            //-webkit-transform: rotate(45deg);
+          }
+        }
+        .open{
+
+          li:first-child{
+            transform-origin: 100% 0%;
+            -webkit-transform-origin: 100% 0%;
+            transform: translateY(0px);
+
+            //-webkit-transform: rotate(0deg);
+          }
+
+          li:last-child{
+            transform-origin: 100% 100%;
+            -webkit-transform-origin: 100% 100%;
+            transform: translateY(0px);
+
+            //-webkit-transform: rotate(0deg);
+          }
+        }
+
+
       }
 
 
@@ -476,7 +570,194 @@ textarea {
     }
   //  3、通讯录
     #phone-box{
+      background-color: #FFFFFF;
+      .title{
+        position: relative;
+        width: 100%;
+        height: 380px;
+        background-image: url('../img/01-title-bg.jpg');
+        background-position: 0 0px;
+        h2{
+          padding: 175px 0 0 48px;
+          font-size: @titleSize;
+        }
+        .ball{
+        }
+      }
 
+      //.msg{
+      //  padding: 20px 0 0 40px;
+      //
+      //  border-bottom: 2px solid #f4f4f4;
+      //  height: 140px;
+      //  width: 100%;
+      //  dt{
+      //    font-size: @titleMsg;
+      //  }
+      //  dd{
+      //    font-size: @titletext;
+      //    line-height: @titletextLH;
+      //  }
+      //
+      //}
+
+      .phone-list-wrap{
+        >ul{
+
+          border-bottom: 2px solid #f4f4f4;
+          min-height: 140px;
+          height: auto;
+          overflow: hidden;
+
+          -webkit-transition: height .8s;
+          transition: height .8s;
+
+          .phone-text-title{
+            padding-left: 40px;
+            min-height: 140px;
+            width: 100%;
+
+
+            dl{
+              padding-top: 30px;
+              width: 100%;
+              height: 100%;
+              dt{
+                width: 110px;
+                height: 80px;
+                border-radius: 50%;
+                padding-right: 30px;
+                float: left;
+                img{
+                  display: block;
+                  width: 80px;
+                  height: 80px;
+                  border-radius: 50%;
+                }
+              }
+
+              .name{
+                color: #1d1d26;
+                display: inline-block;
+                line-height: 80px;
+                font-size: 38px;
+              }
+              dd:last-child{
+                float: right;
+                padding-right: 80px;
+                a{
+                  font-size: 80px;
+                }
+                a:hover{
+                  color: @green;
+                }
+              }
+
+            }
+
+
+          }
+        }
+      }
+
+    }
+
+
+
+  //  6、帮助
+    #help-box{
+      .title{
+        position: relative;
+
+        text-align: center;
+        color: #FFFFFF;
+
+        width: 100%;
+        height: 800px;
+        background-image: url('../img/06-title-bg.jpg');
+        h2{
+          font-weight: 100;
+          font-size: @titleSize;
+          padding-top: 130px;
+        }
+        h3{
+          font-weight: 100;
+          font-size: 26px;
+          padding-top: 10px;
+        }
+
+      }
+
+      .ball-arr{
+        width: 100%;
+        height: 480px;
+        dl{
+
+          box-sizing: border-box;
+
+          -webkit-animation: looding .9s infinite linear 0s;
+          animation: looding .9s infinite linear 0s;
+
+          animation-direction:alternate;
+          -webkit-animation-direction:alternate;
+
+
+
+          position: absolute;
+          border-radius: 50%;
+          border: 7px #FFFFFF solid;
+          dd{
+            width: 100%;
+            position: absolute;
+            bottom: -80px;
+
+          }
+          dt{
+            width: 100%;
+            font-size: 60px;
+            position: absolute;
+            top: 24px;
+          }
+        }
+        .b1{
+          border-color: @orange;
+
+          width: 140px;
+          height: 140px;
+          left: 50px;
+          top: 470px;
+        }
+        .b2{
+          border-color: @green;
+          width: 250px;
+          height: 250px;
+          left: 50%;
+          top: 360px;
+          margin-left: -125px;
+          dt{
+            width: 100%;
+            font-size: 90px;
+            position: absolute;
+            top: 60px;
+          }
+
+        }
+        .b3{
+          border-color: @purple;
+
+          right: 50px;
+          top: 470px;
+          width: 140px;
+          height: 140px;
+        }
+      }
+
+
+
+      img{
+        display: block;
+        width: 100%;
+      }
     }
 
   }
@@ -486,18 +767,44 @@ textarea {
 .bgt{
   background-color: transparent !important;
 }
-.bgr{
-  background-color: #f3f3f4;
+//日期点亮
+.bg-p{
+  color: #FFFFFF;
+  background-color: @purple !important;
 }
+
+.bg-g{
+  color: #ffffff;
+  background-color: @green !important;
+}
+
+.bg-r{
+  color: #ffffff;
+  background-color: @red !important;
+}
+
 h2{
   font-weight: 100;
   color: #ffffff;
 }
 @bg-1:#f8f8f8;
+@green:#50d2c2;
+@red:#ff3366;
+@orange:#fcab53;
+
+@purple:#ba77ff;
+
+@rgba07:rgba(0,0,0,.7);
+
 @titleSize: 80px;
+@titleMsg: 32px;
+@titletext: 26px;
+@titletextLH: 70px;
 
 
 //层级
+
+
 
 //蒙版
 .wrap-mark{
@@ -507,10 +814,56 @@ h2{
 #header-box{
   z-index: 25;
 }
+//菜单
 #nav-box{
   z-index: 30;
 }
 
+//预加载
+#load-wrap{
+  z-index: 80;
+}
+
+.w110{
+  width: 110px;
+}
+
+.h110{
+  height: 110px;
+}
+
+.ball{
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  right: 30px;
+  bottom: -55px;
+}
+
+.ball span{
+  font-weight: 100;
+  color: #FFFFFF;
+  font-size: 55px;
+  line-height: 110px;
+}
+
+
+//通讯录msg
+.msg{
+  padding: 6px 0 0 40px;
+
+  border-bottom: 2px solid #f4f4f4;
+  height: 140px;
+  width: 100%;
+  dd{
+    font-size: @titleMsg;
+  }
+  dt{
+    font-size: @titletext;
+    line-height: @titletextLH;
+  }
+
+}
 
 
 

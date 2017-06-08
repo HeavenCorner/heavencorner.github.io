@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=750, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+    <meta name="viewport" content="width=750,target-densitydpi=device-dpi,user-scalable=no" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+
+    <title>joy</title>
+
+
+
+    <style>
+
+        #load-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,.8);
+            padding-top: 170px;
+            text-align: center;
+            overflow: hidden;
+
+            -webkit-transition: all .8s;
+            transition: all .8s;
+
+        }
+        #load-wrap .looding-box{
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+
+        #load-wrap .looding-ani{
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 300px;
+            height: 300px;
+            margin-left: -150px;
+            border-radius: 50%;
+            border: 6px #50d2c2 solid;
+
+            border-width: 8px 0 8px 0;
+
+            -webkit-transition: all .0s;
+            transition: all .0s;
+
+            -webkit-animation: looding .9s infinite linear 0s;
+            animation: looding .9s infinite linear 0s;
+
+            animation-direction:alternate;
+            -webkit-animation-direction:alternate;
+
+            transform-origin:50% 50%;
+
+            -webkit-transform:rotateZ(0deg);
+            transform:rotateZ(0deg);
+        }
+        @keyframes looding{
+
+            from{
+                border-width: 8px 0 8px 0;
+            }
+            to{
+                border-width: 0 8px 0 8px;
+            }
+        }
+
+        -webkit-@keyframes looding{
+
+            from{
+                border-width: 8px 0 8px 0;
+            }
+            to{
+                border-width: 0 8px 0 8px;
+            }
+
+        }
+
+        #load-wrap #looding-num{
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 300px;
+            height: 300px;
+            margin-left: -150px;
+            border-radius: 50%;
+            color: #ffffff;
+            line-height: 300px;
+            text-align: center;
+            font-size: 80px;
+
+        }
+
+        #load-wrap .title-1{
+            padding-top: 50px;
+            text-align: center;
+            color: #ffffff;
+            font-weight: 100;
+        }
+        #load-wrap .title-2{
+            padding-top: 50px;
+            text-align: center;
+            color: #ffffff;
+            font-weight: 100;
+        }
+
+        #load-wrap blockquote{
+            padding-top: 200px;
+            color: #a8a8aa;
+        }
+        #load-wrap blockquote p{
+            padding-top: 30px;
+            color: #a8a8aa;
+            font-size: 20px;
+        }
+
+
+    </style>
+
+    <!--测试部分的样式链接-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <!--上线时的样式链接(min)-->
+
+</head>
+<body>
+
+<!--预加载页面和开场动画--原生-->
+<div id="load-wrap">
+    <div class="looding-box">
+        <p class="looding-ani">
+            <span class="looding-ani-1"></span>
+        </p>
+        <span id="looding-num">
+            0%
+        </span>
+    </div>
+    <p class="title-1" id="looding-msg">
+            111
+    </p>
+    <h2 class="title-2">
+        Joy 2.0
+    </h2>
+
+    <blockquote>
+        我的心默默无声，专等候神；我的救恩是从他而来。
+        <p>诗篇 62:1</p>
+    </blockquote>
+</div>
+
+<article id="app" class="wrap-box">
+
+    <!--标题头-->
+    <header id="header-box" class="header-box" v-if="header.seen">
+        <!--点击展开菜单：主页显示两个，其它的左边的显示回到主页-->
+        <ul v-on:click="openMenuList" class="ul-left" v-if="all.page == 0">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!--返回主页-->
+        <div v-on:click="goHome" class="ul-left ul" v-if="all.page != 0">
+            <span v-bind:class="all.otherIcon[0]"></span>
+        </div>
+
+
+        <ul v-on:click="openMenuList" class="ul-right" v-bind:class="{'open': !menu.seen, 'close': menu.seen}">
+            <li></li>
+            <li class="ul-right" v-bind:class="{'bgt': menu.seen, 'bgw': !menu.seen}"></li>
+            <li></li>
+        </ul>
+
+    </header>
+
+    <!--蒙版-->
+    <div class="wrap-mark" v-if="menu.seen">
+
+    </div>
+
+    <!--菜单-->
+    <nav id="nav-box"  v-bind:class="{'leave': !menu.seen, 'come': menu.seen}" v-on:click="closeMenuList">
+        <dl>
+            <dt>{{menu.title}}</dt>
+            <dd>{{menu.msg}}</dd>
+        </dl>
+        <ul>
+            <li v-for = "li in menu.list" v-bind:class="{'active': all.page == li.id}" v-on:click="goMenu(li.id)">
+                <span v-bind:class="li.icon"></span>
+                <span class="nav-text">{{li.text}}</span>
+
+                <span class="nav-num" v-if="li.num">{{li.num}}</span>
+
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <!--正文内容-->
+
+    <section class="content-wrap">
+        <!--0、主页（代祷事项）-->
+
+        <div id="prayer-box" class="con-page" v-bind:class="{'leave': all.page != '0', 'come': all.page == '0'}">
+
+            <div class="title">
+                <h2>{{contentpage.prayer.title.msg}}</h2>
+                <p>
+                    <span>{{contentpage.prayer.title.text}}</span>
+                    <i>{{contentpage.prayer.title.chapter}}</i>
+                </p>
+                <h4>{{contentpage.prayer.dateTime.month}}</h4>
+            </div>
+
+            <div class="date-box">
+                <ol>
+                    <li v-for="week in contentpage.prayer.dateTime.weekName">
+                        {{week}}
+                    </li>
+                </ol>
+
+                <ul>
+                    <li v-for="(dateNum,index) in contentpage.prayer.dateTime.weekDateArr" >
+
+                        <span v-bind:class="{'bg-r':contentpage.prayer.dateTime.week == index}">{{dateNum}}</span>
+
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="prayer-text">
+                <ul class="member-list" m="member.listOpen" v-bind:id="member.id" v-for="(member,index) in contentpage.prayer.memberList"
+                    v-bind:class="{'close': member.listOpen == false }">
+                    <li id="" class="prayer-text-title">
+                        <dl v-on:click="closePrayerList(member)">
+                            <dt>
+                                <img v-bind:src="member.imgsrc" alt="">
+                            </dt>
+                            <dd>{{member.name}}</dd>
+                            <!--<dd></dd>-->
+                        </dl>
+                    </li>
+
+                    <li class="prayer-text-list" v-for="(prayer,index) in member.prayer">
+                        <p>
+                            {{index + 1}}、
+                        </p>
+                        <p class="prayer-text-con">
+                            {{prayer.text}}
+                        </p>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="open-all" v-bind:class="{'bg-g': !contentpage.prayer.openAll}" v-if="all.page == '0'">
+                <ul v-on:click="openAllPrayerList(contentpage.prayer)" v-bind:class="{'open': contentpage.prayer.openAll, 'close': !contentpage.prayer.openAll}">
+                    <li></li>
+                    <li class="ul-right" v-bind:class="{'bgt': !contentpage.prayer.openAll, 'bgw': contentpage.prayer.openAll}"></li>
+                    <li></li>
+                </ul>
+            </div>
+            <h5>我是有底线的</h5>
+        </div>
+
+        <!--1、灵粮音乐-->
+        <div id="spirit-box"  class="con-page" v-bind:class="{'leave': all.page != '1', 'come': all.page == '1'}">
+            开发中
+        </div>
+        <!--2、生日-->
+        <div id="birthday-box"  class="con-page" v-bind:class="{'leave': all.page != '2', 'come': all.page == '2'}">
+            开发中
+        </div>
+        <!--3、通讯录-->
+        <div id="phone-box"  class="con-page" v-bind:class="{'leave': all.page != '3', 'come': all.page == '3'}">
+            <div class="title">
+                <h2>{{contentpage.phone.title.titleText}}</h2>
+                <div class="w110 h110 bg-r ball">
+                    <span>
+                        {{contentpage.phone.title.lenght}}
+                    </span>
+                </div>
+            </div>
+            <dl class="msg">
+                <dt>
+                    {{contentpage.phone.msg.text}}
+                </dt>
+                <dd>
+                    {{contentpage.phone.msg.title}}
+                </dd>
+
+            </dl>
+            <div class="phone-list-wrap">
+                <ul class="phone-list" v-if="member.phone" v-for="(member,index) in contentpage.prayer.memberList">
+                    <li class="phone-text-title">
+                        <dl v-on:click="">
+                            <dt>
+                                <img v-bind:src="member.imgsrc" alt="">
+                            </dt>
+                            <dd class="name">{{member.name}}</dd>
+                            <dd>
+                                <a v-bind:href="member.phone" v-bind:class="contentpage.phone.list.icon"></a>
+                            </dd>
+                        </dl>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!--4、其它代祷-->
+        <div id="other-box"  class="con-page" v-bind:class="{'leave': all.page != '4', 'come': all.page == '4'}">
+            开发中
+        </div>
+        <!--5、通知-->
+        <div id="msg-box"  class="con-page" v-bind:class="{'leave': all.page != '5', 'come': all.page == '5'}">
+            开发中
+        </div>
+        <!--6、帮助-->
+        <div id="help-box"  class="con-page" v-bind:class="{'leave': all.page != '6', 'come': all.page == '6'}">
+            <div class="title">
+                <h2>{{contentpage.help.title.msg}}</h2>
+                <h3>{{contentpage.help.title.text}}</h3>
+                <div class="ball-arr">
+
+                    <dl class="b1 bai">
+                        <dt>0</dt>
+                        <dd>
+                            {{contentpage.help.title.titleMsg[0]}}
+                        </dd>
+                    </dl>
+
+
+
+                    <dl class="b2 bai">
+                        <dt>1</dt>
+                        <dd>
+                            {{contentpage.help.title.titleMsg[1]}}
+                        </dd>
+
+                    </dl>
+
+                    <dl class="b3 bai">
+                        <dt>2</dt>
+                        <dd>
+                            {{contentpage.help.title.titleMsg[2]}}
+                        </dd>
+
+                    </dl>
+
+                </div>
+
+            </div>
+
+            <h5>Joy 2.0 单页面应用思维导图</h5>
+            <img src="img/help.png" alt="">
+        </div>
+
+        <!--个人主页-->
+
+    </section>
+
+
+
+</article>
+<!--图片预加载-->
+<script>
+    var loodingText = document.getElementById('looding-num');
+    var loadWrap = document.getElementById('load-wrap');
+    var loodingMsg = document.getElementById('looding-msg');
+
+//        总加载进度
+    var numImg = 0;
+    var loodings = 0;
+
+    //背景和其它图片
+    var arrOtherImg =[
+        '01-title-bg.jpg',
+        '06-title-bg.jpg',
+        'help.png',
+    ];
+
+    //头像图片加载
+    var imgHeadArr = [
+
+        'head/congzhou.jpeg',
+        'head/jinyan.jpeg',
+        'head/mengen.jpeg',
+        'head/binglin.jpeg',
+        'head/dongyi.jpeg',
+        'head/duanduan.jpeg',
+        'head/duqu.jpeg',
+        'head/haoran.jpeg',
+        'head/congzhoumama.jpeg',
+        'head/beijing.jpeg',
+        'head/jingjing.jpeg',
+        'head/shenyuan.jpeg',
+        'head/sisi.jpeg',
+        'head/huangting.jpeg'
+
+    ];
+
+
+    var imghL = imgHeadArr.length;
+    var imgoL = arrOtherImg.length;
+
+    var allLength =  imghL + imgoL;
+
+//    加载其它图片
+
+    for(var i=0;i<imgoL;i++){
+        var newImgT = new Image();
+
+//        otherArr.push(newImg);
+//        arrAllImg.push(newImg);
+
+        newImgT.onload = function(){
+            numImg++;
+            loodings = parseInt(numImg/allLength*100);
+            loodingText.innerHTML = loodings + '%';
+        }
+
+        if(numImg == imgoL){
+        }
+        newImgT.src = "img/"+arrOtherImg[i];
+    }
+    //计时加载
+    var loadTimeNum = 0;
+    var loadTime;
+    loadTime = setInterval(function(){
+        loadTimeNum ++;
+        loadTimeNum = loadTimeNum + '';
+        var m = loadTimeNum.charAt(loadTimeNum.length - 1);
+        if(m == 0){
+
+            if(loadTimeNum > 100){
+                loodingMsg.innerHTML = '加载异常，请等待或刷新' + ' ' +  loadTimeNum/10 + '.0' + 's';
+            }else{
+                loodingMsg.innerHTML = loadTimeNum/10 + '.0' + 's';
+            }
+
+        }else {
+
+            if(loadTimeNum > 100){
+                loodingMsg.innerHTML = '加载异常，请等待或刷新' + ' ' +   loadTimeNum/10 + 's';
+            }else{
+                loodingMsg.innerHTML = loadTimeNum/10 + 's';
+
+            }
+
+        }
+
+    },100)
+
+    loadTime;
+
+
+
+    //开始加载头像图片
+
+    for(var i=0;i<imghL;i++){
+        var newImg = new Image();
+
+//                headArr.push(newImg);
+//                arrAllImg.push(newImg);
+
+        newImg.onload = function(){
+            numImg++;
+            loodings = parseInt(numImg/allLength*100);
+            loodingText.innerHTML = loodings + '%';
+
+            if(loodings == 100){
+                window.clearInterval(loadTime);
+                loadWrap.style.left = '-110vw';
+            }
+        }
+        newImg.src = "img/"+imgHeadArr[i];
+    }
+
+</script>
+
+
+<!--js-->
+<script src="js/vue.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -11,11 +11,12 @@ var member = {
 
     },
     birthdayLenght: 0,
+    phoneLenght: 0,
     icon:[
         'joyT joyT-favorites',
         'joyT joyT-agriculture',
         'joyT joyT-gifts',
-        'joyT joyT-phone',
+        'joyT joyT-account',
         'joyT joyT-earth',
         'joyT joyT-discount',
         'joyT joyT-help'
@@ -23,6 +24,7 @@ var member = {
     otherIcon:[
         'joyT joyT-all',
         'joyT joyT-close',
+        'joyT joyT-phone'
     ]
 }
 //日期
@@ -44,7 +46,6 @@ var dateTime = {
     monthName:'June',
     month: myDate.getMonth(),
     date:myDate.getDate(),
-
     weekDateArr:[4,5,6,7,8,9,10],
 }
 
@@ -54,9 +55,9 @@ var dateTime = {
 //成员信息
 var memberList = [
     {
-        name: 'a',
+        name: '成员q',
         prayer: [
-            {text: '事件1sahahhdsh撒等候神的劳动手段撒大声地简单来说卡德加撒娇的萨拉'},
+            {text: '事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝'},
             {text: '事件2'},
             {text: '事件3'}
         ],
@@ -66,12 +67,31 @@ var memberList = [
         head: '',
         imgsrc: 'img/head/duqu.jpeg',
         bgc: '',
-        id:'congzhou'
+        id:'congzhouBox',
+        listOpen: false,
+        phone:'tel:12345678',
     },
     {
         name: 'a',
         prayer: [
-            {text: '事件1'},
+            {text: '事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝'},
+            {text: '事件2'},
+            {text: '事件3'}
+        ],
+        birthday: '2012-01-01',
+        signature: '每天都是新的，啊哈哈哈哈',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/duqu.jpeg',
+        bgc: '',
+        id:'congzhouBox',
+        listOpen: false,
+        phone:'12345678',
+    },
+    {
+        name: 'a',
+        prayer: [
+            {text: '事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝'},
             {text: '事件2'},
             {text: '事件3'}
         ],
@@ -81,8 +101,29 @@ var memberList = [
         head: '',
         imgsrc: 'img/head/duqu.jpeg',
         bgc: '',
-        id: 'duqu'
+        id:'congzhouBox',
+        listOpen: false,
+        phone:'',
     },
+    {
+        name: 'a',
+        prayer: [
+            {text: '事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝'},
+            {text: '事件2'},
+            {text: '事件3'}
+        ],
+        birthday: '',
+        signature: '每天都是新的，啊哈哈哈哈',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/duqu.jpeg',
+        bgc: '',
+        id:'congzhouBox',
+        listOpen: false,
+        phone:'12345678',
+    },
+
+
 
 
 ]
@@ -94,6 +135,13 @@ for(var i=0;i < memberList.length;i++){
     if(memberList[i].birthday != ''){
         member.birthdayLenght ++;
     }
+//    统计通讯录数目
+    if(memberList[i].phone != ''){
+        member.phoneLenght ++;
+        memberList[i].phone =  'tel:' + memberList[i].phone;
+    }
+
+
 
 }
 
@@ -102,7 +150,7 @@ var app = new Vue({
     el:'#app',
     data:{
         all:{
-            page: 0,
+            page: 6,
             icon: member.icon,
             otherIcon: member.otherIcon,
         },
@@ -111,13 +159,13 @@ var app = new Vue({
         },
         menu:{
             seen: false,
-            title: 'Menu List',
-            msg: '点击菜单切换所选页面',
+            title: '导航',
+            msg: '"神是我坚固的保障；他引导完全人行他的路。"',
             list: [
                 { id:'0',text: '代祷事项' ,icon:member.icon[0],num: memberList.length},
                 { id:'1',text: '灵粮音乐' ,icon:member.icon[1]},
                 { id:'2',text: '小组生日' ,icon:member.icon[2],num: member.birthdayLenght},
-                { id:'3',text: '通讯录' ,icon:member.icon[3]},
+                { id:'3',text: '通讯录' ,icon:member.icon[3],num:member.phoneLenght},
                 { id:'4',text: '其它代祷' ,icon:member.icon[4]},
                 { id:'5',text: '通知' ,icon:member.icon[5]},
                 { id:'6',text: '帮助' ,icon:member.icon[6]},
@@ -147,6 +195,7 @@ var app = new Vue({
 
                 },
                 memberList:memberList,
+                openAll: false,
 
             },
         //    1
@@ -159,7 +208,17 @@ var app = new Vue({
             },
         //    3
             phone:{
-
+                title:{
+                    titleText:'通讯录',
+                    lenght: member.phoneLenght,
+                },
+                list:{
+                    icon:member.otherIcon[2],
+                },
+                msg:{
+                    text:'点击电话按钮获取信息',
+                    title:'温良的舌是生命树；乖谬的嘴使人心碎。'
+                },
             },
         //    4
             other:{
@@ -171,6 +230,18 @@ var app = new Vue({
             },
         //    6
             help:{
+
+                title:{
+                    msg:'Joy 2.0',
+                    text:'天父必看顾你',
+                    titleMsg:[
+
+                        '崩溃 次',
+                        '正常运行 天',
+                        '升级 次'
+
+                    ]
+                }
 
             }
 
@@ -189,7 +260,7 @@ var app = new Vue({
         },
         //菜单
         goMenu: function (id) {
-            console.log(id)
+            // console.log(id)
             this.all.page = id;
             var obj = this;
             closeMenuList(obj);
@@ -198,18 +269,54 @@ var app = new Vue({
         goHome: function(){
             this.all.page = 0;
         },
-    //
+    //   主页点击标题折叠代祷事项(单)
+        closePrayerList: function (obj) {
+            // console.log(obj.listOpen);
+
+            if(obj.listOpen){
+                obj.listOpen = false;
+            }else{
+                obj.listOpen = true;
+            }
+
+            // var listBox = document.getElementById(obj.id);
+        },
+    //    点击展开全部
+        openAllPrayerList: function (obj) {
+
+            // console.log(obj.openAll);
+            var n = this.contentpage.prayer.memberList.length;
+
+            if(obj.openAll){
+                obj.openAll = false;
+
+                for (var i=0;i < n;i++){
+                    this.contentpage.prayer.memberList[i].listOpen = false;
+                }
+
+            }else{
+                obj.openAll = true;
+
+                for (var i=0;i < n;i++){
+                    this.contentpage.prayer.memberList[i].listOpen = true;
+                }
+
+            }
+
+
+
+
+
+
+        },
     },
 
     created: function () {
 
 
+        //全局时间段
 
-        //    时间段
-
-    //    图片预加载：
-
-    //    成员生日计算
+        //成员生日计算
 
     }
 });
