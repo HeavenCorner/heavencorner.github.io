@@ -214,12 +214,23 @@
         <div id="prayer-box" class="con-page" v-bind:class="{'leave': all.page != '0', 'come': all.page == '0'}">
 
             <div class="title">
-                <h2>{{contentpage.prayer.title.msg}}</h2>
-                <p>
-                    <span>{{contentpage.prayer.title.text}}</span>
-                    <i>{{contentpage.prayer.title.chapter}}</i>
-                </p>
-                <h4>{{contentpage.prayer.dateTime.month}}</h4>
+                <!--十字架动画-->
+
+                <div>
+
+                </div>
+
+                <!--展示文字-->
+                <div class="title-msg">
+                    <h2>{{contentpage.prayer.title.msg}}</h2>
+                    <p>
+                        <span>{{contentpage.prayer.title.text}}</span>
+                        <i>{{contentpage.prayer.title.chapter}}</i>
+                    </p>
+                    <h4>{{contentpage.prayer.dateTime.month}}</h4>
+                </div>
+
+
             </div>
 
             <div class="date-box">
@@ -265,7 +276,7 @@
             </div>
 
             <div class="open-all" v-bind:class="{'bg-g': !contentpage.prayer.openAll}" v-if="all.page == '0'">
-                <ul v-on:click="openAllPrayerList(contentpage.prayer)" v-bind:class="{'open': !contentpage.prayer.openAll, 'close': contentpage.prayer.openAll}">
+                <ul v-on:click="openAllList(contentpage.prayer,'prayer','0')" v-bind:class="{'open': !contentpage.prayer.openAll, 'close': contentpage.prayer.openAll}">
                     <li></li>
                     <li class="ul-right" v-bind:class="{'bgt': contentpage.prayer.openAll, 'bgw': !contentpage.prayer.openAll}"></li>
                     <li></li>
@@ -276,22 +287,84 @@
 
         <!--1、灵粮音乐-->
         <div id="spirit-box"  class="con-page" v-bind:class="{'leave': all.page != '1', 'come': all.page == '1'}">
-            开发中
+            <div class="title">
+                <h2>{{contentpage.spirit.title.titleText}}</h2>
+
+            </div>
+            <!--经文-->
+            <dl>
+                <dt></dt>
+                <dd></dd>
+            </dl>
+            <!--音乐-->
+            <div class="">
+
+            </div>
         </div>
         <!--2、生日-->
         <div id="birthday-box"  class="con-page" v-bind:class="{'leave': all.page != '2', 'come': all.page == '2'}">
-            开发中
+            <div class="title">
+                <h2>{{contentpage.birthday.title.titleText}}</h2>
+                <div class="w110 h110 ball">
+                    <span>
+                        {{contentpage.birthday.title.lenght}}
+                    </span>
+                </div>
+            </div>
+
+            <!--日历-->
+
+            <div class="calendar-box">
+                <h1>日历智能提醒模块（开发中...）</h1>
+            </div>
+
+
+            <div class="birthday-wrap">
+                <ul class="list" v-if="member.birthday" v-for="(member,index) in contentpage.birthday.memberList"
+                    v-bind:class="{'close': member.birthdayOpen == false }">
+                    <li class="text-title">
+                        <dl v-on:click="closeBirthdayList(member)">
+                            <dt>
+                                <img v-bind:src="member.imgsrc" alt="">
+                            </dt>
+                            <dd>{{member.name}}</dd>
+                            <!--倒计时-->
+                            <dd>
+
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <!--具体生日日期-->
+                    <li class="day">
+
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="open-all" v-bind:class="{'bg-g': !contentpage.birthday.openAll}" v-if="all.page == '2'">
+                <ul v-on:click="openAllList(contentpage.birthday,'birthday','2')" v-bind:class="{'open': !contentpage.birthday.openAll, 'close': contentpage.birthday.openAll}">
+                    <li></li>
+                    <li class="ul-right" v-bind:class="{'bgt': contentpage.birthday.openAll, 'bgw': !contentpage.birthday.openAll}"></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <h6 class="bottom-msg">我是有底线的</h6>
+
         </div>
         <!--3、通讯录-->
         <div id="phone-box"  class="con-page" v-bind:class="{'leave': all.page != '3', 'come': all.page == '3'}">
             <div class="title">
                 <h2>{{contentpage.phone.title.titleText}}</h2>
-                <div class="w110 h110 bg-r ball">
+                <div class="w110 h110 bg-g ball">
                     <span>
                         {{contentpage.phone.title.lenght}}
                     </span>
                 </div>
             </div>
+
             <dl class="msg">
                 <dt>
                     {{contentpage.phone.msg.text}}
@@ -301,6 +374,7 @@
                 </dd>
 
             </dl>
+
             <div class="phone-list-wrap">
                 <ul class="phone-list" v-if="member.phone" v-for="(member,index) in contentpage.prayer.memberList">
                     <li class="phone-text-title">
@@ -317,6 +391,10 @@
 
                 </ul>
             </div>
+
+
+            <h6 class="bottom-msg">我是有底线的</h6>
+
         </div>
         <!--4、其它代祷-->
         <div id="other-box"  class="con-page" v-bind:class="{'leave': all.page != '4', 'come': all.page == '4'}">
@@ -377,6 +455,7 @@
 
             <h5>{{contentpage.help.logTitle}}</h5>
             <img src="img/help.png" alt="">
+
             <h6 class="bottom-msg">我是有底线的</h6>
 
         </div>
@@ -400,8 +479,12 @@
 
     //背景和其它图片
     var arrOtherImg =[
+
+        '00-title-bg.jpg',
         '01-title-bg.jpg',
+        '02-title-bg.jpg',
         '06-title-bg.jpg',
+
         'help.png',
     ];
 

@@ -47,24 +47,38 @@ var dateTime = {
     month: myDate.getMonth(),
     date:myDate.getDate(),
     weekDateArr:[4,5,6,7,8,9,10],
-}
+};
 
-//正计时
+//每周对应的天数数组
+(function () {
+
+})();
+
+
+
+//计时
 var nowTime = new Date().getTime();
 var tarTime = new Date("2021/5/2 20:00:00").getTime();
 var lastTime = new Date("2017/6/7 22:00:00").getTime();
 
+
+//倒计时
 var disTime = Math.round((tarTime - nowTime) / 1000);
 var seconds = disTime % 60;
 var minutes = (disTime - seconds) / 60 % 60;
 var hours = (disTime - minutes * 60 - seconds) / 3600 % 24;
 var day1 = (disTime - hours * 3600 - minutes * 60 - seconds) / 86400;
 
+//正计时
+
 var disTime2 = Math.round((nowTime - lastTime) / 1000);
 var seconds2 = disTime2 % 60;
 var minutes2 = (disTime2 - seconds2) / 60 % 60;
 var hours2 = (disTime2 - minutes2 * 60 - seconds2) / 3600 % 24;
 var day2 = (disTime2 - hours2 * 3600 - minutes2 * 60 - seconds2) / 86400;
+
+
+
 
 
 
@@ -86,6 +100,7 @@ var memberList = [
         bgc: '',
         id:'congzhouBox',
         listOpen: false,
+        birthdayOpen: false,
         phone:'tel:12345678',
     },
     {
@@ -103,6 +118,8 @@ var memberList = [
         bgc: '',
         id:'congzhouBox',
         listOpen: false,
+        birthdayOpen: false,
+
         phone:'12345678',
     },
     {
@@ -120,6 +137,8 @@ var memberList = [
         bgc: '',
         id:'congzhouBox',
         listOpen: false,
+        birthdayOpen: false,
+
         phone:'',
     },
     {
@@ -137,13 +156,19 @@ var memberList = [
         bgc: '',
         id:'congzhouBox',
         listOpen: false,
+        birthdayOpen: false,
+
         phone:'12345678',
     },
 
 
 
 
-]
+];
+
+
+//活动事项
+
 
 
 
@@ -158,8 +183,6 @@ for(var i=0;i < memberList.length;i++){
         memberList[i].phone =  'tel:' + memberList[i].phone;
     }
 
-
-
 }
 
 //app
@@ -167,7 +190,7 @@ var app = new Vue({
     el:'#app',
     data:{
         all:{
-            page: 0,
+            page: 1,
             icon: member.icon,
             otherIcon: member.otherIcon,
         },
@@ -180,11 +203,11 @@ var app = new Vue({
             msg: '"神是我坚固的保障；他引导完全人行他的路。"',
             list: [
                 { id:'0',text: '代祷事项' ,icon:member.icon[0],num: memberList.length},
-                { id:'1',text: '灵粮音乐' ,icon:member.icon[1]},
-                { id:'2',text: '小组生日' ,icon:member.icon[2],num: member.birthdayLenght},
+                { id:'1',text: '灵粮 · 音乐' ,icon:member.icon[1]},
+                { id:'2',text: '组员生日' ,icon:member.icon[2],num: member.birthdayLenght},
                 { id:'3',text: '通讯录' ,icon:member.icon[3],num:member.phoneLenght},
                 { id:'4',text: '其它代祷' ,icon:member.icon[4]},
-                { id:'5',text: '通知' ,icon:member.icon[5]},
+                { id:'5',text: '通知 · 活动' ,icon:member.icon[5]},
                 { id:'6',text: '帮助' ,icon:member.icon[6]},
 
             ],
@@ -217,10 +240,35 @@ var app = new Vue({
             },
         //    1
             spirit:{
-
+                title:{
+                    titleText:'灵粮 · 音乐',
+                },
+                list:{
+                    icon:member.icon[1],
+                },
+                msg:{
+                    text:'',
+                    title:''
+                },
             },
         //    2
             birthday:{
+                title:{
+                    titleText:'组员生日',
+                    lenght: member.birthdayLenght,
+                },
+                list:{
+                    icon:member.icon[2],
+
+                },
+                msg:{
+                    text:'',
+                    title:''
+                },
+                memberList:memberList,
+                openAll: false,
+
+
 
             },
         //    3
@@ -266,14 +314,22 @@ var app = new Vue({
                 logTitle:'Joy 2.0 单页面应用思维导图 （渐进完善）',
                 upLogTitle:'升级日志',
                 upLog:[
-                    // {
-                    //     date:'2017-06-08',
-                    //     text:'Joy 2.0 测试上线',
-                    // },
+                    {
+                        date:'2017-06-09',
+                        text:'【增加】"生日"模块完善',
+                    },
+                    {
+                        date:'2017-06-08',
+                        text:'【增加】"代祷事项"、"通讯录"和"帮助"模块完善',
+                    },
                     {
                         date:'2017-06-07 22:00',
-                        text:'Joy 2.0 测试上线',
-                    }
+                        text:'Joy 2.0 基础框架测试上线',
+                    },
+                    {
+                        date:'2017-06-06',
+                        text:'Joy 2.0 思维导图构建、UI方案确定',
+                    },
                 ]
 
 
@@ -307,7 +363,6 @@ var app = new Vue({
         },
     //   主页点击标题折叠代祷事项(单)
         closePrayerList: function (obj) {
-            // console.log(obj.listOpen);
 
             if(obj.listOpen){
                 obj.listOpen = false;
@@ -317,34 +372,57 @@ var app = new Vue({
 
             // var listBox = document.getElementById(obj.id);
         },
-    //    点击展开全部
-        openAllPrayerList: function (obj) {
+    //    生日列表折叠
+        closeBirthdayList: function (obj) {
+
+            if(obj.birthdayOpen){
+                obj.birthdayOpen = false;
+            }else{
+                obj.birthdayOpen = true;
+            }
+
+        },
+    //    点击展开全部代祷事项
+        openAllList: function (obj,who,x) {
+
 
             // console.log(obj.openAll);
-            var n = this.contentpage.prayer.memberList.length;
+            var n = this.contentpage[who].memberList.length;
 
             if(obj.openAll){
                 obj.openAll = false;
 
                 for (var i=0;i < n;i++){
-                    this.contentpage.prayer.memberList[i].listOpen = false;
+                    if(x == '0'){
+                        this.contentpage.prayer.memberList[i].listOpen = false;
+
+                    }else if(x == '2'){
+                        this.contentpage.birthday.memberList[i].birthdayOpen = false;
+
+                    }
                 }
 
             }else{
                 obj.openAll = true;
 
+
                 for (var i=0;i < n;i++){
-                    this.contentpage.prayer.memberList[i].listOpen = true;
+                    if(x == '0'){
+                        this.contentpage.prayer.memberList[i].listOpen = true;
+
+                    }else if(x == '2'){
+                        this.contentpage.birthday.memberList[i].birthdayOpen = true;
+                        console.log(this.contentpage.birthday.memberList[i].birthdayOpen)
+
+                    }
                 }
 
             }
 
-
-
-
-
-
         },
+
+
+
     },
 
     created: function () {
@@ -352,7 +430,9 @@ var app = new Vue({
 
         //全局时间段
 
-        //成员生日计算
+        //生日页面：成员生日计算
+
+
 
     }
 });
