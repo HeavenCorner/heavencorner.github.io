@@ -343,7 +343,17 @@ var app = new Vue({
             },
         //    4
             other:{
-
+                title:{
+                    titleText:'其它代祷',
+                    lenght: member.phoneLenght,
+                },
+                list:{
+                    icon:member.otherIcon[2],
+                },
+                msg:{
+                    text:'0',
+                    title:'0',
+                },
             },
         //    5
             msg:{
@@ -351,6 +361,12 @@ var app = new Vue({
                     titleText:'活动 · 通知',
                     text:'',
                     chapter:''
+                },
+                msg:{
+                    text:'信 · 望 · 爱',
+                    title:'你们要彼此相爱，像我爱你们一样；',
+                    title2:'这就是我的命令。',
+
                 },
             },
         //    6

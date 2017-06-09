@@ -745,6 +745,21 @@ textarea {
 .wrap-box .content-wrap #phone-box .phone-list-wrap > ul .phone-text-title dl dd:last-child a:hover {
   color: #50d2c2;
 }
+.wrap-box .content-wrap #other-box {
+  background-color: #FFFFFF;
+}
+.wrap-box .content-wrap #other-box .title {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-image: url('../img/05-title-bg.jpg');
+  background-position: 0 0px;
+}
+.wrap-box .content-wrap #other-box .title h2 {
+  font-weight: 100;
+  padding: 175px 0 0 48px;
+  font-size: 80px;
+}
 .wrap-box .content-wrap #msg-box {
   background-color: #FFFFFF;
 }
@@ -759,6 +774,9 @@ textarea {
   font-weight: 100;
   padding: 175px 0 0 48px;
   font-size: 80px;
+}
+.wrap-box .content-wrap #msg-box .msg {
+  height: 200px;
 }
 .wrap-box .content-wrap #help-box .help-box-title {
   position: relative;
@@ -882,6 +900,10 @@ textarea {
   color: #ffffff;
   background-color: #ff3366 !important;
 }
+.bg-o {
+  color: #ffffff;
+  background-color: #fcab53 !important;
+}
 h2 {
   font-weight: 100;
   color: #ffffff;
@@ -942,7 +964,6 @@ h2 {
   font-weight: 100;
 }
 .calendar-box {
-  height: 80px;
   color: #FFFFFF;
   background-color: #a8a8aa;
 }

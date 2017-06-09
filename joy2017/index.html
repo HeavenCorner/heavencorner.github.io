@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=750,target-densitydpi=device-dpi,user-scalable=no" />
     <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
 
-    <title>joy</title>
+    <title>喜乐组 · 清心</title>
 
 
 
@@ -322,7 +322,7 @@
 
             <!--日历-->
 
-            <div class="calendar-box">
+            <div class="calendar-box msg">
                 <h1>日历智能分组提醒模块（开发中...）</h1>
             </div>
 
@@ -406,14 +406,51 @@
         </div>
         <!--4、其它代祷-->
         <div id="other-box"  class="con-page" v-bind:class="{'leave': all.page != '4', 'come': all.page == '4'}">
-            开发中
+            <div class="title">
+                <h2>{{contentpage.other.title.titleText}}</h2>
+                <div class="w110 h110 bg-o ball">
+                    <span>
+                        0
+                        <!--{{contentpage.phone.title.lenght}}-->
+                    </span>
+                </div>
+            </div>
+            <dl class="msg">
+                <dt>
+                    {{contentpage.other.msg.text}}
+                </dt>
+                <dd>
+                    {{contentpage.other.msg.title}}
+                </dd>
+                <!--<dd>-->
+                    <!--{{contentpage.other.msg.title2}}-->
+                <!--</dd>-->
+
+            </dl>
         </div>
         <!--5、通知-->
         <div id="msg-box"  class="con-page" v-bind:class="{'leave': all.page != '5', 'come': all.page == '5'}">
             <div class="title">
                 <h2>{{contentpage.msg.title.titleText}}</h2>
-
+                <div class="w110 h110 bg-r ball">
+                    <span>
+                        0
+                        <!--{{contentpage.phone.title.lenght}}-->
+                    </span>
+                </div>
             </div>
+            <dl class="msg">
+                <dt>
+                    {{contentpage.msg.msg.text}}
+                </dt>
+                <dd>
+                    {{contentpage.msg.msg.title}}
+                </dd>
+                <dd>
+                    {{contentpage.msg.msg.title2}}
+                </dd>
+
+            </dl>
         </div>
         <!--6、帮助-->
         <div id="help-box"  class="con-page" v-bind:class="{'leave': all.page != '6', 'come': all.page == '6'}">
@@ -437,7 +474,7 @@
                             {{contentpage.help.title.titleMsg[1]}}
                         </dd>
 
-                    </dl>
+                    </dl>'00-title-bg.jpg',
 
                     <dl class="b3">
                         <dt>{{contentpage.help.upLog.length - 2}}</dt>
@@ -491,16 +528,14 @@
     //背景和其它图片
     var arrOtherImg =[
 
-        '00-title-bg.jpg',
         '01-title-bg.jpg',
         '01-title-bg-1.jpg',
-
         '02-title-bg.jpg',
         '05-title-bg.jpg',
-
         '06-title-bg.jpg',
-
+        '00-title-bg.jpg',
         'help.png',
+
     ];
 
     //头像图片加载
