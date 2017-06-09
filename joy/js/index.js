@@ -52,7 +52,7 @@ var dateTime = {
 //正计时
 var nowTime = new Date().getTime();
 var tarTime = new Date("2021/5/2 20:00:00").getTime();
-var lastTime = new Date("2017/6/8 20:00:00").getTime();
+var lastTime = new Date("2017/6/7 22:00:00").getTime();
 
 var disTime = Math.round((tarTime - nowTime) / 1000);
 var seconds = disTime % 60;
@@ -271,7 +271,7 @@ var app = new Vue({
                     //     text:'Joy 2.0 测试上线',
                     // },
                     {
-                        date:'2017-06-08',
+                        date:'2017-06-07 22:00',
                         text:'Joy 2.0 测试上线',
                     }
                 ]
