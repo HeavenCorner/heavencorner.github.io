@@ -298,6 +298,10 @@ var app = new Vue({
                     text:'',
                     title:''
                 },
+                musicList:[
+                    '//music.163.com/outchain/player?type=2&id=17654232&auto=0&height=66',
+                    '//music.163.com/outchain/player?type=2&id=29542772&auto=0&height=66',
+                ]
             },
         //    2
             birthday:{
@@ -364,11 +368,11 @@ var app = new Vue({
                 upLog:[
                     {
                         date:'2017-06-09',
-                        text:'【增加】"生日"模块完善',
+                        text:'【增加】"生日" 基础模块和 "灵粮 · 音乐" 模块完善',
                     },
                     {
                         date:'2017-06-08',
-                        text:'【增加】"代祷事项"、"通讯录"和"帮助"模块完善',
+                        text:'【增加】"代祷事项"、"通讯录" 和 "帮助" 模块完善',
                     },
                     {
                         date:'2017-06-07 22:00',

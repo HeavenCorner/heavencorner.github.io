@@ -299,9 +299,10 @@
                 </p>
             </div>
             <!--音乐-->
-            <div class="music-box animated bounceInRight">
+            <div class="music-box animated bounceInRight" v-for="list in contentpage.spirit.musicList">
                 <span class="music-b"></span>
-                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=200 src="//music.163.com/outchain/player?type=2&id=17654232&auto=0&height=66"></iframe>
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=100
+                        v-bind:src="list"></iframe>
             </div>
         </div>
 
@@ -413,7 +414,7 @@
         </div>
         <!--6、帮助-->
         <div id="help-box"  class="con-page" v-bind:class="{'leave': all.page != '6', 'come': all.page == '6'}">
-            <div class="title">
+            <div class="help-box-title">
                 <h2>{{contentpage.help.title.msg}}</h2>
                 <h3>{{contentpage.help.title.text}}</h3>
                 <div class="ball-arr">
@@ -452,7 +453,7 @@
             <h5>{{contentpage.help.upLogTitle}}</h5>
 
             <ul class="up-log">
-                <li v-for="list in contentpage.help.upLog">
+                <li class="up-log-list" v-for="list in contentpage.help.upLog">
                     <dl>
                         <dt>{{list.date}}</dt>
                         <dd>{{list.text}}</dd>
@@ -555,7 +556,7 @@
             loadWrap.style.left = '-110vw';
         }
 
-        var msgs = '首次加载会卡顿，请等待或刷新';
+        var msgs = '加载异常，请等待或刷新';
 
         if(m == 0){
 

@@ -29,10 +29,10 @@ select {
 html,
 body {
   min-height: 100%;
+  font-size: 28px;
 }
 body {
   font-family: "Avenir", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  font-size: 28px;
   color: #585858;
 }
 h1,
@@ -742,7 +742,7 @@ textarea {
 .wrap-box .content-wrap #phone-box .phone-list-wrap > ul .phone-text-title dl dd:last-child a:hover {
   color: #50d2c2;
 }
-.wrap-box .content-wrap #help-box .title {
+.wrap-box .content-wrap #help-box .help-box-title {
   position: relative;
   text-align: center;
   color: #FFFFFF;
@@ -750,17 +750,17 @@ textarea {
   height: 800px;
   background-image: url('../img/06-title-bg.jpg');
 }
-.wrap-box .content-wrap #help-box .title h2 {
+.wrap-box .content-wrap #help-box .help-box-title h2 {
   font-weight: 100;
   font-size: 80px;
   padding-top: 130px;
 }
-.wrap-box .content-wrap #help-box .title h3 {
+.wrap-box .content-wrap #help-box .help-box-title h3 {
   font-weight: 100;
   font-size: 26px;
   padding-top: 10px;
 }
-.wrap-box .content-wrap #help-box .title h4 {
+.wrap-box .content-wrap #help-box .help-box-title h4 {
   font-weight: 100;
 }
 .wrap-box .content-wrap #help-box .ball-arr {
@@ -817,18 +817,18 @@ textarea {
   background-color: #ffffff;
   width: 100%;
 }
-.wrap-box .content-wrap #help-box .up-log li {
+.wrap-box .content-wrap #help-box .up-log .up-log-list {
   background-color: #f8f8f8;
   padding: 10px 40px 20px;
   border-bottom: 1px #949494 dashed;
 }
-.wrap-box .content-wrap #help-box .up-log li dl {
-  font-size: 18px;
+.wrap-box .content-wrap #help-box .up-log .up-log-list dl {
+  font-size: 18px !important;
 }
-.wrap-box .content-wrap #help-box .up-log li dl dt {
+.wrap-box .content-wrap #help-box .up-log .up-log-list dl dt {
   line-height: 38px;
 }
-.wrap-box .content-wrap #help-box .up-log li dl dd {
+.wrap-box .content-wrap #help-box .up-log .up-log-list dl dd {
   color: #949494;
 }
 .wrap-box .content-wrap #help-box .up-log li:last-child {

@@ -6,13 +6,16 @@ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input,
 *{box-sizing: border-box;}
 html, body {
   min-height: 100%;
+
+  font-size:28px;
+
 }
 
 body {
   //font-family: "Microsoft YaHei";
   font-family: "Avenir","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
-  font-size:28px;
   color:#585858;
+
 }
 h1, h2, h3, h4, h5, h6{font-weight:normal;}
 ul,ol {
@@ -646,6 +649,9 @@ textarea {
       }
 
     }
+
+
+
   //  2、生日
     #birthday-box{
       background-color: #FFFFFF;
@@ -900,7 +906,7 @@ textarea {
 
   //  6、帮助
     #help-box{
-      .title{
+      .help-box-title{
         position: relative;
 
         text-align: center;
@@ -990,7 +996,7 @@ textarea {
       .up-log{
         background-color: #ffffff;
         width: 100%;
-        li{
+        .up-log-list{
 
           background-color: @gray;
           padding: 10px 40px 20px;
@@ -998,7 +1004,7 @@ textarea {
 
 
           dl{
-            font-size: 18px;
+            font-size: 18px !important;
             dt{
               line-height: 38px;
 
