@@ -483,7 +483,10 @@ textarea {
   transform: translateY(0px);
 }
 .wrap-box .content-wrap #spirit-box {
-  background-color: #FFFFFF;
+  background-color: #f9f7fa;
+  background-image: url('../img/01-title-bg-1.jpg');
+  background-position: bottom right;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 .wrap-box .content-wrap #spirit-box .title {
@@ -742,6 +745,21 @@ textarea {
 .wrap-box .content-wrap #phone-box .phone-list-wrap > ul .phone-text-title dl dd:last-child a:hover {
   color: #50d2c2;
 }
+.wrap-box .content-wrap #msg-box {
+  background-color: #FFFFFF;
+}
+.wrap-box .content-wrap #msg-box .title {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-image: url('../img/05-title-bg.jpg');
+  background-position: 0 0px;
+}
+.wrap-box .content-wrap #msg-box .title h2 {
+  font-weight: 100;
+  padding: 175px 0 0 48px;
+  font-size: 80px;
+}
 .wrap-box .content-wrap #help-box .help-box-title {
   position: relative;
   text-align: center;
@@ -926,5 +944,5 @@ h2 {
 .calendar-box {
   height: 80px;
   color: #FFFFFF;
-  background-color: #50d2c2;
+  background-color: #a8a8aa;
 }

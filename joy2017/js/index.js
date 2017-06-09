@@ -43,13 +43,16 @@ var curMonthDaysP = new Date(myDate.getFullYear(), myDate.getMonth(), 0).getDate
 var curMonthDaysN = new Date(myDate.getFullYear(), (myDate.getMonth()+2), 0).getDate(); //下个月有多少天
 
 
-
 var dateTime = {
     weekName:[
         'SUN','MON','TUE','WED','THU','FRI','SAT'
     ],
     week:myDate.getDay(),     //今天星期
-    monthName:'June',
+    monthName:[
+        'January','February','March','April',
+        'May','June','July','August',
+        'September', 'October', 'November', 'December'
+    ],
     month: myDate.getMonth(),  //当月
     date:myDate.getDate(),     //今天
     weekDateArr:[],//本周的7天对应的日期
@@ -236,7 +239,7 @@ var app = new Vue({
     el:'#app',
     data:{
         all:{
-            page: 1,
+            page: 0,
             icon: member.icon,
             otherIcon: member.otherIcon,
         },
@@ -275,8 +278,9 @@ var app = new Vue({
                     data:[
 
                     ],
-                    month:dateTime.monthName,
+                    monthName:dateTime.monthName,
                     weekDateArr:dateTime.weekDateArr,
+                    month:dateTime.month,
 
 
                 },
@@ -343,7 +347,11 @@ var app = new Vue({
             },
         //    5
             msg:{
-
+                title:{
+                    titleText:'活动 · 通知',
+                    text:'',
+                    chapter:''
+                },
             },
         //    6
             help:{
