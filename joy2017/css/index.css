@@ -823,7 +823,7 @@ textarea {
   border-bottom: 1px #949494 dashed;
 }
 .wrap-box .content-wrap #help-box .up-log .up-log-list dl {
-  font-size: 18px !important;
+  font-size: .5rem;
 }
 .wrap-box .content-wrap #help-box .up-log .up-log-list dl dt {
   line-height: 38px;
