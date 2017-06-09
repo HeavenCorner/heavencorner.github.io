@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>第一个vue页面测试</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+
+
+
+
+    <div id="app">
+
+        <div v-bind:id="dynamicId" style="width: 100px;height: 100px;background: red;"></div>
+
+        <p>按钮的可用不可用</p>
+        <button v-bind:disabled="f">Button</button>
+        <button v-bind:disabled="t">Button</button>
+
+
+        {{ message2 }}
+        <br>
+        {{ message }}
+        <br>
+        {{ message3 }}
+
+    </div>
+    <hr>
+    <!--单向绑定 v-bing：后面加上需要赋值的属性-->
+    <div id="app-2">
+      <span v-bind:title="message">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！
+      </span>
+    </div>
+    <hr>
+    <div id="app-3">
+        <p v-if="seen">现在你看到我了</p>
+        <p v-if="seen2">这个是隐藏的</p>
+
+    </div>
+    <hr>
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+    <hr>
+    <div id="app-5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">逆转消息</button>
+    </div>
+    <hr>
+    <div id="app-6">
+
+        <p v-once>&nbsp;{{ message }}</p>
+        <p>&nbsp;{{ message }}</p>
+
+        <input v-model="message">
+    </div>
+    <hr>
+    <p>局域性组件组件：</p>
+
+    <div id="app-7">
+        <ol>
+            <!-- 现在我们为每个todo-item提供待办项对象    -->
+            <!-- 待办项对象是变量，即其内容可以是动态的 -->
+            <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+        </ol>
+    </div>
+    下面是 v-html="rawHtml"
+
+    <div v-html="rawHtml"></div>
+
+    <button v->点击事件测试</button>
+
+
+
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
