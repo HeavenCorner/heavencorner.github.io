@@ -126,7 +126,7 @@
 
     <!--测试部分的样式链接-->
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <!--<link rel="stylesheet" href="css/animate.css">-->
     <link rel="stylesheet" href="font/iconfont.css">
     <!--上线时的样式链接(min)-->
 
@@ -253,8 +253,8 @@
             <div class="prayer-text">
                 <ul class="member-list" m="member.listOpen" v-bind:id="member.id" v-for="(member,index) in contentpage.prayer.memberList"
                     v-bind:class="{'close': member.listOpen == false }">
-                    <li id="" class="prayer-text-title">
-                        <dl v-on:click="closePrayerList(member)">
+                    <li id="" class="prayer-text-title" v-on:click="closePrayerList(member)">
+                        <dl >
                             <dt>
                                 <img v-bind:src="member.imgsrc" alt="">
                             </dt>
@@ -292,15 +292,22 @@
 
             </div>
             <!--经文-->
-            <dl>
-                <dt></dt>
-                <dd></dd>
-            </dl>
+            <div class="title-msg">
+                <p>
+                    <span>{{contentpage.spirit.title.text}}</span>
+                    <i>{{contentpage.spirit.title.chapter}}</i>
+                </p>
+            </div>
             <!--音乐-->
-            <div class="">
-
+            <div class="music-box animated bounceInRight">
+                <span class="music-b"></span>
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=200 src="//music.163.com/outchain/player?type=2&id=17654232&auto=0&height=66"></iframe>
             </div>
         </div>
+
+
+
+
         <!--2、生日-->
         <div id="birthday-box"  class="con-page" v-bind:class="{'leave': all.page != '2', 'come': all.page == '2'}">
             <div class="title">
@@ -315,7 +322,7 @@
             <!--日历-->
 
             <div class="calendar-box">
-                <h1>日历智能提醒模块（开发中...）</h1>
+                <h1>日历智能分组提醒模块（开发中...）</h1>
             </div>
 
 
@@ -429,7 +436,7 @@
                     </dl>
 
                     <dl class="b3">
-                        <dt>{{contentpage.help.title.upLogLength}}</dt>
+                        <dt>{{contentpage.help.upLog.length - 2}}</dt>
                         <dd>
                             {{contentpage.help.title.titleMsg[2]}}
                         </dd>

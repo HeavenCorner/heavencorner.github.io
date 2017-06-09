@@ -38,19 +38,68 @@ var myDate = new Date();
 // myDate.getDate();        //获取当前日(1-31)
 // myDate.getDay();         //获取当前星期X(0-6,0代表星期天)
 
+var curMonthDays = new Date(myDate.getFullYear(), (myDate.getMonth()+1), 0).getDate(); //本月有多少天
+var curMonthDaysP = new Date(myDate.getFullYear(), myDate.getMonth(), 0).getDate(); //上个月有多少天
+var curMonthDaysN = new Date(myDate.getFullYear(), (myDate.getMonth()+2), 0).getDate(); //下个月有多少天
+
+
+
 var dateTime = {
     weekName:[
         'SUN','MON','TUE','WED','THU','FRI','SAT'
     ],
-    week:myDate.getDay(),
+    week:myDate.getDay(),     //今天星期
     monthName:'June',
-    month: myDate.getMonth(),
-    date:myDate.getDate(),
-    weekDateArr:[4,5,6,7,8,9,10],
+    month: myDate.getMonth(),  //当月
+    date:myDate.getDate(),     //今天
+    weekDateArr:[],//本周的7天对应的日期
+    curMonthDays:curMonthDays,//本月有几天
 };
 
-//每周对应的天数数组
+// dateTime.date = 30;
+
+//本周对应的天数数组
 (function () {
+
+    var beginDay = dateTime.date - dateTime.week;
+
+    //显示中间是1号的情况
+    var m = 1;
+
+    if(beginDay <= 0 ){
+        beginDay = curMonthDaysP - dateTime.week + dateTime.date;
+
+        for(var i=0;i < 7;i++){
+            if((beginDay + i) <= curMonthDaysP){
+                dateTime.weekDateArr[i] = beginDay + i;
+            }else{
+
+                for(var n = 1;n < (8 - dateTime.weekDateArr.length);n++){
+                    console.log('m:'+ m)
+                    dateTime.weekDateArr.push(m);
+                    m ++;
+
+                }
+            }
+        }
+
+    }else{
+        for(var i=0;i < 7;i++){
+
+            if((beginDay + i) <= curMonthDays){
+                dateTime.weekDateArr[i] = beginDay + i;
+            }else{
+                for(var n = 1;n < (8 - dateTime.weekDateArr.length);n++){
+                    console.log('m:'+ m)
+                    dateTime.weekDateArr.push(m);
+                    m ++;
+                }
+            }
+
+        }
+    }
+
+
 
 })();
 
@@ -76,9 +125,6 @@ var seconds2 = disTime2 % 60;
 var minutes2 = (disTime2 - seconds2) / 60 % 60;
 var hours2 = (disTime2 - minutes2 * 60 - seconds2) / 3600 % 24;
 var day2 = (disTime2 - hours2 * 3600 - minutes2 * 60 - seconds2) / 86400;
-
-
-
 
 
 
@@ -242,6 +288,8 @@ var app = new Vue({
             spirit:{
                 title:{
                     titleText:'灵粮 · 音乐',
+                    text:'所以你们要彼此认罪，互相代求，使你们可以得医治。义人祈祷所发的力量是大有功效的。 ',
+                    chapter:'—— 雅各书 5:16'
                 },
                 list:{
                     icon:member.icon[1],
