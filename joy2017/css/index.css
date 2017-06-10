@@ -428,6 +428,7 @@ textarea {
   overflow: hidden;
 }
 .wrap-box .content-wrap #prayer-box .prayer-text > ul .prayer-text-list p {
+  line-height: 50px;
   float: left;
   width: 70px;
 }
@@ -647,9 +648,15 @@ textarea {
   padding: 10px 0 10px 150px;
   overflow: hidden;
 }
+.wrap-box .content-wrap #birthday-box .birthday-wrap > ul .day i {
+  line-height: 50px;
+}
 .wrap-box .content-wrap #birthday-box .birthday-wrap > ul .day p {
   float: right;
   padding-right: 40px;
+}
+.wrap-box .content-wrap #birthday-box .birthday-wrap > ul .day p span {
+  line-height: 50px;
 }
 .wrap-box .content-wrap #birthday-box .open-all {
   opacity: .6;
@@ -997,6 +1004,7 @@ textarea {
   overflow: hidden;
 }
 .wrap-box .content-wrap #index-box .msg-box .prayer-text-list p {
+  line-height: 50px;
   float: left;
   width: 70px;
 }
