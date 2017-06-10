@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <!--<meta name="viewport" content="width=750, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
-    <meta name="viewport" content="width=750,target-densitydpi=device-dpi,user-scalable=no" />
+    <meta name="viewport" content="width=750,user-scalable=no" />
     <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
 
-    <title>喜乐组 · 清心</title>
-
+    <title>喜乐组 · 以琳</title>
 
 
     <style>
@@ -64,20 +63,20 @@
         @keyframes looding{
 
             from{
-                border-width: 8px 0 8px 0;
+                border-width: 12px 0 12px 0;
             }
             to{
-                border-width: 0 8px 0 8px;
+                border-width: 0 12px 0 12px;
             }
         }
 
         -webkit-@keyframes looding{
 
             from{
-                border-width: 8px 0 8px 0;
+                border-width: 12px 0 12px 0;
             }
             to{
-                border-width: 0 8px 0 8px;
+                border-width: 0 12px 0 12px;
             }
 
         }
@@ -144,7 +143,7 @@
         </span>
     </div>
     <p class="title-1" id="looding-msg">
-            111
+            0s
     </p>
     <h2 class="title-2">
         Joy 2.0
@@ -178,6 +177,13 @@
             <li></li>
         </ul>
 
+        <!--右下角跳转到主页-->
+        <div class="right-bottom-goindex" v-on:click="goHome"
+        v-if="(all.page != 0) && (all.page != 2)"
+        >
+            <span v-bind:class="all.otherIcon[0]"></span>
+        </div>
+
     </header>
 
     <!--蒙版-->
@@ -193,7 +199,9 @@
         </dl>
         <ul>
             <li v-for = "li in menu.list" v-bind:class="{'active': all.page == li.id}" v-on:click="goMenu(li.id)">
-                <span v-bind:class="li.icon"></span>
+
+                <span class="icon" v-bind:class="li.icon"></span>
+
                 <span class="nav-text">{{li.text}}</span>
 
                 <span class="nav-num" v-if="li.num">{{li.num}}</span>
@@ -256,14 +264,14 @@
                     <li id="" class="prayer-text-title" v-on:click="closePrayerList(member)">
                         <dl >
                             <dt>
-                                <img v-bind:src="member.imgsrc" alt="">
+                                <img v-bind:src="member.imgsrc"  v-on:click="goIndex(member)" alt="">
                             </dt>
                             <dd>{{member.name}}</dd>
                             <!--<dd></dd>-->
                         </dl>
                     </li>
 
-                    <li class="prayer-text-list" v-for="(prayer,index) in member.prayer">
+                    <li class="prayer-text-list" v-if="prayer.text" v-for="(prayer,index) in member.prayer">
                         <p>
                             {{index + 1}}、
                         </p>
@@ -326,18 +334,29 @@
                 <h1>日历智能分组提醒模块（开发中...）</h1>
             </div>
 
+            <div class="time-title">
+                <p>距离下次生日还有：</p>
+            </div>
+
 
             <div class="birthday-wrap">
-                <ul class="list" v-if="member.birthday" v-for="(member,index) in contentpage.birthday.memberList"
+                <ul class="list" v-if="member.birthdayCD.times" v-for="(member,index) in contentpage.birthday.memberList"
                     v-bind:class="{'close': member.birthdayOpen == false }">
                     <li class="text-title">
                         <dl v-on:click="closeBirthdayList(member)">
                             <dt>
-                                <img v-bind:src="member.imgsrc" alt="">
+                                <img v-bind:src="member.imgsrc" v-on:click="goIndex(member)" alt="">
                             </dt>
                             <dd>{{member.name}}</dd>
                             <!--倒计时-->
-                            <dd>
+                            <dd class="birthdays">
+                                <p>
+
+                                    <span v-bind:class="{'c-r': member.birthdayCD.allDays < 7 }">
+                                        {{member.birthdayCD.allDays}}
+                                    </span>
+                                    天
+                                </p>
 
                             </dd>
                         </dl>
@@ -345,6 +364,22 @@
 
                     <!--具体生日日期-->
                     <li class="day">
+
+                        <i>{{member.birthdayCD.times}}</i>
+
+                        <p>
+                            <span v-if="member.birthdayCD.month">{{member.birthdayCD.month}}个月</span>
+
+                            <span  v-bind:class="{'c-r': member.birthdayCD.allDays < 10 }">
+
+                                {{member.birthdayCD.allDays - member.birthdayCD.month*30}}
+
+                                <span class="c-b"> 天</span>
+
+                            </span>
+
+
+                        </p>
 
                     </li>
 
@@ -388,7 +423,7 @@
                     <li class="phone-text-title">
                         <dl v-on:click="">
                             <dt>
-                                <img v-bind:src="member.imgsrc" alt="">
+                                <img v-bind:src="member.imgsrc"  v-on:click="goIndex(member)" alt="">
                             </dt>
                             <dd class="name">{{member.name}}</dd>
                             <dd>
@@ -489,17 +524,25 @@
                 <h4>{{contentpage.help.title.titleMsgBottom}}</h4>
 
             </div>
+            <h6>{{contentpage.help.nameMsg}}</h6>
 
             <h5>{{contentpage.help.upLogTitle}}</h5>
 
-            <ul class="up-log">
-                <li class="up-log-list" v-for="list in contentpage.help.upLog">
-                    <dl>
-                        <dt>{{list.date}}</dt>
-                        <dd>{{list.text}}</dd>
-                    </dl>
-                </li>
-            </ul>
+            <div class="up-log-box">
+                <!--<li class="up-log-list" >-->
+
+                    <p v-for="list in contentpage.help.upLog">
+                        <!--<dt>-->
+                            <span>{{list.date}}</span>
+
+                        <!--</dt>-->
+                        <!--<dd>-->
+                            <span>&nbsp;{{list.text}}</span>
+
+                        <!--</dd>-->
+                    </p>
+                <!--</li>-->
+            </div>
 
             <h5>{{contentpage.help.logTitle}}</h5>
             <img src="img/help.png" alt="">
@@ -508,7 +551,65 @@
 
         </div>
 
-        <!--个人主页-->
+        <!--个人主页 index (点击头像进入)-->
+        <div id="index-box"  class="con-page"
+             v-bind:class="{'leave': all.page != 'index', 'come': all.page == 'index'}">
+            <div class="title">
+                <div class="img-box">
+                    <img class="title-bg" v-bind:src="contentpage.index.member.imgsrc" alt="">
+
+                </div>
+                <div class="mark">
+
+                </div>
+                <h3 class="name">{{contentpage.index.member.name}}</h3>
+                <div class="head-ball">
+                    <img v-bind:src="contentpage.index.member.imgsrc" alt="">
+                </div>
+                <p class="signature">{{contentpage.index.member.signature}}</p>
+
+
+
+            </div>
+
+            <a v-if="contentpage.index.member.phone" class="ball w110 h110"
+               v-bind:href="contentpage.index.member.phone"
+               v-bind:class="contentpage.phone.list.icon"></a>
+
+
+
+
+            <dl class="msg-box">
+
+                <!--代祷事项-->
+                <h4>代祷事项</h4>
+                <div class="prayer-text-list" v-if="prayer.text" v-for="(prayer,index) in contentpage.index.member.prayer">
+                    <p>
+                        {{index + 1}}、
+                    </p>
+                    <p class="prayer-text-con">
+                        {{prayer.text}}
+                    </p>
+                </div>
+
+                <h4
+                        v-if="contentpage.index.member.birthdayCD.allDays"
+                >距离下次生日</h4>
+
+
+
+                <div class="dayss bain"
+                     v-if="contentpage.index.member.birthdayCD.allDays"
+                >
+                    <span v-bind:class="{'c-r': contentpage.index.member.birthdayCD.allDays < 7 }">
+                                        {{contentpage.index.member.birthdayCD.allDays}}
+                                    </span>
+                    <span class="day-text">天</span>
+                </div>
+
+
+            </dl>
+        </div>
 
     </section>
 
@@ -590,13 +691,13 @@
 
         console.log(loadTimeNum);
 
-        if(loadTimeNum > 130 && loodings > 90){
+        if(loadTimeNum > 10 && loodings > 90){
             loadTimeNum = 0;
             window.clearInterval(loadTime);
             loadWrap.style.left = '-110vw';
         }
 
-        var msgs = '加载异常，请等待或刷新';
+        var msgs = '加载异常，请等待或刷新 ';
 
         if(m == 0){
 
@@ -648,7 +749,7 @@
 
 
 <!--js-->
-<script src="js/vue.js"></script>
+<script src="js/vue.min.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

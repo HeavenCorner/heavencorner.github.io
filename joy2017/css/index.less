@@ -243,7 +243,14 @@ textarea {
 
       li.active{
         background-color: @bg-1;
+        .icon{
+          color: @red;
+        }
+        .nav-text{
+          color: #000000;
+        }
       }
+
 
       li {
         height: 110px;
@@ -263,7 +270,7 @@ textarea {
           padding-right: 50px;
         }
         .nav-text {
-          color: #1d1d26;
+          color: #585858;
           font-size: 30px;
           display: block;
 
@@ -423,6 +430,8 @@ textarea {
 
       .prayer-text{
         width: 100%;
+        margin-bottom: 100px;
+
 
         .close{
             height: 140px;
@@ -495,6 +504,9 @@ textarea {
 
     //打开全部
       .open-all{
+
+        opacity: .6;
+
         position: fixed;
         right: 30px;
         bottom: 30px;
@@ -580,7 +592,7 @@ textarea {
       background-image: url('../img/01-title-bg-1.jpg');
       background-position: bottom right;
       background-repeat: no-repeat;
-      overflow: hidden;
+      //overflow: hidden;
       .title{
         position: relative;
         width: 100%;
@@ -674,11 +686,24 @@ textarea {
         }
       }
 
-      //日历
+
+      .time-title{
+        height: 60px;
+        border-bottom: 2px solid #f4f4f4;
+
+        p{
+          padding-right: 40px;
+          text-align: right;
+          line-height: 60px;
+          font-size: 30px;
+        }
+      }
 
 
       .birthday-wrap{
         width: 100%;
+        margin-bottom: 100px;
+
 
         .close{
           height: 140px;
@@ -723,7 +748,20 @@ textarea {
                 display: inline-block;
                 line-height: 80px;
                 font-size: 38px;
+
               }
+              .birthdays{
+                float: right;
+                font-size: 28px;
+                padding-right: 40px;
+                p{
+                  span{
+                    font-size: 48px;
+                  }
+                }
+
+              }
+
 
             }
 
@@ -734,16 +772,13 @@ textarea {
             min-height: 50px;
             background-color: #f8f8f9;
             font-size: 36px;
-            padding: 10px 0 10px 40px;
+            padding: 10px 0 10px 150px;
             overflow: hidden;
-
             p{
-              float: left;
-              width: 70px;
+              float: right;
+              padding-right: 40px;
             }
-            .prayer-text-con{
-              width: 610px;
-            }
+
           }
         }
 
@@ -751,6 +786,7 @@ textarea {
 
       //打开全部
       .open-all{
+        opacity: .6;
         position: fixed;
         right: 30px;
         bottom: 30px;
@@ -1039,31 +1075,39 @@ textarea {
       }
 
 
-      .up-log{
+      .up-log-box{
         background-color: #ffffff;
         width: 100%;
-        .up-log-list{
 
-          background-color: @gray;
-          padding: 10px 40px 20px;
-          border-bottom: 1px #949494 dashed;
+        //.up-log-list{
+          font-size: 10px;
 
 
-          dl{
-            font-size: .5rem;
-            dt{
+          //background-color: @gray;
+          padding: 0px 40px 20px;
+          //border-bottom: 1px #949494 dashed;
+
+
+          p{
+            border-bottom: 1px #949494 dashed;
+
+            //font-size: 14px;
+
+            span{
               line-height: 38px;
 
-            }
-            dd{
+
+            //}
+            //span{
               color: #949494;
+
             }
           }
 
-        }
-        li:last-child{
-          border-bottom-width: 0;
-        }
+        //}
+        //li:last-child{
+        //  border-bottom-width: 0;
+        //}
       }
 
 
@@ -1073,11 +1117,177 @@ textarea {
         font-size: 26px;
         padding: 20px 0 20px 40px;
       }
+      h6{
+        text-align: center;
+        background-color: #FFFFFF;
+        line-height: 70px;
+      }
 
       img{
         display: block;
         width: 100%;
       }
+    }
+
+  //  index
+    #index-box{
+      position: relative;
+      background-color: #FFFFFF;
+
+      .title{
+        color: #FFFFFF;
+
+        position: relative;
+        width: 100%;
+        height: 550px;
+
+        overflow: hidden;
+
+
+
+
+        .img-box{
+
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+
+          .title-bg{
+            position: absolute;
+            top: -80px;
+            left: 0;
+            width: 100vw;
+            opacity: .6;
+
+          }
+        }
+
+
+
+        .mark{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,.5);
+          z-index: 3;
+        }
+
+        h2{
+          font-weight: 100;
+          padding: 175px 0 0 48px;
+          font-size: @titleSize;
+        }
+        .head-ball{
+          z-index: 4;
+          position: absolute;
+          left: 50%;
+          margin-left: -100px;
+          top: 120px;
+
+          height: 200px;
+          width: 200px;
+          img{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+          }
+        }
+
+        .name{
+          position: absolute;
+          z-index: 4;
+          text-align: center;
+          width: 100%;
+          top: 380px;
+          font-size: 40px;
+
+        }
+        .signature{
+          position: absolute;
+          top: 440px;
+          width: 100%;
+          z-index: 4;
+          text-align: center;
+          font-size: 24px;
+          font-weight: 100;
+        }
+
+      }
+
+
+      .ball{
+        z-index: 6;
+        color: #FFFFFF;
+        background-color: @green;
+        position: absolute;
+        right: 30px;
+        top: 500px;
+        font-size: 70px;
+        text-align: center;
+        line-height: 110px;
+      }
+
+      .msg-box{
+        width: 100%;
+
+        h4{
+          padding: 10px 40px;
+          font-size: 40px;
+          //background-color: #f8f8f9;
+          border: 2px #f8f8f9 solid;
+          border-width: 2px 0;
+          color: #000000;
+          text-align: center;
+        }
+
+      //  代祷事项
+      //  color: #585858;
+
+
+
+        .prayer-text-list{
+          width: 100%;
+          //min-height: 50px;
+          //background-color: #f8f8f9;
+          font-size: 36px;
+          padding: 10px 0 10px 40px;
+          overflow: hidden;
+
+          p{
+            float: left;
+            width: 70px;
+          }
+          .prayer-text-con{
+            width: 610px;
+          }
+        }
+
+      //  生日
+        .dayss{
+          margin: 40px 0 20px;
+          position: relative;
+          left: 50%;
+          margin-left: -100px;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          border: 8px @purple solid;
+          text-align: center;
+          font-size: 60px;
+          line-height: 190px;
+          .day-text{
+            position: relative;
+            top: -40px;
+            font-size: 20px;
+          }
+        }
+
+
+
+      }
+
     }
 
   }
@@ -1086,8 +1296,8 @@ textarea {
 //模块化公共样式：
 
 .bain{
-  -webkit-animation: looding .9s infinite linear 0s;
-  animation: looding .9s infinite linear 0s;
+  -webkit-animation: looding 1.9s infinite linear 0s;
+  animation: looding 1.9s infinite linear 0s;
 
   animation-direction:alternate;
   -webkit-animation-direction:alternate;
@@ -1111,6 +1321,14 @@ textarea {
   background-color: @red !important;
 }
 
+.c-r{
+  color: @red !important;
+}
+
+.c-b{
+  color: #585858;
+}
+
 .bg-o{
   color: #ffffff;
   background-color: @orange !important;
@@ -1120,7 +1338,7 @@ h2{
   font-weight: 100;
   color: #ffffff;
 }
-@bg-1:#f8f8f8;
+@bg-1:#f8f8f9;
 @green:#50d2c2;
 @red:#ff3366;
 @orange:#fcab53;
@@ -1220,5 +1438,28 @@ h2{
 .calendar-box{
   //height: 80px;
   color: #FFFFFF;
-  background-color: #a8a8aa;
+  background-color: @rgba07;
+}
+
+.open-all{
+  opacity: .6 !important;
+}
+
+//right-bottom-goindex
+.right-bottom-goindex{
+  height: 110px;
+  width: 110px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  opacity: .6;
+  background-color: @purple;
+  border-radius: 50%;
+
+  text-align: center;
+  span{
+    font-size: 54px;
+    color: #FFFFFF;
+    line-height: 110px;
+  }
 }

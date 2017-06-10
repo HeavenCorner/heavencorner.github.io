@@ -38,6 +38,7 @@ var myDate = new Date();
 // myDate.getDate();        //获取当前日(1-31)
 // myDate.getDay();         //获取当前星期X(0-6,0代表星期天)
 
+var years = myDate.getFullYear();
 var curMonthDays = new Date(myDate.getFullYear(), (myDate.getMonth()+1), 0).getDate(); //本月有多少天
 var curMonthDaysP = new Date(myDate.getFullYear(), myDate.getMonth(), 0).getDate(); //上个月有多少天
 var curMonthDaysN = new Date(myDate.getFullYear(), (myDate.getMonth()+2), 0).getDate(); //下个月有多少天
@@ -78,7 +79,7 @@ var dateTime = {
             }else{
 
                 for(var n = 1;n < (8 - dateTime.weekDateArr.length);n++){
-                    console.log('m:'+ m)
+                    // console.log('m:'+ m)
                     dateTime.weekDateArr.push(m);
                     m ++;
 
@@ -93,7 +94,7 @@ var dateTime = {
                 dateTime.weekDateArr[i] = beginDay + i;
             }else{
                 for(var n = 1;n < (8 - dateTime.weekDateArr.length);n++){
-                    console.log('m:'+ m)
+                    // console.log('m:'+ m)
                     dateTime.weekDateArr.push(m);
                     m ++;
                 }
@@ -111,7 +112,7 @@ var dateTime = {
 //计时
 var nowTime = new Date().getTime();
 var tarTime = new Date("2021/5/2 20:00:00").getTime();
-var lastTime = new Date("2017/6/7 22:00:00").getTime();
+var lastTime = new Date("2017/6/7 20:00:00").getTime();
 
 
 //倒计时
@@ -132,83 +133,474 @@ var day2 = (disTime2 - hours2 * 3600 - minutes2 * 60 - seconds2) / 86400;
 
 
 
+//计算倒计时函数
+var tarTimeR = function(time){
+
+
+
+    var timelast;
+
+    var timeArr = {};
+    if(time == ''){
+        timeArr.times = time;
+        return timeArr;
+    }
+    timelast = (years + 0) + '/' + time;
+    timeArr.times = time;
+    timeArr.birthday = time.replace('/','');
+    // console.log(timeArr.birthday);
+    var tarTime = new Date(timelast).getTime();
+    //倒计时
+
+    timeArr.disTime = Math.round((tarTime - nowTime) / 1000);
+
+
+    if(timeArr.disTime < 0){
+        console.log(timeArr.disTime)
+
+        timelast = '';
+        timelast = (years + 1) + '/' + time;
+        timeArr.times = time;
+
+        console.log(timelast);
+
+        var tarTime2 = new Date(timelast).getTime();
+        timeArr.disTime = Math.round((tarTime2 - nowTime) / 1000);
+
+    }
+
+
+    timeArr.seconds = timeArr.disTime % 60;
+    timeArr.minutes = (timeArr.disTime - timeArr.seconds) / 60 % 60;
+    timeArr.hours = (timeArr.disTime - timeArr.minutes * 60 - timeArr.seconds) / 3600 % 24;
+    timeArr.days = (timeArr.disTime - timeArr.hours * 3600 - timeArr.minutes * 60 - timeArr.seconds) / 86400;
+
+    timeArr.allDays = parseInt(timeArr.disTime/3600/24)
+
+    timeArr.month = parseInt(timeArr.allDays/30);
+
+
+    // console.log(timeArr.allDays,timeArr.times);
+
+
+    // console.log(timeArr)
+
+    if(timeArr.days < 0){
+        timeArr.old = false;
+        timeArr.msg = '';
+    }
+
+    return timeArr;
+}
+
+
+
+// 提示语
+
+var hello = '哈利路亚';
+
+(function(){
+
+    var myDate = new Date();
+    var nowHours = myDate.getHours();
+
+    var arrmsg = ['哈利路亚，早安', '哈利路亚，上午好', '哈利路亚，午安',
+        '哈利路亚，下午好', '哈利路亚，晚上好','哈利路亚，晚安',
+        '哈利路亚，深夜好','哈利路亚，凌晨好','哈利路亚，中午好'];
+
+    //1        =>5<=8   早安
+
+    if((nowHours == 5 || nowHours > 5) && (nowHours == 8 || nowHours < 8) ){
+
+        // canvasbgcolor = '#E8E8E8';
+        hello = arrmsg[0];
+
+    }
+
+    //2        >8<=11  上午好 关闭星空
+    if((nowHours > 8) && (nowHours == 11 || nowHours < 11)) {
+
+        // $('#canvas').css({display: 'none'});
+        //
+        // $('#msg-font').html(arrmsg[1]);
+
+        hello = arrmsg[1];
+
+
+
+    }
+
+
+
+    //9            新加的  中午好
+
+    if((nowHours > 11) && (nowHours == 12 || nowHours < 12)) {
+
+        // $('#canvas').css({display: 'none'});
+        //
+        // $('#msg-font').html(arrmsg[8]);
+
+        hello = arrmsg[8];
+
+
+
+    }
+
+
+    //3       >12<=13     午安
+    if((nowHours > 12) && (nowHours == 13 || nowHours < 13)){
+        // $('#canvas').css({display: 'none'});
+        //
+        // $('#msg-font').html(arrmsg[2]);
+
+        hello = arrmsg[2];
+
+
+    }
+
+    //4        >14<=18     下午好
+    if((nowHours > 13) && (nowHours == 18 || nowHours < 18)){
+        // $('#canvas').css({display: 'none'});
+        //
+        // $('#msg-font').html(arrmsg[3]);
+
+        hello = arrmsg[3];
+
+
+
+    }
+
+    //5        >18<=20   晚上好    背景变化启动canvas  深灰色
+
+
+    if((nowHours > 18) && (nowHours == 20 || nowHours < 20)){
+
+        // canvasbgcolor = '#5b5b5b';
+        //
+        // $('#msg-font').html(arrmsg[4]);
+        // $('#msg-font').css({color:'#ffffff'});
+        //
+        // $('.p3d').css({opacity: '.9'})
+
+
+        hello = arrmsg[4];
+
+
+
+    }
+
+    //6        >20<23   晚安
+    if((nowHours > 20) && (nowHours < 23)){
+
+        // canvasbgcolor = 'hsla(' + hue + ', 64%, 6%, 2)';
+        //
+        // $('#msg-font').html(arrmsg[5]);
+        // $('#msg-font').css({color:'#ffffff'});
+        //
+        // $('.p3d').css({opacity: '.6'})
+
+        hello = arrmsg[5];
+
+
+
+    }
+
+    //7        =23  深夜好
+    if(nowHours == 23){
+        // canvasbgcolor = 'hsla(' + hue + ', 64%, 6%, 2)';
+        //
+        // $('#msg-font').html(arrmsg[6]);
+        // $('#msg-font').css({color:'#ffffff'});
+        //
+        // $('.p3d').css({opacity: '.6'})
+
+        hello = arrmsg[6];
+
+
+
+
+    }
+
+    //8        >=0<5  凌晨好
+
+
+    if((nowHours == 0 || nowHours > 0) && (nowHours < 5)){
+
+        // canvasbgcolor = '#709DF2';
+        //
+        //
+        // $('#msg-font').html(arrmsg[7]);
+        //
+        // $('.p3d').css({opacity: '.7'})
+
+        hello = arrmsg[7];
+
+
+
+
+    }
+
+
+})();
+
+
+
+
 //成员信息
 var memberList = [
     {
-        name: '成员q',
+        name: '从舟',
         prayer: [
-            {text: '事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝'},
-            {text: '事件2'},
-            {text: '事件3'}
+            {text: '1'},
+            {text: '1'},
+            {text: ''}
         ],
-        birthday: '2012-01-01',
-        signature: '每天都是新的，啊哈哈哈哈',
+        birthdayCD:tarTimeR('08/16'),
+        signature: '',
         age: '26',
         head: '',
-        imgsrc: 'img/head/duqu.jpeg',
+        imgsrc: 'img/head/congzhou.jpeg',
         bgc: '',
-        id:'congzhouBox',
+        id:'congzhou',
         listOpen: false,
         birthdayOpen: false,
-        phone:'tel:12345678',
+        phone:'18217309179',
     },
     {
-        name: 'a',
+        name: '从舟妈妈',
         prayer: [
-            {text: '事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝'},
-            {text: '事件2'},
-            {text: '事件3'}
+            {text: '1'},
+            {text: ''},
+            {text: ''}
         ],
-        birthday: '2012-01-01',
-        signature: '每天都是新的，啊哈哈哈哈',
-        age: '26',
+        birthdayCD:tarTimeR('07/15'),
+        signature: '',
+        age: '',
         head: '',
-        imgsrc: 'img/head/duqu.jpeg',
+        imgsrc: 'img/head/congzhoumama.jpeg',
         bgc: '',
-        id:'congzhouBox',
+        id:'congzhoumama',
         listOpen: false,
         birthdayOpen: false,
-
-        phone:'12345678',
+        phone:'13482694331',
     },
     {
-        name: 'a',
+        name: '栋夷',
         prayer: [
-            {text: '事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝'},
-            {text: '事件2'},
-            {text: '事件3'}
+            {text: '1'},
+            {text: ''},
+            {text: ''}
         ],
-        birthday: '',
-        signature: '每天都是新的，啊哈哈哈哈',
-        age: '26',
+        birthdayCD:tarTimeR('2/15'),
+        signature: '',
+        age: '',
         head: '',
-        imgsrc: 'img/head/duqu.jpeg',
+        imgsrc: 'img/head/dongyi.jpeg',
         bgc: '',
-        id:'congzhouBox',
+        id:'dongyi',
         listOpen: false,
         birthdayOpen: false,
-
+        phone:'13651932095',
+    },
+    {
+        name: '段段',
+        prayer: [
+            {text: '1'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('05/21'),
+        signature: '',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/duanduan.jpeg',
+        bgc: '',
+        id:'duanduan',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'15021886131',
+    },
+    {
+        name: '蒙恩',
+        prayer: [
+            {text: '1'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('01/23'),
+        signature: '',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/mengen.jpeg',
+        bgc: '',
+        id:'mengen',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'18817698750',
+    },
+    {
+        name: '浩然',
+        prayer: [
+            {text: '1'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('12/21'),
+        signature: '',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/haoran.jpeg',
+        bgc: '',
+        id:'haoran',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'17765166621',
+    },
+    {
+        name: '晶晶',
+        prayer: [
+            {text: '1'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('10/25'),
+        signature: '',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/jingjing.jpeg',
+        bgc: '',
+        id:'jingjing',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'13009685561',
+    },
+    {
+        name: '蓓静',
+        prayer: [
+            {text: '1'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR(''),
+        signature: '',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/beijing.jpeg',
+        bgc: '',
+        id:'beijing',
+        listOpen: false,
+        birthdayOpen: false,
         phone:'',
     },
     {
-        name: 'a',
+        name: '思思',
         prayer: [
-            {text: '事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝事件测试测试蚕丝'},
-            {text: '事件2'},
-            {text: '事件3'}
+            {text: '1'},
+            {text: ''},
+            {text: ''}
         ],
-        birthday: '',
-        signature: '每天都是新的，啊哈哈哈哈',
+        birthdayCD:tarTimeR('11/03'),
+        signature: '',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/sisi.jpeg',
+        bgc: '',
+        id:'sisi',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'18807046040',
+    },
+    {
+        name: '锦燕',
+        prayer: [
+            {text: '1'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('05/13'),
+        signature: '',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/jinyan.jpeg',
+        bgc: '',
+        id:'jinyan',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'15501695181',
+    },
+    {
+        name: '申元',
+        prayer: [
+            {text: '1'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR(''),
+        signature: '',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/shenyuan.jpeg',
+        bgc: '',
+        id:'shenyuan',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'',
+    },
+    {
+        name: '炳林',
+        prayer: [
+            {text: '1'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('09/20'),
+        signature: '',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/binglin.jpeg',
+        bgc: '',
+        id:'binglin',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'13761371606',
+    },
+    {
+        name: '黄霆',
+        prayer: [
+            {text: '1'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR(''),
+        signature: '',
+        age: '26',
+        head: '',
+        imgsrc: 'img/head/huangting.jpeg',
+        bgc: '',
+        id:'huangting',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'',
+    },
+    {
+        name: '杜渠',
+        prayer: [
+            {text: '你撒飞洒发来师傅师傅师傅你的；萨芬拉风哈舒服撒发生'},
+            {text: '2'},
+            {text: '3'}
+        ],
+        birthdayCD:tarTimeR('03/15'),
+        signature: '保持饥饿感',
         age: '26',
         head: '',
         imgsrc: 'img/head/duqu.jpeg',
         bgc: '',
-        id:'congzhouBox',
+        id:'duqu',
         listOpen: false,
         birthdayOpen: false,
-
-        phone:'12345678',
+        phone:'15649032317',
     },
+
 
 
 
@@ -219,11 +611,9 @@ var memberList = [
 //活动事项
 
 
-
-
 for(var i=0;i < memberList.length;i++){
     //统计生日数目
-    if(memberList[i].birthday != ''){
+    if(memberList[i].birthdayCD.times != ''){
         member.birthdayLenght ++;
     }
 //    统计通讯录数目
@@ -234,12 +624,14 @@ for(var i=0;i < memberList.length;i++){
 
 }
 
+
+
 //app
 var app = new Vue({
     el:'#app',
     data:{
         all:{
-            page: 0,
+            page: '0',
             icon: member.icon,
             otherIcon: member.otherIcon,
         },
@@ -253,7 +645,7 @@ var app = new Vue({
             list: [
                 { id:'0',text: '代祷事项' ,icon:member.icon[0],num: memberList.length},
                 { id:'1',text: '灵粮 · 音乐' ,icon:member.icon[1]},
-                { id:'2',text: '组员生日' ,icon:member.icon[2],num: member.birthdayLenght},
+                { id:'2',text: '生日' ,icon:member.icon[2],num: member.birthdayLenght},
                 { id:'3',text: '通讯录' ,icon:member.icon[3],num:member.phoneLenght},
                 { id:'4',text: '其它代祷' ,icon:member.icon[4]},
                 { id:'5',text: '通知 · 活动' ,icon:member.icon[5]},
@@ -267,7 +659,7 @@ var app = new Vue({
         //    0
             prayer:{
                 title: {
-                    msg:'Good Morning!',
+                    msg:hello,
                     text:'所以你们要彼此认罪，互相代求，使你们可以得医治。义人祈祷所发的力量是大有功效的。 ',
                     chapter:'—— 雅各书 5:16'
                 },
@@ -310,7 +702,7 @@ var app = new Vue({
         //    2
             birthday:{
                 title:{
-                    titleText:'组员生日',
+                    titleText:'生日',
                     lenght: member.birthdayLenght,
                 },
                 list:{
@@ -321,7 +713,7 @@ var app = new Vue({
                     text:'',
                     title:''
                 },
-                memberList:memberList,
+                memberList: memberList,
                 openAll: false,
 
 
@@ -338,7 +730,7 @@ var app = new Vue({
                 },
                 msg:{
                     text:'点击电话按钮获取信息',
-                    title:'温良的舌是生命树；乖谬的嘴使人心碎。'
+                    title:'"温良的舌是生命树；乖谬的嘴使人心碎。"'
                 },
             },
         //    4
@@ -358,14 +750,14 @@ var app = new Vue({
         //    5
             msg:{
                 title:{
-                    titleText:'活动 · 通知',
+                    titleText:'通知 · 活动',
                     text:'',
                     chapter:''
                 },
                 msg:{
                     text:'信 · 望 · 爱',
-                    title:'你们要彼此相爱，像我爱你们一样；',
-                    title2:'这就是我的命令。',
+                    title:'"你们要彼此相爱，像我爱你们一样；',
+                    title2:'这就是我的命令。"',
 
                 },
             },
@@ -387,19 +779,29 @@ var app = new Vue({
                     runDay:day2,
 
                 },
+                nameMsg:'',
                 logTitle:'Joy 2.0 单页面应用思维导图 （渐进完善）',
                 upLogTitle:'升级日志',
                 upLog:[
+
+                    {
+                        date:'2017-06-10',
+                        text:'【版本】Joy 2.0 封版',
+                    },
+                    {
+                        date:'2017-06-10',
+                        text:'【增加】"生日" 倒计时提醒，"个人主页"；【优化】"菜单"选中状态的样式',
+                    },
                     {
                         date:'2017-06-09',
-                        text:'【增加】"生日" 基础模块和 "灵粮 · 音乐" 模块完善',
+                        text:'【增加】"生日" 基础模块和 "灵粮 · 音乐" 和其它模块的完善',
                     },
                     {
                         date:'2017-06-08',
                         text:'【增加】"代祷事项"、"通讯录" 和 "帮助" 模块完善',
                     },
                     {
-                        date:'2017-06-07 22:00',
+                        date:'2017-06-07',
                         text:'Joy 2.0 基础框架测试上线',
                     },
                     {
@@ -411,7 +813,27 @@ var app = new Vue({
 
 
 
-            }
+            },
+
+
+
+            //  7  index
+            index:{
+                title:{
+                    titleName:'杜渠',
+                    img:'img/head/duqu.jpeg',
+                    signature: '保持饥饿感',
+
+                },
+                msg:{
+                    text:'',
+                    title:'',
+                    title2:'',
+
+                },
+                member:memberList[13],
+
+            },
 
         }
 
@@ -424,6 +846,7 @@ var app = new Vue({
         },
         closeMenuList: function(){
             var obj = this;
+
             closeMenuList(obj);
         },
         //菜单
@@ -488,7 +911,7 @@ var app = new Vue({
 
                     }else if(x == '2'){
                         this.contentpage.birthday.memberList[i].birthdayOpen = true;
-                        console.log(this.contentpage.birthday.memberList[i].birthdayOpen)
+                        // console.log(this.contentpage.birthday.memberList[i].birthdayOpen)
 
                     }
                 }
@@ -497,14 +920,35 @@ var app = new Vue({
 
         },
 
+    //    进入个人主页
+
+        goIndex:function(obj){
+            this.all.page = 'index';
+        //    开始部署
+
+            console.log(obj)
+            console.log(this.contentpage.index)
+
+
+            this.contentpage.index.member = obj;
+
+        },
+
+
+
+
 
 
     },
 
     created: function () {
 
+        var obj = this;
 
-        //全局时间段
+
+        //全局定时器
+
+
 
         //生日页面：成员生日计算
 
@@ -519,6 +963,8 @@ var closeMenuList = function(obj){
         obj.menu.seen = false;
     },100)
 }
+
+//时间段函数
 
 
 

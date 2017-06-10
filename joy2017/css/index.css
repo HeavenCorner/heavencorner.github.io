@@ -224,7 +224,13 @@ textarea {
   border-top: 2px #f3f3f4 solid;
 }
 .wrap-box #nav-box ul li.active {
-  background-color: #f8f8f8;
+  background-color: #f8f8f9;
+}
+.wrap-box #nav-box ul li.active .icon {
+  color: #ff3366;
+}
+.wrap-box #nav-box ul li.active .nav-text {
+  color: #000000;
 }
 .wrap-box #nav-box ul li {
   height: 110px;
@@ -244,7 +250,7 @@ textarea {
   padding-right: 50px;
 }
 .wrap-box #nav-box ul li .nav-text {
-  color: #1d1d26;
+  color: #585858;
   font-size: 30px;
   display: block;
 }
@@ -372,6 +378,7 @@ textarea {
 }
 .wrap-box .content-wrap #prayer-box .prayer-text {
   width: 100%;
+  margin-bottom: 100px;
 }
 .wrap-box .content-wrap #prayer-box .prayer-text .close {
   height: 140px;
@@ -428,6 +435,7 @@ textarea {
   width: 610px;
 }
 .wrap-box .content-wrap #prayer-box .open-all {
+  opacity: .6;
   position: fixed;
   right: 30px;
   bottom: 30px;
@@ -487,7 +495,6 @@ textarea {
   background-image: url('../img/01-title-bg-1.jpg');
   background-position: bottom right;
   background-repeat: no-repeat;
-  overflow: hidden;
 }
 .wrap-box .content-wrap #spirit-box .title {
   position: relative;
@@ -571,8 +578,19 @@ textarea {
 .wrap-box .content-wrap #birthday-box .title .ball {
   background-color: #ba77ff;
 }
+.wrap-box .content-wrap #birthday-box .time-title {
+  height: 60px;
+  border-bottom: 2px solid #f4f4f4;
+}
+.wrap-box .content-wrap #birthday-box .time-title p {
+  padding-right: 40px;
+  text-align: right;
+  line-height: 60px;
+  font-size: 30px;
+}
 .wrap-box .content-wrap #birthday-box .birthday-wrap {
   width: 100%;
+  margin-bottom: 100px;
 }
 .wrap-box .content-wrap #birthday-box .birthday-wrap .close {
   height: 140px;
@@ -614,21 +632,27 @@ textarea {
   line-height: 80px;
   font-size: 38px;
 }
+.wrap-box .content-wrap #birthday-box .birthday-wrap > ul .text-title dl .birthdays {
+  float: right;
+  font-size: 28px;
+  padding-right: 40px;
+}
+.wrap-box .content-wrap #birthday-box .birthday-wrap > ul .text-title dl .birthdays p span {
+  font-size: 48px;
+}
 .wrap-box .content-wrap #birthday-box .birthday-wrap > ul .day {
   min-height: 50px;
   background-color: #f8f8f9;
   font-size: 36px;
-  padding: 10px 0 10px 40px;
+  padding: 10px 0 10px 150px;
   overflow: hidden;
 }
 .wrap-box .content-wrap #birthday-box .birthday-wrap > ul .day p {
-  float: left;
-  width: 70px;
-}
-.wrap-box .content-wrap #birthday-box .birthday-wrap > ul .day .prayer-text-con {
-  width: 610px;
+  float: right;
+  padding-right: 40px;
 }
 .wrap-box .content-wrap #birthday-box .open-all {
+  opacity: .6;
   position: fixed;
   right: 30px;
   bottom: 30px;
@@ -849,39 +873,157 @@ textarea {
   width: 140px;
   height: 140px;
 }
-.wrap-box .content-wrap #help-box .up-log {
+.wrap-box .content-wrap #help-box .up-log-box {
   background-color: #ffffff;
   width: 100%;
+  font-size: 10px;
+  padding: 0px 40px 20px;
 }
-.wrap-box .content-wrap #help-box .up-log .up-log-list {
-  background-color: #f8f8f8;
-  padding: 10px 40px 20px;
+.wrap-box .content-wrap #help-box .up-log-box p {
   border-bottom: 1px #949494 dashed;
 }
-.wrap-box .content-wrap #help-box .up-log .up-log-list dl {
-  font-size: .5rem;
-}
-.wrap-box .content-wrap #help-box .up-log .up-log-list dl dt {
+.wrap-box .content-wrap #help-box .up-log-box p span {
   line-height: 38px;
-}
-.wrap-box .content-wrap #help-box .up-log .up-log-list dl dd {
   color: #949494;
-}
-.wrap-box .content-wrap #help-box .up-log li:last-child {
-  border-bottom-width: 0;
 }
 .wrap-box .content-wrap #help-box h5 {
   background-color: #FFFFFF;
   font-size: 26px;
   padding: 20px 0 20px 40px;
 }
+.wrap-box .content-wrap #help-box h6 {
+  text-align: center;
+  background-color: #FFFFFF;
+  line-height: 70px;
+}
 .wrap-box .content-wrap #help-box img {
   display: block;
   width: 100%;
 }
+.wrap-box .content-wrap #index-box {
+  position: relative;
+  background-color: #FFFFFF;
+}
+.wrap-box .content-wrap #index-box .title {
+  color: #FFFFFF;
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+.wrap-box .content-wrap #index-box .title .img-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.wrap-box .content-wrap #index-box .title .img-box .title-bg {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100vw;
+  opacity: .6;
+}
+.wrap-box .content-wrap #index-box .title .mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+.wrap-box .content-wrap #index-box .title h2 {
+  font-weight: 100;
+  padding: 175px 0 0 48px;
+  font-size: 80px;
+}
+.wrap-box .content-wrap #index-box .title .head-ball {
+  z-index: 4;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  top: 120px;
+  height: 200px;
+  width: 200px;
+}
+.wrap-box .content-wrap #index-box .title .head-ball img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+.wrap-box .content-wrap #index-box .title .name {
+  position: absolute;
+  z-index: 4;
+  text-align: center;
+  width: 100%;
+  top: 380px;
+  font-size: 40px;
+}
+.wrap-box .content-wrap #index-box .title .signature {
+  position: absolute;
+  top: 440px;
+  width: 100%;
+  z-index: 4;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 100;
+}
+.wrap-box .content-wrap #index-box .ball {
+  z-index: 6;
+  color: #FFFFFF;
+  background-color: #50d2c2;
+  position: absolute;
+  right: 30px;
+  top: 500px;
+  font-size: 70px;
+  text-align: center;
+  line-height: 110px;
+}
+.wrap-box .content-wrap #index-box .msg-box {
+  width: 100%;
+}
+.wrap-box .content-wrap #index-box .msg-box h4 {
+  padding: 10px 40px;
+  font-size: 40px;
+  border: 2px #f8f8f9 solid;
+  border-width: 2px 0;
+  color: #000000;
+  text-align: center;
+}
+.wrap-box .content-wrap #index-box .msg-box .prayer-text-list {
+  width: 100%;
+  font-size: 36px;
+  padding: 10px 0 10px 40px;
+  overflow: hidden;
+}
+.wrap-box .content-wrap #index-box .msg-box .prayer-text-list p {
+  float: left;
+  width: 70px;
+}
+.wrap-box .content-wrap #index-box .msg-box .prayer-text-list .prayer-text-con {
+  width: 610px;
+}
+.wrap-box .content-wrap #index-box .msg-box .dayss {
+  margin: 40px 0 20px;
+  position: relative;
+  left: 50%;
+  margin-left: -100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 8px #ba77ff solid;
+  text-align: center;
+  font-size: 60px;
+  line-height: 190px;
+}
+.wrap-box .content-wrap #index-box .msg-box .dayss .day-text {
+  position: relative;
+  top: -40px;
+  font-size: 20px;
+}
 .bain {
-  -webkit-animation: looding .9s infinite linear 0s;
-  animation: looding .9s infinite linear 0s;
+  -webkit-animation: looding 1.9s infinite linear 0s;
+  animation: looding 1.9s infinite linear 0s;
   animation-direction: alternate;
   -webkit-animation-direction: alternate;
 }
@@ -899,6 +1041,12 @@ textarea {
 .bg-r {
   color: #ffffff;
   background-color: #ff3366 !important;
+}
+.c-r {
+  color: #ff3366 !important;
+}
+.c-b {
+  color: #585858;
 }
 .bg-o {
   color: #ffffff;
@@ -965,5 +1113,24 @@ h2 {
 }
 .calendar-box {
   color: #FFFFFF;
-  background-color: #a8a8aa;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.open-all {
+  opacity: .6 !important;
+}
+.right-bottom-goindex {
+  height: 110px;
+  width: 110px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  opacity: .6;
+  background-color: #ba77ff;
+  border-radius: 50%;
+  text-align: center;
+}
+.right-bottom-goindex span {
+  font-size: 54px;
+  color: #FFFFFF;
+  line-height: 110px;
 }
