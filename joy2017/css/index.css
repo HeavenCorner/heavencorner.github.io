@@ -729,6 +729,9 @@ textarea {
   padding: 175px 0 0 48px;
   font-size: 80px;
 }
+.wrap-box .content-wrap #phone-box .phone-list-wrap {
+  margin-bottom: 100px;
+}
 .wrap-box .content-wrap #phone-box .phone-list-wrap > ul {
   border-bottom: 2px solid #f4f4f4;
   min-height: 140px;
