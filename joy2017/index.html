@@ -691,7 +691,7 @@
 
         console.log(loadTimeNum);
 
-        if(loadTimeNum > 10 && loodings > 90){
+        if(loadTimeNum > 80 && loodings > 70){
             loadTimeNum = 0;
             window.clearInterval(loadTime);
             loadWrap.style.left = '-110vw';
@@ -701,7 +701,7 @@
 
         if(m == 0){
 
-            if(loadTimeNum > 80){
+            if(loadTimeNum > 50){
                 loodingMsg.innerHTML = msgs + ' ' +  loadTimeNum/10 + '.0' + 's';
             }else{
                 loodingMsg.innerHTML = loadTimeNum/10 + '.0' + 's';
@@ -709,7 +709,7 @@
 
         }else {
 
-            if(loadTimeNum > 80){
+            if(loadTimeNum > 50){
                 loodingMsg.innerHTML = msgs + ' ' +   loadTimeNum/10 + 's';
             }else{
                 loodingMsg.innerHTML = loadTimeNum/10 + 's';

@@ -131,7 +131,7 @@ textarea {
 .wrap-box #header-box .ul li {
   width: 100%;
   height: 2px;
-  background: white;
+  background: #f0f0f0;
 }
 .wrap-box #header-box ul li:nth-child(2),
 .wrap-box #header-box .ul li:nth-child(2) {
