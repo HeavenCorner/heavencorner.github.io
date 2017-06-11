@@ -799,7 +799,7 @@ var app = new Vue({
 
                 title:{
                     msg:'Joy 2.0',
-                    text:'天父必看顾你',
+                    text:'天父必看顾你们，荣耀归于上帝，阿门',
                     titleMsg:[
 
                         '崩溃 次',
@@ -819,7 +819,7 @@ var app = new Vue({
 
                     {
                         date:'2017-06-10',
-                        text:'【版本】Joy 2.0 （喜乐组· 清心）封版',
+                        text:'【版本】Joy 2.0 （喜乐组·清心）封版',
                     },
                     {
                         date:'2017-06-10',

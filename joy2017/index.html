@@ -540,26 +540,29 @@
             </div>
             <h6>{{contentpage.help.nameMsg}}</h6>
 
-            <h5>{{contentpage.help.upLogTitle}}</h5>
 
-            <div class="up-log-box">
-                <!--<li class="up-log-list" >-->
 
-                    <p v-for="list in contentpage.help.upLog">
-                        <!--<dt>-->
-                            <span>{{list.date}}</span>
-
-                        <!--</dt>-->
-                        <!--<dd>-->
-                            <span>&nbsp;{{list.text}}</span>
-
-                        <!--</dd>-->
-                    </p>
-                <!--</li>-->
-            </div>
 
             <h5>{{contentpage.help.logTitle}}</h5>
             <img src="img/help.png" alt="">
+
+            <div class="up-log-box">
+                <h5>{{contentpage.help.upLogTitle}}</h5>
+
+                <!--<li class="up-log-list" >-->
+
+                <p v-for="list in contentpage.help.upLog">
+                    <!--<dt>-->
+                    <span>{{list.date}}</span>
+
+                    <!--</dt>-->
+                    <!--<dd>-->
+                    <span>&nbsp;{{list.text}}</span>
+
+                    <!--</dd>-->
+                </p>
+                <!--</li>-->
+            </div>
 
             <h6 class="bottom-msg">我是有底线的</h6>
 
