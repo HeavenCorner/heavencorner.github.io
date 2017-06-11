@@ -156,16 +156,21 @@ var tarTimeR = function(time){
 
 
     if(timeArr.disTime < 0){
-        console.log(timeArr.disTime)
+        // console.log(timeArr.disTime)
+
+        timeArr.oldday = false;
 
         timelast = '';
         timelast = (years + 1) + '/' + time;
         timeArr.times = time;
 
-        console.log(timelast);
+        // console.log(timelast);
 
         var tarTime2 = new Date(timelast).getTime();
         timeArr.disTime = Math.round((tarTime2 - nowTime) / 1000);
+
+    }else{
+        timeArr.oldday = true;
 
     }
 
@@ -175,7 +180,14 @@ var tarTimeR = function(time){
     timeArr.hours = (timeArr.disTime - timeArr.minutes * 60 - timeArr.seconds) / 3600 % 24;
     timeArr.days = (timeArr.disTime - timeArr.hours * 3600 - timeArr.minutes * 60 - timeArr.seconds) / 86400;
 
-    timeArr.allDays = parseInt(timeArr.disTime/3600/24)
+    timeArr.allDays = parseInt(timeArr.disTime/3600/24);
+    timeArr.allDaysD = parseInt(timeArr.disTime/3600/24) + '天';
+
+    if(timeArr.allDays == 0){
+        timeArr.allDaysD = '今天';
+        timeArr.allDays = '今';
+    }
+
 
     timeArr.month = parseInt(timeArr.allDays/30);
 
@@ -351,8 +363,8 @@ var memberList = [
     {
         name: '从舟',
         prayer: [
-            {text: '1'},
-            {text: '1'},
+            {text: '周六周日要中考。'},
+            {text: ''},
             {text: ''}
         ],
         birthdayCD:tarTimeR('08/16'),
@@ -366,12 +378,13 @@ var memberList = [
         birthdayOpen: false,
         phone:'18217309179',
     },
+    // 1、为自己与主的关系更亲密。2、为爸爸妈妈的睡眠和家人身心灵的强健。3、为从舟的中考。
     {
         name: '从舟妈妈',
         prayer: [
-            {text: '1'},
-            {text: ''},
-            {text: ''}
+            {text: '为自己与主的关系更亲密；'},
+            {text: '为爸爸妈妈的睡眠和家人身心灵的强健；'},
+            {text: '为从舟的中考。'}
         ],
         birthdayCD:tarTimeR('07/15'),
         signature: '',
@@ -387,8 +400,8 @@ var memberList = [
     {
         name: '栋夷',
         prayer: [
-            {text: '1'},
-            {text: ''},
+            {text: '最近工作压力比较大，求神帮助我面对，凡事行在主的心意中，不要依靠人的聪明；'},
+            {text: '每天还是释放安静的时间去灵修，求神指引我前面服侍的方向，也顺服神的带领，感谢主。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('2/15'),
@@ -405,7 +418,7 @@ var memberList = [
     {
         name: '段段',
         prayer: [
-            {text: '1'},
+            {text: '睡眠。'},
             {text: ''},
             {text: ''}
         ],
@@ -423,7 +436,7 @@ var memberList = [
     {
         name: '蒙恩',
         prayer: [
-            {text: '1'},
+            {text: '每天亲近主，操练为别人守望。'},
             {text: ''},
             {text: ''}
         ],
@@ -441,8 +454,8 @@ var memberList = [
     {
         name: '浩然',
         prayer: [
-            {text: '1'},
-            {text: ''},
+            {text: '在病痛中学会忍耐；'},
+            {text: '求主施恩于我，为我建立家室，一同承受生命之恩。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('12/21'),
@@ -456,12 +469,13 @@ var memberList = [
         birthdayOpen: false,
         phone:'17765166621',
     },
+
     {
         name: '晶晶',
         prayer: [
-            {text: '1'},
-            {text: ''},
-            {text: ''}
+            {text: '为郝新争常住在基督里，得着基督丰盛的生命祷告；'},
+            {text: '为我的家人渴慕神，凡事信靠神、顺服神;'},
+            {text: '为我每天可以安排时间灵修，亲近神、寻求神祷告。'}
         ],
         birthdayCD:tarTimeR('10/25'),
         signature: '',
@@ -474,11 +488,17 @@ var memberList = [
         birthdayOpen: false,
         phone:'13009685561',
     },
+//     1、可以找到上车路上拼车的伙伴
+// <br>
+// 2、公司搬迁。
+
+
+    //上周的，这周没发
     {
         name: '蓓静',
         prayer: [
-            {text: '1'},
-            {text: ''},
+            {text: '可以找到上车路上拼车的伙伴'},
+            {text: '公司搬迁'},
             {text: ''}
         ],
         birthdayCD:tarTimeR(''),
@@ -495,7 +515,7 @@ var memberList = [
     {
         name: '思思',
         prayer: [
-            {text: '1'},
+            {text: '更多地亲近主。'},
             {text: ''},
             {text: ''}
         ],
@@ -510,11 +530,13 @@ var memberList = [
         birthdayOpen: false,
         phone:'18807046040',
     },
+    //求主赐我一颗时刻爱他的心，给我信心和力量，求主住在我里面，让圣灵与我同在！
+    // 也求主保守我的家人们，让他们得着平安和喜乐！！
     {
         name: '锦燕',
         prayer: [
-            {text: '1'},
-            {text: ''},
+            {text: '求主赐我一颗时刻爱他的心，给我信心和力量，求主住在我里面，让圣灵与我同在；'},
+            {text: '求主保守我的家人们，让他们得着平安和喜乐。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('05/13'),
@@ -528,10 +550,11 @@ var memberList = [
         birthdayOpen: false,
         phone:'15501695181',
     },
+    // 为我们家宝宝和姊妹祷告，求神给她一颗喜乐的心，万事寻求神的心意。
     {
         name: '申元',
         prayer: [
-            {text: '1'},
+            {text: '为我们家宝宝和姊妹祷告，求神给她一颗喜乐的心，万事寻求神的心意。'},
             {text: ''},
             {text: ''}
         ],
@@ -549,7 +572,7 @@ var memberList = [
     {
         name: '炳林',
         prayer: [
-            {text: '1'},
+            {text: '为最近的身体祷告，这俩天有感冒流鼻涕，希望可以早点好起来。'},
             {text: ''},
             {text: ''}
         ],
@@ -564,12 +587,14 @@ var memberList = [
         birthdayOpen: false,
         phone:'13761371606',
     },
+//     1、新的一周工作会有新任务，求主开道，然后希望自己灵性上追求更多神的话语；
+// 2、希望我老婆秋萍和小孩都能平安成长。
     {
         name: '黄霆',
         prayer: [
-            {text: '1'},
-            {text: ''},
-            {text: ''}
+            {text: '希望这周去配秋萍孕检能够顺利平安，希望自己和别人相处时候能更柔软，去除内心的骄傲；'},
+            {text: '新的一周工作会有新任务，求主开道，然后希望自己灵性上追求更多神的话语；'},
+            {text: '希望我老婆秋萍和小孩都能平安成长。'}
         ],
         birthdayCD:tarTimeR(''),
         signature: '',
@@ -585,9 +610,9 @@ var memberList = [
     {
         name: '杜渠',
         prayer: [
-            {text: '你撒飞洒发来师傅师傅师傅你的；萨芬拉风哈舒服撒发生'},
-            {text: '2'},
-            {text: '3'}
+            {text: '肠胃不好，养成好的作息时间。'},
+            {text: ''},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('03/15'),
         signature: '保持饥饿感',
@@ -648,7 +673,7 @@ var app = new Vue({
                 { id:'2',text: '生日' ,icon:member.icon[2],num: member.birthdayLenght},
                 { id:'3',text: '通讯录' ,icon:member.icon[3],num:member.phoneLenght},
                 { id:'4',text: '其它代祷' ,icon:member.icon[4]},
-                { id:'5',text: '通知 · 活动' ,icon:member.icon[5]},
+                { id:'5',text: '通知 · 活动' ,icon:member.icon[5],num:''},
                 { id:'6',text: '帮助' ,icon:member.icon[6]},
 
             ],
@@ -760,6 +785,14 @@ var app = new Vue({
                     title2:'这就是我的命令。"',
 
                 },
+                list:[
+                    {
+                        title:'聚餐',
+                        con:'从舟家',
+                        time:tarTimeR('06/24'),//06/24
+                        img:'img/00-title-bg.jpg',
+                    }
+                ],
             },
         //    6
             help:{
@@ -786,7 +819,7 @@ var app = new Vue({
 
                     {
                         date:'2017-06-10',
-                        text:'【版本】Joy 2.0 （喜乐组· 清新）封版',
+                        text:'【版本】Joy 2.0 （喜乐组· 清心）封版',
                     },
                     {
                         date:'2017-06-10',
@@ -926,8 +959,8 @@ var app = new Vue({
             this.all.page = 'index';
         //    开始部署
 
-            console.log(obj)
-            console.log(this.contentpage.index)
+            // console.log(obj)
+            // console.log(this.contentpage.index)
 
 
             this.contentpage.index.member = obj;
@@ -945,7 +978,9 @@ var app = new Vue({
 
         var obj = this;
 
+        this.menu.list[5].num = this.contentpage.msg.list.length;
 
+        console.log(this.contentpage.msg.list)
         //全局定时器
 
 

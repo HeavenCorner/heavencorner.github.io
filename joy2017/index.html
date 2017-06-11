@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=750,user-scalable=no" />
     <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
 
-    <title>喜乐组 · 清新</title>
+    <title>喜乐组 · 清心</title>
 
 
     <style>
@@ -469,8 +469,7 @@
                 <h2>{{contentpage.msg.title.titleText}}</h2>
                 <div class="w110 h110 bg-r ball">
                     <span>
-                        0
-                        <!--{{contentpage.phone.title.lenght}}-->
+                        {{contentpage.msg.list.length}}
                     </span>
                 </div>
             </div>
@@ -486,6 +485,21 @@
                 </dd>
 
             </dl>
+            <!--正文-->
+            <ul class="list-box">
+                <li  v-if="list.time.oldday" v-for="list in contentpage.msg.list">
+                    <img v-bind:src="list.img" alt="">
+                    <p class="title">{{list.title}}</p>
+                    <p class="con">{{list.con}}</p>
+                    <p class="time">还有
+                        <span>
+                           {{list.time.allDays}}
+                        </span>
+                        天
+                    </p>
+
+                </li>
+            </ul>
         </div>
         <!--6、帮助-->
         <div id="help-box"  class="con-page" v-bind:class="{'leave': all.page != '6', 'come': all.page == '6'}">

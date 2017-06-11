@@ -786,8 +786,8 @@ textarea {
   position: relative;
   width: 100%;
   height: 380px;
-  background-image: url('../img/05-title-bg.jpg');
-  background-position: 0 0px;
+  background-image: url('../img/01-title-bg.jpg');
+  background-position: 0 60%;
 }
 .wrap-box .content-wrap #other-box .title h2 {
   font-weight: 100;
@@ -797,20 +797,58 @@ textarea {
 .wrap-box .content-wrap #msg-box {
   background-color: #FFFFFF;
 }
-.wrap-box .content-wrap #msg-box .title {
+.wrap-box .content-wrap #msg-box > .title {
   position: relative;
   width: 100%;
   height: 380px;
   background-image: url('../img/05-title-bg.jpg');
   background-position: 0 0px;
 }
-.wrap-box .content-wrap #msg-box .title h2 {
+.wrap-box .content-wrap #msg-box > .title h2 {
   font-weight: 100;
   padding: 175px 0 0 48px;
   font-size: 80px;
 }
 .wrap-box .content-wrap #msg-box .msg {
   height: 200px;
+}
+.wrap-box .content-wrap #msg-box .list-box {
+  color: #FFFFFF;
+}
+.wrap-box .content-wrap #msg-box .list-box li {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+}
+.wrap-box .content-wrap #msg-box .list-box li img {
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  z-index: 2;
+}
+.wrap-box .content-wrap #msg-box .list-box li p {
+  position: relative;
+  z-index: 3;
+  line-height: 140px;
+  float: left;
+  font-weight: 100;
+}
+.wrap-box .content-wrap #msg-box .list-box li .title {
+  font-size: 60px;
+  font-weight: 100;
+  padding-left: 40px;
+}
+.wrap-box .content-wrap #msg-box .list-box li .con {
+  font-size: 40px;
+  padding-left: 60px;
+}
+.wrap-box .content-wrap #msg-box .list-box li .time {
+  float: right;
+  padding-right: 40px;
+}
+.wrap-box .content-wrap #msg-box .list-box li .time span {
+  line-height: 120px;
+  font-size: 60px;
 }
 .wrap-box .content-wrap #help-box .help-box-title {
   position: relative;
