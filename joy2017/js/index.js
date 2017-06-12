@@ -497,8 +497,8 @@ var memberList = [
     {
         name: '蓓静',
         prayer: [
-            {text: '可以找到上车路上拼车的伙伴'},
-            {text: '公司搬迁'},
+            {text: '可以找到上车路上拼车的伙伴；'},
+            {text: '公司搬迁。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR(''),
