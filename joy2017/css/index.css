@@ -1116,6 +1116,7 @@ h2 {
   padding-right: 40px;
   float: right;
   font-style: italic;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 .wrap-mark {
   z-index: 20;
