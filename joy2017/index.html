@@ -291,7 +291,7 @@
                                 <img v-bind:src="member.imgsrc"  v-on:click="goIndex(member)" alt="">
                             </dt>
                             <dd>{{member.name}}</dd>
-                            <!--<dd></dd>-->
+                            <dd v-if="member.head != ''" class="c-red">{{member.head}}</dd>
                         </dl>
                     </li>
 

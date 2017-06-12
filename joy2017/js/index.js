@@ -370,7 +370,7 @@ var memberList = [
         birthdayCD:tarTimeR('08/16'),
         signature: '',
         age: '26',
-        head: '',
+        head: '中考加油！',
         imgsrc: 'img/head/congzhou.jpeg',
         bgc: '',
         id:'congzhou',
@@ -615,7 +615,7 @@ var memberList = [
             {text: ''}
         ],
         birthdayCD:tarTimeR('03/15'),
-        signature: '保持饥饿感',
+        signature: '',
         age: '26',
         head: '',
         imgsrc: 'img/head/duqu.jpeg',

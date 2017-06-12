@@ -1110,6 +1110,13 @@ h2 {
   font-weight: 100;
   color: #ffffff;
 }
+.c-red {
+  color: #890018 !important;
+  font-size: 60px !important;
+  padding-right: 40px;
+  float: right;
+  font-style: italic;
+}
 .wrap-mark {
   z-index: 20;
 }
