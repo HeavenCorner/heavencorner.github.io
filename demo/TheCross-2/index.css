@@ -1272,8 +1272,13 @@ to{
 }
 
 
-.infinite{
+.infinite,.ad,space,.p3d,.con-font{
 	animation-iteration-count: infinite;
 	-webkit-animation-iteration-count: infinite;
 }
 
+.alternate,.ad,space,.p3d,.con-font
+{
+	animation-direction:alternate;
+	-webkit-animation-direction:alternate; /* Safari 和 Chrome */
+}
