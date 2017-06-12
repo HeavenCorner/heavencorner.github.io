@@ -418,7 +418,7 @@ var memberList = [
     {
         name: '段段',
         prayer: [
-            {text: '睡眠。'},
+            {text: '专心追求；专心依靠；专心服侍。'},
             {text: ''},
             {text: ''}
         ],
