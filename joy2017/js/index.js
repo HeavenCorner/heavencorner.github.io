@@ -542,7 +542,7 @@ var memberList = [
         birthdayCD:tarTimeR('05/13'),
         signature: '',
         age: '26',
-        head: '',
+        head: '四级加油！',
         imgsrc: 'img/head/jinyan.jpeg',
         bgc: '',
         id:'jinyan',
