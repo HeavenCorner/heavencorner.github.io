@@ -45,6 +45,7 @@ var curMonthDaysN = new Date(myDate.getFullYear(), (myDate.getMonth()+2), 0).get
 
 
 var dateTime = {
+    year:years,
     weekName:[
         'SUN','MON','TUE','WED','THU','FRI','SAT'
     ],
@@ -370,7 +371,7 @@ var memberList = [
         birthdayCD:tarTimeR('08/16'),
         signature: '',
         age: '26',
-        head: '中考加油！',
+        head: '',
         imgsrc: 'img/head/congzhou.jpeg',
         bgc: '',
         id:'congzhou',
@@ -542,7 +543,7 @@ var memberList = [
         birthdayCD:tarTimeR('05/13'),
         signature: '',
         age: '26',
-        head: '四级加油！',
+        head: '',
         imgsrc: 'img/head/jinyan.jpeg',
         bgc: '',
         id:'jinyan',
@@ -659,6 +660,8 @@ var app = new Vue({
             page: '0',
             icon: member.icon,
             otherIcon: member.otherIcon,
+            dateTime:dateTime,
+
         },
         header:{
             seen: true,
