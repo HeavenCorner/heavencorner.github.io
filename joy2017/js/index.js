@@ -181,8 +181,8 @@ var tarTimeR = function(time){
     timeArr.hours = (timeArr.disTime - timeArr.minutes * 60 - timeArr.seconds) / 3600 % 24;
     timeArr.days = (timeArr.disTime - timeArr.hours * 3600 - timeArr.minutes * 60 - timeArr.seconds) / 86400;
 
-    timeArr.allDays = parseInt(timeArr.disTime/3600/24);
-    timeArr.allDaysD = parseInt(timeArr.disTime/3600/24) + '天';
+    timeArr.allDays = parseInt(timeArr.disTime/3600/24) + 1;
+    timeArr.allDaysD = parseInt(timeArr.disTime/3600/24) + 1 + '天';
 
     if(timeArr.allDays == 0){
         timeArr.allDaysD = '今天';
@@ -475,7 +475,7 @@ var memberList = [
         name: '晶晶',
         prayer: [
             {text: '为郝新争常住在基督里，得着基督丰盛的生命祷告；'},
-            {text: '为我的家人渴慕神，凡事信靠神、顺服神;'},
+            {text: '为我的家人渴慕神，凡事信靠神、顺服神；'},
             {text: '为我每天可以安排时间灵修，亲近神、寻求神祷告。'}
         ],
         birthdayCD:tarTimeR('10/25'),
@@ -537,7 +537,7 @@ var memberList = [
         name: '锦艳',
         prayer: [
             {text: '愿主耶稣继续带领我，保守我的心，让圣灵充满我的心，让他的话语成为我的粮；'},
-            {text: '求主看顾我的家人们！也愿主在本学期期末考试时给我智慧，让我顺利通过。'},
+            {text: '求主看顾我的家人们， 也愿主在本学期期末考试时给我智慧，让我顺利通过。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('05/13'),
