@@ -551,6 +551,24 @@ var memberList = [
         birthdayOpen: false,
         phone:'15501695181',
     },
+    {
+        name: '立娇',
+        prayer: [
+            {text: '最近灵修不太好，读经也不规律；'},
+            {text: '这边的工作接近尾声，各种总结材料写的脑袋要爆炸，还有收拾东西，处理带不走的东西。求主帮助事情多但不慌乱；'},
+            {text: '回国前会在周围旅游一周，求主保守平安。'}
+        ],
+        birthdayCD:tarTimeR(''),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/lijiao.jpeg',
+        bgc: '',
+        id:'lijiao',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'',
+    },
     // 为我们家宝宝和姊妹祷告，求神给她一颗喜乐的心，万事寻求神的心意。
     {
         name: '申元',
