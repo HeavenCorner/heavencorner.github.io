@@ -730,8 +730,8 @@ var app = new Vue({
             spirit:{
                 title:{
                     titleText:'灵粮 · 音乐',
-                    text:'所以你们要彼此认罪，互相代求，使你们可以得医治。义人祈祷所发的力量是大有功效的。 ',
-                    chapter:'—— 雅各书 5:16'
+                    text:'" 我们既因信称义，就借着我们的主耶稣基督得与神相和。 "',
+                    chapter:'—— 罗马书 5:1'
                 },
                 list:{
                     icon:member.icon[1],
