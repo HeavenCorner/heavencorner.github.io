@@ -232,6 +232,9 @@ textarea {
 .wrap-box #nav-box ul li.active .nav-text {
   color: #000000;
 }
+.wrap-box #nav-box ul li.active .nav-num {
+  background-color: #ff3366;
+}
 .wrap-box #nav-box ul li {
   height: 110px;
   border-bottom: 2px #f3f3f4 solid;

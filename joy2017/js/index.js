@@ -25,6 +25,15 @@ var member = {
         'joyT joyT-all',
         'joyT joyT-close',
         'joyT joyT-phone'
+    ],
+    menuList:[
+        '代祷事项',
+        '灵粮 · 灵修',
+        '生日',
+        '通讯录',
+        '其它代祷',
+        '通知 · 活动',
+        '帮助',
     ]
 }
 //日期
@@ -689,13 +698,13 @@ var app = new Vue({
             title: '导航',
             msg: '"神是我坚固的保障；他引导完全人行他的路。"',
             list: [
-                { id:'0',text: '代祷事项' ,icon:member.icon[0],num: memberList.length},
-                { id:'1',text: '灵粮 · 灵修' ,icon:member.icon[1],num:''},
-                { id:'2',text: '生日' ,icon:member.icon[2],num: member.birthdayLenght},
-                { id:'3',text: '通讯录' ,icon:member.icon[3],num:member.phoneLenght},
-                { id:'4',text: '其它代祷' ,icon:member.icon[4]},
-                { id:'5',text: '通知 · 活动' ,icon:member.icon[5],num:''},
-                { id:'6',text: '帮助' ,icon:member.icon[6]},
+                { id:'0',text: member.menuList[0] ,icon:member.icon[0],num: memberList.length},
+                { id:'1',text: member.menuList[1] ,icon:member.icon[1],num:''},
+                { id:'2',text: member.menuList[2] ,icon:member.icon[2],num: member.birthdayLenght},
+                { id:'3',text: member.menuList[3] ,icon:member.icon[3],num:member.phoneLenght},
+                { id:'4',text: member.menuList[4] ,icon:member.icon[4]},
+                { id:'5',text: member.menuList[5] ,icon:member.icon[5],num:''},
+                { id:'6',text: member.menuList[6] ,icon:member.icon[6]},
 
             ],
             member:'',
@@ -729,7 +738,7 @@ var app = new Vue({
         //    1
             spirit:{
                 title:{
-                    titleText:'灵粮 · 灵修',
+                    titleText:member.menuList[1],
                     text:'" 我们既因信称义，就借着我们的主耶稣基督得与神相和。 "',
                     chapter:'—— 罗马书 5:1'
                 },
@@ -754,7 +763,7 @@ var app = new Vue({
         //    2
             birthday:{
                 title:{
-                    titleText:'生日',
+                    titleText:member.menuList[2],
                     lenght: member.birthdayLenght,
                 },
                 list:{
@@ -774,7 +783,7 @@ var app = new Vue({
         //    3
             phone:{
                 title:{
-                    titleText:'通讯录',
+                    titleText:member.menuList[2],
                     lenght: member.phoneLenght,
                 },
                 list:{
@@ -788,7 +797,7 @@ var app = new Vue({
         //    4
             other:{
                 title:{
-                    titleText:'其它代祷',
+                    titleText:member.menuList[4],
                     lenght: member.phoneLenght,
                 },
                 list:{
@@ -802,7 +811,7 @@ var app = new Vue({
         //    5
             msg:{
                 title:{
-                    titleText:'通知 · 活动',
+                    titleText:member.menuList[5],
                     text:'',
                     chapter:''
                 },
@@ -831,7 +840,7 @@ var app = new Vue({
 
                         '崩溃 次',
                         '正常运行 天',
-                        '升级 次'
+                        '升级 次',
 
                     ],
                     titleMsgBottom:'流畅的体验请使用手机浏览器打开',
