@@ -331,7 +331,7 @@
                 </p>
             </div>
             <!--视频-->
-            <div class="video-iframe-box" v-bind:class="{'display-none': menu.seen}" v-for="list in contentpage.spirit.videoList">
+            <div class="video-iframe-box" v-if="all.page == '1'" v-bind:class="{'display-none': menu.seen}" v-for="list in contentpage.spirit.videoList">
                 <h5>{{list.title}}</h5>
 
                 <iframe class="video_iframe" height="502.5" width="670" frameborder="0" v-bind:src="list.src" allowfullscreen="" scrolling="no" style=""></iframe>
