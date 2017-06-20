@@ -690,7 +690,7 @@ var app = new Vue({
             msg: '"神是我坚固的保障；他引导完全人行他的路。"',
             list: [
                 { id:'0',text: '代祷事项' ,icon:member.icon[0],num: memberList.length},
-                { id:'1',text: '灵粮 · 音乐' ,icon:member.icon[1]},
+                { id:'1',text: '灵粮 · 灵修' ,icon:member.icon[1]},
                 { id:'2',text: '生日' ,icon:member.icon[2],num: member.birthdayLenght},
                 { id:'3',text: '通讯录' ,icon:member.icon[3],num:member.phoneLenght},
                 { id:'4',text: '其它代祷' ,icon:member.icon[4]},

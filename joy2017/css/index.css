@@ -543,6 +543,25 @@ textarea {
   font-size: 40px;
   color: #ffffff;
 }
+.wrap-box .content-wrap #spirit-box .video-iframe-box {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.wrap-box .content-wrap #spirit-box .video-iframe-box h5 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.wrap-box .content-wrap #spirit-box .video-iframe-box iframe {
+  margin: 0 auto;
+  max-width: 100%;
+  display: block;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box !important;
+  word-wrap: break-word !important;
+  width: 670px !important;
+  height: 502.5px !important;
+}
 .wrap-box .content-wrap #spirit-box .music-box {
   display: block;
   position: relative;
