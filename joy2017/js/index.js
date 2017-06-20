@@ -729,7 +729,7 @@ var app = new Vue({
         //    1
             spirit:{
                 title:{
-                    titleText:'灵粮 · 音乐',
+                    titleText:'灵粮 · 灵修',
                     text:'" 我们既因信称义，就借着我们的主耶稣基督得与神相和。 "',
                     chapter:'—— 罗马书 5:1'
                 },
