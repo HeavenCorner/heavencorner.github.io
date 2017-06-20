@@ -740,6 +740,12 @@ var app = new Vue({
                     text:'',
                     title:''
                 },
+                videoList:[
+                    {
+                        title:'圣经中最叫人害怕的经文：God is good',
+                        src:'http://v.qq.com/iframe/player.html?vid=j01965amd75&width=670&height=502.5&auto=0'
+                    },
+                ],
                 musicList:[
                     '//music.163.com/outchain/player?type=2&id=17654232&auto=0&height=66',
                     '//music.163.com/outchain/player?type=2&id=29542772&auto=0&height=66',
