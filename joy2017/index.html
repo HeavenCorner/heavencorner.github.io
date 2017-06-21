@@ -259,20 +259,20 @@
                         <span class="animated zoomIn">{{contentpage.prayer.title.text}}</span>
                         <i class="animated fadeInRight">{{contentpage.prayer.title.chapter}}</i>
                     </p>
-                    <h4 class="animated zoomInLeft">{{contentpage.prayer.dateTime.monthName[contentpage.prayer.dateTime.month]}}</h4>
+                    <h4 class="zoomInLeft">{{contentpage.prayer.dateTime.monthName[contentpage.prayer.dateTime.month]}}</h4>
                 </div>
 
 
             </div>
 
             <div class="date-box"  v-bind:class="{'display-none': all.page != '0'}">
-                <ol class="animated fadeInRight">
+                <ol class=" fadeInRight">
                     <li v-for="week in contentpage.prayer.dateTime.weekName">
                         {{week}}
                     </li>
                 </ol>
 
-                <ul class="animated fadeInLeft">
+                <ul class=" fadeInLeft">
                     <li v-for="(dateNum,index) in contentpage.prayer.dateTime.weekDateArr" >
 
                         <span v-bind:class="{'bg-r':contentpage.prayer.dateTime.week == index}">{{dateNum}}</span>
@@ -330,7 +330,7 @@
             </div>
             <!--经文-->
             <div class="title-msg"   v-bind:class="{'display-none': all.page != '1'}">
-                <p class="animated zoomIn">
+                <p class=" zoomIn">
                     <span>{{contentpage.spirit.title.text}}</span>
                     <i>{{contentpage.spirit.title.chapter}}</i>
                 </p>
@@ -366,7 +366,7 @@
             <!--日历-->
 
             <div class="calendar-box" v-bind:class="{'display-none': all.page != '2'}">
-                <p class="animated zoomIn">
+                <p class=" zoomIn">
                     <span>{{all.dateTime.year}}年{{all.dateTime.month + 1}}月{{all.dateTime.date}}日</span>
                     <span>&nbsp;&nbsp;周{{contentpage.prayer.dateTime.weekName2[contentpage.prayer.dateTime.week]}}</span>
                 </p>
