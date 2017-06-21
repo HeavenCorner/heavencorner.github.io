@@ -34,6 +34,7 @@ gulp.task('default',['less']);
 
 // 监听less
 gulp.task('w', ['less'], function () {
+    console.log('您好，测试');
     gulp.watch(Asset.less, ['less']);
 });
 //压缩js css最后

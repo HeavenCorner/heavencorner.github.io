@@ -58,6 +58,9 @@ var dateTime = {
     weekName:[
         'SUN','MON','TUE','WED','THU','FRI','SAT'
     ],
+    weekName2:[
+        '日','一','二','三','四','五','六'
+    ],
     week:myDate.getDay(),     //今天星期
     monthName:[
         'January','February','March','April',
@@ -721,6 +724,7 @@ var app = new Vue({
                 dateTime:{
 
                     weekName: dateTime.weekName,
+                    weekName2: dateTime.weekName2,
                     week: dateTime.week,
                     data:[
 
@@ -783,7 +787,7 @@ var app = new Vue({
         //    3
             phone:{
                 title:{
-                    titleText:member.menuList[2],
+                    titleText:member.menuList[3],
                     lenght: member.phoneLenght,
                 },
                 list:{

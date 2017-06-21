@@ -132,7 +132,7 @@
 
     <!--测试部分的样式链接-->
     <link rel="stylesheet" href="css/index.css">
-    <!--<link rel="stylesheet" href="css/animate.css">-->
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="font/iconfont.css">
     <link rel="stylesheet" href="css/index-t.css" />
     <!--上线时的样式链接(min)-->
@@ -224,15 +224,15 @@
 
     <!--正文内容-->
 
-    <section class="content-wrap">
+    <section class="content-wrap cssgo">
         <!--0、主页（代祷事项）-->
 
         <div id="prayer-box" class="con-page" v-bind:class="{'leave': all.page != '0', 'come': all.page == '0'}">
 
-            <div class="title">
+            <div class="title"  v-bind:class="{'display-none': all.page != '0'}">
                 <!--十字架动画-->
 
-                <div v-bind:class="{'display-none': all.page != '0'}">
+                <div>
                     <div class="p3d infinite">
                         <ul class="space cross space-1">
                             <li class="cover-1-1 ad cover-1-1-animate"><span class="con-font">爱</span></li>
@@ -254,25 +254,25 @@
 
                 <!--展示文字-->
                 <div class="title-msg">
-                    <h2>{{contentpage.prayer.title.msg}}</h2>
+                    <h2 class="animated fadeInDown">{{contentpage.prayer.title.msg}}</h2>
                     <p>
-                        <span>{{contentpage.prayer.title.text}}</span>
-                        <i>{{contentpage.prayer.title.chapter}}</i>
+                        <span class="animated zoomIn">{{contentpage.prayer.title.text}}</span>
+                        <i class="animated fadeInRight">{{contentpage.prayer.title.chapter}}</i>
                     </p>
-                    <h4>{{contentpage.prayer.dateTime.monthName[contentpage.prayer.dateTime.month]}}</h4>
+                    <h4 class="animated zoomInLeft">{{contentpage.prayer.dateTime.monthName[contentpage.prayer.dateTime.month]}}</h4>
                 </div>
 
 
             </div>
 
-            <div class="date-box">
-                <ol>
+            <div class="date-box"  v-bind:class="{'display-none': all.page != '0'}">
+                <ol class="animated fadeInRight">
                     <li v-for="week in contentpage.prayer.dateTime.weekName">
                         {{week}}
                     </li>
                 </ol>
 
-                <ul>
+                <ul class="animated fadeInLeft">
                     <li v-for="(dateNum,index) in contentpage.prayer.dateTime.weekDateArr" >
 
                         <span v-bind:class="{'bg-r':contentpage.prayer.dateTime.week == index}">{{dateNum}}</span>
@@ -282,8 +282,11 @@
 
             </div>
 
-            <div class="prayer-text">
-                <ul class="member-list" m="member.listOpen" v-bind:id="member.id" v-for="(member,index) in contentpage.prayer.memberList"
+            <div class="prayer-text"  v-bind:class="{'display-none': all.page != '0'}">
+
+
+
+                <ul class="member-list animated fadeInUp" m="member.listOpen" v-bind:id="member.id" v-for="(member,index) in contentpage.prayer.memberList"
                     v-bind:class="{'close': member.listOpen == false }">
                     <li id="" class="prayer-text-title" v-on:click="closePrayerList(member)">
                         <dl >
@@ -305,6 +308,8 @@
                     </li>
 
                 </ul>
+
+
             </div>
 
             <div class="open-all" v-bind:class="{'bg-g': !contentpage.prayer.openAll}" v-if="all.page == '0'">
@@ -319,19 +324,19 @@
 
         <!--1、灵粮音乐-->
         <div id="spirit-box"  class="con-page" v-bind:class="{'leave': all.page != '1', 'come': all.page == '1'}">
-            <div class="title">
-                <h2>{{contentpage.spirit.title.titleText}}</h2>
+            <div class="title"  v-bind:class="{'display-none': all.page != '1'}">
+                <h2  class="animated fadeInRight">{{contentpage.spirit.title.titleText}}</h2>
 
             </div>
             <!--经文-->
-            <div class="title-msg">
-                <p>
+            <div class="title-msg"   v-bind:class="{'display-none': all.page != '1'}">
+                <p class="animated zoomIn">
                     <span>{{contentpage.spirit.title.text}}</span>
                     <i>{{contentpage.spirit.title.chapter}}</i>
                 </p>
             </div>
             <!--视频-->
-            <div class="video-iframe-box" v-if="all.page == '1'" v-bind:class="{'display-none': menu.seen}" v-for="list in contentpage.spirit.videoList">
+            <div class="video-iframe-box animated fadeInUp" v-if="all.page == '1'" v-bind:class="{'display-none': menu.seen}" v-for="list in contentpage.spirit.videoList">
                 <h5>{{list.title}}</h5>
 
                 <iframe class="video_iframe" height="502.5" width="670" frameborder="0" v-bind:src="list.src" allowfullscreen="" scrolling="no" style=""></iframe>
@@ -349,9 +354,9 @@
 
         <!--2、生日-->
         <div id="birthday-box"  class="con-page" v-bind:class="{'leave': all.page != '2', 'come': all.page == '2'}">
-            <div class="title">
-                <h2>{{contentpage.birthday.title.titleText}}</h2>
-                <div class="w110 h110 ball">
+            <div class="title" v-bind:class="{'display-none': all.page != '2'}">
+                <h2 class="animated fadeInRight">{{contentpage.birthday.title.titleText}}</h2>
+                <div class="w110 h110 ball animated fadeInDown">
                     <span>
                         {{contentpage.birthday.title.lenght}}
                     </span>
@@ -360,20 +365,38 @@
 
             <!--日历-->
 
-            <div class="calendar-box msg">
-                <p>
+            <div class="calendar-box" v-bind:class="{'display-none': all.page != '2'}">
+                <p class="animated zoomIn">
                     <span>{{all.dateTime.year}}年{{all.dateTime.month + 1}}月{{all.dateTime.date}}日</span>
+                    <span>&nbsp;&nbsp;周{{contentpage.prayer.dateTime.weekName2[contentpage.prayer.dateTime.week]}}</span>
                 </p>
-                <!--<h1>日历智能分组提醒模块（2.1版本开发中...）</h1>-->
+                <!--<div class="date-box">-->
+                    <!--<ol>-->
+                        <!--<li v-for="week in contentpage.prayer.dateTime.weekName">-->
+                            <!--{{week}}-->
+                        <!--</li>-->
+                    <!--</ol>-->
+
+                    <!--<ul>-->
+                        <!--<li  >-->
+
+                            <!--<span></span>-->
+
+                        <!--</li>-->
+                    <!--</ul>-->
+
+                <!--</div>-->
+
+
             </div>
 
-            <div class="time-title">
-                <p>距离下次生日：</p>
+            <div class="time-title" v-bind:class="{'display-none': all.page != '2'}">
+                <p class="animated fadeInLeft">距离下次生日：</p>
             </div>
 
 
-            <div class="birthday-wrap">
-                <ul class="list" v-if="member.birthdayCD.times" v-for="(member,index) in contentpage.birthday.memberList"
+            <div class="birthday-wrap"  v-bind:class="{'display-none': all.page != '2'}">
+                <ul class="list animated fadeInUp" v-if="member.birthdayCD.times" v-for="(member,index) in contentpage.birthday.memberList"
                     v-bind:class="{'close': member.birthdayOpen == false }">
                     <li class="text-title">
                         <dl v-on:click="closeBirthdayList(member)">
@@ -383,8 +406,8 @@
                             <dd>{{member.name}}</dd>
                             <!--倒计时-->
                             <dd class="birthdays">
-                                <p>
 
+                                <p>
                                     <span v-bind:class="{'c-r': member.birthdayCD.allDays < 7 }">
                                         {{member.birthdayCD.allDays}}
                                     </span>
@@ -432,27 +455,27 @@
         </div>
         <!--3、通讯录-->
         <div id="phone-box"  class="con-page" v-bind:class="{'leave': all.page != '3', 'come': all.page == '3'}">
-            <div class="title">
-                <h2>{{contentpage.phone.title.titleText}}</h2>
-                <div class="w110 h110 bg-g ball">
+            <div class="title"  v-bind:class="{'display-none': all.page != '3'}">
+                <h2 class="animated fadeInRight">{{contentpage.phone.title.titleText}}</h2>
+                <div class="w110 h110 bg-g ball animated fadeInDown">
                     <span>
                         {{contentpage.phone.title.lenght}}
                     </span>
                 </div>
             </div>
 
-            <dl class="msg">
-                <dt>
+            <dl class="msg" v-bind:class="{'display-none': all.page != '3'}">
+                <dt class="animated rollIn">
                     {{contentpage.phone.msg.text}}
                 </dt>
-                <dd>
+                <dd class="animated rollIn">
                     {{contentpage.phone.msg.title}}
                 </dd>
 
             </dl>
 
-            <div class="phone-list-wrap">
-                <ul class="phone-list" v-if="member.phone" v-for="(member,index) in contentpage.prayer.memberList">
+            <div class="phone-list-wrap"   v-bind:class="{'display-none': all.page != '3'}">
+                <ul class="phone-list animated fadeInUp" v-if="member.phone" v-for="(member,index) in contentpage.prayer.memberList">
                     <li class="phone-text-title">
                         <dl v-on:click="">
                             <dt>
@@ -474,9 +497,9 @@
         </div>
         <!--4、其它代祷-->
         <div id="other-box"  class="con-page" v-bind:class="{'leave': all.page != '4', 'come': all.page == '4'}">
-            <div class="title">
-                <h2>{{contentpage.other.title.titleText}}</h2>
-                <div class="w110 h110 bg-o ball">
+            <div class="title"  v-bind:class="{'display-none': all.page != '4'}">
+                <h2 class="animated fadeInRight">{{contentpage.other.title.titleText}}</h2>
+                <div class="w110 h110 bg-o ball animated fadeInDown">
                     <span>
                         0
                         <!--{{contentpage.phone.title.lenght}}-->
@@ -498,32 +521,41 @@
         </div>
         <!--5、通知-->
         <div id="msg-box"  class="con-page" v-bind:class="{'leave': all.page != '5', 'come': all.page == '5'}">
-            <div class="title">
-                <h2>{{contentpage.msg.title.titleText}}</h2>
-                <div class="w110 h110 bg-r ball">
+            <div class="title"  v-bind:class="{'display-none': all.page != '5'}">
+                <h2 class="animated fadeInRight">{{contentpage.msg.title.titleText}}</h2>
+                <div class="w110 h110 bg-r ball animated fadeInDown">
                     <span>
                         {{contentpage.msg.list.length}}
                     </span>
                 </div>
+                <p>
+                    <span>{{all.dateTime.year}}年{{all.dateTime.month + 1}}月{{all.dateTime.date}}日</span>
+                    <span>&nbsp;&nbsp;周{{contentpage.prayer.dateTime.weekName2[contentpage.prayer.dateTime.week]}}</span>
+                </p>
             </div>
-            <dl class="msg">
-                <dt>
+            <dl class="msg" v-bind:class="{'display-none': all.page != '5'}">
+                <dt class="animated zoomIn">
                     {{contentpage.msg.msg.text}}
                 </dt>
-                <dd>
+                <dd class="animated zoomIn">
                     {{contentpage.msg.msg.title}}
                 </dd>
-                <dd>
+                <dd class="animated zoomIn">
                     {{contentpage.msg.msg.title2}}
                 </dd>
 
             </dl>
             <!--正文-->
-            <ul class="list-box">
-                <li  v-if="list.time.oldday" v-for="list in contentpage.msg.list">
+            <ul class="list-box" v-bind:class="{'display-none': all.page != '5'}">
+                <li  v-if="list.time.oldday" v-for="list in contentpage.msg.list" class="animated fadeInUp">
                     <img v-bind:src="list.img" alt="">
                     <p class="title">{{list.title}}</p>
-                    <p class="con">{{list.con}}</p>
+                    <p class="con">
+                        {{list.con}}
+                        &nbsp;&nbsp;
+                        {{list.time.times}}
+
+                    </p>
                     <p class="time">还有
                         <span>
                            {{list.time.allDays}}

@@ -92,6 +92,26 @@ textarea {
   *zoom: 1;
 }
 
+
+
+.cssgo {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+
+}
 //公共样式 *** 结束
 
 
@@ -439,14 +459,18 @@ textarea {
 
 
         .close{
-            height: 140px;
+          //height: 140px;
+          max-height: 140px;
+          //overflow: hidden;
+
         }
 
         >ul{
 
           border-bottom: 2px solid #f4f4f4;
-          min-height: 140px;
-          height: auto;
+          max-height: 340px;
+          //height: 140px;
+          clear: both;
           overflow: hidden;
 
           -webkit-transition: height .8s;
@@ -456,7 +480,7 @@ textarea {
             padding-left: 40px;
             min-height: 140px;
             width: 100%;
-
+            clear: both;
 
             dl{
               padding-top: 30px;
@@ -1015,6 +1039,14 @@ textarea {
         .ball{
           //background-color: @purple;
         }
+        >p{
+          height: 80px;
+          line-height: 80px;
+          padding-left: 40px;
+          span{
+            font-size: 36px;
+          }
+        }
       }
       .msg{
         height: 200px;
@@ -1435,6 +1467,8 @@ h2{
 @purple:#ba77ff;
 
 @rgba07:rgba(0,0,0,.7);
+@rgba05:rgba(0,0,0,.5);
+
 
 @titleSize: 80px;
 @titleMsg: 32px;
@@ -1539,7 +1573,61 @@ h2{
 .calendar-box{
   //height: 80px;
   color: #FFFFFF;
-  background-color: @rgba07;
+  background-color: @rgba05;
+  >p{
+    height: 80px;
+    line-height: 80px;
+    padding-left: 40px;
+    span{
+      font-size: 36px;
+    }
+  }
+  //日期
+  .date-box{
+    height: 210px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 46px 39px 0;
+    border-bottom: 2px solid #f4f4f4;
+    border-top: 2px solid #f4f4f4;
+
+
+    ol{
+      height: 44px;
+      width: 100%;
+      overflow: hidden;
+      li{
+        height: 100%;
+        width: 96px;
+        font-size: 28px;
+        float: left;
+        color: #a8a8aa;
+        line-height: 44px;
+        text-align: center;
+
+      }
+    }
+
+    ul{
+      padding-top: 20px;
+      li{
+        width: 96px;
+        float: left;
+        text-align: center;
+        span{
+          text-align: center;
+          line-height: 80px;
+          display: inline-block;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          font-size: 36px;
+        }
+
+      }
+    }
+
+  }
 }
 
 .open-all{
@@ -1568,4 +1656,10 @@ h2{
 //
 .display-none{
   display: none;
+}
+.animated{
+
+  animation-delay:.3s !important;
+  -webkit-animation-delay:.3s !important; /* Safari 和 Chrome */
+
 }

@@ -105,6 +105,21 @@ textarea {
   *display: inline;
   *zoom: 1;
 }
+.cssgo {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
 .wrap-box {
   width: 750px;
   height: 100vh;
@@ -384,12 +399,12 @@ textarea {
   margin-bottom: 100px;
 }
 .wrap-box .content-wrap #prayer-box .prayer-text .close {
-  height: 140px;
+  max-height: 140px;
 }
 .wrap-box .content-wrap #prayer-box .prayer-text > ul {
   border-bottom: 2px solid #f4f4f4;
-  min-height: 140px;
-  height: auto;
+  max-height: 340px;
+  clear: both;
   overflow: hidden;
   -webkit-transition: height .8s;
   transition: height .8s;
@@ -398,6 +413,7 @@ textarea {
   padding-left: 40px;
   min-height: 140px;
   width: 100%;
+  clear: both;
 }
 .wrap-box .content-wrap #prayer-box .prayer-text > ul .prayer-text-title dl {
   padding-top: 30px;
@@ -833,6 +849,14 @@ textarea {
   padding: 175px 0 0 48px;
   font-size: 80px;
 }
+.wrap-box .content-wrap #msg-box > .title > p {
+  height: 80px;
+  line-height: 80px;
+  padding-left: 40px;
+}
+.wrap-box .content-wrap #msg-box > .title > p span {
+  font-size: 36px;
+}
 .wrap-box .content-wrap #msg-box .msg {
   height: 200px;
 }
@@ -1199,7 +1223,54 @@ h2 {
 }
 .calendar-box {
   color: #FFFFFF;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.calendar-box > p {
+  height: 80px;
+  line-height: 80px;
+  padding-left: 40px;
+}
+.calendar-box > p span {
+  font-size: 36px;
+}
+.calendar-box .date-box {
+  height: 210px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 46px 39px 0;
+  border-bottom: 2px solid #f4f4f4;
+  border-top: 2px solid #f4f4f4;
+}
+.calendar-box .date-box ol {
+  height: 44px;
+  width: 100%;
+  overflow: hidden;
+}
+.calendar-box .date-box ol li {
+  height: 100%;
+  width: 96px;
+  font-size: 28px;
+  float: left;
+  color: #a8a8aa;
+  line-height: 44px;
+  text-align: center;
+}
+.calendar-box .date-box ul {
+  padding-top: 20px;
+}
+.calendar-box .date-box ul li {
+  width: 96px;
+  float: left;
+  text-align: center;
+}
+.calendar-box .date-box ul li span {
+  text-align: center;
+  line-height: 80px;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 36px;
 }
 .open-all {
   opacity: .6 !important;
@@ -1222,4 +1293,9 @@ h2 {
 }
 .display-none {
   display: none;
+}
+.animated {
+  animation-delay: .3s !important;
+  -webkit-animation-delay: .3s !important;
+  /* Safari 和 Chrome */
 }
