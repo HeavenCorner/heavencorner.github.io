@@ -847,7 +847,7 @@ var app = new Vue({
                         '升级 次',
 
                     ],
-                    titleMsgBottom:'流畅的体验请使用手机浏览器打开',
+                    titleMsgBottom:'上帝爱你',
                     upLogLength:'0',
                     runDay:day2,
 
@@ -858,7 +858,7 @@ var app = new Vue({
                 upLog:[
                     {
                         date:'2017-06-20',
-                        text:'【增加】视频模块；【更改】"灵粮 · 音乐"更改为"灵粮 · 灵修"；【优化】代祷事项动画优化',
+                        text:'【增加】视频模块；【更改】"灵粮 · 音乐"更改为"灵粮 · 灵修"；【优化】交互动画优化',
                     },
 
                     {
