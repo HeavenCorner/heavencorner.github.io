@@ -399,11 +399,11 @@ textarea {
   margin-bottom: 100px;
 }
 .wrap-box .content-wrap #prayer-box .prayer-text .close {
-  max-height: 140px;
+  height: 140px;
 }
 .wrap-box .content-wrap #prayer-box .prayer-text > ul {
   border-bottom: 2px solid #f4f4f4;
-  max-height: 340px;
+  height: auto;
   clear: both;
   overflow: hidden;
   -webkit-transition: height .8s;
