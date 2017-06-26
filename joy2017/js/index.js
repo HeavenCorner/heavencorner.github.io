@@ -853,7 +853,7 @@ var app = new Vue({
                         '升级 次',
 
                     ],
-                    titleMsgBottom:'上帝爱你',
+                    titleMsgBottom:'耶稣爱你',
                     upLogLength:'0',
                     runDay:day2,
 
