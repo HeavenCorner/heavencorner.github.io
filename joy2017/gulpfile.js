@@ -21,7 +21,7 @@ gulp.task('hello', function () {
 });
 
 //编译less
-gulp.task('less',function(){
+gulp.task('l',function(){
     return gulp.src('css/*.less')
         .pipe(less())
         .pipe(gulp.dest('css'));
