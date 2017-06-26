@@ -552,13 +552,12 @@
                 <li  v-if="list.time.oldday" v-for="list in contentpage.msg.list" class="animated fadeInUp">
                     <img v-bind:src="list.img" alt="">
                     <p class="title">{{list.title}}</p>
-                    <p class="con">
+                    <p class="con" v-if="list.con">
                         {{list.con}}
-                        &nbsp;&nbsp;
                         {{list.time.times}}
 
                     </p>
-                    <p class="time">还有
+                    <p class="time" v-if="list.con">还有
                         <span>
                            {{list.time.allDays}}
                         </span>
@@ -566,6 +565,7 @@
                     </p>
 
                 </li>
+                <img class="img" v-bind:src="list.src" v-if="list.src" alt="" v-for="list in contentpage.msg.list">
             </ul>
         </div>
         <!--6、帮助-->

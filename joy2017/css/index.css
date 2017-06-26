@@ -898,6 +898,9 @@ textarea {
   line-height: 120px;
   font-size: 60px;
 }
+.wrap-box .content-wrap #msg-box .list-box .img {
+  margin-top: 20px;
+}
 .wrap-box .content-wrap #help-box .help-box-title {
   position: relative;
   text-align: center;
