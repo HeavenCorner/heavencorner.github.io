@@ -743,7 +743,8 @@ var app = new Vue({
                 title:{
                     titleText:member.menuList[1],
                     text:'" 凡事谦虚、温柔、忍耐，用爱心互相宽容， 用和平彼此联络，竭力保守圣灵所赐合而为一的心。"',
-                    chapter:'—— 以弗所书 4:2-3'
+                    chapter:'—— 以弗所书 4:2-3',
+                    src:'img/a.jpeg',
                 },
                 list:{
                     icon:member.icon[1],
@@ -892,9 +893,6 @@ var app = new Vue({
                         text:'Joy 2.0 思维导图构建、UI方案确定',
                     },
                 ]
-
-
-
 
             },
 

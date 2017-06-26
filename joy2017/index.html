@@ -329,14 +329,14 @@
 
             </div>
             <!--经文-->
-            <div class="title-msg"   v-bind:class="{'display-none': all.page != '1'}">
-                <p class=" zoomIn">
-                    <span>{{contentpage.spirit.title.text}}</span>
-                    <i>{{contentpage.spirit.title.chapter}}</i>
-                </p>
-            </div>
+            <!--<div class="title-msg"   v-bind:class="{'display-none': all.page != '1'}">-->
+                <!--<p class=" zoomIn">-->
+                    <!--<span>{{contentpage.spirit.title.text}}</span>-->
+                    <!--<i>{{contentpage.spirit.title.chapter}}</i>-->
+                <!--</p>-->
+            <!--</div>-->
             <!--加贝的书写-->
-            <!--<img src="" alt="">-->
+            <img v-bind:class="{'display-none': all.page != '1'}" class="animated fadeInLeft" v-bind:src="contentpage.spirit.title.src" alt="">
             <!--视频-->
             <div class="video-iframe-box animated fadeInUp" v-if="all.page == '1'" v-bind:class="{'display-none': menu.seen}" v-for="list in contentpage.spirit.videoList">
                 <h5>{{list.title}}</h5>
