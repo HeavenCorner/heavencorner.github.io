@@ -375,9 +375,9 @@ var hello = '哈利路亚';
 var memberList = [
     //26
     {
-        name: '网址链接已更换，已发到微信群二维码。',
+        name: '从舟',
         prayer: [
-            {text: ''},
+            {text: '为西区的营会顺利感恩，为暑期生活多读经多亲近神代祷。'},
             {text: ''},
             {text: ''}
         ],
@@ -385,7 +385,7 @@ var memberList = [
         signature: '',  //个人主页签名
         age: '',
         head: '',   //特殊提醒，例如：'考试加油！'
-        imgsrc: 'img/head/duqu.jpeg',
+        imgsrc: 'img/head/congzhou.jpeg',
         bgc: '',
         id:'congzhou',
         listOpen: false,
@@ -394,17 +394,17 @@ var memberList = [
     },
     // 26
     {
-        name: 'b',
+        name: '从舟妈妈',
         prayer: [
-            {text: 'hkdhffdfh'},
-            {text: 'dsfhofhofhfi'},
+            {text: '为家庭祷告祭台的坚固；'},
+            {text: '为爸爸的睡眠，求赐平安的神用他的大能托住。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('07/15'),
         signature: '',
         age: '',
         head: '',
-        imgsrc: 'img/head/duqu.jpeg',
+        imgsrc: 'img/head/congzhoumama.jpeg',
         bgc: '',
         id:'congzhoumama',
         listOpen: false,
@@ -413,17 +413,17 @@ var memberList = [
     },
     //26
     {
-        name: 'd',
+        name: '栋夷',
         prayer: [
-            {text: '发；进击的看过的；了解多少'},
-            {text: '恢复健康合法的发挥领导'},
+            {text: '公司变动比较大，希望有个好的心态，依靠主跟神有亲密关系；'},
+            {text: '希望在服侍的前能多祷告。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('2/15'),
         signature: '',
         age: '',
         head: '',
-        imgsrc: 'img/head/duqu.jpeg',
+        imgsrc: 'img/head/dongyi.jpeg',
         bgc: '',
         id:'dongyi',
         listOpen: false,
@@ -431,23 +431,230 @@ var memberList = [
         phone:'13651932095',
     },
     {
-        name: 'c',
+        name: '段段',
         prayer: [
-            {text: '测试'},
-            {text: '测试'},
+            {text: '为校友会的预备代祷。'},
+            {text: ''},
             {text: ''}
         ],
         birthdayCD:tarTimeR('05/21'),
         signature: '',
         age: '',
         head: '',
-        imgsrc: 'img/head/duqu.jpeg',
+        imgsrc: 'img/head/duanduan.jpeg',
         bgc: '',
         id:'duanduan',
         listOpen: false,
         birthdayOpen: false,
         phone:'15021886131',
-    }
+    },
+    //26
+    {
+        name: '蒙恩',
+        prayer: [
+            {text: '求主保守我每天都以神为我的喜乐，好好读书，好好工作，好好为大家代祷。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('01/23'),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/mengen.jpeg',
+        bgc: '',
+        id:'mengen',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'18817698750',
+    },
+    {
+        name: '浩然',
+        prayer: [
+            {text: '在病痛中学会忍耐；'},
+            {text: '求主施恩于我，为我建立家室，一同承受生命之恩。'},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('12/21'),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/haoran.jpeg',
+        bgc: '',
+        id:'haoran',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'17765166621',
+    },
+    //26
+    {
+        name: '晶晶',
+        prayer: [
+            {text: '在找工作，压力比较大。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('10/25'),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/jingjing.jpeg',
+        bgc: '',
+        id:'jingjing',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'13009685561',
+    },
+//     26
+
+    {
+        name: '蓓静',
+        prayer: [
+            {text: '与主亲近。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR(''),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/beijing.jpeg',
+        bgc: '',
+        id:'beijing',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'',
+    },
+    {
+        name: '思思',
+        prayer: [
+            {text: '为工作代祷。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('11/03'),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/sisi.jpeg',
+        bgc: '',
+        id:'sisi',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'18807046040',
+    },
+    //26
+    {
+        name: '锦艳',
+        prayer: [
+            {text: '愿主看顾保守我，赐给我在学习上面的智慧，顺利通过本学期的期末考试。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('05/13'),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/jinyan.jpeg',
+        bgc: '',
+        id:'jinyan',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'15501695181',
+    },
+    {
+        name: '立娇',
+        prayer: [
+            {text: '最近灵修不太好，读经也不规律；'},
+            {text: '这边的工作接近尾声，各种总结材料写的脑袋要爆炸，还有收拾东西，处理带不走的东西。求主帮助事情多但不慌乱；'},
+            {text: '回国前会在周围旅游一周，求主保守平安。'}
+        ],
+        birthdayCD:tarTimeR(''),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/lijiao.jpeg',
+        bgc: '',
+        id:'lijiao',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'',
+    },
+    // 为我们家宝宝和姊妹祷告，求神给她一颗喜乐的心，万事寻求神的心意。
+    {
+        name: '申元',
+        prayer: [
+            {text: '为我们家宝宝和姊妹祷告，求神给她一颗喜乐的心，万事寻求神的心意。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR(''),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/shenyuan.jpeg',
+        bgc: '',
+        id:'shenyuan',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'',
+    },
+    //26
+    {
+        name: '炳林',
+        prayer: [
+            {text: '为我能够愿意多一点时间用来读经这件事祷告，我现在肯花在读经的时间太少太少了，希望自己可以多一点时间用在读经上面。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('09/20'),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/binglin.jpeg',
+        bgc: '',
+        id:'binglin',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'13761371606',
+    },
+//     1、新的一周工作会有新任务，求主开道，然后希望自己灵性上追求更多神的话语；
+// 2、希望我老婆秋萍和小孩都能平安成长。
+    {
+        name: '黄霆',
+        prayer: [
+            {text: '为上周秋萍和宝宝健康成长感恩，希望这周做孕检也能平平安安，还有就是希望有更多时间亲近主的话语。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR(''),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/huangting.jpeg',
+        bgc: '',
+        id:'huangting',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'',
+    },
+    {
+        name: '杜渠',
+        prayer: [
+            {text: '肠胃不好，养成好的作息时间。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('03/15'),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/duqu.jpeg',
+        bgc: '',
+        id:'duqu',
+        listOpen: false,
+        birthdayOpen: false,
+        phone:'15649032317',
+    },
 
 ];
 
