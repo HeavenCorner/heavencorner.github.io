@@ -375,7 +375,7 @@ var hello = '哈利路亚';
 var memberList = [
     //26
     {
-        name: '网址链接已更换，已发到微信群二维码。',
+        name: '网址链接已更换。',
         prayer: [
             {text: ''},
             {text: ''},
