@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+.per {
+  height: 1030px;
+  -webkit-transform-origin: center top;
+  transform-origin: center top;
+  -webkit-perspective: 100px;
+  perspective: 500px;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.per .space {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  width: 640px;
+  height: 1030px;
+  position: relative;
+}
+.per .space .c {
+  font-size: 30px;
+  position: absolute;
+  width: 500px;
+  height: 900px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #FFFFFF;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  margin-top: -450px;
+  margin-left: -250px;
+}
+.per .space .c .d1 h2 {
+  padding: 20px 0;
+}
+.per .space .ceng1 > p {
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  color: #FFFFFF;
+  font-size: 60px;
+}
+.per .space .ceng1 > p > span {
+  font-size: 30px;
+  line-height: 60px;
+}
+/*# sourceMappingURL=style.css.map */
