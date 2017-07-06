@@ -38,12 +38,13 @@ html {
   margin-left: -250px;
 }
 .per .space .c .d1 h2 {
+  line-height: 800px;
   padding: 20px 0;
 }
 .per .space .ceng1 > p {
   width: 100%;
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 0;
   color: #FFFFFF;
   font-size: 60px;
@@ -51,5 +52,13 @@ html {
 .per .space .ceng1 > p > span {
   font-size: 30px;
   line-height: 60px;
+}
+.head{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+h3{
+  padding-top: 50px;
 }
 /*# sourceMappingURL=style.css.map */
