@@ -14,7 +14,7 @@ html {
   -webkit-perspective: 100px;
   perspective: 500px;
   background-image: url(../img/bg.jpg);
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
 }
 .per .space {
