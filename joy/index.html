@@ -410,7 +410,7 @@
                             <dd class="birthdays">
 
                                 <p>
-                                    <span v-bind:class="{'c-r': member.birthdayCD.allDays < 7 }">
+                                    <span v-bind:class="{'c-r': member.birthdayCD.allDays < 10 }">
                                         {{member.birthdayCD.allDays}}
                                     </span>
                                     天
@@ -428,7 +428,7 @@
                         <p>
                             <span v-if="member.birthdayCD.month">{{member.birthdayCD.month}}个月</span>
 
-                            <span  v-bind:class="{'c-r': member.birthdayCD.allDays < 10 }">
+                            <span>
 
                                 {{member.birthdayCD.allDays - member.birthdayCD.month*30}}
 
