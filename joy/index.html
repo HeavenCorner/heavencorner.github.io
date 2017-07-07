@@ -401,8 +401,8 @@
                 <ul class="list animated fadeInUp" v-if="member.birthdayCD.times" v-for="(member,index) in contentpage.birthday.memberList"
                     v-bind:class="{'close': member.birthdayOpen == false }">
                     <li class="text-title">
-                        <dl v-on:click="closeBirthdayList(member)">
-                            <dt>
+                        <dl v-on:click="closeBirthdayList(member)" class="animated infinite" v-bind:class="{'shake': member.birthdayCD.allDays < 10}">
+                            <dt >
                                 <img v-bind:src="member.imgsrc" v-on:click="goIndex(member)" alt="">
                             </dt>
                             <dd>{{member.name}}</dd>
@@ -410,7 +410,7 @@
                             <dd class="birthdays">
 
                                 <p>
-                                    <span v-bind:class="{'c-r': member.birthdayCD.allDays < 10 }">
+                                    <span class="animated infinite" v-bind:class="{'c-r shake': member.birthdayCD.allDays < 10}">
                                         {{member.birthdayCD.allDays}}
                                     </span>
                                     天
