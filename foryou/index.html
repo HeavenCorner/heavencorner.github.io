@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=750,user-scalable=no" />
 
-    <title>Title</title>
+    <title>写给你~</title>
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="iconfont.css">
     <style>
         /*//!*公共样式--开始*!*/
         html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
@@ -119,36 +121,496 @@
 
         }
         /*公共样式 *** 结束*/
+        @font-face
+        {
+            font-family: myFont;
+            src: url('迷你简丫丫.ttf');
+        }
+        html{
+            width: 750px;
+            height: 100%;
+        }
 
-        .index .head{
-            width: 230px;
-            height: 230px;
-            border-radius: 50%;
+        body{
+            width: 750px;
+            height: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+            font-family: myFont;
+            background-color: #fdf7eb;
+
+        }
+
+        .index{
+            overflow: hidden;
+            /*display: none;*/
+            background-color: #fdf7eb;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
         }
 
         .head-box{
+            display: none;
+
             width: 230px;
             height: 230px;
             background-image: url("my.jpeg");
+            background-color: #00b6e3;
             background-size: 118% auto;
             border-radius: 50%;
+            border: 5px solid pink;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            margin-left: -120px;
+        }
+
+        #c{
+            opacity: .2;
         }
 
 
+        .index .title{
+            display: none;
+
+            font-size: 90px;
+            width: 100%;
+            position: absolute;
+            top: 600px;
+            text-align: center;
+            z-index: 11;
+
+        }
+
+        .next{
+            display: none;
+            opacity: .8;
+            transition: all .5s;
+            -webkit-transition: all .5s;
+            position: absolute;
+            top: 900px;
+            text-align: center;
+            height: 160px;
+            width: 100%;
+            /*background-color: #ccc;*/
+            text-align: center;
+            z-index: 11;
+
+        }
+        .next span{
+            font-size: 160px;
+        }
+
+        /*.next .c1{*/
+            /*!*background-color: #00b6e3;*!*/
+        /*}*/
+
+        /*.next .c2{*/
+            /*position: relative;*/
+            /*top: 16px;*/
+            /*width: 80px;*/
+            /*height: 80px;*/
+
+        /*}*/
+
+        /*.next .c3{*/
+            /*position: relative;*/
+            /*top: 16px;*/
+            /*width: 40px;*/
+            /*height: 40px;*/
+        /*}*/
+        .con{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: auto;
+        }
+        .con p {
+            padding: 20px;
+            text-indent: 80px;
+            font-size: 40px;
+            line-height: 50px;
+        }
+        .con-title{
+            text-align: left;
+            padding: 20px;
+            font-size: 40px;
+        }
+
+        .imgs{
+            display: none;
+            opacity: .5;
+        }
+
+        .img1{
+            position: absolute;
+            right:10px;
+            top: 260px;
+            height: 700px;
+            z-index: 11;
+        }
+
+
+
+        .img2{
+            position: absolute;
+            left:10px;
+            top: 260px;
+            height: 700px;
+            z-index: 11;
+        }
+
+        .last{
+            text-align: right;
+        }
     </style>
 </head>
 <body>
+
     <div class="wrap-box">
 
+
         <div class="index">
-            <div class="head-box"></div>
-            <p>写给你</p>
+            <!--泡沫-->
+            <canvas id="c"></canvas>
+            <div class="head-box slideInDown animated" >
+
+            </div>
+            <img class="imgs img2 animated slideInRight" src="img/2.png" alt="">
+            <img class="imgs img1 animated slideInLeft" src="img/3.png" alt="">
+
+            <p class="title animated zoomInLeft">
+                <span class="t1">写</span>
+                <span class="t2">给</span>
+                <span class="t3">你</span>
+            </p>
+            <div class="next slideInUp animated">
+                <p class=" animated infinite swing">
+                    <span class="icon iconfont icon-xinfeng"></span>
+
+                </p>
+            </div>
         </div>
 
-        <div class="con">
 
+        <div class="con">
+            <h5 class="con-title">嗨，梦颖：</h5>
+            <p>
+                这是一封对你表白的情书。
+            </p>
+            <p>
+                那个问题，我不知道其他人会在什么时候跟自己喜欢的女生表白，
+                对我而言，会选择在确认我是真的喜欢她的时候，以此为基础，那是一种无法用言语形容的感觉，
+                的确，我还没有准备好，因为不得不考虑除了喜欢你之外的其它因素；
+                然而就是在昨天，只是普通的一个社交，
+                但接着听到有人对你有好感，不能接受了，就是这么很小的事也不行，
+                也许是吃醋了，就算没那个责任和义务，总之，感觉就是很不爽，这种不爽反而觉得很安心，就是喜欢你；
+                以前做事，总喜欢什么都准备好，需要这个环境，那个条件，为什么要准备好呢，
+                也许只是所谓的准备好，就是一种借口，给你表明心声，
+                单单确认喜欢你就已经可以忽略其它的一切，
+                在尽可能的去拥有我们可以单独交流的条件里，对你的感觉是那么的真实。
+            </p>
+            <p>
+                第一次在青团见到你，你的眼神有些忧郁，总觉得是有什么心事，
+                喜欢踮起脚尖坐着，一开始还以为你是学舞蹈的；
+                我们不在一个小组，也没有什么可交集的地方，想靠近你，
+                了解你，对于一个见了陌生人都不敢开口说话的我，在这种情况下，
+                也想不出什么办法，也许没有资格说后来是天父帮忙，能做的只有默默祷告，悄然等待，
+                不管有没有喜欢你，都需要甩掉枷锁，充实自己，那些消极和不好的都不是从神而来的；
+                景梅问我要不要参加话剧组，我答应了；后来在公司问我有没有兴趣参加诗班，我答应了；
+                家庭营分配角色，也坚持下来了，很感恩，一切就像安排好似得；
+                小时候永远是小时候，所以又给了我一切重来的机会；
+                开始摆脱心里的积攒的阴影，让圣灵占据充满，尽管依然与你接触甚少，但还是确定自己内心对你的感觉。
+                能有足够的机会，那就尽可能的每一个都紧紧抓住。
+            </p>
+            <p>
+                紧接着，工作发生了变故，上边决定换掉新人，团队一半的成员有被劝退，有对公司的不满，
+                我以为，好不容易建立起来的自信和憧憬，又要被收回了吗？
+                如果重新开始，这个时间点，又要折腾几个月；可能会没有心思继续拉近你我的关系，
+                因为我了解自己实在做不到忽视现实生活带来的窘迫而又去坦然面对自己想追求的那个你，
+                也许正因如此，我刚要开始作难的时候，祂借助老板的手施恩典于我，让那些担心并没有发生。
+            </p>
+            <p>
+                都又一次经历了那么多，还有什么可担心的，喜欢就是喜欢，
+                不想再等到下一个周末，明天，下一个小时，下一秒，就现在，梦颖，我喜欢你。
+            </p>
+            <p>
+                谢谢你看到了这里，晚安~
+            </p>
+            <p class="last">
+                杜渠
+                2017.07.10
+            </p>
         </div>
 
     </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $('.next')[0].addEventListener("touchstart",function(e){
+            e.preventDefault();
+            var e = e||window.event;
+            console.log("123");
+            $(".index").animate({top:"-130vh"},1000);
+
+        },false)
+        //animetion.css x:动画名 obj：要控制的对象 z：动画之后的class display: 动画之后的状态
+        function testAnim(x,obj,z,display) {
+
+            var cn = $(obj).attr('class');
+            $(this).removeClass();
+
+            $(obj).addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+
+                $(this).removeClass();
+
+
+                if(z){
+                    $(this).addClass(z);
+                }else{
+                    $(this).addClass(cn);
+                }
+
+                $(this).removeClass(x);
+                if(display){
+                    $(obj).css({
+                        'display': display
+                    })
+                }
+            });
+        };
+        setTimeout(function () {
+            $('.head-box').css({
+                display:'block',
+            })
+            $('.imgs').css({
+                display:'block',
+            })
+        },2000);
+        setTimeout(function () {
+            $('.index .title').css({
+                display:'block',
+            })
+        },2300);
+        setTimeout(function () {
+            $('.next').css({
+                display:'block',
+            })
+        },3600);
+    </script>
+
+    <!--背景泡沫-->
+
+    <script>
+
+        function aa() {
+
+            var c = document.getElementById('c'),
+                $ = c.getContext('2d'),
+                w = c.width = window.innerWidth,
+                h = c.height = window.innerHeight;
+
+            var i, bubblesNumber = w * h > 750000 ? 35 : 20,
+                objects = [],
+                maxRadius = w * h > 500000 ? 50 : 35,
+                maxYVelocity = 2;
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            function insertElementsAtIndex(index, arrayTo, arrayFrom, removeCount) {
+                var removed = false;
+                for (var i = arrayFrom.length - 1; i >= 0; i--) {
+                    if (removeCount && !removed) {
+                        arrayTo.splice(index, removeCount, arrayFrom[i]);
+                        removed = true;
+                        continue;
+                    }
+                    arrayTo.splice(index, 0, arrayFrom[i]);
+                }
+            }
+
+            function Vector(x, y) {
+                this.x = x || 0;
+                this.y = y || 0;
+            }
+
+            Vector.prototype.add = function(v) {
+                this.x += v.x;
+                this.y += v.y;
+                return this;
+            };
+
+            Vector.prototype.multiply = function(value) {
+                this.x *= value;
+                this.y *= value;
+                return this;
+            };
+
+            Vector.prototype.getMagnitude = function() {
+                return Math.sqrt(this.x * this.x + this.y * this.y);
+            };
+
+            function Fragment(position, velocity, radius, hue) {
+                this.position = position;
+                this.velocity = velocity;
+                this.startSpeed = this.velocity.getMagnitude();
+                this.radius = radius;
+                this.hue = hue;
+            }
+
+            Fragment.prototype.update = function(world) {
+                this.velocity.multiply(world.physicalProperties.friction);
+                this.position.add(this.velocity);
+                this.radius *= this.velocity.getMagnitude() / this.startSpeed;
+                if (this.radius < 0.1) {
+                    world.objects.splice(world.objects.indexOf(this), 1);
+                }
+            }
+
+            Fragment.prototype.render = function($) {
+                $.beginPath();
+                $.fillStyle = 'hsl(' + this.hue + ', 100%, 50%)';
+                $.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
+                $.fill();
+            };
+
+            function Bubble(x, y, speed, radius, fragments, swing, hue) {
+                this.x = x;
+                this.y = y;
+                this.startX = this.x;
+                this.speed = speed;
+                this.radius = radius;
+                this.fragments = fragments;
+                this.swing = swing;
+                this.hue = hue;
+            }
+
+            Bubble.prototype.update = function(world) {
+                this.x = this.startX + Math.cos(this.y / 80) * this.swing;
+                this.y += this.speed;
+                if (this.y + this.radius < 0) {
+                    this.y = world.physicalProperties.height + this.radius;
+                }
+            }
+
+            Bubble.prototype.render = function($) {
+                $.beginPath();
+                $.fillStyle = 'hsl(' + this.hue + ', 100%, 50%)';
+                $.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                $.fill();
+            };
+
+            Bubble.prototype.pop = function(world) {
+                var arr = [];
+                for (var i = 0; i < this.fragments; i++) {
+                    arr.push(new Fragment(new Vector(this.x, this.y), new Vector(randomInRange(-2, 2), randomInRange(-2, 2)), randomInRange(2, this.radius / 4), this.hue));
+                }
+                insertElementsAtIndex(world.objects.indexOf(this), world.objects, arr, 1);
+            };
+
+            function World(physicalProperties, objects, ctx, background) {
+                this.physicalProperties = physicalProperties;
+                this.objects = objects;
+                this.ctx = ctx;
+                this.background = background;
+                this.frameID = 0;
+            }
+
+            World.prototype.update = function() {
+                for (var i = 0; i < this.objects.length; i++) {
+                    this.objects[i].update(this);
+                }
+            };
+
+            World.prototype.render = function() {
+                this.ctx.clearRect(0, 0, this.physicalProperties.width, this.physicalProperties.height);
+                if (this.background) {
+                    this.ctx.fillStyle = this.background;
+                    this.ctx.fillRect(0, 0, this.physicalProperties.width, this.physicalProperties.height);
+                }
+
+
+                for (var i = 0; i < this.objects.length; i++) {
+                    this.objects[i].render(this.ctx);
+                }
+            };
+
+            World.prototype.animate = function() {
+                this.update();
+                this.render();
+                this.frameID = requestAnimationFrame(this.animate.bind(this));
+            };
+
+            for (i = 0; i < bubblesNumber; i++) {
+                objects.push(new Bubble(Math.random() * w, Math.random() * h, -randomInRange(0.5, maxYVelocity), randomInRange(5, maxRadius), randomInRange(7, 10), randomInRange(-40, 40), randomInRange(0, 360)));
+            }
+
+            var world = new World({
+                width: c.width,
+                height: c.height,
+                friction: 0.997
+            }, objects, $, false);
+
+            $.globalCompositeOperation = 'lighter';
+
+            world.animate();
+
+            window.addEventListener('resize', function() {
+                w = world.physicalProperties.width = c.width = window.innerWidth;
+                h = world.physicalProperties.height = c.height = window.innerHeight;
+                $.globalCompositeOperation = 'lighter';
+            });
+
+            window.addEventListener('mousemove',
+                function(e) {
+                    for(var i = 0; i < world.objects.length; i++) {
+                        if((world.objects[i] instanceof Bubble) && (e.clientX > world.objects[i].x - world.objects[i].radius && e.clientX < world.objects[i].x + world.objects[i].radius && e.clientY < world.objects[i].y + world.objects[i].radius && e.clientY > world.objects[i].y - world.objects[i].radius)) {
+                            world.objects[i].pop(world);
+//			console.log(world.objects.length)
+//			console.log(Math.abs(bubblesNumber - world.objects.length));
+                            if(world.objects.length < bubblesNumber) {
+
+                                for(i = 0; i < Math.abs(bubblesNumber - world.objects.length); i++) {
+                                    objects.push(new Bubble(Math.random() * w, -Math.random() * h, -randomInRange(0.5, maxYVelocity), randomInRange(5, maxRadius), randomInRange(7, 10), randomInRange(-40, 40), randomInRange(0, 360)));
+                                }
+                            }
+                        }
+                    }
+                });
+
+            window.addEventListener('touchmove', function(e) {
+                for(var i = 0; i < world.objects.length; i++) {
+                    if((world.objects[i] instanceof Bubble) && (e.touches[0].clientX > world.objects[i].x - world.objects[i].radius && e.touches[0].clientX < world.objects[i].x + world.objects[i].radius && e.touches[0].clientY < world.objects[i].y + world.objects[i].radius && e.touches[0].clientY > world.objects[i].y - world.objects[i].radius)) {
+                        world.objects[i].pop(world);
+
+                        if(world.objects.length < bubblesNumber) {
+
+                            for(i = 0; i < bubblesNumber - world.objects.length; i++) {
+                                objects.push(new Bubble( Math.random() * w, -Math.random() * h, -randomInRange(0.5, maxYVelocity), randomInRange(5, maxRadius), randomInRange(7, 10), randomInRange(-40, 40), randomInRange(0, 360)));
+                            }
+                        }
+
+
+                    }
+
+                }
+            });
+
+        };
+        aa();</script>
+
+<!---->
+
+
 </body>
 </html>

@@ -1142,8 +1142,6 @@ function testAnim(x,obj,z,display) {
                 'display': display
             })
         }
-
-
 	});
 };
 
