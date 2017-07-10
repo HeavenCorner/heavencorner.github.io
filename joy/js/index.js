@@ -592,7 +592,7 @@ var memberList = [
         head: '',
         imgsrc: 'img/head/hemei.jpeg',
         bgc: '',
-        id:'lijiao',
+        id:'hemei',
         listOpen: false,
         birthdayOpen: false,
         phone:'',
