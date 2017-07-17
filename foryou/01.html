@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=750,user-scalable=no" />
+
+    <title>写给你</title>
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="iconfont.css">
+    <style>
+        /*//!*公共样式--开始*!*/
+        html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+            margin: 0;
+            padding: 0;
+        }
+        *{box-sizing: border-box;}
+        html, body {
+            min-height: 100%;
+            font-size:28px;
+        }
+
+        body {
+        //font-family: "Microsoft YaHei";
+            font-family: "Avenir","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+            color:#585858;
+
+        }
+        h1, h2, h3, h4, h5, h6{font-weight:normal;}
+        ul,ol {
+            list-style: none;
+        }
+
+        img {
+            border: none;
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+            color: #585858;
+        }
+
+        table {
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        input, textarea {
+            outline: none;
+            border: none;
+        }
+
+        textarea {
+            resize: none;
+            overflow: auto;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        .clearfix:after {
+            content: ".";
+            width: 0;
+            height: 0;
+            visibility: hidden;
+            display: block;
+            clear: both;
+            overflow:hidden;
+        }
+
+        .fl {
+            float: left
+        }
+
+        .fr {
+            float: right
+        }
+
+        .tl {
+            text-align: left;
+        }
+
+        .tc {
+            text-align: center
+        }
+
+        .tr {
+            text-align: right;
+        }
+
+        .ellipse {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .inline{
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+        }
+
+
+
+        .cssgo {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+
+        }
+        /*公共样式 *** 结束*/
+        @font-face
+        {
+            font-family: myFont;
+            src: url('迷你简丫丫.ttf');
+        }
+        html{
+            width: 100%;
+            height: 100%;
+        }
+
+        body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+            font-family: myFont;
+            background-color: #fdf7eb;
+
+        }
+
+        .index{
+            overflow: hidden;
+            /*display: none;*/
+            background-color: #fdf7eb;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+        }
+
+        .head-box{
+            display: none;
+
+            width: 230px;
+            height: 230px;
+            background-image: url("my.jpeg");
+            /*background-color: #00b6e3;*/
+            background-size: 118% auto;
+            border-radius: 50%;
+            border: 5px solid pink;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            margin-left: -120px;
+        }
+
+        #c{
+            opacity: .2;
+        }
+
+
+        .index .title{
+            display: none;
+
+            font-size: 90px;
+            width: 100%;
+            position: absolute;
+            top: 600px;
+            text-align: center;
+            z-index: 11;
+
+        }
+
+        .next{
+            opacity: .8;
+            transition: all .5s;
+            -webkit-transition: all .5s;
+            position: absolute;
+            top: 900px;
+            text-align: center;
+            height: 160px;
+            width: 100%;
+            /*background-color: #ccc;*/
+            text-align: center;
+            z-index: 11;
+
+        }
+        .next span{
+            font-size: 160px;
+        }
+
+        /*.next .c1{*/
+        /*!*background-color: #00b6e3;*!*/
+        /*}*/
+
+        /*.next .c2{*/
+        /*position: relative;*/
+        /*top: 16px;*/
+        /*width: 80px;*/
+        /*height: 80px;*/
+
+        /*}*/
+
+        /*.next .c3{*/
+        /*position: relative;*/
+        /*top: 16px;*/
+        /*width: 40px;*/
+        /*height: 40px;*/
+        /*}*/
+
+
+        .con{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: auto;
+        }
+        .con p {
+            padding: 20px;
+            text-indent: 80px;
+            font-size: 40px;
+            line-height: 60px;
+        }
+        .con-title{
+            text-align: left;
+            padding: 20px;
+            font-size: 40px;
+        }
+
+        .imgs{
+            display: none;
+            opacity: .5;
+        }
+
+        .img1{
+            position: absolute;
+            right:10px;
+            top: 260px;
+            height: 700px;
+            z-index: 11;
+        }
+
+
+
+        .img2{
+            position: absolute;
+            left:10px;
+            top: 260px;
+            height: 700px;
+            z-index: 11;
+        }
+
+        .last{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrap-box">
+
+
+
+
+
+    <div class="con">
+        <p>
+            当你递给我这个本本的时候，我有点慌了，不过我扫了几眼前面几位的字迹，松了一口气，哈哈哈...<br>
+            有一句歌词：'就像初次见面的那天一样，你并不在我的记忆里，而是变成了轻轻的风'；<br>
+            然而，第一次给你见面是在室内，没有风，只有一个眼神在我眼前飘过...<br>
+            祝福的话语此处省略两本书，不再赘述；坚持自己的判断，上帝不会带错路的，以马内利！<br>
+            这一点很看好你，祝你幸福快乐，哦不，你一定会幸福快乐的，我们神家的小公举~ <br>
+
+        </p>
+
+    </div>
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script>
+    $('.next')[0].addEventListener("touchstart",function(e){
+        e.preventDefault();
+        var e = e||window.event;
+        console.log("123");
+        $(".index").animate({top:"-130vh"},1000);
+
+    },false)
+
+</script>
+
+
+<!---->
+
+
+</body>
+</html>
