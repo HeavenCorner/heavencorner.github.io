@@ -26,16 +26,14 @@
 
 
             
-            
-            标签云｜为同在天堂的5年行程
-
+            离你那么近，离你那么远 | 
             
 
 
         
     </title>
 
-    <link rel="canonical" href="http://www.v-mx.com/tags/">
+    <link rel="canonical" href="http://www.v-mx.com/2017/07/18/离你那么近，离你那么远/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -91,7 +89,7 @@
         width: 2.2rem;
     }
 </style>
-<nav class="navbar shadow navbar-default navbar-custom navbar-customs navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
+<nav class="navbar shadow navbar-default navbar-custom navbar-customs navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -180,280 +178,283 @@
 
 <!-- Main Content -->
 
+<!--only post-->
+<!-- （20170326）针对阅读时标题颜色的优化，在博客正文标题内添加  header-img 图片路径就显示图片，如果添加了 bg-color 就显示纯色背景 -->
+
+
+<img class="wechat-title-img"
+     src="/img/index-title-bg.jpg">
+
 
 <style>
-	.intro-header .site-heading {
-		margin: 50px;
-	}
-	/*标签页的高度*/
-	
-	.intro-header {
-		background-position: center;
-		background-repeat: no-repeat;
-		/*background-color: #808080;*/
-		background-attachment: scroll;
-		background-size: cover;
-		height: 300px;
-		display: table;
-		width: 100%;
-		margin-bottom: 20px;
-	}
-	
-	.post-preview>a>.post-title {
-		color: #000000;
-	}
-	/*目录高亮*/
-	
-	.nav-li4 {
-		color: #62A4FF !important;
-	}
-	
-	.post-preview a {
-		margin-bottom: 10px;
-	}
-	
-	.post-preview a .post-title {
-		margin-top: 10px !important;
-	}
-	
-	.post-preview a .h3 {
-		font-size: 14px !important;
-		color: #545454;
-	}
-	
-	.post-preview a:hover {
-		background-color: rgba(15, 169, 195, .3);
-	}
+    
+    header.intro-header {
+        background-image: url('/img/index-title-bg.jpg')
+    }
+
+    
+
+    header.intro-header .container{
+        padding-top: 80px;
+    }
+
+    header.intro-header {
+        position: relative;
+        height: 235px;
+    }
+
+    .mark-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.3);
+    }
+
+
+    @media only screen and (min-width: 768px) {
+        header.intro-header .container{
+            padding-top: 88px;
+        }
+    }
+
+    .subheading {
+        font-size: 16px !important;
+    }
+
+
+
+
+    /*首页音乐*/
+    .musicbox {
+        position: relative;
+        height: 86px;
+        text-align: center;
+        background-color: rgba(0,133,161,0.1);
+        /*box-shadow: 0 0 5px rgba(0,0,0,0.2);*/
+        color: #ffffff;
+        font-size: 30px;
+        z-index: 2;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    .musicbox p {
+        padding: 10px 0 0px;
+        margin: 0;
+        line-height: 50px;
+        overflow: hidden;
+    }
+    .musicbox p > span {
+        display: block;
+    }
+
+    .musicbox .play {
+        display: none;
+    }
+    .musicbox h5 {
+        font-size: 20px;
+    }
+    .musicbox h5 span {
+        font-size: 14px;
+    }
+    .musicbox h5 i {
+        /*color: #FC7097;*/
+        font-size: 18px;
+    }
+    .musicbox h5 b{
+        color: #000;
+    }
+
+    /*网易云音乐*/
+    .musicbox iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+
+    .music-b {
+        position: absolute;
+        top: 27px;
+        left: 85px;
+        width: 20px;
+        height: 20px;
+        background: #ffffff;
+        z-index: 10;
+    }
+    .music-t {
+        position: absolute;
+        top: 15%;
+        left: 10%;
+        width: 80%;
+        height: 70%;
+        background: #ffffff;
+        z-index: 8;
+        font-size: 1.1rem;
+        text-align: center;
+        color: #505050;
+        line-height: 60px;
+    }
+
+    /*内容界面*/
+    .poetry {
+        /*background-color: #fdf7eb;*/
+        font-size: 1.4rem;
+        padding-bottom: 20px;
+    }
+
+    .text-center-p {
+        text-align: center;
+    }
+
+    .text-left-p {
+        padding-left: 33%;
+        text-align: left;
+    }
+
+    /*自适应*/
+    /*pc*/
+    @media only screen and (min-width: 768px) {
+        .poetry {
+            /*background-color: #fdf7eb;*/
+            font-size: 1.4rem;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+    }
+    /*移动*/
+    @media only screen and (max-width: 767px) {
+        .poetry {
+            background-color: #fdf7eb;
+            font-size: 1.4rem;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+
+        .text-left-p {
+            padding-left: 14%;
+            text-align: left;
+        }
+
+
+
+    }
+
+
 </style>
 
-<!-- Page Header -->
-<header class="intro-header">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-				<div class="site-heading text-center">
-					<h1>标签云</h1>
-					<span class="subheading subheading-pc">在这里你可以根据标签，点击标签快速检索文章</span>
-					<span class="subheading subheading-app">在这里你可以根据标签<br>点击标签快速检索文章</span>
-				</div>
-			</div>
-		</div>
-	</div>
+
+
+<!--进度条，仅博文-->
+<div class="progress-bar">
+    <span class="progress-bar-run"></span>
+</div>
+
+
+<header class="intro-header data-ispost-is">
+    <div class="mark-bg">
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>离你那么近，离你那么远</h1>
+                    
+                    <span class="meta" style="display: none">
+                         作者 DuyangSir
+                        <span>
+                          日期 2017-07-18
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            离你那么近，离你那么远
+        </span>
+    </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			<!-- 标签云JQ插件 -->
+<!-- Post Content -->
+<!-- 序言 -->
 
-			<div id='tag_cloud' class="tags tag_cloud_scroll">
-				
-				<a href="#杂文" title=""  class="tags-c" rel="2">
-					杂文
-				</a>
-				
-				<a href="#歌曲" title=""  class="tags-c" rel="2">
-					歌曲
-				</a>
-				
-				<a href="#关于本站" title=""  class="tags-c" rel="1">
-					关于本站
-				</a>
-				
-				<a href="#行程日志" title=""  class="tags-c" rel="1">
-					行程日志
-				</a>
-				
-			</div>
-
-			<!-- 标签列表 -->
-			
-
-			<div class="one-tag-list ">
-
-				<span class="fa fa-tag listing-seperator" id="杂文">
-	                    <span class="tag-text">杂文</span>
-				</span>
-
-				
-
-				
-				<div class="post-preview">
-					<a href="/2017/04/26/七月/">
-						<h2 class="post-title">
-                            七月
-                        </h2>
-						
-						<h3 class="post-subtitle">
-                            简要的一句话说明
-                        </h3>
-						
-					</a>
-				</div>
-				<hr>
-				
-				<div class="post-preview">
-					<a href="/2017/05/05/河泽兮/">
-						<h2 class="post-title">
-                            河泽兮
-                        </h2>
-						
-						<h3 class="post-subtitle">
-                            书写中...
-                        </h3>
-						
-					</a>
-				</div>
-				<hr>
-				
-
-				
-
-			</div>
-
-			
-
-			<div class="one-tag-list ">
-
-				<span class="fa fa-tag listing-seperator" id="歌曲">
-	                    <span class="tag-text">歌曲</span>
-				</span>
-
-				
-
-				
-				<div class="post-preview">
-					<a href="/2017/04/26/《爱是不保留》/">
-						<h2 class="post-title">
-                            爱是不保留
-                        </h2>
-						
-						<h3 class="post-subtitle">
-                            那天在团契合唱这首歌，就很喜欢了
-                        </h3>
-						
-					</a>
-				</div>
-				<hr>
-				
-				<div class="post-preview">
-					<a href="/2017/05/02/《It Is Well (Live)》/">
-						<h2 class="post-title">
-                            It Is Well (Live)
-                        </h2>
-						
-						<h3 class="post-subtitle">
-                            别说话，听~
-                        </h3>
-						
-					</a>
-				</div>
-				<hr>
-				
-
-				
-
-			</div>
-
-			
-
-			<div class="one-tag-list ">
-
-				<span class="fa fa-tag listing-seperator" id="关于本站">
-	                    <span class="tag-text">关于本站</span>
-				</span>
-
-				
-
-				
-				<div class="post-preview">
-					<a href="/2017/04/26/正式发布公布/">
-						<h2 class="post-title">
-                            V-mx 正式发布
-                        </h2>
-						
-						<h3 class="post-subtitle">
-                            2017年04月26日，这一天
-                        </h3>
-						
-					</a>
-				</div>
-				<hr>
-				
-
-				
-
-			</div>
-
-			
-
-			<div class="one-tag-list ">
-
-				<span class="fa fa-tag listing-seperator" id="行程日志">
-	                    <span class="tag-text">行程日志</span>
-				</span>
-
-				
+<!-- 博客正文 -->
 
 
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 col-sm-12 post-container">
+                <blockquote><br>   <i>歌手：Pharrell Williams </i><br></blockquote>
 
-					<h2 class="post-title" style="opacity: .5;font-size: 12px;line-height: 1.3;margin-top: 10px !important;">
-                            <!--&nbsp;&nbsp;&nbsp;&nbsp; * 存在文章流中，正常检索不可跳转-->
-                        </h2>
-					
-				<div class="post-preview">
-						
-					<a href="###" class="nohover">
-						<h2 class="post-title">
-                            行程第一年：路过
-                        </h2>
-						
-						<h3 class="post-subtitle">
-                            结束幻想的方式，就是自灭和重生
-                        </h3>
-						
-					</a>
-				</div>
-				<hr>
-				
-					
+<div class="musicbox"><br>    <span class="music-t">Happy</span><br>    <span class="music-b"></span><br>    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="100%" src="//music.163.com/outchain/player?type=2&id=26548584&auto=0&height=66"></iframe><br></div>
+
+<hr>
 
 
-				<!--<hr>-->
+<div class="poetry text-left-p"><br><br>彼此的悄然守望，<br>度过预备的时光；<br>短暂对视的方向，<br>是我心爱的向往。<br><br>每一次的见面，内心都在扩张；<br>每一次的交流，情绪不断飞扬。<br>父啊，请继续为我们加添力量！<br>深知，祢对我们的爱无限无疆。<br><br>话语在心中回荡，<br>每天都如此晴朗；<br>圣灵充满的光芒，<br>照耀至地久天长。<br><br></div>
+                <hr>
 
-				
+                <!--下面是每一篇文章的上一篇下一篇，更改为显示名称内容，鼠标移上去显示全部的内容20170324-->
+                <ul class="pager">
+         
+                    
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/05/05/河泽兮/" data-toggle="tooltip" data-placement="top"
+                           title="河泽兮"><span>河泽兮</span>
+                            <i class="glyphicon glyphicon-triangle-right"></i></a>
+                    </li>
+                    
+                </ul>
 
-			</div>
+            </div>
 
-			
+            <div class="hidden-xs col-sm-3 toc-col" style="display: none">
+                <div class="toc-wrap">
+                    
+                </div>
+            </div>
+        </div>
+        <!--每一篇的所属标签，所有标签都加上一个class类名：atags，根据此类名添加随机背景色rgba-->
+        <div class="row">
+            <!-- Sidebar Container -->
 
-			<!-- 标签云JQ插件 -->
+            <div class="
+                col-lg-12
+                col-md-12
+                sidebar-container">
 
-			<div class="tags mt50 tags-style-bottom tag_cloud_scroll">
+                <!-- Featured Tags -->
                 
-				<a href="#杂文" title=""  class="tags-c" rel="2">
-                    杂文
-				</a>
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">标签归属，点击跳转</a>
+                    </h5>
+                    <div class="tags">
+                        
+                    </div>
+                </section>
                 
-				<a href="#歌曲" title=""  class="tags-c" rel="2">
-                    歌曲
-				</a>
+
+                <!-- Friends Blog -->
                 
-				<a href="#关于本站" title=""  class="tags-c" rel="1">
-                    关于本站
-				</a>
-                
-				<a href="#行程日志" title=""  class="tags-c" rel="1">
-                    行程日志
-				</a>
-                
-			</div>
+            </div>
+        </div>
+
+    </div>
+</article>
 
 
-		</div>
-	</div>
-</div>
 
 
 <!-- Footer -->
