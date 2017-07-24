@@ -557,7 +557,7 @@
                         {{list.time.times}}
 
                     </p>
-                    <p class="time" v-if="list.con">还有
+                    <p v-if="list.con" class="time animated infinite" v-bind:class="{'shake': list.time.allDays < 10}">还有
                         <span>
                            {{list.time.allDays}}
                         </span>
