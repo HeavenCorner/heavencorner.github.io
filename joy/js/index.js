@@ -486,24 +486,7 @@ var memberList = [
         phone:'17765166621',
     },
     //26
-    // {
-    //     name: '晶晶',
-    //     prayer: [
-    //         {text: '在找工作，压力比较大。'},
-    //         {text: ''},
-    //         {text: ''}
-    //     ],
-    //     birthdayCD:tarTimeR('10/25'),
-    //     signature: '',
-    //     age: '',
-    //     head: '',
-    //     imgsrc: 'img/head/jingjing.jpeg',
-    //     bgc: '',
-    //     id:'jingjing',
-    //     listOpen: false,
-    //     birthdayOpen: false,
-    //     phone:'13009685561',
-    // },
+
 //     26
 
     {
