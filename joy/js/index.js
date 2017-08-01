@@ -841,12 +841,12 @@ var app = new Vue({
 
                 },
                 list:[
-                    {
-                        title:'聚餐',
-                        con:'从舟家',
-                        time:tarTimeR('07/30'),//06/24
-                        img:'img/00-title-bg.jpg',
-                    },
+                    // {
+                    //     title:'聚餐',
+                    //     con:'从舟家',
+                    //     time:tarTimeR('07/30'),//06/24
+                    //     img:'img/00-title-bg.jpg',
+                    // },
                     {
                         title:'2017第三季度活动安排',
                         con:'',
