@@ -127,6 +127,11 @@
 
         }
 
+        #index-title-box{
+            height: 700px;
+            -webkit-transition: all 1s;
+            transition: all 1s;
+        }
 
     </style>
 
@@ -229,7 +234,7 @@
 
         <div id="prayer-box" class="con-page" v-bind:class="{'leave': all.page != '0', 'come': all.page == '0'}">
 
-            <div class="title"  v-bind:class="{'display-none': all.page != '0'}">
+            <div class="title " id="index-title-box" v-bind:class="{'display-none': all.page != '0'}">
                 <!--十字架动画-->
 
                 <div>
@@ -282,7 +287,7 @@
 
             </div>
 
-            <div class="prayer-text"  v-bind:class="{'display-none': all.page != '0'}">
+            <div class="prayer-text" id="prayer-text" v-bind:class="{'display-none': all.page != '0'}">
 
 
 
@@ -705,6 +710,8 @@
     var loodingText = document.getElementById('looding-num');
     var loadWrap = document.getElementById('load-wrap');
     var loodingMsg = document.getElementById('looding-msg');
+    var indexTitleBox = document.getElementById('index-title-box');
+    var prayerBox = document.getElementById('prayer-box');
 
 //        总加载进度
     var numImg = 0;
@@ -775,7 +782,7 @@
 
         console.log(loadTimeNum);
 
-        if(loadTimeNum > 40 && loodings > 80){
+        if(loadTimeNum > 20 && loodings > 50){
             loadTimeNum = 0;
             window.clearInterval(loadTime);
             loadWrap.style.left = '-110vw';
@@ -824,10 +831,24 @@
             if(loodings == 100){
                 window.clearInterval(loadTime);
                 loadWrap.style.left = '-110vw';
+//                检测滑动关闭title
+                console.log(2);
+
+                prayerBox.onscroll = function(){
+
+                }
+
+                setTimeout(function(){
+                    console.log(indexTitleBox);
+                    indexTitleBox.style.height = '0';
+                },3500)
+
             }
         }
         newImg.src = "img/"+imgHeadArr[i];
     }
+
+
 
 </script>
 
