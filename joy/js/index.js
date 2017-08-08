@@ -388,8 +388,8 @@ var memberList = [
         imgsrc: 'img/head/congzhou.jpeg',
         bgc: '',
         id:'congzhou',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'18217309179',
     },
     // 26
@@ -407,8 +407,8 @@ var memberList = [
         imgsrc: 'img/head/congzhoumama.jpeg',
         bgc: '',
         id:'congzhoumama',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'13482694331',
     },
     //26
@@ -426,8 +426,8 @@ var memberList = [
         imgsrc: 'img/head/dongyi.jpeg',
         bgc: '',
         id:'dongyi',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'13651932095',
     },
     {
@@ -444,8 +444,8 @@ var memberList = [
         imgsrc: 'img/head/duanduan.jpeg',
         bgc: '',
         id:'duanduan',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'15021886131',
     },
     //26
@@ -463,8 +463,8 @@ var memberList = [
         imgsrc: 'img/head/mengen.jpeg',
         bgc: '',
         id:'mengen',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'18817698750',
     },
     {
@@ -481,8 +481,8 @@ var memberList = [
         imgsrc: 'img/head/haoran.jpeg',
         bgc: '',
         id:'haoran',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'17765166621',
     },
     //26
@@ -503,8 +503,8 @@ var memberList = [
         imgsrc: 'img/head/beijing.jpeg',
         bgc: '',
         id:'beijing',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'',
     },
     {
@@ -521,8 +521,8 @@ var memberList = [
         imgsrc: 'img/head/sisi.jpeg',
         bgc: '',
         id:'sisi',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'18807046040',
     },
     //26
@@ -540,8 +540,8 @@ var memberList = [
         imgsrc: 'img/head/jinyan.jpeg',
         bgc: '',
         id:'jinyan',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'15501695181',
     },
     {
@@ -558,8 +558,8 @@ var memberList = [
         imgsrc: 'img/head/lijiao.jpeg',
         bgc: '',
         id:'lijiao',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'',
     },
     {
@@ -576,8 +576,8 @@ var memberList = [
         imgsrc: 'img/head/hemei.jpeg',
         bgc: '',
         id:'hemei',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'',
     },
     // 为我们家宝宝和姊妹祷告，求神给她一颗喜乐的心，万事寻求神的心意。
@@ -595,8 +595,8 @@ var memberList = [
         imgsrc: 'img/head/shenyuan.jpeg',
         bgc: '',
         id:'shenyuan',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'',
     },
     //26
@@ -614,8 +614,8 @@ var memberList = [
         imgsrc: 'img/head/binglin.jpeg',
         bgc: '',
         id:'binglin',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'13761371606',
     },
 //     1、新的一周工作会有新任务，求主开道，然后希望自己灵性上追求更多神的话语；
@@ -634,8 +634,8 @@ var memberList = [
         imgsrc: 'img/head/huangting.jpeg',
         bgc: '',
         id:'huangting',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'',
     },
     {
@@ -652,8 +652,8 @@ var memberList = [
         imgsrc: 'img/head/duwei.jpeg',
         bgc: '',
         id:'huangting',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'',
     },
     {
@@ -670,8 +670,8 @@ var memberList = [
         imgsrc: 'img/head/duqu.jpeg',
         bgc: '',
         id:'duqu',
-        listOpen: false,
-        birthdayOpen: false,
+        listOpen: true,
+        birthdayOpen: true,
         phone:'15649032317',
     },
 
@@ -750,7 +750,7 @@ var app = new Vue({
 
                 },
                 memberList:memberList,
-                openAll: false,
+                openAll: true,
 
             },
         //    1
@@ -794,7 +794,7 @@ var app = new Vue({
                     title:''
                 },
                 memberList: memberList,
-                openAll: false,
+                openAll: true,
 
 
 
