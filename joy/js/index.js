@@ -545,11 +545,13 @@ var memberList = [
         phone:'15501695181',
     },
     {
-        name: '立娇',
+        name: '贺莉娇',
         prayer: [
-            {text: ''},
-            {text: ''},
-            {text: ''}
+            {text: '求主帮助出去懒惰能规律灵修；'},
+            {text: '九月份之前就可以回上海，途中会拜访大学时候的教会和弟兄姊妹们，求主保守平安；'},
+            {text: '写毕业论文和兼职求主帮助；'},
+            {text: '操练节制。'},
+
         ],
         birthdayCD:tarTimeR(''),
         signature: '',
