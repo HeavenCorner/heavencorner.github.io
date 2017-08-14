@@ -377,7 +377,7 @@ var memberList = [
     {
         name: '从舟',
         prayer: [
-            {text: '求主保守旅行愉快。'},
+            {text: '求主保守欧洲之行的平安顺利。'},
             {text: ''},
             {text: ''}
         ],
@@ -396,8 +396,8 @@ var memberList = [
     {
         name: '从舟妈妈',
         prayer: [
-            {text: '求主保守旅行愉快，父女之间有和谐的交流；'},
-            {text: '保守父母家人平安。'},
+            {text: '求主保守欧洲之行的平安顺利。'},
+            {text: ''},
             {text: ''}
         ],
         birthdayCD:tarTimeR('07/15'),
@@ -415,9 +415,9 @@ var memberList = [
     {
         name: '栋夷',
         prayer: [
-            {text: '求神帮助我胜过肉体疲乏，坚持有规律灵修；'},
-            {text: '求神也释放时间，让我为家人，朋友恒切祷告；'},
-            {text: '求神启示我工作发展的方向，顺服神的带领。'}
+            {text: '为身体，感冒祷告；'},
+            {text: '与神关系，下周查经祷告；'},
+            {text: '求神带领，多花时间，为家人朋友和医院的小朋友祷告。'}
         ],
         birthdayCD:tarTimeR('2/15'),
         signature: '',
@@ -452,7 +452,7 @@ var memberList = [
     {
         name: '蒙恩',
         prayer: [
-            {text: '求神给我智慧管理时间。'},
+            {text: '下周讲道，为自己的心祷告。'},
             {text: ''},
             {text: ''}
         ],
@@ -461,6 +461,24 @@ var memberList = [
         age: '',
         head: '',
         imgsrc: 'img/head/mengen.jpeg',
+        bgc: '',
+        id:'mengen',
+        listOpen: true,
+        birthdayOpen: true,
+        phone:'18817698750',
+    },
+    {
+        name: '感恩',
+        prayer: [
+            {text: '爸妈外出平安祷告；'},
+            {text: '约瑟回程平安祷告。'},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('01/23'),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/ganen.jpeg',
         bgc: '',
         id:'mengen',
         listOpen: true,
@@ -510,8 +528,8 @@ var memberList = [
     {
         name: '思思',
         prayer: [
-            {text: '希望能多亲近神，多读经，少玩游戏。'},
-            {text: ''},
+            {text: '租房；'},
+            {text: '为老公参加聚会祷告。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('11/03'),
@@ -529,7 +547,7 @@ var memberList = [
     {
         name: '锦艳',
         prayer: [
-            {text: '求主保守看顾我和家人们，求主让我时刻荣耀他的名，也求主能够让家人早日归属他的名下。'},
+            {text: '求主看顾保守我，认真读经祷告，认识神。'},
             {text: ''},
             {text: ''}
         ],
@@ -586,9 +604,9 @@ var memberList = [
     {
         name: '申元',
         prayer: [
-            {text: '求主带领，坚持读经；'},
-            {text: '求主看顾我家姊妹，身体，让她万事多多祷告；'},
-            {text: '求主继续看顾和保守宝宝的成长。'}
+            {text: '坚持读经，为家里的宝宝健康成长；'},
+            {text: '为妻子身体恢复和以及神的关系，多信靠神祷告。'},
+            {text: ''}
         ],
         birthdayCD:tarTimeR(''),
         signature: '',
@@ -605,7 +623,7 @@ var memberList = [
     {
         name: '炳林',
         prayer: [
-            {text: '为我要不要参加这次的校友会祷告，校友会8月份马上要开始了，但我现在一直没有确定下来要不要去，我这几天就必须要决定下来，希望为我祷告。'},
+            {text: '为我每天能够去做到早睡早起以及在校友会的学习祷告。'},
             {text: ''},
             {text: ''}
         ],
@@ -625,7 +643,7 @@ var memberList = [
     {
         name: '黄霆',
         prayer: [
-            {text: '希望秋萍和宝宝平安，还有自己多花精力灵修，顾念神的话语，工作上可以拓展自己的案源。'},
+            {text: '求主保守秋萍和宝宝健康平安，希望宝宝也能聪明，其余最近睡眠不好牙肉化脓，希望可以好起来。'},
             {text: ''},
             {text: ''}
         ],
@@ -661,8 +679,8 @@ var memberList = [
     {
         name: '杜渠',
         prayer: [
-            {text: '锻炼身体，工作稳中求发展。'},
-            {text: ''},
+            {text: '肠胃不适，求主医治；'},
+            {text: '准备换新的工作，求神继续指引。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('03/15'),
