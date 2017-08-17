@@ -680,7 +680,7 @@ var memberList = [
         name: '杜渠',
         prayer: [
             {text: '肠胃不适，求主医治；'},
-            {text: '准备换新的工作，求神继续指引。'},
+            {text: '为工作，求神继续指引。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('03/15'),
