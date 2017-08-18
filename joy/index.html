@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=750, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+    <meta name="viewport" content="width=750,user-scalable=no" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+
+    <title>喜乐组 · 清心</title>
+
+
+    <style>
+
+        #load-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,.8);
+            padding-top: 170px;
+            text-align: center;
+            overflow: hidden;
+
+            -webkit-transition: all .8s;
+            transition: all .8s;
+
+        }
+        #load-wrap .looding-box{
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+
+        #load-wrap .looding-ani{
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 300px;
+            height: 300px;
+            margin-left: -150px;
+            border-radius: 50%;
+            border: 6px #50d2c2 solid;
+
+            border-width: 8px 0 8px 0;
+
+            -webkit-transition: all .0s;
+            transition: all .0s;
+
+            -webkit-animation: looding .9s infinite linear 0s;
+            animation: looding .9s infinite linear 0s;
+
+            animation-direction:alternate;
+            -webkit-animation-direction:alternate;
+
+            transform-origin:50% 50%;
+
+            -webkit-transform:rotateZ(0deg);
+            transform:rotateZ(0deg);
+        }
+        @keyframes looding{
+
+            from{
+                border-width: 12px 0 12px 0;
+            }
+            to{
+                border-width: 0 12px 0 12px;
+            }
+        }
+
+        -webkit-@keyframes looding{
+
+            from{
+                border-width: 12px 0 12px 0;
+            }
+            to{
+                border-width: 0 12px 0 12px;
+            }
+
+        }
+
+        #load-wrap #looding-num{
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 300px;
+            height: 300px;
+            margin-left: -150px;
+            border-radius: 50%;
+            color: #ffffff;
+            line-height: 300px;
+            text-align: center;
+            font-size: 80px;
+
+        }
+
+        #load-wrap .title-1{
+            padding-top: 50px;
+            text-align: center;
+            color: #ffffff;
+            font-weight: 100;
+        }
+
+        #load-wrap .title-2{
+            padding-top: 50px;
+            text-align: center;
+            color: #ffffff;
+            font-weight: 100;
+        }
+
+        #load-wrap blockquote{
+            padding-top: 200px;
+            color: #a8a8aa;
+        }
+        #load-wrap blockquote p{
+            padding-top: 30px;
+            color: #a8a8aa;
+            font-size: 20px;
+        }
+
+        .p3d{
+            opacity: .5;
+            margin-top: -100px;
+
+        }
+
+        #index-title-box{
+            height: 700px;
+            -webkit-transition: all 1s;
+            transition: all 1s;
+        }
+
+    </style>
+
+    <!--测试部分的样式链接-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="css/index-t.css" />
+    <!--上线时的样式链接(min)-->
+
+</head>
+<body>
+
+<!--预加载页面和开场动画--原生-->
+<div id="load-wrap">
+    <div class="looding-box">
+        <p class="looding-ani">
+            <span class="looding-ani-1"></span>
+        </p>
+        <span id="looding-num">
+            0%
+        </span>
+    </div>
+    <p class="title-1" id="looding-msg">
+            0s
+    </p>
+    <h2 class="title-2">
+        Joy 2.0
+    </h2>
+
+    <blockquote>
+        我的心默默无声，专等候神；我的救恩是从他而来。
+        <p>诗篇 62:1</p>
+    </blockquote>
+</div>
+
+<article id="app" class="wrap-box">
+
+    <!--标题头-->
+    <header id="header-box" class="header-box" v-if="header.seen">
+        <!--点击展开菜单：主页显示两个，其它的左边的显示回到主页-->
+        <ul v-on:click="openMenuList" class="ul-left" v-if="all.page == 0">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!--返回主页-->
+        <div v-on:click="goHome" class="ul-left ul" v-if="all.page != 0">
+            <span v-bind:class="all.otherIcon[0]"></span>
+        </div>
+
+
+        <ul v-on:click="openMenuList" class="ul-right" v-bind:class="{'open': !menu.seen, 'close': menu.seen}">
+            <li></li>
+            <li class="ul-right" v-bind:class="{'bgt': menu.seen, 'bgw': !menu.seen}"></li>
+            <li></li>
+        </ul>
+
+        <!--右下角跳转到主页-->
+        <div class="right-bottom-goindex" v-on:click="goHome"
+        v-if="(all.page != 0) && (all.page != 2)"
+        >
+            <span v-bind:class="all.otherIcon[0]"></span>
+        </div>
+
+    </header>
+
+    <!--蒙版-->
+    <div class="wrap-mark" v-if="menu.seen">
+
+    </div>
+
+    <!--菜单-->
+    <nav id="nav-box"  v-bind:class="{'leave': !menu.seen, 'come': menu.seen}" v-on:click="closeMenuList">
+        <dl>
+            <dt>{{menu.title}}</dt>
+            <dd>{{menu.msg}}</dd>
+        </dl>
+        <ul>
+            <li v-for = "li in menu.list" v-bind:class="{'active': all.page == li.id}" v-on:click="goMenu(li.id)">
+
+                <span class="icon" v-bind:class="li.icon"></span>
+
+                <span class="nav-text">{{li.text}}</span>
+
+                <span class="nav-num" v-if="li.num">{{li.num}}</span>
+
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <!--正文内容-->
+
+    <section class="content-wrap cssgo">
+        <!--0、主页（代祷事项）-->
+
+        <div id="prayer-box" class="con-page" v-bind:class="{'leave': all.page != '0', 'come': all.page == '0'}">
+
+            <div class="title " id="index-title-box" v-bind:class="{'display-none': all.page != '0'}">
+                <!--十字架动画-->
+
+                <div>
+                    <div class="p3d infinite">
+                        <ul class="space cross space-1">
+                            <li class="cover-1-1 ad cover-1-1-animate"><span class="con-font">爱</span></li>
+                            <li class="cover-1-2 ad cover-1-2-animate"><span class="con-font">望</span></li>
+                            <li class="cover-1-3 ad cover-1-3-animate"><span class="con-font">节制</span></li>
+                            <li class="cover-1-4 ad cover-1-4-animate"><span class="con-font">忍耐</span></li>
+                            <li class="cover-1-5 ad cover-1-5-animate"><span class="con-font">恩慈</span></li>
+                            <li class="cover-1-6 ad cover-1-6-animate"><span class="con-font">良善</span></li>
+                            <li class="cover-2-1 ad cover-2-1-animate"><span class="con-font">信实</span></li>
+                            <li class="cover-2-2 ad cover-2-2-animate"><span class="con-font">温柔</span></li>
+                            <li class="cover-2-3 ad cover-2-3-animate"><span class="con-font">信</span></li>
+                            <li class="cover-2-4 ad cover-2-4-animate"><span class="con-font fz24">和平</span></li>
+                            <li class="cover-2-5 ad cover-2-5-animate"><span class="con-font">喜乐</span></li>
+                            <li class="cover-2-6 ad cover-2-6-animate"><span class="con-font">仁爱</span></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!--展示文字-->
+                <div class="title-msg">
+                    <h2 class="animated fadeInDown">{{contentpage.prayer.title.msg}}</h2>
+                    <p>
+                        <span class="animated zoomIn">{{contentpage.prayer.title.text}}</span>
+                        <i class="animated fadeInRight">{{contentpage.prayer.title.chapter}}</i>
+                    </p>
+                    <h4 class="zoomInLeft">{{contentpage.prayer.dateTime.monthName[contentpage.prayer.dateTime.month]}}</h4>
+                </div>
+
+
+            </div>
+
+            <div class="date-box"  v-bind:class="{'display-none': all.page != '0'}">
+                <ol class=" fadeInRight">
+                    <li v-for="week in contentpage.prayer.dateTime.weekName">
+                        {{week}}
+                    </li>
+                </ol>
+
+                <ul class=" fadeInLeft">
+                    <li v-for="(dateNum,index) in contentpage.prayer.dateTime.weekDateArr" >
+
+                        <span v-bind:class="{'bg-r':contentpage.prayer.dateTime.week == index}">{{dateNum}}</span>
+
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="prayer-text" id="prayer-text" v-bind:class="{'display-none': all.page != '0'}">
+
+
+
+                <ul class="member-list animated fadeInUp" m="member.listOpen" v-bind:id="member.id" v-for="(member,index) in contentpage.prayer.memberList"
+                    v-bind:class="{'close': member.listOpen == false }">
+                    <li id="" class="prayer-text-title" v-on:click="closePrayerList(member)">
+                        <dl >
+                            <dt>
+                                <img v-bind:src="member.imgsrc"  v-on:click="goIndex(member)" alt="">
+                            </dt>
+                            <dd>{{member.name}}</dd>
+                            <dd v-if="member.head != ''" class="c-red">{{member.head}}</dd>
+                        </dl>
+                    </li>
+
+                    <li class="prayer-text-list" v-if="prayer.text" v-for="(prayer,index) in member.prayer">
+                        <p>
+                            {{index + 1}}、
+                        </p>
+                        <p class="prayer-text-con">
+                            {{prayer.text}}
+                        </p>
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+            <div class="open-all" v-bind:class="{'bg-g': !contentpage.prayer.openAll}" v-if="all.page == '0'">
+                <ul v-on:click="openAllList(contentpage.prayer,'prayer','0')" v-bind:class="{'open': !contentpage.prayer.openAll, 'close': contentpage.prayer.openAll}">
+                    <li></li>
+                    <li class="ul-right" v-bind:class="{'bgt': contentpage.prayer.openAll, 'bgw': !contentpage.prayer.openAll}"></li>
+                    <li></li>
+                </ul>
+            </div>
+            <h6 class="bottom-msg">到底了</h6>
+        </div>
+
+        <!--1、灵粮音乐-->
+        <div id="spirit-box"  class="con-page" v-bind:class="{'leave': all.page != '1', 'come': all.page == '1'}">
+            <div class="title"  v-bind:class="{'display-none': all.page != '1'}">
+                <h2  class="animated fadeInRight">{{contentpage.spirit.title.titleText}}</h2>
+
+            </div>
+            <!--经文-->
+            <!--<div class="title-msg"   v-bind:class="{'display-none': all.page != '1'}">-->
+                <!--<p class=" zoomIn">-->
+                    <!--<span>{{contentpage.spirit.title.text}}</span>-->
+                    <!--<i>{{contentpage.spirit.title.chapter}}</i>-->
+                <!--</p>-->
+            <!--</div>-->
+            <!--加贝的书写-->
+            <img v-bind:class="{'display-none': all.page != '1'}" class="animated fadeInLeft" v-bind:src="contentpage.spirit.title.src" alt="">
+            <!--视频-->
+            <div class="video-iframe-box animated fadeInUp" v-if="all.page == '1'" v-bind:class="{'display-none': menu.seen}" v-for="list in contentpage.spirit.videoList">
+                <h5>{{list.title}}</h5>
+
+                <iframe class="video_iframe" height="502.5" width="670" frameborder="0" v-bind:src="list.src" allowfullscreen="" scrolling="no" style=""></iframe>
+            </div>
+            <!--音乐-->
+            <div class="music-box animated bounceInRight" v-for="list in contentpage.spirit.musicList">
+                <span class="music-b"></span>
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=690 height=100
+                        v-bind:src="list"></iframe>
+            </div>
+        </div>
+
+
+
+
+        <!--2、生日-->
+        <div id="birthday-box"  class="con-page" v-bind:class="{'leave': all.page != '2', 'come': all.page == '2'}">
+            <div class="title" v-bind:class="{'display-none': all.page != '2'}">
+                <h2 class="animated fadeInRight">{{contentpage.birthday.title.titleText}}</h2>
+                <div class="w110 h110 ball animated fadeInDown">
+                    <span>
+                        {{contentpage.birthday.title.lenght}}
+                    </span>
+                </div>
+            </div>
+
+            <!--日历-->
+
+            <div class="calendar-box" v-bind:class="{'display-none': all.page != '2'}">
+                <p class=" zoomIn">
+                    <span>{{all.dateTime.year}}年{{all.dateTime.month + 1}}月{{all.dateTime.date}}日</span>
+                    <span>&nbsp;&nbsp;周{{contentpage.prayer.dateTime.weekName2[contentpage.prayer.dateTime.week]}}</span>
+                </p>
+                <!--<div class="date-box">-->
+                    <!--<ol>-->
+                        <!--<li v-for="week in contentpage.prayer.dateTime.weekName">-->
+                            <!--{{week}}-->
+                        <!--</li>-->
+                    <!--</ol>-->
+
+                    <!--<ul>-->
+                        <!--<li  >-->
+
+                            <!--<span></span>-->
+
+                        <!--</li>-->
+                    <!--</ul>-->
+
+                <!--</div>-->
+
+
+            </div>
+
+            <div class="time-title" v-bind:class="{'display-none': all.page != '2'}">
+                <p class="animated fadeInLeft">距离下次生日：</p>
+            </div>
+
+
+            <div class="birthday-wrap"  v-bind:class="{'display-none': all.page != '2'}">
+                <ul class="list animated fadeInUp" v-if="member.birthdayCD.times" v-for="(member,index) in contentpage.birthday.memberList"
+                    v-bind:class="{'close': member.birthdayOpen == false }">
+                    <li class="text-title">
+                        <dl v-on:click="closeBirthdayList(member)" class="animated infinite" v-bind:class="{'shake': member.birthdayCD.allDays < 10}">
+                            <dt >
+                                <img v-bind:src="member.imgsrc" v-on:click="goIndex(member)" alt="">
+                            </dt>
+                            <dd>{{member.name}}</dd>
+                            <!--倒计时-->
+                            <dd class="birthdays">
+
+                                <p>
+                                    <span class="animated infinite" v-bind:class="{'c-r shake': member.birthdayCD.allDays < 10}">
+                                        {{member.birthdayCD.allDays}}
+                                    </span>
+                                    天
+                                </p>
+
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <!--具体生日日期-->
+                    <li class="day">
+
+                        <i>{{member.birthdayCD.times}}</i>
+
+                        <p>
+                            <span v-if="member.birthdayCD.month">{{member.birthdayCD.month}}个月</span>
+
+                            <span>
+
+                                {{member.birthdayCD.allDays - member.birthdayCD.month*30}}
+
+                                <span class="c-b"> 天</span>
+
+                            </span>
+
+
+                        </p>
+
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="open-all" v-bind:class="{'bg-g': !contentpage.birthday.openAll}" v-if="all.page == '2'">
+                <ul v-on:click="openAllList(contentpage.birthday,'birthday','2')" v-bind:class="{'open': !contentpage.birthday.openAll, 'close': contentpage.birthday.openAll}">
+                    <li></li>
+                    <li class="ul-right" v-bind:class="{'bgt': contentpage.birthday.openAll, 'bgw': !contentpage.birthday.openAll}"></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <h6 class="bottom-msg">到底了</h6>
+
+        </div>
+        <!--3、通讯录-->
+        <div id="phone-box"  class="con-page" v-bind:class="{'leave': all.page != '3', 'come': all.page == '3'}">
+            <div class="title"  v-bind:class="{'display-none': all.page != '3'}">
+                <h2 class="animated fadeInRight">{{contentpage.phone.title.titleText}}</h2>
+                <div class="w110 h110 bg-g ball animated fadeInDown">
+                    <span>
+                        {{contentpage.phone.title.lenght}}
+                    </span>
+                </div>
+            </div>
+
+            <dl class="msg" v-bind:class="{'display-none': all.page != '3'}">
+                <dt class="animated rollIn">
+                    {{contentpage.phone.msg.text}}
+                </dt>
+                <dd class="animated rollIn">
+                    {{contentpage.phone.msg.title}}
+                </dd>
+
+            </dl>
+
+            <div class="phone-list-wrap"   v-bind:class="{'display-none': all.page != '3'}">
+                <ul class="phone-list animated fadeInUp" v-if="member.phone" v-for="(member,index) in contentpage.prayer.memberList">
+                    <li class="phone-text-title">
+                        <dl v-on:click="">
+                            <dt>
+                                <img v-bind:src="member.imgsrc"  v-on:click="goIndex(member)" alt="">
+                            </dt>
+                            <dd class="name">{{member.name}}</dd>
+                            <dd>
+                                <a v-bind:href="member.phone" v-bind:class="contentpage.phone.list.icon"></a>
+                            </dd>
+                        </dl>
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <h6 class="bottom-msg">到底了</h6>
+
+        </div>
+        <!--4、其它代祷-->
+        <div id="other-box"  class="con-page" v-bind:class="{'leave': all.page != '4', 'come': all.page == '4'}">
+            <div class="title"  v-bind:class="{'display-none': all.page != '4'}">
+                <h2 class="animated fadeInRight">{{contentpage.other.title.titleText}}</h2>
+                <div class="w110 h110 bg-o ball animated fadeInDown">
+                    <span>
+                        0
+                        <!--{{contentpage.phone.title.lenght}}-->
+                    </span>
+                </div>
+            </div>
+            <dl class="msg">
+                <dt>
+                    {{contentpage.other.msg.text}}
+                </dt>
+                <dd>
+                    {{contentpage.other.msg.title}}
+                </dd>
+                <!--<dd>-->
+                    <!--{{contentpage.other.msg.title2}}-->
+                <!--</dd>-->
+
+            </dl>
+        </div>
+        <!--5、通知-->
+        <div id="msg-box"  class="con-page" v-bind:class="{'leave': all.page != '5', 'come': all.page == '5'}">
+            <div class="title"  v-bind:class="{'display-none': all.page != '5'}">
+                <h2 class="animated fadeInRight">{{contentpage.msg.title.titleText}}</h2>
+                <div class="w110 h110 bg-r ball animated fadeInDown">
+                    <span>
+                        {{contentpage.msg.list.length}}
+                    </span>
+                </div>
+                <p style="color: #ffffff;">
+                    <span>{{all.dateTime.year}}年{{all.dateTime.month + 1}}月{{all.dateTime.date}}日</span>
+                    <span>&nbsp;&nbsp;周{{contentpage.prayer.dateTime.weekName2[contentpage.prayer.dateTime.week]}}</span>
+                </p>
+            </div>
+            <dl class="msg" v-bind:class="{'display-none': all.page != '5'}">
+                <dt class="animated zoomIn">
+                    {{contentpage.msg.msg.text}}
+                </dt>
+                <dd class="animated zoomIn">
+                    {{contentpage.msg.msg.title}}
+                </dd>
+                <dd class="animated zoomIn">
+                    {{contentpage.msg.msg.title2}}
+                </dd>
+
+            </dl>
+            <!--正文-->
+            <ul class="list-box" v-bind:class="{'display-none': all.page != '5'}">
+                <li  v-if="list.time.oldday" v-for="list in contentpage.msg.list" class="animated fadeInUp">
+                    <img v-bind:src="list.img" alt="">
+                    <p class="title">{{list.title}}</p>
+                    <p class="con" v-if="list.con">
+                        {{list.con}}
+                        {{list.time.times}}
+
+                    </p>
+                    <p v-if="list.con" class="time animated infinite" v-bind:class="{'shake': list.time.allDays < 10}">还有
+                        <span>
+                           {{list.time.allDays}}
+                        </span>
+                        天
+                    </p>
+
+                </li>
+                <img class="img" v-bind:src="list.src" v-if="list.src" alt="" v-for="list in contentpage.msg.list">
+            </ul>
+        </div>
+        <!--6、帮助-->
+        <div id="help-box"  class="con-page" v-bind:class="{'leave': all.page != '6', 'come': all.page == '6'}">
+            <div class="help-box-title">
+                <h2>{{contentpage.help.title.msg}}</h2>
+                <h3>{{contentpage.help.title.text}}</h3>
+                <div class="ball-arr">
+
+                    <dl class="b1">
+                        <dt>0</dt>
+                        <dd>
+                            {{contentpage.help.title.titleMsg[0]}}
+                        </dd>
+                    </dl>
+
+
+
+                    <dl class="b2 bain">
+                        <dt>{{contentpage.help.title.runDay}}</dt>
+                        <dd>
+                            {{contentpage.help.title.titleMsg[1]}}
+                        </dd>
+
+                    </dl>
+
+                    <dl class="b3">
+                        <dt>{{contentpage.help.upLog.length - 2}}</dt>
+                        <dd>
+                            {{contentpage.help.title.titleMsg[2]}}
+                        </dd>
+
+                    </dl>
+
+                </div>
+
+                <h4>{{contentpage.help.title.titleMsgBottom}}</h4>
+
+            </div>
+            <h6>{{contentpage.help.nameMsg}}</h6>
+
+
+
+
+            <h5>{{contentpage.help.logTitle}}</h5>
+            <img src="img/help.png" alt="">
+
+            <div class="up-log-box">
+                <h5>{{contentpage.help.upLogTitle}}</h5>
+
+                <!--<li class="up-log-list" >-->
+
+                <p v-for="list in contentpage.help.upLog">
+                    <!--<dt>-->
+                    <span>{{list.date}}</span>
+
+                    <!--</dt>-->
+                    <!--<dd>-->
+                    <span>&nbsp;{{list.text}}</span>
+
+                    <!--</dd>-->
+                </p>
+                <!--</li>-->
+            </div>
+
+            <h6 class="bottom-msg">到底了</h6>
+
+        </div>
+        <!--个人主页 index (点击头像进入)-->
+        <div id="index-box"  class="con-page"
+             v-bind:class="{'leave': all.page != 'index', 'come': all.page == 'index'}">
+            <div class="title">
+                <div class="img-box">
+                    <img class="title-bg" v-bind:src="contentpage.index.member.imgsrc" alt="">
+
+                </div>
+                <div class="mark">
+
+                </div>
+                <h3 class="name">{{contentpage.index.member.name}}</h3>
+                <div class="head-ball">
+                    <img v-bind:src="contentpage.index.member.imgsrc" alt="">
+                </div>
+                <p class="signature">{{contentpage.index.member.signature}}</p>
+
+
+
+            </div>
+
+            <a v-if="contentpage.index.member.phone" class="ball w110 h110"
+               v-bind:href="contentpage.index.member.phone"
+               v-bind:class="contentpage.phone.list.icon"></a>
+
+
+
+
+            <dl class="msg-box">
+
+                <!--代祷事项-->
+                <h4>代祷事项</h4>
+                <div class="prayer-text-list" v-if="prayer.text" v-for="(prayer,index) in contentpage.index.member.prayer">
+                    <p>
+                        {{index + 1}}、
+                    </p>
+                    <p class="prayer-text-con">
+                        {{prayer.text}}
+                    </p>
+                </div>
+
+                <h4
+                        v-if="contentpage.index.member.birthdayCD.allDays"
+                >距离下次生日</h4>
+
+
+
+                <div class="dayss bain"
+                     v-if="contentpage.index.member.birthdayCD.allDays"
+                >
+                    <span v-bind:class="{'c-r': contentpage.index.member.birthdayCD.allDays < 7 }">
+                                        {{contentpage.index.member.birthdayCD.allDays}}
+                                    </span>
+                    <span class="day-text">天</span>
+                </div>
+
+
+            </dl>
+        </div>
+
+    </section>
+
+
+
+</article>
+<!--图片预加载-->
+<script>
+    var loodingText = document.getElementById('looding-num');
+    var loadWrap = document.getElementById('load-wrap');
+    var loodingMsg = document.getElementById('looding-msg');
+    var indexTitleBox = document.getElementById('index-title-box');
+    var prayerBox = document.getElementById('prayer-box');
+
+//        总加载进度
+    var numImg = 0;
+    var loodings = 0;
+
+    //背景和其它图片
+    var arrOtherImg =[
+        '01-title-bg.jpg',
+        '01-title-bg-1.jpg',
+        '02-title-bg.jpg',
+        '05-title-bg.jpg',
+        '06-title-bg.jpg',
+        '00-title-bg.jpg',
+        'help.png',
+    ];
+
+    //头像图片加载
+    var imgHeadArr = [
+
+        'head/congzhou.jpeg',
+        'head/jinyan.jpeg',
+        'head/mengen.jpeg',
+        'head/binglin.jpeg',
+        'head/dongyi.jpeg',
+        'head/duanduan.jpeg',
+        'head/duqu.jpeg',
+        'head/haoran.jpeg',
+        'head/congzhoumama.jpeg',
+        'head/beijing.jpeg',
+        'head/shenyuan.jpeg',
+        'head/sisi.jpeg',
+        'head/huangting.jpeg',
+        'head/lijiao.jpeg',
+
+    ];
+
+
+    var imghL = imgHeadArr.length;
+    var imgoL = arrOtherImg.length;
+
+    var allLength =  imghL + imgoL;
+
+//    加载其它图片
+
+    for(var i=0;i<imgoL;i++){
+        var newImgT = new Image();
+
+//        otherArr.push(newImg);
+//        arrAllImg.push(newImg);
+
+        newImgT.onload = function(){
+            numImg++;
+//            loodings = parseInt(numImg/allLength*100);
+            loodingText.innerHTML = loodings + '%';
+        }
+
+        if(numImg == imgoL){
+        }
+        newImgT.src = "img/"+arrOtherImg[i];
+    }
+    //计时加载
+    var loadTimeNum = 0;
+    var loadTime;
+    loadTime = setInterval(function(){
+        loadTimeNum ++;
+        loadTimeNum = loadTimeNum + '';
+        var m = loadTimeNum.charAt(loadTimeNum.length - 1);
+
+        console.log(loadTimeNum);
+
+        if(loadTimeNum > 20 && loodings > 50){
+            loadTimeNum = 0;
+            window.clearInterval(loadTime);
+            loadWrap.style.left = '-110vw';
+        }
+
+        var msgs = '加载异常，请等待或刷新 ';
+
+        if(m == 0){
+
+            if(loadTimeNum > 30){
+                loodingMsg.innerHTML = msgs + ' ' +  loadTimeNum/10 + '.0' + 's';
+            }else{
+                loodingMsg.innerHTML = loadTimeNum/10 + '.0' + 's';
+            }
+
+        }else {
+
+            if(loadTimeNum > 30){
+                loodingMsg.innerHTML = msgs + ' ' +   loadTimeNum/10 + 's';
+            }else{
+                loodingMsg.innerHTML = loadTimeNum/10 + 's';
+
+            }
+
+        }
+
+    },100)
+
+    loadTime;
+
+
+
+    //开始加载头像图片
+
+    for(var i=0;i<imghL;i++){
+        var newImg = new Image();
+
+//                headArr.push(newImg);
+//                arrAllImg.push(newImg);
+
+        newImg.onload = function(){
+            numImg++;
+            loodings = parseInt(numImg/allLength*100);
+            loodingText.innerHTML = loodings + '%';
+
+            if(loodings == 100){
+                window.clearInterval(loadTime);
+                loadWrap.style.left = '-110vw';
+//                检测滑动关闭title
+                console.log(2);
+
+                prayerBox.onscroll = function(){
+
+                }
+
+                setTimeout(function(){
+                    console.log(indexTitleBox);
+                    indexTitleBox.style.height = '0';
+                },3500)
+
+            }
+        }
+        newImg.src = "img/"+imgHeadArr[i];
+    }
+</script>
+
+
+<!--js-->
+<script src="js/vue.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="我是DuyangSir，一名前端工程师，对前端和编程技术非常热爱">
+    <meta name="keyword" content="web前端工程师,个人博客,为同在天堂的5年行程,初恋,信仰前端工程师,个人网站,v-mx.com,v-mx">
+    <meta name="author" content="DuyangSir">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <link rel="alternate" type="application/atom+xml" title="为同在天堂的5年行程" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>
+        
+
+
+            
+            
+            关于工作｜为同在天堂的5年行程
+
+            
+
+
+        
+    </title>
+
+    <link rel="canonical" href="http://www.v-mx.com/work/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+    <link rel="stylesheet" href="/fonts/font_001/iconfont.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css">
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?1e726c08a716ac50c0691a8a2be30b3b";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+
+
+</head>
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<style>
+    nav {
+        background-color: rgba(0,0,0,0.2);
+        z-index: 9999 !important;
+    }
+    .nav-fly {
+        position: absolute;
+        top: 52px;
+        left: 0px;
+        display: block;
+        height: 3px;
+        background: #FFFFFF;
+        width: 0;
+
+    }
+    .titleouttimes {
+        display: inline-block;
+        overflow: hidden;
+    }
+    .titleouttimes span {
+
+        width: 2.2rem;
+    }
+</style>
+<nav class="navbar shadow navbar-default navbar-custom navbar-customs navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo titleouttimes" class="cssgo">
+                    为同在天堂的5年行程
+                </span>
+            </a>
+        </div>
+
+        <div id="blog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+
+                    
+
+
+                        <li>
+                            <a href="/" class="nav-li1 nav-li" target="_self">首页</a>
+                        </li>
+                        <li>
+                            <a href="/about/" class="nav-li2 nav-li" target="_self">关于</a>
+                        </li>
+                        <li>
+                            <a href="/work/" class="nav-li3 nav-li" target="_self">在职</a>
+                        </li>
+                        <li>
+                            <a href="/tags/" class="nav-li4 nav-li" target="_self">标签云</a>
+                        </li>
+                        <li>
+                            <a href="/message/" class="nav-li5 nav-li" target="_self">寄语墙</a>
+                        </li>
+
+
+                    
+
+                    <!--滑块-->
+                    <i class="nav-fly"></i>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#blog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+
+
+
+</script>
+
+<!-- Main Content -->
+
+<!--  -->
+<style>
+	* {
+		/*border: thin red solid;*/
+	}
+
+	header{
+		position: relative;
+		overflow: hidden;
+	}
+	
+	header .bg-header {
+		position: relative;
+		height: 500px;
+		/*background-color: #0fa9c3;*/
+	}
+	/*头像*/
+	
+	.bg-header .avatar img {
+		border-radius: 50%;
+		margin-top: 100px;
+		margin-bottom: 70px;
+		max-width: 170px;
+		height: 170px;
+	}
+	
+	.bg-header h1,
+	.bg-header h2 {
+		color: white;
+	}
+	/*姓名*/
+	
+	.bg-header h1 {
+		letter-spacing: 2px;
+		text-shadow: 0 0 10px rgba(15, 15, 15, .3);
+	}
+	/*描述*/
+	
+	.bg-header h2 {
+		font-size: 18px;
+		margin-top: 12px;
+	}
+	/*整个作品展示区*/
+	
+	section .works-area {
+		margin-top: -150px;
+	}
+	
+	.works-area .works-item {
+		border-radius: 2px;
+		border: 1px solid #eee8d5;
+		margin-bottom: 50px;
+		box-shadow: 8px 5px 10px rgba(0, 0, 0, .2);
+	}
+	
+	.works-item-img {
+		margin: auto -26px;
+	}
+	
+	.works-item-img img {
+		width: 100%;
+	}
+	
+	.works-area .works-item {
+		background: white;
+		padding: 5px 25px;
+	}
+	
+	.works-area .footer {
+		padding-top: 10px;
+		border-top: thin #eee solid;
+	}
+	
+	.works-area .footer .btn {
+		padding: 7px 9px;
+		border-radius: 2px;
+		float: right;
+		margin: 8px 0;
+		text-transform: none;
+		font-size: 12px;
+		font-style: italic;
+		background: #0fa9c3;
+		border: none;
+		color: #fff;
+	}
+	
+	.works-item .works-content {
+		padding-top: 15px;
+	}
+	
+	.works-item .title {
+		padding-top: 6px;
+	}
+	
+	.works-item .title h3 {
+		display: inline-block;
+		margin: 0 15px;
+		height: 33px;
+		font-size: 18px;
+		font-weight: 400;
+	}
+	
+	.works-item .title .title-date {
+		float: right;
+		font-size: 18px;
+	}
+	
+	.works-item .use span {
+		display: inline-block;
+		font-size: 12px;
+		border-radius: 3px;
+		padding: 0 4px;
+		border: thin solid #795548;
+	}
+	
+	.works-item .subtitle {
+		margin: 0;
+		font-size: 17px;
+	}
+	
+	h2 {
+		padding-top: 20px;
+	}
+	
+	h6 {
+		text-align: center;
+	}
+	/*增加一个旋转的canvas*/
+	
+	.profile {
+		position: relative;
+	}
+	
+	.title-wrap {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		width: 200px;
+	}
+	
+	.title-ctx-wrap {
+		position: absolute;
+		left: -20px;
+		top: 65px;
+		display: inline-block;
+		vertical-align: middle;
+		width: 240px;
+		height: 240px;
+		opacity: 0.5;
+		/*background-color: rgba(0,0,0,0.3);*/
+	}
+	
+	header {
+		position: relative;
+	}
+	
+	#snow-wrap {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	/*移动端*/
+	
+	@media screen and (max-width: 768px) {
+		.personal-profile h1 {
+			font-size: 18px !important;
+		}
+	}
+	/*目录高亮*/
+	
+	.nav-li3 {
+		color: #62A4FF !important;
+	}
+	
+	.container.huyan,
+	.personal-profile {
+		position: relative;
+		z-index: 4;
+		padding-bottom: 20px;
+	}
+	
+	.iframe-box {
+		height: 32px;
+		position: relative;
+		left: 50%;
+		width: 300px;
+		margin-left: -150px;
+	}
+	
+	.iframe-box span {
+		position: absolute;
+		top: 12px;
+		left: 46px;
+		display: block;
+		width: 183px;
+		text-align: center;
+		padding-left: 20px;
+		/*min-width: 149px;*/
+		height: 18px;
+		background-color: #ffffff;
+		font-size: 12px;
+		line-height: 18px;
+	}
+	
+	.iframe-box i {
+		position: absolute;
+		top: 16px;
+		left: 16px;
+		display: block;
+		width: 23px;
+		/*min-width: 149px;*/
+		height: 23px;
+		background-color: #f3f3f4;
+		font-size: 21px;
+	}
+	
+	#path-wrap {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		/*background: rgba(0,0,0,0.3);*/
+		z-index: 3;
+		overflow: hidden;
+	}
+	
+	.bg-header .avatar img {
+		position: relative;
+		z-index: 4;
+	}
+	
+	iframe {}
+	
+	blockquote {
+		border-color: #0fa9c3;
+	}
+	
+	.em1 {
+		font-size: 1rem !important;
+	}
+	
+	.em1-2 {
+		font-size: 1.2rem !important;
+	}
+	
+	.xieti {
+		font-style: oblique;
+	}
+	
+	.grey {
+		color: grey;
+	}
+	/*<!--手机端-->*/
+	
+	@media only screen and (max-width: 767px) {
+		.container .text {
+			top: 0px !important;
+		}
+		header .bg-header {
+			height: 380px;
+		}
+	}
+
+
+
+	
+	.container h3 {
+		text-align: center;
+		font-size: 2.5rem;
+	}
+	
+	.container h4 {
+		padding-top: 10px;
+		text-align: center;
+	}
+	
+	.container h4 i span {
+		color: red;
+	}
+	
+	.container h5 {
+		padding-top: 10px;
+		padding-right: 10px;
+		text-align: right;
+	}
+	
+	.container .text {
+		padding: 10px 20px 20px;
+		top: -75px;
+		background-color: #ffffff;
+		/*height: 300px;*/
+	}
+	
+	.container-text>p {
+		text-indent: 2rem;
+		font-size: 1.3rem;
+	}
+	
+	.text-indents {
+		text-indent: 2rem;
+	}
+	
+	.lastTimeS {
+		display: inline-block;
+		width: 76px;
+		text-indent: 0rem;
+	}
+	
+	hr {
+		margin: 10px 0 20px;
+	}
+	
+ /*进入前端实验室*/
+ /*pc*/
+ 
+ @media only screen and (min-width: 768px) {
+ 	.app-golab {
+ 		display: none;
+ 	}
+ 	.pc-golab {
+ 		cursor: pointer;
+ 		display: block;
+ 	}
+ 	.pc-golab h2 {
+ 		margin: 0;
+ 		padding: 0;
+ 	}
+ 	.pc-golab.fixed {
+ 		position: fixed;
+ 		bottom: 30px;
+ 		left: 4vw;
+ 		z-index: 999;
+ 		-webkit-animation-duration: 12s;
+ 		animation-duration: 12s;
+ 		-webkit-animation-fill-mode: both;
+ 		animation-fill-mode: both;
+ 		-webkit-animation-iteration-count: infinite;
+ 		animation-iteration-count: infinite;
+ 		-webkit-animation-name: lowups;
+ 		animation-name: lowups;
+ 		animation-direction:alternate;
+		-webkit-animation-direction:alternate;
+ 	}
+ }
+ 
+ @-webkit-keyframes lowups {
+ 	from {
+ 		bottom: 10vh;
+ 	}
+ 	to {
+ 		bottom: 30vh;
+ 	}
+ }
+ 
+ @keyframes lowups {
+ 	from {
+ 		bottom: 10vh;
+ 	}
+ 	to {
+ 		bottom: 30vh;
+ 	}
+ }
+
+ /*app*/
+ 
+ @media screen and (max-width: 768px) {
+ 	.app-golab {
+ 		display: block;
+ 	}
+ 	.pc-golab {
+ 		display: none;
+ 	}
+	.personal-profile h1{
+		position: relative;
+		top: -20px;
+	}
+	/*视频*/
+	 .video-player-box{
+		 display: none;
+	 }
+	 header .bg-header {
+		 background-color: #0fa9c3;
+	 }
+ }
+
+.video-player-box{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*background: #000000;*/
+}
+
+.video-player{
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	z-index: 2;
+	box-shadow: 0 0 20px rgba(0,0,0,.9);
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,.9);
+}
+
+	.video-player-bg{
+		display: block;
+		position: absolute;
+		top:0;
+		left: 0;
+		z-index: 0;
+		/*width: 100%;*/
+	}
+	.video-player-mark-p{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background-color: rgba(0,0,0,.6);
+	}
+
+.video-player-mark{
+	/*display: none;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #0fa9c3;
+	opacity: .4;
+	z-index: 3;
+}
+
+
+ 
+ </style>
+
+<div class="works-container work-page" style="background-color: #fafafa">
+
+	<header>
+
+		<!--视频-->
+		<div class="video-player-box">
+
+			<video class="video-player-bg" width="100%" height="" loop autoplay>
+				<source src="/video/work.mp4" type="video/mp4">
+				<source src="" type="video/mkv" />
+				<source src="" type="video/rmvb" />
+			</video>
+
+			<div class="video-player-mark-p"></div>
+
+
+			<video class="video-player" width="" height="100%" loop autoplay>
+				<source src="/video/work.mp4" type="video/mp4">
+				<source src="" type="video/mkv" />
+				<source src="" type="video/rmvb" />
+			</video>
+		</div>
+
+
+
+		<!--蒙版-->
+		<div class="video-player-mark">
+
+		</div>
+
+
+		<!--路径画板-->
+		<div id="path-wrap">
+			<canvas id="path-canvas" width="" height=""></canvas>
+		</div>
+
+		<div class="bg-header text-center" id="work-page-bgheader">
+
+			<div class="profile">
+
+				<div class="avatar">
+					<div class="title-wrap">
+						<div class="title-ctx-wrap">
+						</div>
+						<img class="op" src="/img/tx-grey.jpg">
+					</div>
+				</div>
+
+				<div class="personal-profile">
+					<h1>
+                        <i>V-mx</i> 一个前端工程师的行程站点
+                    </h1>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--关于工作方面的内容-->
+	<div class="container huyan">
+		<section class="row ">
+			<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text huyan box-shadows">
+				<h3>Every thing...ing</h3>
+				<h4><i><span>V</span>ector <span>-</span> <span>M</span>a<span>x</span>imum</i></h4>
+				<h4>保持饥饿感；敬畏耶和华是智慧的开端</h4>
+
+				<!--<h5>&#45;&#45; 把细节做到极致</h5>-->
+
+				<!--<div class="iframe-box" id="work-bgm">
+                    <span>把细节做到极致</span>
+                    <i class="glyphicon glyphicon-music"></i>
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=437597650&auto=0&height=32"></iframe>
+                </div>-->
+
+				<div class="container-text huyan">
+					<blockquote class="em1-2">
+						<br>
+
+						<i class="em1-2">web前端工程师<br>你好 </i>
+						<br>
+
+					</blockquote>
+
+					<p>
+						是的，这就是现在的职业，在一个互联网金融公司做前端，两年前，我还铁了心的毕业后成为一个嵌入式工程师， 以此不辜负了自己的动手能力和在学校实验室苦练的电路板绘制和参加的国家级比赛， 但是尝试过此专业的工作之后，我打算放弃，原因有以下三点：
+					</p>
+					<p>
+						1、虽然当时也会C语言做嵌入式开发，但实习择业的时候选了绘制硬件；然而，做硬件需要经常接触电路板，而电路板的加工工艺离不开助焊剂和洗板水，而助焊剂含有重金属--铅， 
+						经常触摸和洗板，或者焊接调试改个线什么的，都通过皮肤和呼吸道进入体内了， 刚开始没那么电路板要画，
+						所以焊接调试也有我的份。 开始每天嗓子疼，晚上回去一头的油。后来意识到，铅，是重金属，不是贵金属，剧毒。一开始做页面就像绘制电路图，
+						大三时候做智能家居接触过前端，写JS又有C语言的基础。于是后来选择做了前端。
+					</p>
+					<p>
+						2、同上。
+					</p>
+					<p>
+						3、同上。
+					</p>
+					<blockquote>
+						<br>
+
+						<i class="em1-2">以上原由，还在做硬件的同学请忽略...毕竟分支不一样嘛。</i>
+						<br>
+
+					</blockquote>
+					<hr>
+					<p>
+						2016年5月2日晚，距离现在<span class="lastTimeDay">此处会自动填入天数</span>， 确切点说就是
+						<span class="lastTimeS">此处会自动填入秒</span>秒，于是重新整理强化技能，半年后，来到SH，一个小目标，在这里的第一个5年计划，在路上；倒计时，走起。
+					</p>
+					<p>
+						关于本站，本来应该在"关于"页面描述的，显然被主题占了，那也就是属于主题的关于了，所以，关于本站：
+					</p>
+
+					<blockquote class="em1-2">
+						<br>
+
+						<i class="em1-2">
+                            V-mx.com 第二版，自适应移动和PC端，更好的交互和视觉体验请使用电脑浏览器访问，
+                            移动端自动更换护眼背景色，后期主要继续针对移动端的再优化，第一版为个人展示动态网站，
+                            的确为求职立下了不少功劳，很好。
+                        </i>
+						<br>
+					</blockquote>
+					<p>
+						技术流：
+					</p>
+					<blockquote class="em1-2">
+						<br>
+
+						<i class="em1-2">
+                            第一版涉及技术：html5 css3 js jq Bootstrap(简历页面) canvas php Ps SQL
+                            <br>
+                            第二版涉及技术：html5 css3 js jq Bootstrap canvas Node.js Ps
+                            <br>
+							实验室涉及技术：同上 + three.js (持续更新...)
+                        </i>
+						<br>
+					</blockquote>
+					<p>
+						关于整站：
+					</p>
+					<blockquote class="em1-2">
+						<a href="http://www.v-mx.com/2017/04/26/%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83%E5%85%AC%E5%B8%83/">点击这里查看《关于本站》的博客</a>
+
+					</blockquote>
+
+				</div>
+			</div>
+		</section>
+
+		<div class="app-golab">
+			<h3 class="animated infinite pulse"><a href="../lab/">点击进入前端实验室</a></h3>
+		</div>
+
+	</div>
+</div>
+
+<div class="pc-golab fixed">
+	<h2 class="animated infinite tada"><a href="../lab/">点击进入前端实验室</a></h2>
+</div>
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<style>
+    .modal-box{
+        display: none;
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,.8);
+        z-index: 9999;
+        cursor: crosshair;
+    }
+
+
+    /*pc*/
+    /*@media screen and (min-width: 768px) {*/
+        /*.modal-bg .con-box{*/
+            /*width: 600px;*/
+        /*}*/
+
+        .modal-box img{
+            width: 300px;
+            height: 300px;
+        }
+
+        .modal-box .img-box{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            margin-left: -150px;
+            margin-top: -150px;
+        }
+
+    /*}*/
+
+    /*app*/
+    /*@media screen and (max-width: 768px) {*/
+        /*.modal-box img{*/
+            /*width: 300px;*/
+            /*height: 300px;*/
+
+        /*}*/
+        /*.modal-box .img-box{*/
+            /*width: 300px;*/
+            /*height: 300px;*/
+
+            /*position: absolute;*/
+            /*left: 50%;*/
+            /*top:50%;*/
+            /*margin-left: -150px;*/
+            /*margin-top: -150px;*/
+        /*}*/
+
+    /*}*/
+
+
+</style>
+<footer>
+
+    <!--背景色菜单-->
+    <div id="bgc">
+        <a href="###">
+            <span>选择<br>背景</span>
+        </a>
+        <!--选择框-->
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="totop">
+        <a href="###">
+            <i class="glyphicon glyphicon-menu-up"></i>
+            <span>回到<br>顶部</span>
+        </a>
+    </div>
+
+    <div class="animate-box animate-box-1 animated modal-close-box-2">
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=100%
+                src="../demo/TheCross/index.html">
+        </iframe>
+
+        <div class="animate-box-mark"></div>
+
+    </div>
+
+    <!--模态框-->
+    <div class="modal-box animated  modal-close-box">
+        <div class="con-box">
+
+        </div>
+
+
+        <!--footer-click-->
+
+        <div class="img-box" title="扫描二维码加我微信">
+
+            <img src="/img/Wechat.jpeg" alt="微信二维码">
+
+        </div>
+
+
+        <div class="">
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/u/2986295253">
+                            <span class="fa-stack fa-lg">
+                                <i class="icon iconfont icon-weibo" style="font-size: 44px"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                    <!--微信-new-->
+
+                    <li class="modal-open-me">
+                        <a target="_blank" href="javascript:void(0);">
+                            <span class="fa-stack fa-lg">
+                                <i class="icon iconfont icon-weixin" style="font-size: 50px"></i>
+                            </span>
+                        </a>
+                    </li>
+
+
+
+                
+
+                
+
+                
+
+                </ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; 为同在天堂的5年行程 2017
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+//    <!--变量-->
+    var initTop = 360;
+//    进度条调试显示差量
+
+    var pbc = parseInt($(window).height() / 1.5);
+//        pbc = 0;
+
+//    <!--返回顶部-->
+    $("#totop").click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        $('#totop i').css({
+            display: "inline-block"
+        })
+        $('#totop span').css({
+            display: "none"
+        })
+//        app点击优化
+        $('#totop').css('background-color','rgba(0,0,0,0.15)')
+
+        return false;
+    });
+
+    $("#totop").on("mouseenter",function(){
+        $('#totop a span').css({
+            display: 'inline-block'
+        })
+        $('#totop a i').css({
+            display: 'none'
+        })
+        $('#totop').css('background-color','rgba(0,0,0,0.5)')
+
+    })
+    $("#totop").on("mouseleave",function(){
+        $('#totop a span').css({
+            display: 'none'
+        })
+        $('#totop a i').css({
+            display: 'inline-block'
+        })
+        $('#totop').css('background-color','rgba(0,0,0,0.15)')
+    })
+
+    $(window).scroll(function(){
+
+        var winT = $(window).scrollTop();
+        var pagelong = $(document.body).outerHeight(true) - pbc;
+
+
+        if(winT > initTop){
+
+            $('#totop').css({
+                display: "block"
+            })
+            $('.progress-bar').css({
+                opacity: '1',
+            })
+
+            //进度条
+            var winH = $(window).height();
+            var progressbarW = ((winH + winT - pbc) * 100 /pagelong).toFixed(2);
+
+//            console.log(winH + winT , pagelong ,progressbarW);
+
+            $('.progress-bar span').css({
+                width : progressbarW + '%'
+            })
+
+
+        }else{
+            $('#totop').css({
+                display: "none"
+            })
+            $('.progress-bar').css({
+                opacity: '0',
+            })
+
+        }
+        
+        $('.toc-wrap.toc-fixed').css({
+            width: $('.hidden-xs.col-sm-3.toc-col').css('width')
+        })
+
+    });
+    
+    
+//获取当前时间，动态写入
+	var date = new Date;
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	month =(month < 10 ? "0"+month:month);
+
+    $('.wyear').html(year);
+    $('.month').html(month);
+    
+
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+
+
+//    开场动画
+//设置需要开启的页面
+//alert($('.about-page').length);
+if($('.about-page').length){
+        $('.animate-box-1').css({
+            display:'block'
+        })
+
+}else{
+    $('.animate-box-1').css({
+        display:'none'
+    })
+}
+
+
+//        点击关闭开场动画
+
+$('.modal-close-box-2').on('click',function(){
+    console.log(2)
+    testAnim('fadeOutUp',$('.animate-box-1'),'','none');
+})
+
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://www.v-mx.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','null','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="/img/tx.jpg">
+</body>
+
+</html>

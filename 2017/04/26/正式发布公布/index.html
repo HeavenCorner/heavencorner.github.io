@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="我是DuyangSir，一名前端工程师，对前端和编程技术非常热爱">
+    <meta name="keyword" content="web前端工程师,个人博客,为同在天堂的5年行程,初恋,信仰前端工程师,个人网站,v-mx.com,v-mx">
+    <meta name="author" content="DuyangSir">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <link rel="alternate" type="application/atom+xml" title="为同在天堂的5年行程" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>
+        
+
+
+            
+            V-mx 正式发布 | 2017年04月26日，这一天
+            
+
+
+        
+    </title>
+
+    <link rel="canonical" href="http://www.v-mx.com/2017/04/26/正式发布公布/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+    <link rel="stylesheet" href="/fonts/font_001/iconfont.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css">
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?1e726c08a716ac50c0691a8a2be30b3b";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+
+
+</head>
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<style>
+    nav {
+        background-color: rgba(0,0,0,0.2);
+        z-index: 9999 !important;
+    }
+    .nav-fly {
+        position: absolute;
+        top: 52px;
+        left: 0px;
+        display: block;
+        height: 3px;
+        background: #FFFFFF;
+        width: 0;
+
+    }
+    .titleouttimes {
+        display: inline-block;
+        overflow: hidden;
+    }
+    .titleouttimes span {
+
+        width: 2.2rem;
+    }
+</style>
+<nav class="navbar shadow navbar-default navbar-custom navbar-customs navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo titleouttimes" class="cssgo">
+                    为同在天堂的5年行程
+                </span>
+            </a>
+        </div>
+
+        <div id="blog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+
+                    
+
+
+                        <li>
+                            <a href="/" class="nav-li1 nav-li" target="_self">首页</a>
+                        </li>
+                        <li>
+                            <a href="/about/" class="nav-li2 nav-li" target="_self">关于</a>
+                        </li>
+                        <li>
+                            <a href="/work/" class="nav-li3 nav-li" target="_self">在职</a>
+                        </li>
+                        <li>
+                            <a href="/tags/" class="nav-li4 nav-li" target="_self">标签云</a>
+                        </li>
+                        <li>
+                            <a href="/message/" class="nav-li5 nav-li" target="_self">寄语墙</a>
+                        </li>
+
+
+                    
+
+                    <!--滑块-->
+                    <i class="nav-fly"></i>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#blog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+
+
+
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+<!-- （20170326）针对阅读时标题颜色的优化，在博客正文标题内添加  header-img 图片路径就显示图片，如果添加了 bg-color 就显示纯色背景 -->
+
+
+
+<style>
+    
+
+    header.intro-header {
+        background: #890018;
+    }
+
+    
+    
+    
+    
+
+    header.intro-header .container{
+        padding-top: 80px;
+    }
+
+    header.intro-header {
+        position: relative;
+    }
+
+    .mark-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0);
+    }
+
+
+    @media only screen and (min-width: 768px) {
+        header.intro-header .container{
+            padding-top: 105px;
+        }
+    }
+     h1{
+         margin-bottom: 26px;
+     }
+
+    p{
+        text-indent:32px
+    }
+
+</style>
+
+<!--进度条，仅博文-->
+<div class="progress-bar">
+    <span class="progress-bar-run"></span>
+</div>
+
+
+<header class="intro-header data-ispost-is">
+    <div class="mark-bg">
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>V-mx 正式发布</h1>
+                    
+                    <h2 class="subheading">2017年04月26日，这一天</h2>
+                    
+                    <span class="meta">
+                         作者 duyang sir
+                        <span>
+                          日期 2017-04-26
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#关于本站"
+                           title="关于本站">关于本站</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            V-mx 正式发布
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<!-- 序言 -->
+
+<!-- 博客正文 -->
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <blockquote>
+<p>&nbsp;<br>在每个页面的样式测试和效果调试，上上上线了！<br>此处是欢呼声，看标题，我使用了喜庆的中国红 O(∩_∩)O<br>&nbsp;</p>
+</blockquote>
+<h1 id="本站指南"><a href="#本站指南" class="headerlink" title="本站指南"></a>本站指南</h1><h2 id="V-mx"><a href="#V-mx" class="headerlink" title="V-mx"></a>V-mx</h2><p>V-mx.com（Vector - Maximum 矢量无限大） 个人网站的第二版，首先，本站即日起将持续优化，然后呢，在原有博文内容的基础上，添加了其它页面，所以本站长认为，V-mx不单单是一个简单的博客了，尤其是加入了前端实验室，“<a href="http://www.v-mx.com/work/" title="点击进入“在职”页面">在职</a>”页面底部的“<a href="http://www.v-mx.com/lab/" title="点击进入“前端实验室”">进入前端实验室</a>”通道链接；后期会在<a href="http://www.v-mx.com/lab/" title="点击进入“前端实验室”">实验室</a>陆续添加单页面。</p>
+<h2 id="博文日志"><a href="#博文日志" class="headerlink" title="博文日志"></a>博文日志</h2><p>没有关于技术分享的博客，全部都在百度里，我觉得那些点点滴滴就不需要再重复了，毕竟这个网站从建站开始就打算是大众化的，所以呢，她是展示欣赏的，她是美好的，她更是唯一的。</p>
+<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><p>一个展示型页面，用电脑浏览器打开很不同（chrome或者其他高版本浏览器），进入<a href="http://www.v-mx.com/about/" title="点击进入“关于”页面">关于</a>。</p>
+<h2 id="在职"><a href="#在职" class="headerlink" title="在职"></a>在职</h2><p>点击进入“<a href="http://www.v-mx.com/work/" title="点击进入“在职”页面">在职</a>”，那里已经介绍了一切，不再重复说明。</p>
+<h2 id="标签云"><a href="#标签云" class="headerlink" title="标签云"></a>标签云</h2><p>在“<a href="http://www.v-mx.com/tags/" title="点击进入“标签云”页面">标签云</a>”页面，你可以根据标签，点击标签快速检索文章。</p>
+<h2 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h2><p>第一个5年规划，“<a href="http://www.v-mx.com/work/" title="点击进入“在职”页面">在职</a>”页面有简介。</p>
+<h2 id="前端实验室"><a href="#前端实验室" class="headerlink" title="前端实验室"></a>前端实验室</h2><p>新天地，在“<a href="http://www.v-mx.com/lab/" title="点击进入“前端实验室”">前端实验室</a>”有我认为很不错的Demo分享，或者自己写的一些好玩的页面小程序。<br>(页面是V-mx第一版的排版)</p>
+<h2 id="寄语墙"><a href="#寄语墙" class="headerlink" title="寄语墙"></a>寄语墙</h2><p>“你相信奇迹吗？”</p>
+<p>“不，我只相信神迹。”</p>
+<blockquote>
+<p>&nbsp;<br>PC端打开页面，有很多彩蛋~<br>&nbsp;</p>
+</blockquote>
+
+                <hr>
+
+                <!-- 分享 -->
+                
+
+
+                <!--下面是每一篇文章的上一篇下一篇，更改为显示名称内容，鼠标移上去显示全部的内容20170324-->
+                <ul class="pager">
+                		
+                	
+                    
+                    <li class="previous">
+                        <a href="/2017/04/26/《爱是不保留》/" data-toggle="tooltip" data-placement="top"
+                           title="爱是不保留">
+                            <i class="glyphicon glyphicon-triangle-left"></i><span>爱是不保留</span></a>
+                    </li>
+                    
+                    
+                    
+                    
+                </ul>
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#本站指南"><span class="toc-text">本站指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#V-mx"><span class="toc-text">V-mx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博文日志"><span class="toc-text">博文日志</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于"><span class="toc-text">关于</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在职"><span class="toc-text">在职</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签云"><span class="toc-text">标签云</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行程"><span class="toc-text">行程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端实验室"><span class="toc-text">前端实验室</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#寄语墙"><span class="toc-text">寄语墙</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+        <!--每一篇的所属标签，所有标签都加上一个class类名：atags，根据此类名添加随机背景色rgba-->
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-12
+                col-md-12
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">标签归属，点击跳转</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#关于本站"
+                           title="关于本站">关于本站</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<style>
+    .modal-box{
+        display: none;
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,.8);
+        z-index: 9999;
+        cursor: crosshair;
+    }
+
+
+    /*pc*/
+    /*@media screen and (min-width: 768px) {*/
+        /*.modal-bg .con-box{*/
+            /*width: 600px;*/
+        /*}*/
+
+        .modal-box img{
+            width: 300px;
+            height: 300px;
+        }
+
+        .modal-box .img-box{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            margin-left: -150px;
+            margin-top: -150px;
+        }
+
+    /*}*/
+
+    /*app*/
+    /*@media screen and (max-width: 768px) {*/
+        /*.modal-box img{*/
+            /*width: 300px;*/
+            /*height: 300px;*/
+
+        /*}*/
+        /*.modal-box .img-box{*/
+            /*width: 300px;*/
+            /*height: 300px;*/
+
+            /*position: absolute;*/
+            /*left: 50%;*/
+            /*top:50%;*/
+            /*margin-left: -150px;*/
+            /*margin-top: -150px;*/
+        /*}*/
+
+    /*}*/
+
+
+</style>
+<footer>
+
+    <!--背景色菜单-->
+    <div id="bgc">
+        <a href="###">
+            <span>选择<br>背景</span>
+        </a>
+        <!--选择框-->
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="totop">
+        <a href="###">
+            <i class="glyphicon glyphicon-menu-up"></i>
+            <span>回到<br>顶部</span>
+        </a>
+    </div>
+
+    <div class="animate-box animate-box-1 animated modal-close-box-2">
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=100%
+                src="../demo/TheCross/index.html">
+        </iframe>
+
+        <div class="animate-box-mark"></div>
+
+    </div>
+
+    <!--模态框-->
+    <div class="modal-box animated  modal-close-box">
+        <div class="con-box">
+
+        </div>
+
+
+        <!--footer-click-->
+
+        <div class="img-box" title="扫描二维码加我微信">
+
+            <img src="/img/Wechat.jpeg" alt="微信二维码">
+
+        </div>
+
+
+        <div class="">
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/u/2986295253">
+                            <span class="fa-stack fa-lg">
+                                <i class="icon iconfont icon-weibo" style="font-size: 44px"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                    <!--微信-new-->
+
+                    <li class="modal-open-me">
+                        <a target="_blank" href="javascript:void(0);">
+                            <span class="fa-stack fa-lg">
+                                <i class="icon iconfont icon-weixin" style="font-size: 50px"></i>
+                            </span>
+                        </a>
+                    </li>
+
+
+
+                
+
+                
+
+                
+
+                </ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; 为同在天堂的5年行程 2017
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+//    <!--变量-->
+    var initTop = 360;
+//    进度条调试显示差量
+
+    var pbc = parseInt($(window).height() / 1.5);
+//        pbc = 0;
+
+//    <!--返回顶部-->
+    $("#totop").click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        $('#totop i').css({
+            display: "inline-block"
+        })
+        $('#totop span').css({
+            display: "none"
+        })
+//        app点击优化
+        $('#totop').css('background-color','rgba(0,0,0,0.15)')
+
+        return false;
+    });
+
+    $("#totop").on("mouseenter",function(){
+        $('#totop a span').css({
+            display: 'inline-block'
+        })
+        $('#totop a i').css({
+            display: 'none'
+        })
+        $('#totop').css('background-color','rgba(0,0,0,0.5)')
+
+    })
+    $("#totop").on("mouseleave",function(){
+        $('#totop a span').css({
+            display: 'none'
+        })
+        $('#totop a i').css({
+            display: 'inline-block'
+        })
+        $('#totop').css('background-color','rgba(0,0,0,0.15)')
+    })
+
+    $(window).scroll(function(){
+
+        var winT = $(window).scrollTop();
+        var pagelong = $(document.body).outerHeight(true) - pbc;
+
+
+        if(winT > initTop){
+
+            $('#totop').css({
+                display: "block"
+            })
+            $('.progress-bar').css({
+                opacity: '1',
+            })
+
+            //进度条
+            var winH = $(window).height();
+            var progressbarW = ((winH + winT - pbc) * 100 /pagelong).toFixed(2);
+
+//            console.log(winH + winT , pagelong ,progressbarW);
+
+            $('.progress-bar span').css({
+                width : progressbarW + '%'
+            })
+
+
+        }else{
+            $('#totop').css({
+                display: "none"
+            })
+            $('.progress-bar').css({
+                opacity: '0',
+            })
+
+        }
+        
+        $('.toc-wrap.toc-fixed').css({
+            width: $('.hidden-xs.col-sm-3.toc-col').css('width')
+        })
+
+    });
+    
+    
+//获取当前时间，动态写入
+	var date = new Date;
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	month =(month < 10 ? "0"+month:month);
+
+    $('.wyear').html(year);
+    $('.month').html(month);
+    
+
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+
+
+//    开场动画
+//设置需要开启的页面
+//alert($('.about-page').length);
+if($('.about-page').length){
+        $('.animate-box-1').css({
+            display:'block'
+        })
+
+}else{
+    $('.animate-box-1').css({
+        display:'none'
+    })
+}
+
+
+//        点击关闭开场动画
+
+$('.modal-close-box-2').on('click',function(){
+    console.log(2)
+    testAnim('fadeOutUp',$('.animate-box-1'),'','none');
+})
+
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://www.v-mx.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','null','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="/img/tx.jpg">
+</body>
+
+</html>

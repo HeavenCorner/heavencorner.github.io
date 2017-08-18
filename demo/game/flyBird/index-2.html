@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		.wrap{
+			position: relative;
+			width: 340px;
+			height: 480px;
+			margin: 0 auto;
+			/*background-image: url(img/bg.jpg);*/
+			overflow: hidden;
+		}
+		.wrap-bg{
+			width: 300%;
+			height: 100%;
+			position: relative;
+			top: 0;
+			left: -100px;
+		}
+		 #bgimg1,#bgimg2{
+			float: left;
+		}
+		#bgimg2{
+			position: relative;
+			top: 0;
+			left: -56px;
+		}
+		#bird-wrap{
+			position: absolute;
+			left: 20px;
+			top: 240px;
+		}
+		.pipe{
+			width: 62px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 200px;
+		}
+		.pipe img{
+			position: absolute;
+			
+		}
+		#pipeD{
+			top: 300px;
+		}
+		#pipeU{
+			top: 80px;
+		}
+	</style>
+	
+	<body>
+		<div class="wrap">
+			<div class="wrap-bg">
+			<img src="img/bg.jpg" id = "bgimg1"/>
+			<img src="img/bg.jpg" id = "bgimg2"/>
+			</div>
+			
+			<div id="bird-wrap">
+				<img src=" " id="bird"/>
+			</div>
+			<div class="pipe">
+				<img src="img/up_pipe.png" id="pipeU"/>
+				<img src="img/down_pipe.png" id="pipeD"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var wrapBg = document.getElementsByClassName("wrap-bg")[0];
+		var bird = document.getElementById("bird");
+		var birdWrap = document.getElementById("bird-wrap");
+		var pipeU = document.getElementById("pipeU");
+		var pipeD = document.getElementById("pipeD");
+		var pipe = document.getElementsByClassName("pipe");
+		
+		
+		var bgLeft=0;
+		//飞的方向
+		var arrBf=[1,0,0];//上，中，下
+		var birdT=240;
+		
+		setInterval(function(){
+			bgLeft-=2;
+			bgLeft=bgLeft<-194?0:bgLeft;
+			wrapBg.style.left=bgLeft+"px";
+		},100)
+		
+		//---飞吧，控制飞行动画的
+		setInterval(function(){
+				if(arrBf[1]==1){
+					bird.src="img/bird0.png";
+				}
+				if(arrBf[0]==1){
+					bird.src="img/up_bird0.png";
+				}
+				if(arrBf[2]==1){
+					bird.src="img/down_bird0.png";
+				}
+			setTimeout(function(){
+				if(arrBf[1]==1){
+					bird.src="img/bird1.png";
+				}
+				if(arrBf[0]==1){
+					bird.src="img/up_bird1.png";
+				}
+				if(arrBf[2]==1){
+					bird.src="img/down_bird1.png";
+				}
+			},100)
+
+		},200)
+	
+	//匀速掉下去,实时刷新
+	var timedown;
+	var timeup;
+	
+		setInterval(function(){
+			
+			timedown=setTimeout(function(){
+				
+				arrBf=[0,0,1];
+				clearTimeout(timedown);
+			},400)
+			
+			birdT+=10;
+			birdT=birdT>=400?400:birdT;
+			console.log(birdT);
+			birdWrap.style.top = birdT+"px";
+		},100)
+		//判断鼠标点击
+		document.addEventListener("mousedown", function() {
+			arrBf=[1,0,0];
+			birdT-=32;
+			birdWrap.style.top = birdT+"px";
+//			document.addEventListener("mousedown", function() {
+//				timeup=setTimeout(function(){
+//				arrBf=[0,1,0];
+//				clearTimeout(timeup);
+//				},400)
+//			},false)
+			
+		},false)
+	
+		//产生随机管道
+		var pipeDT;
+		function pipeRandom(){
+			pipeDT=getRandom(30,150);
+			pipeU.style.top=pipeDT+"px";
+			pipeD.style.top=pipeDT+200+"px";
+		}
+		
+		
+		
+		//管道移动
+		var pipeL=340;
+		setInterval(function(){
+			var newPipe=document.createElement("div");
+			pipeL-=8;
+			if(pipeL<-62){
+				pipeL=340;
+				pipeRandom();
+			}
+			pipe[0].style.left=pipeL+"px";
+		},100)
+	
+		//随机数函数
+		function getRandom(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
+		}
+	</script>
+</html>

@@ -1,0 +1,85 @@
+
+@font-face {font-family: "joyT";
+  src: url('iconfont.eot?t=1496801998260'); /* IE9*/
+  src: url('iconfont.eot?t=1496801998260#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1496801998260') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1496801998260') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1496801998260#joyT') format('svg'); /* iOS 4.1- */
+}
+
+.joyT {
+  font-family:"joyT" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.joyT-all:before { content: "\e696"; }
+
+.joyT-back:before { content: "\e697"; }
+
+.joyT-cart:before { content: "\e698"; }
+
+.joyT-category:before { content: "\e699"; }
+
+.joyT-close:before { content: "\e69a"; }
+
+.joyT-cry:before { content: "\e69c"; }
+
+.joyT-favorite:before { content: "\e6a0"; }
+
+.joyT-help:before { content: "\e6a3"; }
+
+.joyT-refresh:before { content: "\e6aa"; }
+
+.joyT-smile:before { content: "\e6af"; }
+
+.joyT-account:before { content: "\e6b8"; }
+
+.joyT-remind:before { content: "\e6bc"; }
+
+.joyT-attachment:before { content: "\e6c0"; }
+
+.joyT-discount:before { content: "\e6c5"; }
+
+.joyT-service:before { content: "\e6c7"; }
+
+.joyT-gifts:before { content: "\e6db"; }
+
+.joyT-toys:before { content: "\e6e1"; }
+
+.joyT-auto:before { content: "\e6e3"; }
+
+.joyT-rfq:before { content: "\e6eb"; }
+
+.joyT-move:before { content: "\e6fd"; }
+
+.joyT-office:before { content: "\e705"; }
+
+.joyT-agriculture:before { content: "\e707"; }
+
+.joyT-gerenzhongxin:before { content: "\e70b"; }
+
+.joyT-remind1:before { content: "\e713"; }
+
+.joyT-skip:before { content: "\e718"; }
+
+.joyT-phone:before { content: "\e725"; }
+
+.joyT-bussinessman:before { content: "\e726"; }
+
+.joyT-exl:before { content: "\e73f"; }
+
+.joyT-pdf:before { content: "\e740"; }
+
+.joyT-zip:before { content: "\e741"; }
+
+.joyT-save:before { content: "\e747"; }
+
+.joyT-favorites:before { content: "\e7ce"; }
+
+.joyT-earth:before { content: "\e828"; }
+
+.joyT-password:before { content: "\e82b"; }
+
