@@ -415,8 +415,8 @@ var memberList = [
     {
         name: '栋夷',
         prayer: [
-            {text: '为下周的出差，求神带领赐智慧，与神的关系亲近，多为家人代祷，求主带领前面的方向。'},
-            {text: ''},
+            {text: '求神继续恢复我与他亲密的关系，也多花时间为需要的肢体，家人，朋友代祷；'},
+            {text: '求神继续带领我前面的路，也帮助我明白他的心意，顺服在他的旨意中。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('2/15'),
@@ -712,24 +712,24 @@ var memberList = [
         birthdayOpen: true,
         phone:'',
     },
-    // {
-    //     name: '锦东',
-    //     prayer: [
-    //         {text: '为婚姻祷告。'},
-    //         {text: ''},
-    //         {text: ''}
-    //     ],
-    //     birthdayCD:tarTimeR(''),
-    //     signature: '',
-    //     age: '',
-    //     head: '',
-    //     imgsrc: 'img/head/',
-    //     bgc: '',
-    //     id:'huangting',
-    //     listOpen: true,
-    //     birthdayOpen: true,
-    //     phone:'',
-    // }
+    {
+        name: '锦东',
+        prayer: [
+            {text: '为婚姻祷告。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR(''),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/',
+        bgc: '',
+        id:'huangting',
+        listOpen: true,
+        birthdayOpen: true,
+        phone:'',
+    }
 
 ];
 
