@@ -562,7 +562,7 @@ var memberList = [
         id:'lijiao',
         listOpen: true,
         birthdayOpen: true,
-        phone:'',
+        phone:'13817707574',
     },
     {
         name: '何梅',
