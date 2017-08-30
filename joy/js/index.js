@@ -677,24 +677,6 @@ var memberList = [
         phone:'',
     },
     {
-        name: '杜渠',
-        prayer: [
-            {text: '为肠胃不好，为好好读经'},
-            {text: ''},
-            {text: ''}
-        ],
-        birthdayCD:tarTimeR('03/15'),
-        signature: '',
-        age: '',
-        head: '',
-        imgsrc: 'img/head/duqu.jpeg',
-        bgc: '',
-        id:'duqu',
-        listOpen: true,
-        birthdayOpen: true,
-        phone:'15649032317',
-    },
-    {
         name: '翁磊',
         prayer: [
             {text: '为八年级的学习代祷。'},
@@ -713,23 +695,24 @@ var memberList = [
         phone:'',
     },
     {
-        name: '锦东',
+        name: '杜渠',
         prayer: [
-            {text: '为婚姻祷告。'},
+            {text: '为肠胃不好，为好好读经'},
             {text: ''},
             {text: ''}
         ],
-        birthdayCD:tarTimeR(''),
+        birthdayCD:tarTimeR('03/15'),
         signature: '',
         age: '',
         head: '',
-        imgsrc: 'img/head/',
+        imgsrc: 'img/head/duqu.jpeg',
         bgc: '',
-        id:'huangting',
+        id:'duqu',
         listOpen: true,
         birthdayOpen: true,
-        phone:'',
-    }
+        phone:'15649032317',
+    },
+
 
 ];
 
