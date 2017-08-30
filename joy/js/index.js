@@ -687,7 +687,7 @@ var memberList = [
         signature: '',
         age: '',
         head: '',
-        imgsrc: 'img/head/',
+        imgsrc: 'img/head/wenglei.jpeg',
         bgc: '',
         id:'huangting',
         listOpen: true,
@@ -697,7 +697,7 @@ var memberList = [
     {
         name: '杜渠',
         prayer: [
-            {text: '为肠胃不好，为好好读经'},
+            {text: '为肠胃不好，为好好读经。'},
             {text: ''},
             {text: ''}
         ],
