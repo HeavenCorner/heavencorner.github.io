@@ -2075,3 +2075,12 @@ a.nohover h2,a.nohover h3{
 #SOHUCS #SOHU_MAIN .module-cmt-footer{
     display: none !important;
 }
+
+
+#SOHUCS #SOHU_MAIN .module-cmt-notice{
+    display: none !important;
+}
+
+#SOHUCS #SOHU_MAIN .module-mobile-cmt-float-bar{
+    display: none !important;
+}
