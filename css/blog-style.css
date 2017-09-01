@@ -2067,3 +2067,11 @@ a.nohover h2,a.nohover h3{
 #SOHUCS #SOHU_MAIN .module-cmt-notice{
     display: none !important;
 }
+
+#SOHUCS #SOHU_MAIN .module-hot-topic{
+    display: none !important;
+}
+
+#SOHUCS #SOHU_MAIN .module-cmt-footer{
+    display: none !important;
+}
