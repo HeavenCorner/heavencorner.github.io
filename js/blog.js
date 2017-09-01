@@ -1095,7 +1095,7 @@ if($(window).width() < 768) {
     if(sessionStorage.getItem('indexmusic') == null ){
         //自动播放
         //主页
-        $('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=29947420&auto=1&height=66');
+        $('#index-bgm iframe').attr('src','//music.163.com/outchain/player?type=2&id=29947420&auto=0&height=66');
         sessionStorage.indexmusic = 'play';
 
     }else if(sessionStorage.getItem('indexmusic') == 'play'){
