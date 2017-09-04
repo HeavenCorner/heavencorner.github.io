@@ -135,13 +135,17 @@
 
         /*细节样式临时的修改*/
         .wrap-box .content-wrap #phone-box .phone-list-wrap > ul .phone-text-title dl dd:last-child {
-            padding-right: 260px !important;
+            padding-right: 160px !important;
         }
         .wrap-box .content-wrap #birthday-box .birthday-wrap {
-            margin-bottom: 230px !important;
+            margin-bottom: 130px !important;
         }
         .wrap-box .content-wrap #prayer-box .prayer-text {
-            margin-bottom: 230px !important;
+            margin-bottom: 130px !important;
+        }
+
+        .prayer-text{
+            position: relative;
         }
 
     </style>
@@ -200,26 +204,26 @@
             <li class="ul-right" v-bind:class="{'bgt': menu.seen, 'bgw': !menu.seen}"></li>
             <li></li>
         </ul>
-        <!--右下角的留言板-->
-        <a href="http://www.v-mx.com/joy/ly.html"
-           v-if="(all.page == 0)"
-           style="position: fixed;
-                    opacity: .6;
-                    right: 30px;
-                    bottom: 170px;
-                    height: 110px;
-                    width: 110px;
-                    background-color: #fcab53;
-                    text-align: center;
-                    border-radius: 50%;">
-            <span style="position: absolute;
-                        color: #ffffff;
-                        top: 23px;
-                        left: 13px;
-                        font-size: 40px;"
-            >留言</span>
+        <!--&lt;!&ndash;右下角的留言板&ndash;&gt;-->
+        <!--<a href="http://www.v-mx.com/joy/ly.html"-->
+           <!--v-if="(all.page == 0)"-->
+           <!--style="position: fixed;-->
+                    <!--opacity: .6;-->
+                    <!--right: 30px;-->
+                    <!--bottom: 170px;-->
+                    <!--height: 110px;-->
+                    <!--width: 110px;-->
+                    <!--background-color: #fcab53;-->
+                    <!--text-align: center;-->
+                    <!--border-radius: 50%;">-->
+            <!--<span style="position: absolute;-->
+                        <!--color: #ffffff;-->
+                        <!--top: 23px;-->
+                        <!--left: 13px;-->
+                        <!--font-size: 40px;"-->
+            <!--&gt;留言</span>-->
 
-        </a>
+        <!--</a>-->
 
         <!--右下角跳转到主页-->
         <div class="right-bottom-goindex" v-on:click="goHome"
@@ -345,6 +349,28 @@
 
                 </ul>
 
+                <!--右下角的留言板-->
+                <a href="http://www.v-mx.com/joy/ly.html"
+                   v-if="(all.page == 0)"
+                   style="    position: absolute;
+                   text-align: center;
+                                opacity: 0.6;
+                                left: 50%;
+                                margin-left: -110px;
+                                bottom: -118px;
+                                height: 70px;
+                                width: 220px;
+                                background-color: rgb(252, 171, 83);
+                                text-align: center;
+                                border-radius: 20px;">
+            <span style="line-height: 70px;
+                        color: #ffffff;
+
+                        font-size: 40px;"
+            >点击留言</span>
+
+                </a>
+
 
             </div>
 
@@ -355,6 +381,8 @@
                     <li></li>
                 </ul>
             </div>
+
+
             <h6 class="bottom-msg">到底了</h6>
         </div>
 
