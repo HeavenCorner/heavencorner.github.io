@@ -152,13 +152,21 @@
             font-size: 28px;
             float: right;
             padding-right: 40px;
-            color: #333;
+            color: #ffffff;
         }
         .wrap-box .content-wrap #prayer-box .prayer-text > ul .prayer-text-title dl dd.c-br span{
             font-size: 45px;
             color: #ff3366;
         }
 
+        .brbg{
+            background: url(img/00-title-bg.jpg) no-repeat 0px 0px;
+            /*background-position: 0 0px;*/
+            /*background-color: #00b6e3;*/
+        }
+        .color-ff{
+            color: rgba(137,0,24,1) !important;
+        }
     </style>
 
     <!--测试部分的样式链接-->
@@ -338,15 +346,16 @@
 
 
                 <ul class="member-list animated fadeInUp" m="member.listOpen" v-bind:id="member.id" v-for="(member,index) in contentpage.prayer.memberList"
-                    v-bind:class="{'close': member.listOpen == false }">
-                    <li id="" class="prayer-text-title" v-on:click="closePrayerList(member)">
+                    v-bind:class="{'close': member.listOpen == false}">
+                    <li id="" class="prayer-text-title" v-on:click="closePrayerList(member)"
+                        v-bind:class="{'brbg': ( member.birthdayCD.allDays < 15 || member.birthdayCD.allDays == 15)}">
                         <dl >
                             <dt>
                                 <img v-bind:src="member.imgsrc"  v-on:click="goIndex(member)" alt="">
                             </dt>
-                            <dd>{{member.name}}</dd>
+                            <dd v-bind:class="{'color-ff':  ( member.birthdayCD.allDays < 15 || member.birthdayCD.allDays == 15)}">{{member.name}}</dd>
                             <dd v-if="member.head != ''" class="c-red">{{member.head}}</dd>
-                            <dd v-if="member.birthdayCD.allDays < 15 || member.birthdayCD.allDays == 15" class="c-br">下次生日还有<span>{{member.birthdayCD.allDays}}</span>天</dd>
+                            <dd v-if="member.birthdayCD.allDays < 15 || member.birthdayCD.allDays == 15" class="c-br">下次生日还有<span> {{member.birthdayCD.allDays}} </span>天</dd>
                         </dl>
                     </li>
 
