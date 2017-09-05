@@ -148,6 +148,17 @@
             position: relative;
         }
 
+        .wrap-box .content-wrap #prayer-box .prayer-text > ul .prayer-text-title dl dd.c-br{
+            font-size: 28px;
+            float: right;
+            padding-right: 40px;
+            color: #333;
+        }
+        .wrap-box .content-wrap #prayer-box .prayer-text > ul .prayer-text-title dl dd.c-br span{
+            font-size: 45px;
+            color: #ff3366;
+        }
+
     </style>
 
     <!--测试部分的样式链接-->
@@ -335,6 +346,7 @@
                             </dt>
                             <dd>{{member.name}}</dd>
                             <dd v-if="member.head != ''" class="c-red">{{member.head}}</dd>
+                            <dd v-if="member.birthdayCD.allDays < 15 || member.birthdayCD.allDays == 15" class="c-br">下次生日还有<span>{{member.birthdayCD.allDays}}</span>天</dd>
                         </dl>
                     </li>
 
