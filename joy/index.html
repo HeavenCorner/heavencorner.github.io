@@ -21,10 +21,8 @@
             padding-top: 170px;
             text-align: center;
             overflow: hidden;
-
             -webkit-transition: all .8s;
             transition: all .8s;
-
         }
         #load-wrap .looding-box{
             position: relative;
@@ -205,25 +203,25 @@
             <li></li>
         </ul>
         <!--&lt;!&ndash;右下角的留言板&ndash;&gt;-->
-        <!--<a href="http://www.v-mx.com/joy/ly.html"-->
-           <!--v-if="(all.page == 0)"-->
-           <!--style="position: fixed;-->
-                    <!--opacity: .6;-->
-                    <!--right: 30px;-->
-                    <!--bottom: 170px;-->
-                    <!--height: 110px;-->
-                    <!--width: 110px;-->
-                    <!--background-color: #fcab53;-->
-                    <!--text-align: center;-->
-                    <!--border-radius: 50%;">-->
-            <!--<span style="position: absolute;-->
-                        <!--color: #ffffff;-->
-                        <!--top: 23px;-->
-                        <!--left: 13px;-->
-                        <!--font-size: 40px;"-->
-            <!--&gt;留言</span>-->
+        <a href="img/0.png"
+           v-if="(all.page == 0)"
+           style="position: fixed;
+                    opacity: .6;
+                    right: 30px;
+                    bottom: 170px;
+                    height: 110px;
+                    width: 110px;
+                    background-color: #ba77ff;
+                    text-align: center;
+                    border-radius: 50%;">
+            <span style="position: absolute;
+                        color: #ffffff;
+                        top: 23px;
+                        left: 13px;
+                        font-size: 40px;"
+            >图片</span>
 
-        <!--</a>-->
+        </a>
 
         <!--右下角跳转到主页-->
         <div class="right-bottom-goindex" v-on:click="goHome"
@@ -351,7 +349,7 @@
 
                 </ul>
 
-                <!--右下角的留言板-->
+                <!--留言板-->
                 <a href="http://www.v-mx.com/joy/ly.html"
                    v-if="(all.page == 0)"
                    style="    position: absolute;
