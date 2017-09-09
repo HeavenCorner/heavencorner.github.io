@@ -447,24 +447,24 @@ var memberList = [
     //     birthdayOpen: true,
     //     phone:'18217309179',
     // },
-    // {
-    //     name: '后天生日',
-    //     prayer: [
-    //         {text: '为好好抓紧时间认真学习。'},
-    //         {text: ''},
-    //         {text: ''}
-    //     ],
-    //     birthdayCD:tarTimeR('09/11','09/12'),
-    //     signature: '',  //个人主页签名
-    //     age: '',
-    //     head: '',   //特殊提醒，例如：'考试加油！'
-    //     imgsrc: '',
-    //     bgc: '',
-    //     id:'congzhou',
-    //     listOpen: true,
-    //     birthdayOpen: true,
-    //     phone:'18217309179',
-    // },
+    {
+        name: '生日测试',
+        prayer: [
+            {text: '为好好抓紧时间认真学习。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR('09/11','09/12'),
+        signature: '',  //个人主页签名
+        age: '',
+        head: '',   //特殊提醒，例如：'考试加油！'
+        imgsrc: '',
+        bgc: '',
+        id:'congzhou',
+        listOpen: true,
+        birthdayOpen: true,
+        phone:'18217309179',
+    },
     //26
     {
         name: '从舟',
@@ -839,6 +839,7 @@ console.log(TodyBirthday)
 //如果有过生日的就给盒子添加一个img背景
 
 if(TodyBirthday.list.length > 0 ){
+    //只有生日当天会自动弹出，其它的需要点击
     if(TodyBirthday.list[0].birthdayCD.allDaysY == 1){
         TodyBirthday.box = true;
     }
