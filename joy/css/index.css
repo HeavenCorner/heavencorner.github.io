@@ -301,8 +301,8 @@ textarea {
   top: 0;
   right: 0;
   overflow-y: auto;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 .wrap-box .content-wrap .leave {
   right: -100vw;

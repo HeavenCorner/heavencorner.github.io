@@ -15,6 +15,7 @@
             position: fixed;
             top: 0;
             left: 0;
+            z-index: 9999999;
             width: 100vw;
             height: 100vh;
             background-color: rgba(0,0,0,.8);
@@ -148,6 +149,107 @@
             position: relative;
             top: 8px;
         }
+        /*生日庆祝弹出框*/
+        .happy-box{
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 50;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255,255,255,.6);
+            overflow-y: auto;
+            -webkit-transition: all 1s;
+            transition: all 1s;
+        }
+
+        .himg-box{
+            position: absolute;
+            top: 2vh;
+            left: 25px;
+            z-index: 50;
+            width: 700px;
+            height: 1120px;
+            background-color: rgba(40,35,46,.9);
+            overflow: hidden;
+        }
+
+        /*顶部气球*/
+        #bd-img-1{
+            position: absolute;
+            top: -80px;
+            left: -56px;
+        }
+        /*底部蛋糕*/
+        #bd-img-2{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        /*hp*/
+        #bd-img-3{
+            position: absolute;
+            left: 110px;
+            top: 370px;
+        }
+        /*mm*/
+        #bd-img-4{
+            position: absolute;
+            right: 100px;
+            bottom: 30px;
+        }
+        /*mmmz*/
+        #bd-img-5{
+            position: absolute;
+            right: 174px;
+            bottom: 245px;
+        }
+
+        #bd-img-0{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+
+        /*姓名*/
+        .happy-box .name {
+            display: inline-block;
+            position: absolute;
+            bottom: 560px;
+            right: 83px;
+            color: #ffffff;
+            z-index: 50;
+            font-size: 80px;
+            width: 500px;
+            height: 86px;
+            text-align: center;
+
+        }
+        .happy-box .name > span{
+            color: #ff3972;
+        }
+
+        #p{
+            position: absolute;
+            right: 34px;
+            bottom: 319px;
+            color: #ffffff;
+            font-size: 30px;
+        }
+
+        .com{
+            top: 0;
+            right: 0;
+        }
+
+        .leave {
+            top: -100vh;
+            right: -100vw;
+        }
+
+
+        
     </style>
 
     <!--测试部分的样式链接-->
@@ -286,7 +388,6 @@
                             <li class="cover-2-5 ad cover-2-5-animate"><span class="con-font">喜乐</span></li>
                             <li class="cover-2-6 ad cover-2-6-animate"><span class="con-font">仁爱</span></li>
                         </ul>
-
                     </div>
                 </div>
 
@@ -327,14 +428,14 @@
                 <ul class="member-list animated fadeInUp" m="member.listOpen" v-bind:id="member.id" v-for="(member,index) in contentpage.prayer.memberList"
                     v-bind:class="{'close': member.listOpen == false}">
                     <li id="" class="prayer-text-title" v-on:click="closePrayerList(member)"
-                        v-bind:class="{'brbg': ( member.birthdayCD.allDays < 15 || member.birthdayCD.allDays == 15)}">
+                        v-bind:class="{'brbg': ( member.birthdayCD.allDaysY < 4 || member.birthdayCD.allDaysY == 6 || member.birthdayCD.allDaysY == 11 || member.birthdayCD.allDaysY == 16) && member.birthdayCD.allDaysY}">
                         <dl >
                             <dt>
                                 <img v-bind:src="member.imgsrc"  v-on:click="goIndex(member)" alt="">
                             </dt>
-                            <dd v-bind:class="{'color-ff':  ( member.birthdayCD.allDays < 15 || member.birthdayCD.allDays == 15)}">{{member.name}}</dd>
+                            <dd v-bind:class="{'color-ff':  ( member.birthdayCD.allDaysY < 4 || member.birthdayCD.allDaysY == 6 || member.birthdayCD.allDaysY == 11 || member.birthdayCD.allDaysY == 16) && member.birthdayCD.allDaysY}">{{member.name}}</dd>
                             <dd v-if="member.head != ''" class="c-red">{{member.head}}</dd>
-                            <dd v-if="member.birthdayCD.allDays < 15 || member.birthdayCD.allDays == 15" class="c-br"><span>{{member.birthdayCD.allDays}}</span>天</dd>
+                            <dd v-on:click="closeBirthdayBox(all.TodyBirthday,member.birthdayCD.allDaysY)" v-if="(member.birthdayCD.allDaysY < 4 || member.birthdayCD.allDaysY == 6 || member.birthdayCD.allDaysY == 11 || member.birthdayCD.allDaysY == 16) && member.birthdayCD.allDaysY" class="c-br"><span>{{member.birthdayCD.allDays}}</span>天</dd>
                         </dl>
                     </li>
 
@@ -415,9 +516,6 @@
             </div>
         </div>
 
-
-
-
         <!--2、生日-->
         <div id="birthday-box"  class="con-page" v-bind:class="{'leave': all.page != '2', 'come': all.page == '2'}">
             <div class="title" v-bind:class="{'display-none': all.page != '2'}">
@@ -465,7 +563,7 @@
                 <ul class="list animated fadeInUp" v-if="member.birthdayCD.times" v-for="(member,index) in contentpage.birthday.memberList"
                     v-bind:class="{'close': member.birthdayOpen == false }">
                     <li class="text-title">
-                        <dl v-on:click="closeBirthdayList(member)" class="animated infinite" v-bind:class="{'shake': member.birthdayCD.allDays < 10}">
+                        <dl v-on:click="closeBirthdayList(member)" class="animated infinite" v-bind:class="{'shake': member.birthdayCD.allDaysY < 10 && member.birthdayCD.allDaysY }">
                             <dt >
                                 <img v-bind:src="member.imgsrc" v-on:click="goIndex(member)" alt="">
                             </dt>
@@ -474,7 +572,7 @@
                             <dd class="birthdays">
 
                                 <p>
-                                    <span class="animated infinite" v-bind:class="{'c-r shake': member.birthdayCD.allDays < 10}">
+                                    <span class="animated infinite" v-bind:class="{'c-r shake': member.birthdayCD.allDaysY < 10 && member.birthdayCD.allDaysY }">
                                         {{member.birthdayCD.allDays}}
                                     </span>
                                     天
@@ -489,7 +587,7 @@
 
                         <i>{{member.birthdayCD.times}}</i>
 
-                        <p>
+                        <p v-if="member.birthdayCD.allDaysY != 2 && member.birthdayCD.allDaysY != 1">
                             <span v-if="member.birthdayCD.month">{{member.birthdayCD.month}}个月</span>
 
                             <span>
@@ -743,7 +841,7 @@
                 <div class="dayss bain"
                      v-if="contentpage.index.member.birthdayCD.allDays"
                 >
-                    <span v-bind:class="{'c-r': contentpage.index.member.birthdayCD.allDays < 7 }">
+                    <span v-bind:class="{'c-r': contentpage.index.member.birthdayCD.allDaysY < 10 }">
                                         {{contentpage.index.member.birthdayCD.allDays}}
                                     </span>
                     <span class="day-text">天</span>
@@ -754,8 +852,30 @@
             </dl>
         </div>
 
-    </section>
 
+
+    </section>
+    <!--生日头一天和当天弹出的庆祝页面-->
+    <div class="happy-box"
+         v-bind:class="{'leave': all.TodyBirthday.box == false, 'com': all.TodyBirthday.box == true}"
+         v-on:click="closeBirthdayBox(all.TodyBirthday)">
+        <div class="himg-box">
+            <p id="p">
+                喜乐组&nbsp;&nbsp;&nbsp;全体小伙伴贺
+            </p>
+
+            <img id="bd-img-0" class="animated infinite flash" src="" alt="">
+
+            <img id="bd-img-1" class="animated infinite pulse" src="" alt="">
+            <img id="bd-img-4" class="animated infinite" src="" alt="">
+            <img id="bd-img-2" class="animated infinite pulse" src="" alt="">
+            <img id="bd-img-3" class="animated infinite pulse" src="" alt="">
+            <img id="bd-img-5" class="animated infinite pulse" src="" alt="">
+
+        </div>
+        <span class="animated infinite swing name">~<span>{{(all.TodyBirthday.list.length > 0) && all.TodyBirthday.list[0].name}}</span>~</span>
+
+    </div>
 
 
 </article>
@@ -838,6 +958,12 @@
                 window.clearInterval(loadTime);
             }catch (exp){}
             loadWrap.style.left = '-110vw';
+
+            setTimeout(function(){
+                removeElement(loadWrap);
+            },2000)
+
+
         }
 
         var msgs = '加载异常，请等待或刷新 ';
@@ -886,12 +1012,21 @@
                 loadWrap.style.left = '-110vw';
 
                 setTimeout(function(){
-                    indexTitleBox.style.height = '0';
-                },3500)
+//                    indexTitleBox.style.height = '0';
+                    removeElement(loadWrap);
+                },2000)
 
             }
         }
         newImg.src = "img/"+imgHeadArr[i];
+    }
+
+
+    function removeElement(_element){
+        var _parentElement = _element.parentNode;
+        if(_parentElement){
+            _parentElement.removeChild(_element);
+        }
     }
 </script>
 

@@ -147,29 +147,29 @@ var day2 = (disTime2 - hours2 * 3600 - minutes2 * 60 - seconds2) / 86400;
 
 
 //计算倒计时函数
-var tarTimeR = function(time){
+var tarTimeR = function(time,yesterday){
 
 
 
-    var timelast;
+    var timelast = '';
+    var timeYesterday = '';
 
     var timeArr = {};
-    if(time == ''){
+    if(!time){
         timeArr.times = time;
         return timeArr;
     }
     timelast = (years + 0) + '/' + time;
+
     timeArr.times = time;
     timeArr.birthday = time.replace('/','');
-    // console.log(timeArr.birthday);
     var tarTime = new Date(timelast).getTime();
+
     //倒计时
 
     timeArr.disTime = Math.round((tarTime - nowTime) / 1000);
 
-
     if(timeArr.disTime < 0){
-        // console.log(timeArr.disTime)
 
         timeArr.oldday = false;
 
@@ -177,14 +177,11 @@ var tarTimeR = function(time){
         timelast = (years + 1) + '/' + time;
         timeArr.times = time;
 
-        // console.log(timelast);
-
         var tarTime2 = new Date(timelast).getTime();
         timeArr.disTime = Math.round((tarTime2 - nowTime) / 1000);
 
     }else{
         timeArr.oldday = true;
-
     }
 
 
@@ -194,25 +191,45 @@ var tarTimeR = function(time){
     timeArr.days = (timeArr.disTime - timeArr.hours * 3600 - timeArr.minutes * 60 - timeArr.seconds) / 86400;
 
     timeArr.allDays = parseInt(timeArr.disTime/3600/24) + 1;
-    timeArr.allDaysD = parseInt(timeArr.disTime/3600/24) + 1 + '天';
+    timeArr.allDaysD = parseInt(timeArr.disTime/3600/24) + 1;
 
-    if(timeArr.allDays == 0){
-        timeArr.allDaysD = '今天';
-        timeArr.allDays = '今';
+    //如果算出生日的头一天距离生日是1天，那就说明生日就是今天
+    if(yesterday){
+        timeYesterday = (years + 0) + '/' + yesterday;
+        var tarTimeY = new Date(timeYesterday).getTime();
+
+        timeArr.disTimeY = Math.round((tarTimeY - nowTime) / 1000);
+
+
+        if(timeArr.disTimeY > 0){
+            timeArr.allDaysY = parseInt(timeArr.disTimeY/3600/24) + 1;
+        }else{
+            timeArr.allDaysY = 999;
+        }
+
+        // console.log(timeArr.allDaysY,time,yesterday)
     }
-
 
     timeArr.month = parseInt(timeArr.allDays/30);
 
 
-    // console.log(timeArr.allDays,timeArr.times);
-
-
-    // console.log(timeArr)
 
     if(timeArr.days < 0){
         timeArr.old = false;
         timeArr.msg = '';
+    }
+
+    if(timeArr.allDaysY == 1){
+        // timeArr.allDaysD = '今天';
+        timeArr.allDays = '今';
+    }
+    if(timeArr.allDaysY == 2){
+        // timeArr.allDaysD = '明天';
+        timeArr.allDays = '明';
+    }
+    if(timeArr.allDaysY == 3){
+        // timeArr.allDaysD = '明天';
+        timeArr.allDays = '后';
     }
 
     return timeArr;
@@ -374,6 +391,81 @@ var hello = '哈利路亚';
 //成员信息
 var memberList = [
     //26
+    // {
+    //     name: '昨天生日',
+    //     prayer: [
+    //         {text: '为好好抓紧时间认真学习。'},
+    //         {text: ''},
+    //         {text: ''}
+    //     ],
+    //     birthdayCD:tarTimeR('09/08','09/09'),
+    //     signature: '',  //个人主页签名
+    //     age: '',
+    //     head: '',   //特殊提醒，例如：'考试加油！'
+    //     imgsrc: '',
+    //     bgc: '',
+    //     id:'congzhou',
+    //     listOpen: true,
+    //     birthdayOpen: true,
+    //     phone:'18217309179',
+    // },
+    // //26
+    // {
+    //     name: '今天生日',
+    //     prayer: [
+    //         {text: '为好好抓紧时间认真学习。'},
+    //         {text: ''},
+    //         {text: ''}
+    //     ],
+    //     birthdayCD:tarTimeR('09/09','09/10'),
+    //     signature: '',  //个人主页签名
+    //     age: '',
+    //     head: '',   //特殊提醒，例如：'考试加油！'
+    //     imgsrc: '',
+    //     bgc: '',
+    //     id:'congzhou',
+    //     listOpen: true,
+    //     birthdayOpen: true,
+    //     phone:'18217309179',
+    // },
+    // //26
+    // {
+    //     name: '明天生日',
+    //     prayer: [
+    //         {text: '为好好抓紧时间认真学习。'},
+    //         {text: ''},
+    //         {text: ''}
+    //     ],
+    //     birthdayCD:tarTimeR('09/10','09/11'),
+    //     signature: '',  //个人主页签名
+    //     age: '',
+    //     head: '',   //特殊提醒，例如：'考试加油！'
+    //     imgsrc: '',
+    //     bgc: '',
+    //     id:'congzhou',
+    //     listOpen: true,
+    //     birthdayOpen: true,
+    //     phone:'18217309179',
+    // },
+    // {
+    //     name: '后天生日',
+    //     prayer: [
+    //         {text: '为好好抓紧时间认真学习。'},
+    //         {text: ''},
+    //         {text: ''}
+    //     ],
+    //     birthdayCD:tarTimeR('09/11','09/12'),
+    //     signature: '',  //个人主页签名
+    //     age: '',
+    //     head: '',   //特殊提醒，例如：'考试加油！'
+    //     imgsrc: '',
+    //     bgc: '',
+    //     id:'congzhou',
+    //     listOpen: true,
+    //     birthdayOpen: true,
+    //     phone:'18217309179',
+    // },
+    //26
     {
         name: '从舟',
         prayer: [
@@ -381,7 +473,7 @@ var memberList = [
             {text: ''},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('08/16'),
+        birthdayCD:tarTimeR('08/16','08/17'),
         signature: '',  //个人主页签名
         age: '',
         head: '',   //特殊提醒，例如：'考试加油！'
@@ -400,7 +492,7 @@ var memberList = [
             {text: '为我弟弟的灵命祷告，求主赐他信心重新回到就神面前，体贴神的心意。'},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('07/15'),
+        birthdayCD:tarTimeR('07/15','07/16'),
         signature: '',
         age: '',
         head: '',
@@ -419,7 +511,7 @@ var memberList = [
             {text: '10月份要参加一个真理应用的课程培训，求神预备心。'},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('2/15'),
+        birthdayCD:tarTimeR('2/15','2/16'),
         signature: '',
         age: '',
         head: '',
@@ -437,7 +529,7 @@ var memberList = [
             {text: '为校友会预备心。'},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('05/21'),
+        birthdayCD:tarTimeR('05/21','05/22'),
         signature: '',
         age: '',
         head: '',
@@ -456,7 +548,7 @@ var memberList = [
             {text: '这两天感觉特别疲惫，除了工作吃饭之外，就想睡觉😂，求主帮助我恢复体力，灵修和为大家代祷有力。'},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('01/23'),
+        birthdayCD:tarTimeR('01/23','01/24'),
         signature: '',
         age: '',
         head: '',
@@ -474,7 +566,7 @@ var memberList = [
             {text: ''},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('12/21'),
+        birthdayCD:tarTimeR('12/21','12/22'),
         signature: '',
         age: '',
         head: '',
@@ -514,7 +606,7 @@ var memberList = [
             {text: ''},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('11/03'),
+        birthdayCD:tarTimeR('11/03','11/04'),
         signature: '',
         age: '',
         head: '',
@@ -533,7 +625,7 @@ var memberList = [
             {text: ''},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('05/13'),
+        birthdayCD:tarTimeR('05/13','05/14'),
         signature: '',
         age: '',
         head: '',
@@ -619,7 +711,7 @@ var memberList = [
         birthdayOpen: true,
         phone:'',
     },
-    //26
+    //09/20
     {
         name: '炳林',
         prayer: [
@@ -627,7 +719,7 @@ var memberList = [
             {text: ''},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('09/20'),
+        birthdayCD:tarTimeR('09/20','09/21'),
         signature: '',
         age: '',
         head: '',
@@ -701,7 +793,7 @@ var memberList = [
             {text: ''},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('03/15'),
+        birthdayCD:tarTimeR('03/15','03/16'),
         signature: '',
         age: '',
         head: '',
@@ -719,6 +811,13 @@ var memberList = [
 
 //活动事项
 
+var TodyBirthday = {
+    'box': false,
+    'list': []
+}
+
+
+
 
 for(var i=0;i < memberList.length;i++){
     //统计生日数目
@@ -730,10 +829,36 @@ for(var i=0;i < memberList.length;i++){
         member.phoneLenght ++;
         memberList[i].phone =  'tel:' + memberList[i].phone;
     }
-
+    //三天内过生日的
+    if(memberList[i].birthdayCD.allDaysY < 4){
+        TodyBirthday.list.push(memberList[i])
+    }
 }
 
+console.log(TodyBirthday)
+//如果有过生日的就给盒子添加一个img背景
 
+if(TodyBirthday.list.length > 0 ){
+    if(TodyBirthday.list[0].birthdayCD.allDaysY == 1){
+        TodyBirthday.box = true;
+    }
+    //顶部气球
+    var bdImg1 = document.getElementById('bd-img-1');
+    var bdImg2 = document.getElementById('bd-img-2');
+    var bdImg3 = document.getElementById('bd-img-3');
+    var bdImg4 = document.getElementById('bd-img-4');
+    var bdImg5 = document.getElementById('bd-img-5');
+    var bdImg0 = document.getElementById('bd-img-0');
+
+
+    bdImg1.src = 'img/hbd/ball.png';
+    bdImg2.src = 'img/hbd/dg.png';
+    bdImg3.src = 'img/hbd/hp-text.png';
+    bdImg4.src = 'img/hbd/mm.png';
+    bdImg5.src = 'img/hbd/mmmz.png';
+    bdImg0.src = 'img/hbd/light.png';
+
+}
 
 //app
 var app = new Vue({
@@ -744,6 +869,7 @@ var app = new Vue({
             icon: member.icon,
             otherIcon: member.otherIcon,
             dateTime:dateTime,
+            TodyBirthday:TodyBirthday,
 
         },
         header:{
@@ -918,6 +1044,10 @@ var app = new Vue({
                 upLogTitle:'升级日志',
                 upLog:[
                     {
+                        date:'2017-09-08',
+                        text:'【增加】生日弹出框提醒；【优化】生日是今天或者昨天的不友好提示。',
+                    },
+                    {
                         date:'2017-08-30',
                         text:'【增加】留言板。',
                     },
@@ -1061,16 +1191,36 @@ var app = new Vue({
         },
 
     //    进入个人主页
-
         goIndex:function(obj){
             this.all.page = 'index';
-        //    开始部署
-
-            // console.log(obj)
-            // console.log(this.contentpage.index)
-
 
             this.contentpage.index.member = obj;
+
+        },
+
+        //    生日祝福页面关闭时间
+        closeBirthdayBox: function (obj,x) {
+            if(x){
+                if(x<4){
+                    if(obj.box){
+                        obj.box = false;
+
+                    }else{
+                        obj.box = true;
+
+                    }
+                }else{
+                    return;
+                }
+            }else {
+                if(obj.box){
+                    obj.box = false;
+
+                }else{
+                    obj.box = true;
+
+                }
+            }
 
         },
 
