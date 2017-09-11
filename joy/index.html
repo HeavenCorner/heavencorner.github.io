@@ -155,8 +155,8 @@
         /*生日庆祝弹出框*/
         .happy-box{
             position: absolute;
-            top: 0;
-            right: 0;
+            top: -100vh;
+            right: -100vw;
             z-index: 50;
             width: 100vw;
             height: 100vh;
@@ -355,7 +355,7 @@
 
                 <span class="nav-text">{{li.text}}</span>
 
-                <span class="nav-num" v-if="li.num">{{li.num}}</span>
+                <span class="nav-num" v-if="li.num && li.id != 1">{{li.num}}</span>
 
             </li>
         </ul>
@@ -567,7 +567,7 @@
 
 
             <div class="birthday-wrap"  v-bind:class="{'display-none': all.page != '2'}">
-                <ul class="list animated fadeInUp" v-if="member.birthdayCD.times" v-for="(member,index) in contentpage.birthday.memberList"
+                <ul class="list animated fadeInUp" v-if="member.birthdayCD.times" v-for="(member,index) in listCmputed":key="member.birthdayCD.allDaysY"
                     v-bind:class="{'close': member.birthdayOpen == false }">
                     <li class="text-title">
                         <dl v-on:click="closeBirthdayList(member)" class="animated infinite" v-bind:class="{'shake': member.birthdayCD.allDaysY < 10 && member.birthdayCD.allDaysY }">
