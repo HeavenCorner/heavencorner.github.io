@@ -789,22 +789,22 @@ var memberList = [
         phone:'15649032317',
     },
     {
-        name: '生日测试',
+        name: '小组新人',
         prayer: [
-            {text: '线上弹框测试'},
+            {text: '？？？？'},
             {text: ''},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('09/11','09/12'),
+        birthdayCD:tarTimeR(''),
         signature: '',  //个人主页签名
         age: '',
         head: '',   //特殊提醒，例如：'考试加油！'
         imgsrc: '',
         bgc: '',
-        id:'congzhou',
+        id:'',
         listOpen: true,
         birthdayOpen: true,
-        phone:'18217309179',
+        phone:'',
     },
 
 ];
