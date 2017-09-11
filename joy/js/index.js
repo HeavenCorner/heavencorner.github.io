@@ -1046,6 +1046,10 @@ var app = new Vue({
                 upLogTitle:'升级日志',
                 upLog:[
                     {
+                        date:'2017-09-11',
+                        text:'【优化】生日列表按照时间排序。',
+                    },
+                    {
                         date:'2017-09-08',
                         text:'【增加】生日弹出框提醒；【优化】生日是今天或者昨天的不友好提示。',
                     },
@@ -1244,15 +1248,89 @@ var app = new Vue({
         this.menu.list[5].num = this.contentpage.msg.list.length;
         this.menu.list[1].num = this.contentpage.spirit.videoList.length + this.contentpage.spirit.musicList.length;
 
+        // console.log(this.contentpage.birthday.memberList);
+
+        var newlist = [];
+        var newshow = [];
+
+        //所有填写生日的成员
+        for(n=0;n < this.contentpage.birthday.memberList.length;n++){
+            if(this.contentpage.birthday.memberList[n].birthdayCD.allDays){
+                newlist.push(this.contentpage.birthday.memberList[n])
+            }
+        }
+
+        console.log(newlist);
+
+
+        var a=[];
+
+        for(m=0;m < this.contentpage.birthday.memberList.length;m++){
+            if(this.contentpage.birthday.memberList[m].birthdayCD.allDaysY){
+                if(this.contentpage.birthday.memberList[m].birthdayCD.allDaysY == 999){
+                    a.push(this.contentpage.birthday.memberList[m].birthdayCD.allDays)
+                }else{
+                    a.push(this.contentpage.birthday.memberList[m].birthdayCD.allDaysY)
+                }
+
+            }
+        }
+
+        console.log(a);
+
+        var temp=0;
+
+        for(i=0;i<a.length-1;i++){
+            for(var j=i+1;j<a.length;j++){
+                if(a[i]>a[j]){
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+            // console.log("第"+i+"次排序结果："+a);
+        }
+
+        console.log(a);
+
+        var temps=0;
+
+        for(k=0;k<newlist.length;k++){
+            for(l=0;l<a.length;l++){
+                if(newlist[l].birthdayCD.allDaysY == 999){
+                    if(newlist[l].birthdayCD.allDays == a[k]){
+                        newshow.push(newlist[l])
+                    }
+
+                }else{
+                    if(newlist[l].birthdayCD.allDaysY == a[k]){
+                        newshow.push(newlist[l])
+
+                    }
+                }
+            }
+
+            console.log(newshow[k].birthdayCD.allDays)
+        }
+
+
+        this.contentpage.birthday.memberList = newshow;
+
+
+
+
+
+
 
     },
 
     computed:{
         listCmputed:function(){
             return this.contentpage.birthday.memberList.filter(function(item){
-                console.log(item)
+                // console.log(item)
                 return item.birthdayCD.allDaysY;
             })
+
         }
     },
 });
