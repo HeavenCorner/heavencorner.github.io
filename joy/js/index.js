@@ -788,24 +788,24 @@ var memberList = [
         birthdayOpen: true,
         phone:'15649032317',
     },
-    {
-        name: '小组新人',
-        prayer: [
-            {text: '？？？？'},
-            {text: ''},
-            {text: ''}
-        ],
-        birthdayCD:tarTimeR(''),
-        signature: '',  //个人主页签名
-        age: '',
-        head: '',   //特殊提醒，例如：'考试加油！'
-        imgsrc: '',
-        bgc: '',
-        id:'',
-        listOpen: true,
-        birthdayOpen: true,
-        phone:'',
-    },
+    // {
+    //     name: '小组新人',
+    //     prayer: [
+    //         {text: '？？？？'},
+    //         {text: ''},
+    //         {text: ''}
+    //     ],
+    //     birthdayCD:tarTimeR(''),
+    //     signature: '',  //个人主页签名
+    //     age: '',
+    //     head: '',   //特殊提醒，例如：'考试加油！'
+    //     imgsrc: '',
+    //     bgc: '',
+    //     id:'',
+    //     listOpen: true,
+    //     birthdayOpen: true,
+    //     phone:'',
+    // },
 
 ];
 
