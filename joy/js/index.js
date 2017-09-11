@@ -589,7 +589,7 @@ var memberList = [
             {text: ''},
             {text: ''}
         ],
-        birthdayCD:tarTimeR('11/03','11/04'),
+        birthdayCD:tarTimeR('09/17','09/18'),
         signature: '',
         age: '',
         head: '',
@@ -675,7 +675,7 @@ var memberList = [
         birthdayOpen: true,
         phone:'',
     },
-    // 为我们家宝宝和姊妹祷告，求神给她一颗喜乐的心，万事寻求神的心意。
+    // 04/04
     {
         name: '申元',
         prayer: [
@@ -683,7 +683,7 @@ var memberList = [
             {text: '姊妹多亲近神，在与父母相处及带孩子中有神的智慧与教导'},
             {text: ''}
         ],
-        birthdayCD:tarTimeR(''),
+        birthdayCD:tarTimeR('04/04','04/05'),
         signature: '',
         age: '',
         head: '',
