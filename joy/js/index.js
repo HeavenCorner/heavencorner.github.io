@@ -789,13 +789,13 @@ var memberList = [
         phone:'15649032317',
     },
     // {
-    //     name: '小组新人',
+    //     name: '李子',
     //     prayer: [
     //         {text: '？？？？'},
     //         {text: ''},
     //         {text: ''}
     //     ],
-    //     birthdayCD:tarTimeR(''),
+    //     birthdayCD:tarTimeR('09/12','09/13'),
     //     signature: '',  //个人主页签名
     //     age: '',
     //     head: '',   //特殊提醒，例如：'考试加油！'
@@ -825,19 +825,18 @@ for(var i=0;i < memberList.length;i++){
     if(memberList[i].birthdayCD.times != ''){
         member.birthdayLenght ++;
     }
-//    统计通讯录数目
+    //统计通讯录数目
     if(memberList[i].phone != ''){
         member.phoneLenght ++;
         memberList[i].phone =  'tel:' + memberList[i].phone;
     }
     //三天内过生日的
     if(memberList[i].birthdayCD.allDaysY < 4){
-        TodyBirthday.list.push(memberList[i])
+        TodyBirthday.list.push(memberList[i]);
     }
 }
 
-console.log(TodyBirthday)
-//如果有过生日的就给盒子添加一个img背景
+//如果有过生日的就给盒子添加img背景开始加载
 
 if(TodyBirthday.list.length > 0 ){
     //只有生日当天会自动弹出，其它的需要点击
@@ -850,7 +849,7 @@ if(TodyBirthday.list.length > 0 ){
     var bdImg3 = document.getElementById('bd-img-3');
     var bdImg4 = document.getElementById('bd-img-4');
     var bdImg5 = document.getElementById('bd-img-5');
-    var bdImg0 = document.getElementById('bd-img-0');
+    // var bdImg0 = document.getElementById('bd-img-0');
 
 
     bdImg1.src = 'img/hbd/ball.png';
@@ -858,7 +857,7 @@ if(TodyBirthday.list.length > 0 ){
     bdImg3.src = 'img/hbd/hp-text.png';
     bdImg4.src = 'img/hbd/mm.png';
     bdImg5.src = 'img/hbd/mmmz.png';
-    bdImg0.src = 'img/hbd/light.png';
+    // bdImg0.src = 'img/hbd/light.png';
 
 }
 
@@ -1341,8 +1340,4 @@ var closeMenuList = function(obj){
         obj.menu.seen = false;
     },100)
 }
-
-//时间段函数
-
-
 
