@@ -786,7 +786,7 @@ var memberList = [
         id:'duqu',
         listOpen: true,
         birthdayOpen: true,
-        phone:'15649032317',
+        phone:'17192190110',
     },
     // {
     //     name: '李子',
