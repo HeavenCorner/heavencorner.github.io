@@ -1306,3 +1306,16 @@ h2 {
   -webkit-animation-delay: .3s !important;
   /* Safari 和 Chrome */
 }
+
+
+/*后期手动补上*/
+.loading-img{
+  min-height: 30px;
+  text-align: center;
+}
+
+.loading-img p{
+  line-height: 60px;
+  font-size: 20px;
+  color: #585858;
+}

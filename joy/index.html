@@ -743,7 +743,12 @@
                     </p>
 
                 </li>
-                <img class="img" v-bind:src="list.src" v-if="list.src" alt="" v-for="list in contentpage.msg.list">
+                <!--<img class="img" v-bind:src="list.src" v-if="list.src" alt="" v-for="list in contentpage.msg.list">-->
+
+                <div class="loading-img" v-on:click="loadingHelp('img/tz/qingtuan.jpeg','51')">
+                    <p v-if="contentpage.msg.tzImg1">点击加载表格图片</p>
+                    <img v-bind:src="contentpage.msg.tzImg" alt="">
+                </div>
             </ul>
         </div>
         <!--6、帮助-->
@@ -789,7 +794,12 @@
 
 
             <h5>{{contentpage.help.logTitle}}</h5>
-            <img src="img/help.png" alt="">
+
+            <div class="loading-img" v-on:click="loadingHelp('img/help.png','61')">
+                <p v-if="contentpage.help.msg1">点击加载思维导图</p>
+                <img v-bind:src="contentpage.help.helpImg" alt="">
+            </div>
+            <!--<img  src="img/help.png" alt="">-->
 
             <div class="up-log-box">
                 <h5>{{contentpage.help.upLogTitle}}</h5>
@@ -921,7 +931,7 @@
         '05-title-bg.jpg',
         '06-title-bg.jpg',
         '00-title-bg.jpg',
-        'help.png',
+//        'help.png',
     ];
 
     //头像图片加载

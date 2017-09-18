@@ -848,7 +848,7 @@ var app = new Vue({
     el:'#app',
     data:{
         all:{
-            page: '0',
+            page: '5',
             icon: member.icon,
             otherIcon: member.otherIcon,
             dateTime:dateTime,
@@ -992,17 +992,19 @@ var app = new Vue({
                     // {
                     //     title:'聚餐',
                     //     con:'从舟家',
-                    //     time:tarTimeR('07/30'),//06/24
+                    //     time:tarTimeR('11/30'),//06/24
                     //     img:'img/00-title-bg.jpg',
                     // },
                     {
                         title:'2017第三季度活动安排',
                         con:'',
                         time:tarTimeR('10/01'),//06/24
-                        img:'img/01-title-bg.jpg',
-                        src:'img/tz/qingtuan.jpeg',
+                        img:'img/05-title-bg.jpg',
+                        src:'',
                     }
                 ],
+                tzImg:'',
+                tzImg1: true,
             },
         //    6
             help:{
@@ -1024,8 +1026,14 @@ var app = new Vue({
                 },
                 nameMsg:'',
                 logTitle:'Joy 2.0 单页面应用思维导图 （渐进完善）',
+                helpImg: '',
+                msg1: true,
                 upLogTitle:'升级日志',
                 upLog:[
+                    {
+                        date:'2017-09-18',
+                        text:'【优化】对于一些不必要的图片，节省流量和提升加载速度考虑，只有在点击之后才进行加载。',
+                    },
                     {
                         date:'2017-09-11',
                         text:'【优化】生日列表按照时间排序。',
@@ -1213,8 +1221,19 @@ var app = new Vue({
     //    按照生日排序
         bdOrderBy: function (a,b) {
             return a.birthdayCD.allDaysY-b.birthdayCD.allDaysY;
-        }
+        },
 
+    //    点击预加载
+        loadingHelp: function(x,y){
+            if(y == '61'){
+                this.contentpage.help.helpImg = x;
+                this.contentpage.help.msg1 = false;
+            }else if(y == '51'){
+                this.contentpage.msg.tzImg = x;
+                this.contentpage.msg.tzImg1 = false;
+
+            }
+        },
 
 
 
