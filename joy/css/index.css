@@ -125,7 +125,7 @@ textarea {
   height: 100vh;
   margin: 0 auto;
   position: relative;
-  background: #e2e2e2;
+  background: #eef;
   overflow: hidden;
 }
 .wrap-box #header-box {
@@ -908,17 +908,20 @@ textarea {
 .wrap-box .content-wrap #help-box .help-box-title {
   position: relative;
   text-align: center;
-  color: #FFFFFF;
+  /*color: #FFFFFF;*/
   width: 100%;
   height: 800px;
-  background-image: url('../img/06-title-bg.jpg');
+  /*background-image: url('../img/06-title-bg.jpg');*/
 }
 .wrap-box .content-wrap #help-box .help-box-title h2 {
+  color: #585858;
+  position: relative;
   font-weight: 100;
-  font-size: 80px;
-  padding-top: 130px;
+  font-size: 66px;
+  padding-top: 30px;
 }
 .wrap-box .content-wrap #help-box .help-box-title h3 {
+  position: relative;
   font-weight: 100;
   font-size: 26px;
   padding-top: 10px;
@@ -927,6 +930,8 @@ textarea {
   font-weight: 100;
 }
 .wrap-box .content-wrap #help-box .ball-arr {
+  position: relative;
+  top: -100px;
   width: 100%;
   height: 460px;
 }
@@ -935,7 +940,7 @@ textarea {
   position: absolute;
   border-radius: 50%;
   border: 7px #FFFFFF solid;
-  border-width: 6px 0;
+  /*border-width: 6px 0;*/
 }
 .wrap-box .content-wrap #help-box .ball-arr dl dd {
   width: 100%;
@@ -956,7 +961,7 @@ textarea {
   top: 470px;
 }
 .wrap-box .content-wrap #help-box .ball-arr .b2 {
-  border-color: #50d2c2;
+  border-color: transparent;
   width: 250px;
   height: 250px;
   left: 50%;
@@ -967,7 +972,7 @@ textarea {
   width: 100%;
   font-size: 90px;
   position: absolute;
-  top: 60px;
+  top: 110px;
 }
 .wrap-box .content-wrap #help-box .ball-arr .b3 {
   border-color: #ba77ff;
@@ -1317,5 +1322,11 @@ h2 {
 .loading-img p{
   line-height: 60px;
   font-size: 20px;
-  color: #585858;
+  color: #ffffff;
+}
+
+.help-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
 }
