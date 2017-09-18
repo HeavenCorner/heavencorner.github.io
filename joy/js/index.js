@@ -628,7 +628,7 @@ var memberList = [
             {text: ''},
 
         ],
-        birthdayCD:tarTimeR(''),
+        birthdayCD:tarTimeR('11/22','11/23'),
         signature: '',
         age: '',
         head: '',
