@@ -9,6 +9,7 @@
     <title>喜乐组 · 清心</title>
 
 
+
     <style>
 
         #load-wrap {
@@ -87,10 +88,12 @@
         }
 
         #load-wrap blockquote{
-            padding-top: 200px;
+            width: 100%;
+            padding: 0;
+            margin: 0;
             color: #000000;
             position: absolute;
-            bottom: 20px;
+            bottom: 10%;
             text-align: center;
         }
         #load-wrap blockquote p{
@@ -261,10 +264,12 @@
     </style>
 
     <!--测试部分的样式链接-->
+    <link rel="stylesheet" href="bg/css/style.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="font/iconfont.css">
     <link rel="stylesheet" href="css/index-t.css" />
+
     <!--上线时的样式链接(min)-->
 
 </head>
@@ -969,7 +974,7 @@
 
         console.log(loadTimeNum);
 
-        if(loadTimeNum > 15 && loodings > 60){
+        if(loadTimeNum > 15 && loodings > 80){
             loadTimeNum = 0;
             try{
                 window.clearInterval(loadTime);
@@ -977,9 +982,9 @@
 
 
             loadWrap.style.left = '-110vw';
-//            setTimeout(function(){
-//                removeElement(loadWrap);
-//            },2000)
+            setTimeout(function(){
+                removeElement(loadWrap);
+            },2000)
 
 
         }
@@ -1027,10 +1032,10 @@
                     window.clearInterval(loadTime);
                 }catch (exp){}
 
-//                loadWrap.style.left = '-110vw';
-//                setTimeout(function(){
-//                    removeElement(loadWrap);
-//                },2000)
+                loadWrap.style.left = '-110vw';
+                setTimeout(function(){
+                    removeElement(loadWrap);
+                },2000)
 
             }
         }
