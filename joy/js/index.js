@@ -737,8 +737,8 @@ var memberList = [
     {
         name: '杜威',
         prayer: [
-            {text: '求神带领我在工作中时刻思想他，不远离他；'},
-            {text: '并赐我智慧，在各样的事情上，有公义的判断。'},
+            {text: '为JH尽快稳定下来祷告；'},
+            {text: '为身体健康祷告，求主加添力量。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR(''),
