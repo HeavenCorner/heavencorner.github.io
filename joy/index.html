@@ -733,7 +733,6 @@
                     <p class="con" v-if="list.con">
                         {{list.con}}
                         {{list.time.times}}
-
                     </p>
                     <p v-if="list.con" class="time animated infinite" v-bind:class="{'shake': list.time.allDays < 10}">还有
                         <span>
@@ -747,7 +746,7 @@
 
                 <div class="loading-img" v-on:click="loadingHelp('img/tz/qingtuan.jpeg','51')">
                     <p v-if="contentpage.msg.tzImg1">点击加载表格图片</p>
-                    <img v-bind:src="contentpage.msg.tzImg" alt="">
+                    <img  v-if="!contentpage.msg.tzImg1" v-bind:src="contentpage.msg.tzImg" alt="">
                 </div>
             </ul>
         </div>
@@ -759,6 +758,7 @@
 
                 <iframe class="help-bg" height="100%" width="100%" frameborder="0" src="bg/index.html" allowfullscreen="" scrolling="no" style=""></iframe>
 
+                <img id="help-bg" src="img/help-bg.jpg" alt="">
 
                 <h2>{{contentpage.help.title.msg}}</h2>
                 <h3>{{contentpage.help.title.text}}</h3>
@@ -803,7 +803,7 @@
 
             <div class="loading-img" v-on:click="loadingHelp('img/help.png','61')">
                 <p v-if="contentpage.help.msg1">点击加载思维导图</p>
-                <img v-bind:src="contentpage.help.helpImg" alt="">
+                <img  v-if="!contentpage.help.msg1" v-bind:src="contentpage.help.helpImg" alt="">
             </div>
             <!--<img  src="img/help.png" alt="">-->
 

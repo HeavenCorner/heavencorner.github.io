@@ -906,6 +906,7 @@ textarea {
   margin-top: 20px;
 }
 .wrap-box .content-wrap #help-box .help-box-title {
+  overflow: hidden;
   position: relative;
   text-align: center;
   /*color: #FFFFFF;*/
@@ -931,7 +932,7 @@ textarea {
 }
 .wrap-box .content-wrap #help-box .ball-arr {
   position: relative;
-  top: -100px;
+  top: -78px;
   width: 100%;
   height: 460px;
 }
@@ -954,11 +955,16 @@ textarea {
   top: 24px;
 }
 .wrap-box .content-wrap #help-box .ball-arr .b1 {
-  border-color: #fcab53;
+  /*border-color: #fcab53;*/
+  border-color: transparent;
   width: 140px;
   height: 140px;
   left: 50px;
   top: 470px;
+}
+
+.wrap-box .content-wrap #help-box .ball-arr .b1 dt{
+  color: #fcab53;
 }
 .wrap-box .content-wrap #help-box .ball-arr .b2 {
   border-color: transparent;
@@ -974,12 +980,22 @@ textarea {
   position: absolute;
   top: 110px;
 }
+
+.wrap-box .content-wrap #help-box .ball-arr .b2 dt{
+  color: #50d2c2;
+}
 .wrap-box .content-wrap #help-box .ball-arr .b3 {
-  border-color: #ba77ff;
+  /*border-color: #ba77ff;*/
+  border-color: transparent;
   right: 50px;
   top: 470px;
   width: 140px;
   height: 140px;
+}
+
+.wrap-box .content-wrap #help-box .ball-arr .b3 dt{
+  color: #ba77ff;
+
 }
 .wrap-box .content-wrap #help-box .up-log-box {
   background-color: #ffffff;
@@ -1324,9 +1340,19 @@ h2 {
   font-size: 20px;
   color: #ffffff;
 }
-
+/*帮助*/
 .help-bg{
   position: absolute;
   top: 0;
   left: 0;
 }
+
+#help-bg{
+  opacity: .1;
+  width: 856px !important;
+  position: absolute;
+  top: 2px;
+  left: -56px;
+}
+
+/**/
