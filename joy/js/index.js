@@ -471,9 +471,9 @@ var memberList = [
     {
         name: '顾阿姨',
         prayer: [
-            {text: '为自己亲近神，多多祷告；'},
-            {text: '求主为从舟爸爸预备心参加国庆营会，愿神的救恩临到他；'},
-            {text: '求神赐信心和智慧给从舟,在压力中依靠神，经历神的大能。'}
+            {text: '学习谦卑忍耐的功课等候神。'},
+            {text: ''},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('07/15','07/16'),
         signature: '',
