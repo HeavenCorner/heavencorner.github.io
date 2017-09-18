@@ -848,7 +848,7 @@ var app = new Vue({
     el:'#app',
     data:{
         all:{
-            page: '6',
+            page: '0',
             icon: member.icon,
             otherIcon: member.otherIcon,
             dateTime:dateTime,
