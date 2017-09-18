@@ -18,8 +18,8 @@
             z-index: 9999999;
             width: 100vw;
             height: 100vh;
-            background-color: rgba(0,0,0,.8);
-            padding-top: 170px;
+            background-color: #eef;
+            /*padding-top: 170px;*/
             text-align: center;
             overflow: hidden;
             -webkit-transition: all .8s;
@@ -58,12 +58,12 @@
             display: block;
             position: absolute;
             left: 50%;
-            top: 0;
+            top: 5%;
             width: 300px;
             height: 300px;
             margin-left: -150px;
             border-radius: 50%;
-            color: #ffffff;
+            color: #000000;
             line-height: 300px;
             text-align: center;
             font-size: 80px;
@@ -71,26 +71,31 @@
         }
 
         #load-wrap .title-1{
-            padding-top: 50px;
+            position: absolute;
             text-align: center;
-            color: #ffffff;
+            color: #000000;
             font-weight: 100;
+            top: 26%;
+            width: 100vw;
         }
 
         #load-wrap .title-2{
             padding-top: 50px;
             text-align: center;
-            color: #ffffff;
+            color: #000000;
             font-weight: 100;
         }
 
         #load-wrap blockquote{
             padding-top: 200px;
-            color: #a8a8aa;
+            color: #000000;
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
         }
         #load-wrap blockquote p{
             padding-top: 30px;
-            color: #a8a8aa;
+            color: #000000;
             font-size: 20px;
         }
 
@@ -267,12 +272,15 @@
 
 <!--预加载页面和开场动画--原生-->
 <div id="load-wrap">
-    <div class="looding-box">
-        <canvas id="c"></canvas>
+    <iframe class="bg-iframe" height="100%" width="100%" frameborder="0" src="bg/index.html" allowfullscreen="" scrolling="no" style=""></iframe>
+
+    <!--<div class="looding-box">-->
+        <!--<canvas id="c"></canvas>-->
+
         <span id="looding-num">
             0%
         </span>
-    </div>
+    <!--</div>-->
     <p class="title-1" id="looding-msg">
             0s
     </p>
@@ -966,8 +974,9 @@
             try{
                 window.clearInterval(loadTime);
             }catch (exp){}
-            loadWrap.style.left = '-110vw';
 
+
+            loadWrap.style.left = '-110vw';
             setTimeout(function(){
                 removeElement(loadWrap);
             },2000)
@@ -1019,9 +1028,7 @@
                 }catch (exp){}
 
                 loadWrap.style.left = '-110vw';
-
                 setTimeout(function(){
-//                    indexTitleBox.style.height = '0';
                     removeElement(loadWrap);
                 },2000)
 
@@ -1041,7 +1048,7 @@
 
 
 <!--js-->
-<script src="js/loading.js"></script>
+<!--<script src="js/loading.js"></script>-->
 <script src="js/vue.min.js"></script>
 <script src="js/index.js"></script>
 
