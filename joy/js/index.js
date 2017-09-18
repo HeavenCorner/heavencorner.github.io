@@ -452,8 +452,8 @@ var memberList = [
     {
         name: '从舟',
         prayer: [
-            {text: '为高中学习尽快进入节奏，尽量读经。'},
-            {text: ''},
+            {text: '学习求主赐智慧和效率；'},
+            {text: '多读经祷告。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('08/16','08/17'),
@@ -490,9 +490,9 @@ var memberList = [
     {
         name: '栋夷',
         prayer: [
-            {text: '每天从亲近神开始，求神帮助我坚持; 也坚持常常为身边人代祷；'},
-            {text: '工作继续等候神的带领；'},
-            {text: '为10月份真理应用课程里预备心。'}
+            {text: '工作关系中的忍耐操练，尽好本分；'},
+            {text: '预备心参加真理应用的课程。'},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('2/15','2/16'),
         signature: '',
@@ -527,9 +527,9 @@ var memberList = [
     {
         name: '蒙恩',
         prayer: [
-            {text: '为好好学习德语祷告；'},
-            {text: '为老爸腰疼祷告；'},
-            {text: '为新地方整修祷告。'}
+            {text: '管理好时间，工作，学习和服侍的平衡，Do my best and God will do the rest。'},
+            {text: ''},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('01/23','01/24'),
         signature: '',
@@ -545,7 +545,7 @@ var memberList = [
     {
         name: '浩然',
         prayer: [
-            {text: '计划用六年时间重返大型事务所工作，愿主成就！人心筹算自己的道路；惟耶和华指引他的脚步。'},
+            {text: '计划用六年时间重返大型事务所工作。'},
             {text: ''},
             {text: ''}
         ],
@@ -622,8 +622,8 @@ var memberList = [
     {
         name: '贺莉娇',
         prayer: [
-            {text: '规律灵修，更加认识神；'},
-            {text: '节制的生活；'},
+            {text: '规律灵修；'},
+            {text: '合理的时间和分配；'},
             {text: '论文和工作（常驻项目）。'},
             {text: ''},
 
@@ -679,9 +679,9 @@ var memberList = [
     {
         name: '申元',
         prayer: [
-            {text: '坚持读经；'},
-            {text: '为姊妹在带孩子和家人关系中多多仰望神，也求神引领她的读经祷告；'},
-            {text: '工作中智慧性坚定主的教导。'}
+            {text: '学习忍耐；'},
+            {text: '更加成熟，工作中少发脾气。'},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('04/04','04/05'),
         signature: '',
@@ -698,8 +698,8 @@ var memberList = [
     {
         name: '炳林',
         prayer: [
-            {text: '为我每天能够去做到早睡早起以及在校友会的学习祷告。'},
-            {text: ''},
+            {text: '每天能够做到早睡早起；'},
+            {text: '为在校友会的学习和婚姻祷告。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('11/08','11/09'),
@@ -752,29 +752,29 @@ var memberList = [
         birthdayOpen: true,
         phone:'',
     },
-    {
-        name: '翁磊',
-        prayer: [
-            {text: '为八年级的学习代祷。'},
-            {text: ''},
-            {text: ''}
-        ],
-        birthdayCD:tarTimeR(''),
-        signature: '',
-        age: '',
-        head: '',
-        imgsrc: 'img/head/wenglei.jpeg',
-        bgc: '',
-        id:'huangting',
-        listOpen: true,
-        birthdayOpen: true,
-        phone:'',
-    },
+    // {
+    //     name: '翁磊',
+    //     prayer: [
+    //         {text: '为八年级的学习代祷。'},
+    //         {text: ''},
+    //         {text: ''}
+    //     ],
+    //     birthdayCD:tarTimeR(''),
+    //     signature: '',
+    //     age: '',
+    //     head: '',
+    //     imgsrc: 'img/head/wenglei.jpeg',
+    //     bgc: '',
+    //     id:'huangting',
+    //     listOpen: true,
+    //     birthdayOpen: true,
+    //     phone:'',
+    // },
     {
         name: '杜渠',
         prayer: [
-            {text: '为肠胃不好，为好好读经。'},
-            {text: ''},
+            {text: '多读经多祷告；'},
+            {text: '为肠胃恢复代祷。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('03/15','03/16'),
@@ -788,24 +788,6 @@ var memberList = [
         birthdayOpen: true,
         phone:'17192190110',
     },
-    // {
-    //     name: '李子',
-    //     prayer: [
-    //         {text: '？？？？'},
-    //         {text: ''},
-    //         {text: ''}
-    //     ],
-    //     birthdayCD:tarTimeR('09/12','09/13'),
-    //     signature: '',  //个人主页签名
-    //     age: '',
-    //     head: '',   //特殊提醒，例如：'考试加油！'
-    //     imgsrc: '',
-    //     bgc: '',
-    //     id:'',
-    //     listOpen: true,
-    //     birthdayOpen: true,
-    //     phone:'',
-    // },
 
 ];
 
