@@ -383,7 +383,7 @@
     <section class="content-wrap cssgo">
         <!--0、主页（代祷事项）-->
 
-        <div id="prayer-box" class="con-page" v-bind:class="{'leave': all.page != '0', 'come': all.page == '0'}">
+        <div id="prayer-box" v-if="all.page == '0'" class="con-page" v-bind:class="{'leave': all.page != '0', 'come': all.page == '0'}">
 
             <div class="title " id="index-title-box" v-bind:class="{'display-none': all.page != '0'}">
                 <!--十字架动画-->
@@ -504,7 +504,7 @@
         </div>
 
         <!--1、灵粮音乐-->
-        <div id="spirit-box"  class="con-page" v-bind:class="{'leave': all.page != '1', 'come': all.page == '1'}">
+        <div id="spirit-box" v-if="all.page == '1'" class="con-page" v-bind:class="{'leave': all.page != '1', 'come': all.page == '1'}">
             <div class="title"  v-bind:class="{'display-none': all.page != '1'}">
                 <h2  class="animated fadeInRight">{{contentpage.spirit.title.titleText}}</h2>
 
@@ -533,7 +533,7 @@
         </div>
 
         <!--2、生日-->
-        <div id="birthday-box"  class="con-page" v-bind:class="{'leave': all.page != '2', 'come': all.page == '2'}">
+        <div id="birthday-box" v-if="all.page == '2'" class="con-page" v-bind:class="{'leave': all.page != '2', 'come': all.page == '2'}">
             <div class="title" v-bind:class="{'display-none': all.page != '2'}">
                 <h2 class="animated fadeInRight">{{contentpage.birthday.title.titleText}}</h2>
                 <div class="w110 h110 ball animated fadeInDown">
@@ -638,7 +638,7 @@
 
         </div>
         <!--3、通讯录-->
-        <div id="phone-box"  class="con-page" v-bind:class="{'leave': all.page != '3', 'come': all.page == '3'}">
+        <div id="phone-box" v-if="all.page == '3'" class="con-page" v-bind:class="{'leave': all.page != '3', 'come': all.page == '3'}">
             <div class="title"  v-bind:class="{'display-none': all.page != '3'}">
                 <h2 class="animated fadeInRight">{{contentpage.phone.title.titleText}}</h2>
                 <div class="w110 h110 bg-g ball animated fadeInDown">
@@ -681,7 +681,7 @@
 
         </div>
         <!--4、其它代祷-->
-        <div id="other-box"  class="con-page" v-bind:class="{'leave': all.page != '4', 'come': all.page == '4'}">
+        <div id="other-box" v-if="all.page == '4'" class="con-page" v-bind:class="{'leave': all.page != '4', 'come': all.page == '4'}">
             <div class="title"  v-bind:class="{'display-none': all.page != '4'}">
                 <h2 class="animated fadeInRight">{{contentpage.other.title.titleText}}</h2>
                 <!--<div class="w110 h110 bg-o ball animated fadeInDown">-->
@@ -700,7 +700,7 @@
             </dl>
         </div>
         <!--5、通知-->
-        <div id="msg-box"  class="con-page" v-bind:class="{'leave': all.page != '5', 'come': all.page == '5'}">
+        <div id="msg-box"  v-if="all.page == '5'" class="con-page" v-bind:class="{'leave': all.page != '5', 'come': all.page == '5'}">
             <div class="title"  v-bind:class="{'display-none': all.page != '5'}">
                 <h2 class="animated fadeInRight">{{contentpage.msg.title.titleText}}</h2>
                 <div class="w110 h110 bg-r ball animated fadeInDown">
@@ -751,7 +751,7 @@
             </ul>
         </div>
         <!--6、帮助-->
-        <div id="help-box"  class="con-page" v-bind:class="{'leave': all.page != '6', 'come': all.page == '6'}">
+        <div id="help-box" v-if="all.page == '6'" class="con-page" v-bind:class="{'leave': all.page != '6', 'come': all.page == '6'}">
 
 
             <div class="help-box-title">
