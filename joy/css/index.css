@@ -146,7 +146,7 @@ textarea {
 .wrap-box #header-box .ul li {
   width: 100%;
   height: 2px;
-  background: #f0f0f0;
+  background: #cccccc;
 }
 .wrap-box #header-box ul li:nth-child(2),
 .wrap-box #header-box .ul li:nth-child(2) {
@@ -164,7 +164,7 @@ textarea {
   top: -4px;
   font-size: 40px;
   font-weight: bold;
-  color: #f0f0f0;
+  color: #cccccc;
 }
 .wrap-box #header-box .ul-right {
   float: right;
@@ -410,6 +410,7 @@ textarea {
   transition: height .8s;
 }
 .wrap-box .content-wrap #prayer-box .prayer-text > ul .prayer-text-title {
+  position: relative;
   padding-left: 40px;
   min-height: 140px;
   width: 100%;
@@ -1333,6 +1334,27 @@ h2 {
 
 
 /*后期手动补上*/
+/*本周是否更新*/
+.update-s{
+  position: absolute;
+  right: -68px;
+  top: -35px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 78px;
+  width: 100px;
+}
+.update-yes{
+  background: #50d2c2;
+}
+
+.update-no{
+  background: #ba77ff;
+}
+
 
 #go-msg{
   position: absolute;

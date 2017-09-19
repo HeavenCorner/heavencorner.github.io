@@ -451,6 +451,7 @@ var memberList = [
     //26
     {
         name: '从舟',
+        update: true, //本周是否更新
         prayer: [
             {text: '学习求主赐智慧和效率；'},
             {text: '多读经祷告。'},
@@ -470,6 +471,7 @@ var memberList = [
     // 26
     {
         name: '顾阿姨',
+        update: true, //本周是否更新
         prayer: [
             {text: '学习谦卑忍耐的功课等候神。'},
             {text: ''},
@@ -489,6 +491,7 @@ var memberList = [
     //26
     {
         name: '栋夷',
+        update: true, //本周是否更新
         prayer: [
             {text: '工作关系中的忍耐操练，尽好本分；'},
             {text: '预备心参加真理应用的课程。'},
@@ -507,6 +510,7 @@ var memberList = [
     },
     {
         name: '段段',
+        update: true, //本周是否更新
         prayer: [
             {text: '专心在神里；'},
             {text: '为校友会预备心。'},
@@ -526,6 +530,7 @@ var memberList = [
     //26
     {
         name: '蒙恩',
+        update: true, //本周是否更新
         prayer: [
             {text: '管理好时间，工作，学习和服侍的平衡，Do my best and God will do the rest。'},
             {text: ''},
@@ -544,6 +549,7 @@ var memberList = [
     },
     {
         name: '浩然',
+        update: true, //本周是否更新
         prayer: [
             {text: '计划用六年时间重返大型事务所工作。'},
             {text: ''},
@@ -562,10 +568,9 @@ var memberList = [
     },
     //26
 
-//     26
-
     {
         name: '蓓静',
+        update: true, //本周是否更新
         prayer: [
             {text: '求每天亲近主，不以口舌论断人。'},
             {text: ''},
@@ -584,6 +589,7 @@ var memberList = [
     },
     {
         name: '思思',
+        update: true, //本周是否更新
         prayer: [
             {text: '为身体健康代祷，有点感冒，嗓子很痛；'},
             {text: '为能尽快适应在莘庄的生活代祷；'},
@@ -603,6 +609,7 @@ var memberList = [
     //26
     {
         name: '锦艳',
+        update: true, //本周是否更新
         prayer: [
             {text: '求主保守我在学校里学会自我分辨，时刻祷告仰望主，求神与我同在。'},
             {text: ''},
@@ -621,6 +628,7 @@ var memberList = [
     },
     {
         name: '贺莉娇',
+        update: true, //本周是否更新
         prayer: [
             {text: '规律灵修；'},
             {text: '合理的时间和分配；'},
@@ -641,6 +649,7 @@ var memberList = [
     },
     {
         name: '何梅',
+        update: true, //本周是否更新
         prayer: [
             {text: '为有更多的时间亲近主和聚会祷告。'},
             {text: ''},
@@ -659,6 +668,7 @@ var memberList = [
     },
     {
         name: '秋萍',
+        update: true, //本周是否更新
         prayer: [
             {text: '为下周五产检祷告。'},
             {text: ''},
@@ -678,6 +688,7 @@ var memberList = [
     // 04/04
     {
         name: '申元',
+        update: true, //本周是否更新
         prayer: [
             {text: '学习忍耐；'},
             {text: '更加成熟，工作中少发脾气。'},
@@ -697,6 +708,7 @@ var memberList = [
     //09/20
     {
         name: '炳林',
+        update: true, //本周是否更新
         prayer: [
             {text: '每天能够做到早睡早起；'},
             {text: '为在校友会的学习和婚姻祷告。'},
@@ -717,6 +729,7 @@ var memberList = [
 // 2、希望我老婆秋萍和小孩都能平安成长。
     {
         name: '黄霆',
+        update: true, //本周是否更新
         prayer: [
             {text: '求主继续看顾秋萍和宝宝健康成长；'},
             {text: '自己的灵修上需要更多的敬虔；'},
@@ -736,6 +749,7 @@ var memberList = [
     },
     {
         name: '杜威',
+        update: true, //本周是否更新
         prayer: [
             {text: '为JH尽快稳定下来祷告；'},
             {text: '为身体健康祷告，求主加添力量。'},
@@ -772,6 +786,7 @@ var memberList = [
     // },
     {
         name: '杜渠',
+        update: true, //本周是否更新
         prayer: [
             {text: '多读经多祷告；'},
             {text: '为肠胃恢复代祷。'},
