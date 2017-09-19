@@ -766,8 +766,11 @@ textarea {
   position: relative;
   width: 100%;
   height: 380px;
-  background-image: url('../img/01-title-bg.jpg');
-  background-position: 0 0px;
+  background-color: #082656;
+  background-image: url(browser-orbit-reverse.svg);
+  background-repeat: no-repeat;
+  background-position: 120px -145px;
+  background-size: cover;
 }
 .wrap-box .content-wrap #phone-box .title h2 {
   font-weight: 100;
@@ -820,9 +823,11 @@ textarea {
 }
 .wrap-box .content-wrap #phone-box .phone-list-wrap > ul .phone-text-title dl dd:last-child a {
   font-size: 80px;
+  color: #26c73d;
+
 }
 .wrap-box .content-wrap #phone-box .phone-list-wrap > ul .phone-text-title dl dd:last-child a:hover {
-  color: #50d2c2;
+  color: #26c73d;
 }
 .wrap-box .content-wrap #other-box {
   background-color: #FFFFFF;
@@ -931,7 +936,7 @@ textarea {
 .wrap-box .content-wrap #help-box .help-box-title h4 {
   font-weight: 100;
   margin-top: -150px;
-
+  color: #cccccc;
 }
 .wrap-box .content-wrap #help-box .ball-arr {
   position: relative;

@@ -268,8 +268,6 @@ var hello = '哈利路亚';
 
         hello = arrmsg[1];
 
-
-
     }
 
 
