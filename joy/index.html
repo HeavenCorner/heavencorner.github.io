@@ -121,9 +121,7 @@
         .wrap-box .content-wrap #birthday-box .birthday-wrap {
             margin-bottom: 130px !important;
         }
-        .wrap-box .content-wrap #prayer-box .prayer-text {
-            margin-bottom: 130px !important;
-        }
+
 
         .prayer-text{
             position: relative;
@@ -279,19 +277,13 @@
 <div id="load-wrap">
     <iframe class="bg-iframe" height="100%" width="100%" frameborder="0" src="bg/index.html" allowfullscreen="" scrolling="no" style=""></iframe>
 
-    <!--<div class="looding-box">-->
-        <!--<canvas id="c"></canvas>-->
+    <span id="looding-num">
+        0%
+    </span>
 
-        <span id="looding-num">
-            0%
-        </span>
-    <!--</div>-->
     <p class="title-1" id="looding-msg">
-            0s
+        0s
     </p>
-    <!--<h2 class="title-2">-->
-        <!--Joy 2.0 · 清心-->
-    <!--</h2>-->
 
     <blockquote>
         我的心默默无声，专等候神；我的救恩是从他而来。
@@ -466,27 +458,17 @@
 
                 </ul>
 
-                <!--留言板-->
-                <a href="http://www.v-mx.com/joy/ly.html"
-                   v-if="(all.page == 0)"
-                   style="    position: absolute;
-                   text-align: center;
-                                opacity: 0.6;
-                                left: 50%;
-                                margin-left: -110px;
-                                bottom: -118px;
-                                height: 70px;
-                                width: 220px;
-                                background-color: rgb(252, 171, 83);
-                                text-align: center;
-                                border-radius: 20px;">
-            <span style="line-height: 70px;
-                        color: #ffffff;
+                <div class="fly-box">
+                    <div class="fly-r leftfly">
+                        <div class="fly-rl updown"></div>
+                        <!--留言板-->
+                        <a id="go-msg" class="updown" href="http://www.v-mx.com/joy/ly.html" v-if="(all.page == 0)">
+                            <span>点击留言</span>
+                        </a>
+                    </div>
+                </div>
 
-                        font-size: 40px;"
-            >点击留言</span>
 
-                </a>
 
 
             </div>
@@ -742,12 +724,16 @@
                     </p>
 
                 </li>
-                <!--<img class="img" v-bind:src="list.src" v-if="list.src" alt="" v-for="list in contentpage.msg.list">-->
 
-                <div class="loading-img" v-on:click="loadingHelp('img/tz/qingtuan.jpeg','51')">
-                    <p v-if="contentpage.msg.tzImg1">点击加载表格图片</p>
+                <div class="loading-img" v-on:click="loadingHelp('img/tz/qingtuan.jpeg','51')" >
+                    <div class="fly-r leftfly" v-if="contentpage.msg.tzImg1">
+                        <div class="fly-rl updown"></div>
+                        <!--留言板-->
+                        <p >点击加载表格</p>
+                    </div>
                     <img  v-if="!contentpage.msg.tzImg1" v-bind:src="contentpage.msg.tzImg" alt="">
                 </div>
+
             </ul>
         </div>
         <!--6、帮助-->
@@ -756,9 +742,10 @@
 
             <div class="help-box-title">
 
+                <img id="help-bg" src="img/lm-bg.jpg" alt="">
+
                 <iframe class="help-bg" height="100%" width="100%" frameborder="0" src="bg/index.html" allowfullscreen="" scrolling="no" style=""></iframe>
 
-                <img id="help-bg" src="img/help-bg.jpg" alt="">
 
                 <h2>{{contentpage.help.title.msg}}</h2>
                 <h3>{{contentpage.help.title.text}}</h3>
@@ -796,16 +783,17 @@
             </div>
             <h6>{{contentpage.help.nameMsg}}</h6>
 
-
-
-
             <h5>{{contentpage.help.logTitle}}</h5>
 
-            <div class="loading-img" v-on:click="loadingHelp('img/help.png','61')">
-                <p v-if="contentpage.help.msg1">点击加载思维导图</p>
+            <div class="loading-img" v-on:click="loadingHelp('img/help.png','61')" >
+                <div class="fly-r leftfly" v-if="contentpage.help.msg1">
+                    <div class="fly-rl updown"></div>
+                    <!--留言板-->
+                    <p >点击加载思维导图</p>
+                </div>
                 <img  v-if="!contentpage.help.msg1" v-bind:src="contentpage.help.helpImg" alt="">
             </div>
-            <!--<img  src="img/help.png" alt="">-->
+
 
             <div class="up-log-box">
                 <h5>{{contentpage.help.upLogTitle}}</h5>
@@ -892,7 +880,7 @@
 
 
     </section>
-    <!--生日头一天和当天弹出的庆祝页面-->
+    <!--生日当天弹出的庆祝页面-->
     <div class="happy-box"
          v-bind:class="{'leave': all.TodyBirthday.box == false, 'com': all.TodyBirthday.box == true}"
          v-on:click="closeBirthdayBox(all.TodyBirthday)">

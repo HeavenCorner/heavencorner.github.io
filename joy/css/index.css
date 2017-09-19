@@ -396,7 +396,7 @@ textarea {
 }
 .wrap-box .content-wrap #prayer-box .prayer-text {
   width: 100%;
-  margin-bottom: 100px;
+  /*margin-bottom: 100px;*/
 }
 .wrap-box .content-wrap #prayer-box .prayer-text .close {
   height: 140px;
@@ -929,6 +929,8 @@ textarea {
 }
 .wrap-box .content-wrap #help-box .help-box-title h4 {
   font-weight: 100;
+  margin-top: -150px;
+
 }
 .wrap-box .content-wrap #help-box .ball-arr {
   position: relative;
@@ -1002,6 +1004,7 @@ textarea {
   width: 100%;
   font-size: 10px;
   padding: 0px 40px 20px;
+  border-top: 2px #eef solid;
 }
 .wrap-box .content-wrap #help-box .up-log-box h5 {
   background-color: #FFFFFF;
@@ -1330,29 +1333,132 @@ h2 {
 
 
 /*后期手动补上*/
-.loading-img{
-  min-height: 30px;
+
+#go-msg{
+  position: absolute;
   text-align: center;
+  opacity: 0.6;
+  left: 350px;
+  margin-left: -110px;
+  margin-top: 30px;
+  bottom: -118px;
+  height: 70px;
+  width: 220px;
+  background-color: rgb(252, 171, 83);
+  text-align: center;
+  border-radius: 6px;
+}
+
+#go-msg span{
+  line-height: 70px;
+  color: #ffffff;
+  font-size: 40px;
+}
+
+.loading-img{
+  overflow: hidden;
+  width: 750px;
+  min-height: 200px;
+  margin-top: 3px;
+  text-align: center;
+  background-color: #ffffff;
 }
 
 .loading-img p{
   line-height: 60px;
-  font-size: 20px;
-  color: #ffffff;
+  font-size: 22px;
+  color: #585858;
 }
+
 /*帮助*/
 .help-bg{
   position: absolute;
-  top: 0;
+  top: -150px;
   left: 0;
+  display: block;
 }
 
 #help-bg{
-  opacity: .2;
-  width: 856px !important;
+  opacity: .3;
+  width: 864px !important;
   position: absolute;
-  top: 5px;
+  top: -100px;
   left: -56px;
 }
 
-/**/
+/*飞行上下动画*/
+.fly-box{
+  padding-top: 10px;
+  height: 190px;
+  width: 750px;
+  position: relative;
+  overflow: hidden;
+}
+.fly-r{
+  position: absolute;
+  left: 100px;
+  height: 140px;
+  width: 200px;
+  /*background-color: #fff;*/
+
+}
+.fly-r .fly-rl{
+  position: relative;
+  height: 100%;
+  width: 200px;
+  background-image: url("../img/fly/kiki.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.updown{
+  -webkit-animation: updown 1.9s infinite linear 0s;
+  animation: updown 1.9s infinite linear 0s;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+}
+
+/*上下动画*/
+@keyframes updown{
+  from{
+    top: 0px;
+  }
+  to{
+    top: 40px;
+  }
+}
+
+-webkit-@keyframes updown{
+    from{
+      top: 0px;
+    }
+    to{
+      top: 40px;
+    }
+}
+
+/*左右动画*/
+.leftfly{
+  -webkit-animation: leftfly 11s infinite linear 0s;
+  animation: leftfly 11s infinite linear 0s;
+  /*animation-direction: alternate;*/
+  /*-webkit-animation-direction: alternate;*/
+}
+
+@keyframes leftfly{
+  from{
+    left: 750px;
+  }
+  to{
+    left: -500px;
+  }
+}
+
+-webkit-@keyframes leftfly{
+  from{
+    left: 750px;
+  }
+  to{
+    left: -500px;
+  }
+}
