@@ -683,13 +683,32 @@ var memberList = [
         birthdayOpen: true,
         phone:'',
     },
+    {
+        name: '周卓屿',
+        update: true, //本周是否更新
+        prayer: [
+            {text: '论文盲审开始了希望大家代祷。'},
+            {text: ''},
+            {text: ''}
+        ],
+        birthdayCD:tarTimeR(''),
+        signature: '',
+        age: '',
+        head: '',
+        imgsrc: 'img/head/zhuoyu.jpeg',
+        bgc: '',
+        id:'zhuoyu',
+        listOpen: true,
+        birthdayOpen: true,
+        phone:'',
+    },
     // 04/04
     {
         name: '申元',
         update: true, //本周是否更新
         prayer: [
-            {text: '学习忍耐；'},
-            {text: '更加成熟，工作中少发脾气。'},
+            {text: '感谢神保守看顾我家娃（亚设），求神继续看顾；'},
+            {text: '求神让我在工作中经历神，坚定他的话语和教导。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('04/04','04/05'),
@@ -729,10 +748,10 @@ var memberList = [
         name: '黄霆',
         update: true, //本周是否更新
         prayer: [
-            {text: '求主继续看顾秋萍和宝宝健康成长；'},
-            {text: '自己的灵修上需要更多的敬虔；'},
-            {text: '工作上求主指引自己，增添智慧走在道路中间；'},
-            {text: '希望自己不要太骄傲，不要过于在乎别人对自己是否尊重，在乎别人对自己的想法。'}
+            {text: '感谢主保守我们家平安，请主继续看顾我妻子秋萍和我们宝宝，希望主赐予给宝宝健康的身体和善良的灵魂；'},
+            {text: '求主在工作中继续指引鞭策我，不要犯罪，合乎他的心意；'},
+            {text: '为自己情绪祷告，最近火气比较旺，尤其有些过去的事，会有应激反应，希望神能给开一条路化解。'},
+            {text: ''}
         ],
         birthdayCD:tarTimeR(''),
         signature: '',
