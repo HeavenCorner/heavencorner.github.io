@@ -1466,8 +1466,8 @@ h2 {
 
 /*左右动画*/
 .leftfly{
-  -webkit-animation: leftfly 11s infinite linear 0s;
-  animation: leftfly 11s infinite linear 0s;
+  -webkit-animation: leftfly 19s infinite linear 0s;
+  animation: leftfly 19s infinite linear 0s;
   /*animation-direction: alternate;*/
   /*-webkit-animation-direction: alternate;*/
 }
