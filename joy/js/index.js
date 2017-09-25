@@ -451,8 +451,8 @@ var memberList = [
         name: '从舟',
         update: true, //本周是否更新
         prayer: [
-            {text: '学习求主赐智慧和效率；'},
-            {text: '多读经祷告。'},
+            {text: '好好学习，天天向上。'},
+            {text: ''},
             {text: ''}
         ],
         birthdayCD:tarTimeR('08/16','08/17'),
