@@ -1292,7 +1292,7 @@ var app = new Vue({
             }
         }
 
-        console.log(newlist);
+        // console.log(newlist);
 
 
         var a=[];
@@ -1308,7 +1308,7 @@ var app = new Vue({
             }
         }
 
-        console.log(a);
+        // console.log(a);
 
         var temp=0;
 
@@ -1323,7 +1323,7 @@ var app = new Vue({
             // console.log("第"+i+"次排序结果："+a);
         }
 
-        console.log(a);
+        // console.log(a);
 
         var temps=0;
 
@@ -1342,13 +1342,26 @@ var app = new Vue({
                 }
             }
 
-            console.log(newshow[k].birthdayCD.allDays)
+            // console.log(newshow[k].birthdayCD.allDays)
         }
 
 
         this.contentpage.birthday.memberList = newshow;
 
 
+        //    关闭预加载
+
+        // closeLoad: function(){
+        var loadWrap = document.getElementById('load-wrap');
+
+        console.log("1111");
+
+        loadWrap.style.left = '-110vw';
+        setTimeout(function(){
+            removeElement(loadWrap);
+        },2000)
+
+        // }
 
 
 
@@ -1363,8 +1376,10 @@ var app = new Vue({
                 return item.birthdayCD.allDaysY;
             })
 
-        }
-    },
+        },
+
+
+},
 });
 
 //公共函数
