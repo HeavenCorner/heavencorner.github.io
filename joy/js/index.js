@@ -471,7 +471,7 @@ var memberList = [
         name: '顾阿姨',
         update: true, //本周是否更新
         prayer: [
-            {text: '学习谦卑忍耐的功课等候神。'},
+            {text: '为全家尤其是从舟爸爸祷告，预备心，在十一营会期间被神的爱感动并激励。'},
             {text: ''},
             {text: ''}
         ],
@@ -492,8 +492,8 @@ var memberList = [
         update: true, //本周是否更新
         prayer: [
             {text: '工作关系中的忍耐操练，尽好本分；'},
-            {text: '预备心参加真理应用的课程。'},
-            {text: ''}
+            {text: '预备心参加真理应用的课程；'},
+            {text: '求神每天释放安静的时间，来灵修，为身边人代；释放时间，可以参加医院探访。'}
         ],
         birthdayCD:tarTimeR('2/15','2/16'),
         signature: '',
@@ -530,7 +530,7 @@ var memberList = [
         name: '蒙恩',
         update: true, //本周是否更新
         prayer: [
-            {text: '管理好时间，工作，学习和服侍的平衡，Do my best and God will do the rest。'},
+            {text: '求主加力量，每天都亲近主。'},
             {text: ''},
             {text: ''}
         ],
@@ -589,9 +589,9 @@ var memberList = [
         name: '思思',
         update: true, //本周是否更新
         prayer: [
-            {text: '为身体健康代祷，有点感冒，嗓子很痛；'},
-            {text: '为能尽快适应在莘庄的生活代祷；'},
-            {text: '希望能多亲近神代祷。'}
+            {text: '为每天能够读经多祷告多亲近神；'},
+            {text: '为了琴的事情代祷。'},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('09/17','09/18'),
         signature: '',
@@ -609,8 +609,8 @@ var memberList = [
         name: '锦艳',
         update: true, //本周是否更新
         prayer: [
-            {text: '求主保守我在学校里学会自我分辨，时刻祷告仰望主，求神与我同在。'},
-            {text: ''},
+            {text: '12月的英语六级考试求主赐智慧好好准备；'},
+            {text: '为2018年5月的职称考试做准备。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('05/13','05/14'),
@@ -629,8 +629,8 @@ var memberList = [
         update: true, //本周是否更新
         prayer: [
             {text: '规律灵修；'},
-            {text: '合理的时间和分配；'},
-            {text: '论文和工作（常驻项目）。'},
+            {text: '做事有节制。'},
+            {text: ''},
             {text: ''},
 
         ],
@@ -786,9 +786,9 @@ var memberList = [
         name: '杜渠',
         update: true, //本周是否更新
         prayer: [
-            {text: '多读经多祷告；'},
+            {text: '增强属灵积极性，多读经，多灵修，多祷告；'},
+            {text: '求神赐福多开口交流，学会与人交际，多沟通，让信心带出更多更好的行为。'},
             {text: '为肠胃恢复代祷。'},
-            {text: ''}
         ],
         birthdayCD:tarTimeR('03/15','03/16'),
         signature: '',
