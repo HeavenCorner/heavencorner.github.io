@@ -62,10 +62,15 @@ var dateTime = {
         '日','一','二','三','四','五','六'
     ],
     week:myDate.getDay(),     //今天星期
-    monthName:[
+    monthNameE:[
         'January','February','March','April',
         'May','June','July','August',
         'September', 'October', 'November', 'December'
+    ],
+    monthName:[
+        '一月','二月','三月','四月',
+        '五月','六月','七月','八月',
+        '九月', '十月', '十一月', '十二月'
     ],
     month: myDate.getMonth(),  //当月
     date:myDate.getDate(),     //今天
