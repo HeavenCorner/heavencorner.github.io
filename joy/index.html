@@ -103,9 +103,8 @@
         }
 
         .p3d{
-            opacity: .5;
+            opacity: .8;
             margin-top: -100px;
-
         }
 
         #index-title-box{
@@ -258,6 +257,13 @@
         }
 
 
+
+        /*动画延时函数*/
+        .ani-delay-3
+        {
+            animation-delay:3s !important;
+            -webkit-animation-delay:3s !important; /* Safari 和 Chrome */
+        }
         
     </style>
 
@@ -401,10 +407,10 @@
 
                 <!--展示文字-->
                 <div class="title-msg">
-                    <h2 class="animated fadeInDown">{{contentpage.prayer.title.msg}}</h2>
+                    <h2 class="animated fadeInDown ani-delay-3">{{contentpage.prayer.title.msg}}</h2>
                     <p>
-                        <span class="animated zoomIn">{{contentpage.prayer.title.text}}</span>
-                        <i class="animated fadeInRight">{{contentpage.prayer.title.chapter}}</i>
+                        <span class="animated zoomIn ani-delay-3">{{contentpage.prayer.title.text}}</span>
+                        <i class="animated fadeInRight ani-delay-3">{{contentpage.prayer.title.chapter}}</i>
                     </p>
                     <h4 class="zoomInLeft">{{contentpage.prayer.dateTime.monthName[contentpage.prayer.dateTime.month]}}</h4>
                 </div>
@@ -921,10 +927,8 @@
     //背景和其它图片
     var arrOtherImg =[
         '01-title-bg.jpg',
-//        '01-title-bg-1.jpg',
         '02-title-bg.jpg',
         '05-title-bg.jpg',
-        '06-title-bg.jpg',
         '00-title-bg.jpg',
 //        'help.png',
     ];

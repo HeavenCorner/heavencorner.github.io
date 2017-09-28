@@ -1332,8 +1332,8 @@ h2 {
   display: none;
 }
 .animated {
-  animation-delay: .3s !important;
-  -webkit-animation-delay: .3s !important;
+  /*animation-delay: .3s !important;*/
+  /*-webkit-animation-delay: .3s !important;*/
   /* Safari 和 Chrome */
 }
 
@@ -1389,6 +1389,10 @@ h2 {
   margin-top: 3px;
   text-align: center;
   background-color: #ffffff;
+}
+
+.loading-img img{
+  width: 100%;
 }
 
 .loading-img p{

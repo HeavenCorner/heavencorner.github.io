@@ -1028,7 +1028,7 @@ var app = new Vue({
                     //     img:'img/00-title-bg.jpg',
                     // },
                     {
-                        title:'2017第三季度活动安排',
+                        title:'2017第四季度活动安排',
                         con:'',
                         time:tarTimeR('10/01'),//06/24
                         img:'img/05-title-bg.jpg',

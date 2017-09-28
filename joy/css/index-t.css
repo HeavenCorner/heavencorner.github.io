@@ -37,7 +37,7 @@ ul{
 }
 .p3d{
 	position: relative;
-	z-index: 10;
+	z-index: 0;
 	width: 100%;
 	height: 100%;
 
@@ -305,7 +305,7 @@ ul{
 	text-align: center;
 	line-height: 50px;
 	color: #ffffff;
-	background-color: rgba(137,0,24,.7);
+	background-color: rgba(137,0,24,1);
 
 	-webkit-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
