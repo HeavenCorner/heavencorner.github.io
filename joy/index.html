@@ -452,6 +452,8 @@
                             <dd v-on:click="closeBirthdayBox(all.TodyBirthday,member.birthdayCD.allDaysY)" v-if="(member.birthdayCD.allDaysY < 4 || member.birthdayCD.allDaysY == 6 || member.birthdayCD.allDaysY == 11 || member.birthdayCD.allDaysY == 16) && member.birthdayCD.allDaysY" class="c-br"><span>{{member.birthdayCD.allDays}}</span>天</dd>
                         </dl>
                         <span class="update-s" v-bind:class="{'update-yes': member.update, 'update-no': !member.update }"></span>
+                        <span class="update-s-l" v-bind:class="{'update-yes': member.update, 'update-no': !member.update }"></span>
+
                     </li>
 
                     <li class="prayer-text-list" v-if="prayer.text" v-for="(prayer,index) in member.prayer">
@@ -589,6 +591,9 @@
 
                             </dd>
                         </dl>
+                        <span class="update-s update-no" ></span>
+                        <span class="update-s-l update-no" ></span>
+
                     </li>
 
                     <!--具体生日日期-->

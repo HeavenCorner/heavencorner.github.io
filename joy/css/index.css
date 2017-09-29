@@ -650,6 +650,7 @@ textarea {
   transition: height .8s;
 }
 .wrap-box .content-wrap #birthday-box .birthday-wrap > ul .text-title {
+  position: relative;
   padding-left: 40px;
   min-height: 140px;
   width: 100%;
@@ -955,6 +956,7 @@ textarea {
   width: 100%;
   position: absolute;
   bottom: -80px;
+  color: #cfcfcf;
 }
 .wrap-box .content-wrap #help-box .ball-arr dl dt {
   width: 100%;
@@ -1352,6 +1354,13 @@ h2 {
   height: 78px;
   width: 100px;
 }
+.update-s-l{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 6px;
+}
 .update-yes{
   background: #50d2c2;
 }
@@ -1410,7 +1419,7 @@ h2 {
 }
 
 #help-bg{
-  opacity: .3;
+  opacity: .8;
   width: 864px !important;
   position: absolute;
   top: -100px;
