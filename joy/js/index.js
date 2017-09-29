@@ -1356,6 +1356,8 @@ var app = new Vue({
 
         //    关闭预加载
 
+        console.log(loadTimeNum)
+
         // closeLoad: function(){
         var loadWrap = document.getElementById('load-wrap');
 
