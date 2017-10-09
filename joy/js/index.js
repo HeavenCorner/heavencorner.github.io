@@ -456,9 +456,9 @@ var memberList = [
         name: '从舟',
         update: true, //本周是否更新
         prayer: [
-            {text: '好好学习，天天向上。'},
-            {text: ''},
-            {text: ''}
+            {text: '为繁忙的学业祷告；'},
+            {text: '周二的语文数学考试，周三学生会外事部筛选；'},
+            {text: '每天晚饭后坚持读经。'}
         ],
         birthdayCD:tarTimeR('08/16','08/17'),
         signature: '',  //个人主页签名
@@ -496,9 +496,9 @@ var memberList = [
         name: '栋夷',
         update: true, //本周是否更新
         prayer: [
-            {text: '工作关系中的忍耐操练，尽好本分；'},
-            {text: '预备心参加真理应用的课程；'},
-            {text: '求神每天释放安静的时间，来灵修，为身边人代；释放时间，可以参加医院探访。'}
+            {text: '求神每天释放安静的时间,可以与神亲近，读神的话语。也常常按神的心意，为家人，朋友代祷。'},
+            {text: ''},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('2/15','2/16'),
         signature: '',
@@ -535,7 +535,7 @@ var memberList = [
         name: '蒙恩',
         update: true, //本周是否更新
         prayer: [
-            {text: '求主加力量，每天都亲近主。'},
+            {text: '本周好好复习德语，求主加力量，尽自己最大的努力，并将结果交给神。'},
             {text: ''},
             {text: ''}
         ],
@@ -811,7 +811,7 @@ var memberList = [
         update: true, //本周是否更新
         prayer: [
             {text: '增强属灵积极性，多读经，多灵修，多祷告；'},
-            {text: '求神赐福多开口交流，学会与人交际，多沟通，让信心带出更多更好的行为；'},
+            {text: '求神赐福学会与人交际，沟通，让信心带出更多更好的行为；'},
             {text: '为肠胃恢复代祷。'},
         ],
         birthdayCD:tarTimeR('03/15','03/16'),
