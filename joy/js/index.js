@@ -456,9 +456,9 @@ var memberList = [
         name: '从舟',
         update: true, //本周是否更新
         prayer: [
-            {text: '为繁忙的学业祷告；'},
-            {text: '周二的语文数学考试，周三学生会外事部筛选；'},
-            {text: '每天晚饭后坚持读经。'}
+            {text: '为学习，求主赐智慧；'},
+            {text: '合理的时间安排；'},
+            {text: '每天读经。'}
         ],
         birthdayCD:tarTimeR('08/16','08/17'),
         signature: '',  //个人主页签名
@@ -476,9 +476,9 @@ var memberList = [
         name: '顾阿姨',
         update: true, //本周是否更新
         prayer: [
-            {text: '请为弟弟职业的选择代祷，求圣灵引导他帮助他作合神心意的选择；'},
-            {text: '为从舟开始每天坚持读经感恩，求主赐我爱心帮助她养成好习惯。'},
-            {text: ''}
+            {text: '少看手机，多读经祷告亲近神；'},
+            {text: '为家人和服侍的病人代祷；'},
+            {text: '为11月特会祷告。'}
         ],
         birthdayCD:tarTimeR('07/15','07/16'),
         signature: '',
@@ -496,8 +496,8 @@ var memberList = [
         name: '栋夷',
         update: true, //本周是否更新
         prayer: [
-            {text: '求神每天释放安静的时间,可以与神亲近，读神的话语。也常常按神的心意，为家人，朋友代祷。'},
-            {text: ''},
+            {text: '年底工作忙碌，常出问题，希望神给智慧处理。求神带领前面工作的方向；'},
+            {text: '求神帮助有规律的灵修。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('2/15','2/16'),
@@ -595,7 +595,7 @@ var memberList = [
         update: true, //本周是否更新
         prayer: [
             {text: '为每天能够读经多祷告多亲近神；'},
-            {text: '为了琴的事情代祷。'},
+            {text: '为了能够多安排时间练琴代祷。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('09/17','09/18'),
@@ -614,9 +614,9 @@ var memberList = [
         name: '锦艳',
         update: true, //本周是否更新
         prayer: [
-            {text: '12月的英语六级考试求主赐智慧好好准备；'},
-            {text: '为2018年5月的职称考试做准备。'},
-            {text: ''}
+            {text: '求主加智慧，预备她在12月的英语六级考试和18年5月份的初级会计职称考试；'},
+            {text: '为她父亲的事业祷告；'},
+            {text: '为她的身体不适祷告。'}
         ],
         birthdayCD:tarTimeR('05/13','05/14'),
         signature: '',
@@ -633,8 +633,8 @@ var memberList = [
         name: '贺莉娇',
         update: true, //本周是否更新
         prayer: [
-            {text: '规律灵修；'},
-            {text: '做事有节制。'},
+            {text: '过有节制的生活。'},
+            {text: ''},
             {text: ''},
             {text: ''},
 
@@ -712,9 +712,9 @@ var memberList = [
         name: '申元',
         update: true, //本周是否更新
         prayer: [
-            {text: '感谢神保守看顾我家娃（亚设），求神继续看顾；'},
-            {text: '求神让我在工作中经历神，坚定他的话语和教导。'},
-            {text: ''}
+            {text: '求主医治我家姊妹膝盖的疼痛；'},
+            {text: '求主继续看顾和保守我们家亚设小弟兄；'},
+            {text: '求主给予智慧处理工作，坚定在主的道路上。'}
         ],
         birthdayCD:tarTimeR('04/04','04/05'),
         signature: '',
