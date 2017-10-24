@@ -393,72 +393,14 @@ var hello = '哈利路亚';
 
 //成员信息
 var memberList = [
-    //26
-    // {
-    //     name: '昨天生日',
-    //     prayer: [
-    //         {text: '为好好抓紧时间认真学习。'},
-    //         {text: ''},
-    //         {text: ''}
-    //     ],
-    //     birthdayCD:tarTimeR('09/08','09/09'),
-    //     signature: '',  //个人主页签名
-    //     age: '',
-    //     head: '',   //特殊提醒，例如：'考试加油！'
-    //     imgsrc: '',
-    //     bgc: '',
-    //     id:'congzhou',
-    //     listOpen: true,
-    //     birthdayOpen: true,
-    //     phone:'18217309179',
-    // },
-    // //26
-    // {
-    //     name: '今天生日',
-    //     prayer: [
-    //         {text: '为好好抓紧时间认真学习。'},
-    //         {text: ''},
-    //         {text: ''}
-    //     ],
-    //     birthdayCD:tarTimeR('09/09','09/10'),
-    //     signature: '',  //个人主页签名
-    //     age: '',
-    //     head: '',   //特殊提醒，例如：'考试加油！'
-    //     imgsrc: '',
-    //     bgc: '',
-    //     id:'congzhou',
-    //     listOpen: true,
-    //     birthdayOpen: true,
-    //     phone:'18217309179',
-    // },
-    // //26
-    // {
-    //     name: '明天生日',
-    //     prayer: [
-    //         {text: '为好好抓紧时间认真学习。'},
-    //         {text: ''},
-    //         {text: ''}
-    //     ],
-    //     birthdayCD:tarTimeR('09/10','09/11'),
-    //     signature: '',  //个人主页签名
-    //     age: '',
-    //     head: '',   //特殊提醒，例如：'考试加油！'
-    //     imgsrc: '',
-    //     bgc: '',
-    //     id:'congzhou',
-    //     listOpen: true,
-    //     birthdayOpen: true,
-    //     phone:'18217309179',
-    // },
 
-    //26
     {
         name: '从舟',
         update: true, //本周是否更新
         prayer: [
-            {text: '为学习，求主赐智慧；'},
-            {text: '合理的时间安排；'},
-            {text: '每天读经。'}
+            {text: '周二地理和数学考试求主保守；'},
+            {text: '周四作业可以少一些，能和诗班一起练习；'},
+            {text: '周六的金秋欢唱。'}
         ],
         birthdayCD:tarTimeR('08/16','08/17'),
         signature: '',  //个人主页签名
@@ -476,9 +418,9 @@ var memberList = [
         name: '顾阿姨',
         update: true, //本周是否更新
         prayer: [
-            {text: '少看手机，多读经祷告亲近神；'},
-            {text: '为家人和服侍的病人代祷；'},
-            {text: '为11月特会祷告。'}
+            {text: '希望有好好的休息时间；'},
+            {text: '能有时间祷告。'},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('07/15','07/16'),
         signature: '',
@@ -496,9 +438,9 @@ var memberList = [
         name: '栋夷',
         update: true, //本周是否更新
         prayer: [
-            {text: '年底工作忙碌，常出问题，希望神给智慧处理。求神带领前面工作的方向；'},
-            {text: '求神帮助有规律的灵修。'},
-            {text: ''}
+            {text: '工作上，求神赐平静安稳的心面对一起压力挑战，从明天开始到11月底，老板开启每天下班前要询问定单定购情况。我当尽力，其余都交托神，顺服神；'},
+            {text: '求神帮助我，每天读他话语的时候，更认识他，更明白他的道；'},
+            {text: '求神每天释放安静的时候，我可以为家人，朋友，肢体祷告。'}
         ],
         birthdayCD:tarTimeR('2/15','2/16'),
         signature: '',
@@ -535,7 +477,7 @@ var memberList = [
         name: '蒙恩',
         update: true, //本周是否更新
         prayer: [
-            {text: '操练每天都仰望主，在学习上尽心，并将结果交给神。'},
+            {text: '接下来两周能好好休息，整理思路。'},
             {text: ''},
             {text: ''}
         ],
@@ -596,7 +538,7 @@ var memberList = [
         prayer: [
             {text: '为每天能够读经多祷告多亲近神；'},
             {text: '为了能够多安排时间练琴代祷。'},
-            {text: ''}
+            {text: '求神保守家人不沉迷于打牌赌博，求神释放捆绑，让他们有机会认识神。'}
         ],
         birthdayCD:tarTimeR('09/17','09/18'),
         signature: '',
@@ -692,8 +634,8 @@ var memberList = [
         name: '周卓屿',
         update: true, //本周是否更新
         prayer: [
-            {text: '论文盲审开始了希望大家代祷。'},
-            {text: ''},
+            {text: '求神保守论文的后两审；'},
+            {text: '为回家的一个月时间不停止聚会祷告。'},
             {text: ''}
         ],
         birthdayCD:tarTimeR(''),
@@ -811,7 +753,7 @@ var memberList = [
         update: true, //本周是否更新
         prayer: [
             {text: '增强属灵积极性，多读经，多灵修，多祷告；'},
-            {text: '求神赐福学会与人交际，沟通，让信心带出更多更好的行为；'},
+            {text: '最近状态不佳，为因着信仰带来的好习惯代祷，学会抛开担子去寻求神的带领；'},
             {text: '为肠胃恢复代祷。'},
         ],
         birthdayCD:tarTimeR('03/15','03/16'),
@@ -913,7 +855,7 @@ var app = new Vue({
 
         },
         contentpage:{
-        //    0
+            //    0
             prayer:{
                 title: {
                     msg:hello,
@@ -938,7 +880,7 @@ var app = new Vue({
                 openAll: true,
 
             },
-        //    1
+            //    1
             spirit:{
                 title:{
                     titleText:member.menuList[1],
@@ -964,7 +906,7 @@ var app = new Vue({
                     '//music.163.com/outchain/player?type=2&id=29542772&auto=0&height=66',
                 ]
             },
-        //    2
+            //    2
             birthday:{
                 title:{
                     titleText:member.menuList[2],
@@ -984,7 +926,7 @@ var app = new Vue({
 
 
             },
-        //    3
+            //    3
             phone:{
                 title:{
                     titleText:member.menuList[3],
@@ -998,7 +940,7 @@ var app = new Vue({
                     title:'"温良的舌是生命树；乖谬的嘴使人心碎。"'
                 },
             },
-        //    4
+            //    4
             other:{
                 title:{
                     titleText:member.menuList[4],
@@ -1012,7 +954,7 @@ var app = new Vue({
                     title:'0',
                 },
             },
-        //    5
+            //    5
             msg:{
                 title:{
                     titleText:member.menuList[5],
@@ -1043,7 +985,7 @@ var app = new Vue({
                 tzImg:'',
                 tzImg1: true,
             },
-        //    6
+            //    6
             help:{
 
                 title:{
@@ -1158,11 +1100,11 @@ var app = new Vue({
             var obj = this;
             closeMenuList(obj);
         },
-    //    返回主页
+        //    返回主页
         goHome: function(){
             this.all.page = 0;
         },
-    //   主页点击标题折叠代祷事项(单)
+        //   主页点击标题折叠代祷事项(单)
         closePrayerList: function (obj) {
 
             if(obj.listOpen){
@@ -1173,7 +1115,7 @@ var app = new Vue({
 
             // var listBox = document.getElementById(obj.id);
         },
-    //    生日列表折叠
+        //    生日列表折叠
         closeBirthdayList: function (obj) {
 
             if(obj.birthdayOpen){
@@ -1183,7 +1125,7 @@ var app = new Vue({
             }
 
         },
-    //    点击展开全部代祷事项
+        //    点击展开全部代祷事项
         openAllList: function (obj,who,x) {
 
 
@@ -1222,7 +1164,7 @@ var app = new Vue({
 
         },
 
-    //    进入个人主页
+        //    进入个人主页
         goIndex:function(obj){
             this.all.page = 'index';
 
@@ -1255,12 +1197,12 @@ var app = new Vue({
             }
 
         },
-    //    按照生日排序
+        //    按照生日排序
         bdOrderBy: function (a,b) {
             return a.birthdayCD.allDaysY-b.birthdayCD.allDaysY;
         },
 
-    //    点击预加载
+        //    点击预加载
         loadingHelp: function(x,y){
             if(y == '61'){
                 this.contentpage.help.helpImg = x;
@@ -1395,4 +1337,3 @@ var closeMenuList = function(obj){
         obj.menu.seen = false;
     },100)
 }
-

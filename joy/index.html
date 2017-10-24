@@ -11,7 +11,6 @@
 
 
     <style>
-
         #load-wrap {
             position: fixed;
             top: 0;
@@ -31,7 +30,6 @@
             width: 100%;
             height: 300px;
         }
-
         @keyframes looding{
             from{
                 border-width: 12px 0 12px 0;
@@ -40,21 +38,18 @@
                 border-width: 0 12px 0 12px;
             }
         }
-
         -webkit-@keyframes looding{
-            from{
-                border-width: 12px 0 12px 0;
-            }
-            to{
-                border-width: 0 12px 0 12px;
-            }
-        }
-
+                    from{
+                        border-width: 12px 0 12px 0;
+                    }
+                    to{
+                        border-width: 0 12px 0 12px;
+                    }
+                }
         #c{
             position: relative;
             top: -70px;
         }
-
         #load-wrap #looding-num{
             display: block;
             position: absolute;
@@ -68,9 +63,7 @@
             line-height: 300px;
             text-align: center;
             font-size: 80px;
-
         }
-
         #load-wrap .title-1{
             position: absolute;
             text-align: center;
@@ -79,14 +72,12 @@
             top: 26%;
             width: 100vw;
         }
-
         #load-wrap .title-2{
             padding-top: 50px;
             text-align: center;
             color: #000000;
             font-weight: 100;
         }
-
         #load-wrap blockquote{
             width: 100%;
             padding: 0;
@@ -101,18 +92,15 @@
             color: #000000;
             font-size: 20px;
         }
-
         .p3d{
             opacity: .8;
             margin-top: -100px;
         }
-
         #index-title-box{
             height: 700px;
             -webkit-transition: all 1s;
             transition: all 1s;
         }
-
         /*细节样式临时的修改*/
         .wrap-box .content-wrap #phone-box .phone-list-wrap > ul .phone-text-title dl dd:last-child {
             padding-right: 160px !important;
@@ -120,12 +108,9 @@
         .wrap-box .content-wrap #birthday-box .birthday-wrap {
             margin-bottom: 130px !important;
         }
-
-
         .prayer-text{
             position: relative;
         }
-
         .wrap-box .content-wrap #prayer-box .prayer-text > ul .prayer-text-title dl dd.c-br{
             font-size: 28px;
             float: right;
@@ -141,7 +126,6 @@
         .wrap-box .content-wrap #prayer-box .prayer-text > ul .prayer-text-title{
             height: 140px;
         }
-
         .brbg{
             background: url(img/br-bg.jpg) no-repeat 240px -12px;
             background-size: 40%;
@@ -170,7 +154,6 @@
             -webkit-transition: all 1s;
             transition: all 1s;
         }
-
         .himg-box{
             position: absolute;
             top: 2vh;
@@ -181,7 +164,6 @@
             background-color: rgba(40,35,46,.9);
             overflow: hidden;
         }
-
         /*顶部气球*/
         #bd-img-1{
             position: absolute;
@@ -212,14 +194,11 @@
             right: 174px;
             bottom: 245px;
         }
-
         #bd-img-0{
             position: absolute;
             bottom: 0;
             left: 0;
         }
-
-
         /*姓名*/
         .happy-box .name {
             display: inline-block;
@@ -232,12 +211,10 @@
             width: 500px;
             height: 86px;
             text-align: center;
-
         }
         .happy-box .name > span{
             color: #ff3972;
         }
-
         #p{
             position: absolute;
             right: 34px;
@@ -245,26 +222,21 @@
             color: #ffffff;
             font-size: 30px;
         }
-
         .com{
             top: 0;
             right: 0;
         }
-
         .leave {
             top: -100vh;
             right: -100vw;
         }
-
-
-
         /*动画延时函数*/
         .ani-delay-3
         {
             animation-delay: 4.5s !important;
             -webkit-animation-delay: 4.5s !important; /* Safari 和 Chrome */
         }
-        
+
     </style>
 
     <!--测试部分的样式链接-->
@@ -320,28 +292,28 @@
         </ul>
         <!--&lt;!&ndash;右下角的留言板&ndash;&gt;-->
         <!--<a href="http://www.v-mx.com/joy/img/0.png"-->
-           <!--v-if="(all.page == 0)"-->
-           <!--style="position: fixed;-->
-                    <!--opacity: .6;-->
-                    <!--right: 30px;-->
-                    <!--bottom: 170px;-->
-                    <!--height: 110px;-->
-                    <!--width: 110px;-->
-                    <!--background-color: #ba77ff;-->
-                    <!--text-align: center;-->
-                    <!--border-radius: 50%;">-->
-            <!--<span style="position: absolute;-->
-                        <!--color: #ffffff;-->
-                        <!--top: 23px;-->
-                        <!--left: 13px;-->
-                        <!--font-size: 40px;"-->
-            <!--&gt;图片</span>-->
+        <!--v-if="(all.page == 0)"-->
+        <!--style="position: fixed;-->
+        <!--opacity: .6;-->
+        <!--right: 30px;-->
+        <!--bottom: 170px;-->
+        <!--height: 110px;-->
+        <!--width: 110px;-->
+        <!--background-color: #ba77ff;-->
+        <!--text-align: center;-->
+        <!--border-radius: 50%;">-->
+        <!--<span style="position: absolute;-->
+        <!--color: #ffffff;-->
+        <!--top: 23px;-->
+        <!--left: 13px;-->
+        <!--font-size: 40px;"-->
+        <!--&gt;图片</span>-->
 
         <!--</a>-->
 
         <!--右下角跳转到主页-->
         <div class="right-bottom-goindex" v-on:click="goHome"
-        v-if="(all.page != 0) && (all.page != 2)"
+             v-if="(all.page != 0) && (all.page != 2)"
         >
             <span v-bind:class="all.otherIcon[0]"></span>
         </div>
@@ -502,10 +474,10 @@
             </div>
             <!--经文-->
             <!--<div class="title-msg"   v-bind:class="{'display-none': all.page != '1'}">-->
-                <!--<p class=" zoomIn">-->
-                    <!--<span>{{contentpage.spirit.title.text}}</span>-->
-                    <!--<i>{{contentpage.spirit.title.chapter}}</i>-->
-                <!--</p>-->
+            <!--<p class=" zoomIn">-->
+            <!--<span>{{contentpage.spirit.title.text}}</span>-->
+            <!--<i>{{contentpage.spirit.title.chapter}}</i>-->
+            <!--</p>-->
             <!--</div>-->
             <!--加贝的书写-->
             <img v-bind:class="{'display-none': all.page != '1'}" class="animated fadeInLeft" v-bind:src="contentpage.spirit.title.src" alt="">
@@ -542,19 +514,19 @@
                     <span>&nbsp;&nbsp;周{{contentpage.prayer.dateTime.weekName2[contentpage.prayer.dateTime.week]}}</span>
                 </p>
                 <!--<div class="date-box">-->
-                    <!--<ol>-->
-                        <!--<li v-for="week in contentpage.prayer.dateTime.weekName">-->
-                            <!--{{week}}-->
-                        <!--</li>-->
-                    <!--</ol>-->
+                <!--<ol>-->
+                <!--<li v-for="week in contentpage.prayer.dateTime.weekName">-->
+                <!--{{week}}-->
+                <!--</li>-->
+                <!--</ol>-->
 
-                    <!--<ul>-->
-                        <!--<li  >-->
+                <!--<ul>-->
+                <!--<li  >-->
 
-                            <!--<span></span>-->
+                <!--<span></span>-->
 
-                        <!--</li>-->
-                    <!--</ul>-->
+                <!--</li>-->
+                <!--</ul>-->
 
                 <!--</div>-->
 
@@ -679,16 +651,16 @@
             <div class="title"  v-bind:class="{'display-none': all.page != '4'}">
                 <h2 class="animated fadeInRight">{{contentpage.other.title.titleText}}</h2>
                 <!--<div class="w110 h110 bg-o ball animated fadeInDown">-->
-                    <!--<span>-->
-                        <!---->
-                    <!--</span>-->
+                <!--<span>-->
+                <!---->
+                <!--</span>-->
                 <!--</div>-->
             </div>
             <dl class="msg">
 
                 <!--<div id="SOHUCS" sid="joy" ></div>-->
                 <!--<script id="changyan_mobile_js" charset="utf-8" type="text/javascript"-->
-                        <!--src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cytaRJywF&conf=prod_039c8d5bb33a60c687c2a521f0e5e77a">-->
+                <!--src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cytaRJywF&conf=prod_039c8d5bb33a60c687c2a521f0e5e77a">-->
                 <!--</script>-->
 
             </dl>
@@ -924,25 +896,19 @@
     var loodingMsg = document.getElementById('looding-msg');
     var indexTitleBox = document.getElementById('index-title-box');
     var prayerBox = document.getElementById('prayer-box');
-
-//        总加载进度
+    //        总加载进度
     var numImg = 0;
     var loodings = 0;
-
     //背景和其它图片
     var arrOtherImg =[
-
         '01-title-bg.jpg',
         '02-title-bg.jpg',
         '05-title-bg.jpg',
         '00-title-bg.jpg',
         'lm-bg.jpg',
-
     ];
-
     //头像图片加载
     var imgHeadArr = [
-
         'head/congzhou.jpeg',
         'head/jinyan.jpeg',
         'head/mengen.jpeg',
@@ -958,25 +924,17 @@
         'head/huangting.jpeg',
         'head/lijiao.jpeg',
         'head/zhuoyu.jpeg',
-
     ];
-
-
     var imghL = imgHeadArr.length;
     var imgoL = arrOtherImg.length;
-
     var allLength =  imghL + imgoL;
-
-//    加载其它图片
-
+    //    加载其它图片
     for(var i=0;i<imgoL;i++){
         var newImgT = new Image();
-
         newImgT.onload = function(){
             numImg++;
             loodingText.innerHTML = loodings + '%';
         }
-
         if(numImg == imgoL){
         }
         newImgT.src = "img/"+arrOtherImg[i];
@@ -985,86 +943,57 @@
     var loadTimeNum = 0;
     var loadTime;
     var msgs = '正在渲染页面，若等待过久请刷新';
-
     loadTime = setInterval(function(){
         loadTimeNum ++;
         loadTimeNum = loadTimeNum + '';
         var m = loadTimeNum.charAt(loadTimeNum.length - 1);
-
         console.log(loadTimeNum);
-
         if(loadTimeNum > 15 && loodings > 80){
             loadTimeNum = 0;
             loodingMsg.innerHTML = msgs;
-
             try{
                 window.clearInterval(loadTime);
             }catch (exp){}
-
-
 //            loadWrap.style.left = '-110vw';
 //            setTimeout(function(){
 //                removeElement(loadWrap);
 //            },2000)
-
-
         }
-
-
         if(m == 0){
-
             if(loadTimeNum > 30){
                 loodingMsg.innerHTML = msgs + ' ' +  loadTimeNum/10 + '.0' + 's';
             }else{
                 loodingMsg.innerHTML = loadTimeNum/10 + '.0' + 's';
             }
-
         }else {
-
             if(loadTimeNum > 30){
                 loodingMsg.innerHTML = msgs + ' ' +   loadTimeNum/10 + 's';
             }else{
                 loodingMsg.innerHTML = loadTimeNum/10 + 's';
-
             }
-
         }
-
     },100)
-
     loadTime;
-
-
-
     //开始加载头像图片
-
     for(var i=0;i<imghL;i++){
         var newImg = new Image();
-
         newImg.onload = function(){
             numImg++;
             loodings = parseInt(numImg/allLength*100);
             loodingText.innerHTML = loodings + '%';
-
             if(loodings == 100){
-
                 loodingMsg.innerHTML = msgs;
-
                 try{
                     window.clearInterval(loadTime);
                 }catch (exp){}
-
 //                loadWrap.style.left = '-110vw';
 //                setTimeout(function(){
 //                    removeElement(loadWrap);
 //                },2000)
-
             }
         }
         newImg.src = "img/"+imgHeadArr[i];
     }
-
-
     function removeElement(_element){
         var _parentElement = _element.parentNode;
         if(_parentElement){
