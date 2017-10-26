@@ -752,9 +752,9 @@ var memberList = [
         name: '杜渠',
         update: true, //本周是否更新
         prayer: [
-            {text: '最近状态不佳，为因着信仰带来的好习惯：读经，灵修，祷告；'},
-            {text: '学会抛开担子奉献自己，寻求神的带领；'},
-            {text: '为肠胃恢复代祷。'},
+            {text: '为睡眠，为肠胃恢复代祷。'},
+            {text: ''},
+            {text: ''},
         ],
         birthdayCD:tarTimeR('03/15','03/16'),
         signature: '',
