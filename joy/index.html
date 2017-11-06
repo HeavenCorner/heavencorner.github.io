@@ -413,7 +413,7 @@
 
                 <ul class="member-list animated fadeInUp" m="member.listOpen" v-bind:id="member.id" v-for="(member,index) in contentpage.prayer.memberList"
                     v-bind:class="{'close': member.listOpen == false}">
-                    <li id="" class="prayer-text-title" v-on:click="closePrayerList(member)"
+                    <li id="" class="prayer-text-title" v-if="member.prayer.length > 0" v-on:click="closePrayerList(member)"
                         v-bind:class="{'brbg': ( member.birthdayCD.allDaysY < 4 || member.birthdayCD.allDaysY == 6 || member.birthdayCD.allDaysY == 11 || member.birthdayCD.allDaysY == 16) && member.birthdayCD.allDaysY}">
                         <dl >
                             <dt>
@@ -448,9 +448,6 @@
                         </a>
                     </div>
                 </div>
-
-
-
 
             </div>
 

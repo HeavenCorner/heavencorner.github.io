@@ -689,7 +689,7 @@ var memberList = [
         birthdayOpen: true,
         phone:'13761371606',
     },
-//     1、新的一周工作会有新任务，求主开道，然后希望自己灵性上追求更多神的话语；
+// 1、新的一周工作会有新任务，求主开道，然后希望自己灵性上追求更多神的话语；
 // 2、希望我老婆秋萍和小孩都能平安成长。
     {
         name: '黄霆',
@@ -752,9 +752,9 @@ var memberList = [
         name: '杜渠',
         update: true, //本周是否更新
         prayer: [
-            {text: '为肠胃恢复代祷。'},
-            {text: ''},
-            {text: ''},
+            // {text: ''},
+            // {text: ''},
+            // {text: ''},
         ],
         birthdayCD:tarTimeR('03/15','03/16'),
         signature: '',
