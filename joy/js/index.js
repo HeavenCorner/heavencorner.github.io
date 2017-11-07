@@ -398,9 +398,9 @@ var memberList = [
         name: '从舟',
         update: true, //本周是否更新
         prayer: [
-            {text: '周二地理和数学考试求主保守；'},
-            {text: '周四作业可以少一些，能和诗班一起练习；'},
-            {text: '周六的金秋欢唱。'}
+            {text: '为下周期中考试祷告，本周忙疯。'},
+            {text: ''},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('08/16','08/17'),
         signature: '',  //个人主页签名
@@ -438,9 +438,9 @@ var memberList = [
         name: '栋夷',
         update: true, //本周是否更新
         prayer: [
-            {text: '求神帮助，每天读他话语的时候，更认识他，更明白他的道；'},
-            {text: '工作上努力尽好本分，讨神喜悦; 也求神按他心意来带领；'},
-            {text: '为接下来圣剧排练来预备心，也求主释放时间。'}
+            {text: '本周一周外出参加书展，求神帮助我可以管理好时间，在忙碌中赐我平静安稳；'},
+            {text: '求神帮助我坚持有规律的灵修。'},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('2/15','2/16'),
         signature: '',
@@ -477,7 +477,7 @@ var memberList = [
         name: '蒙恩',
         update: true, //本周是否更新
         prayer: [
-            {text: '求主让我每天都渴慕亲近他，在工作学习上都能尽忠心有智慧。'},
+            {text: '好好学习，专心寻求。'},
             {text: ''},
             {text: ''}
         ],
@@ -549,7 +549,7 @@ var memberList = [
         id:'sisi',
         listOpen: true,
         birthdayOpen: true,
-        phone:'18807046040',
+        phone:'18807046040'
     },
     //26
     {
@@ -569,7 +569,7 @@ var memberList = [
         id:'jinyan',
         listOpen: true,
         birthdayOpen: true,
-        phone:'15501695181',
+        phone:'15501695181'
     },
     {
         name: '贺莉娇',
@@ -578,7 +578,7 @@ var memberList = [
             {text: '过有节制的生活。'},
             {text: ''},
             {text: ''},
-            {text: ''},
+            {text: ''}
 
         ],
         birthdayCD:tarTimeR('11/22','11/23'),
@@ -674,8 +674,8 @@ var memberList = [
         name: '炳林',
         update: true, //本周是否更新
         prayer: [
-            {text: '每天能够做到早睡早起；'},
-            {text: '为在校友会的学习和婚姻祷告。'},
+            {text: '为婚姻祷告。'},
+            {text: ''},
             {text: ''}
         ],
         birthdayCD:tarTimeR('11/08','11/09'),
@@ -752,9 +752,7 @@ var memberList = [
         name: '杜渠',
         update: true, //本周是否更新
         prayer: [
-            // {text: ''},
-            // {text: ''},
-            // {text: ''},
+            {text: '自律。'},
         ],
         birthdayCD:tarTimeR('03/15','03/16'),
         signature: '',
