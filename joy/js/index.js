@@ -477,8 +477,8 @@ var memberList = [
         name: '蒙恩',
         update: true, //本周是否更新
         prayer: [
-            {text: '好好学习，专心寻求。'},
-            {text: ''},
+            {text: '为本周末特hui祷告，求主预备我们大家的心田。也求主加讲员力量；'},
+            {text: '为有智慧的安排时间学习，和过祷告的生活.'},
             {text: ''}
         ],
         birthdayCD:tarTimeR('01/23','01/24'),
@@ -575,9 +575,9 @@ var memberList = [
         name: '贺莉娇',
         update: true, //本周是否更新
         prayer: [
-            {text: '过有节制的生活。'},
-            {text: ''},
-            {text: ''},
+            {text: '过有节制有效率的生活；'},
+            {text: '坚持灵修祷告读属灵书籍；'},
+            {text: '尽快完成论文。'},
             {text: ''}
 
         ],
