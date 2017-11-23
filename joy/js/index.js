@@ -398,7 +398,7 @@ var memberList = [
         name: '从舟',
         update: true, //本周是否更新
         prayer: [
-            {text: '为本周的期中考试祷告，特别是理科，求主帮助。'},
+            {text: '为繁忙的学业 还有下周一整周的东方绿洲政训平安顺利。'},
             {text: ''},
             {text: ''}
         ],
@@ -418,9 +418,9 @@ var memberList = [
         name: '顾阿姨',
         update: true, //本周是否更新
         prayer: [
-            {text: '静下心读经祷告亲近神；'},
-            {text: '为我弟弟的生命祷告，求主感动他真正识破魔鬼的诡计，认罪悔改，恢复跟神的关系；'},
-            {text: '为从舟能每天配合养成积极主动读经祷告习惯。'}
+            {text: '多多祷告，亲近神；'},
+            {text: '预备下周回老家传福音。'},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('07/15','07/16'),
         signature: '',
@@ -477,8 +477,8 @@ var memberList = [
         name: '蒙恩',
         update: true, //本周是否更新
         prayer: [
-            {text: '为本周末特hui祷告，求主预备我们大家的心田。也求主加讲员力量；'},
-            {text: '为有智慧的安排时间学习，和过祷告的生活.'},
+            {text: '操练祷告的生活，为圣诞节福音聚会，求主带领！'},
+            {text: ''},
             {text: ''}
         ],
         birthdayCD:tarTimeR('01/23','01/24'),
@@ -536,9 +536,9 @@ var memberList = [
         name: '思思',
         update: true, //本周是否更新
         prayer: [
-            {text: '为每天能够读经多祷告多亲近神；'},
-            {text: '为了能够多安排时间练琴代祷。'},
-            {text: '求神保守家人不沉迷于打牌赌博，求神释放捆绑，让他们有机会认识神。'}
+            {text: '希望能正常读经祷告，亲近神。'},
+            {text: '最近身体原因，也越来越会偷懒了，求主加力量！'},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('09/17','09/18'),
         signature: '',
@@ -556,9 +556,9 @@ var memberList = [
         name: '锦艳',
         update: true, //本周是否更新
         prayer: [
-            {text: '预备12月的英语六级考试，愿神保守看顾顺利通过；'},
-            {text: '为父亲的事业祷告；'},
-            {text: '预备家人接受信仰的祷告。'}
+            {text: '求主预备家人的心早日来到神的面前；'},
+            {text: '预备英语六级考试本学期期末考试；'},
+            {text: '求主让我更加渴慕他的话语，在他的里面永不失脚。'}
         ],
         birthdayCD:tarTimeR('05/13','05/14'),
         signature: '',
@@ -654,9 +654,9 @@ var memberList = [
         name: '申元',
         update: true, //本周是否更新
         prayer: [
-            {text: '求主医治我家姊妹膝盖的疼痛；'},
-            {text: '求主继续看顾和保守我们家亚设小弟兄；'},
-            {text: '求主给予智慧处理工作，坚定在主的道路上。'}
+            {text: '求主看顾亚设，给予他健康的身体，让我们有智慧引导他一生在主里；'},
+            {text: '保守微娜在照顾亚设中能有好的睡眠。'},
+            {text: ''}
         ],
         birthdayCD:tarTimeR('04/04','04/05'),
         signature: '',
