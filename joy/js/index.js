@@ -496,7 +496,7 @@ var memberList = [
         name: '浩然',
         update: true, //本周是否更新
         prayer: [
-            {text: '计划用六年时间重返大型事务所工作。'},
+            {text: '操练殷勤。'},
             {text: ''},
             {text: ''}
         ],
