@@ -849,7 +849,6 @@ var app = new Vue({
                 { id:'4',text: member.menuList[4] ,icon:member.icon[4]},
                 { id:'5',text: member.menuList[5] ,icon:member.icon[5],num:''},
                 { id:'6',text: member.menuList[6] ,icon:member.icon[6]},
-
             ],
             member:'',
 
