@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>圣诞诗歌</title>
+	<link type="text/css" rel="stylesheet" href="QPlayer/css/player.css">
+</head>
+<body>
+<div id="QPlayer">
+<div id="pContent">
+	<div id="player">
+		<span class="cover"></span>
+		<div class="ctrl">
+			<div class="musicTag marquee">
+				<strong>歌名</strong>
+				<!--<span> - </span>-->
+				<span class="artist">歌手</span>
+			</div>
+			<div class="progress">
+				<div class="timer left">0:00</div>
+				<div class="contr">
+					<div class="rewind icon"></div>
+					<div class="playback icon"></div>
+					<div class="fastforward icon"></div>
+				</div>
+				<!--<div class="right">-->
+					<!--<div class="liebiao icon"></div>-->
+				<!--</div>-->
+			</div>
+		</div>
+	</div>
+	<!--<div class="ssBtn">-->
+	        <!--<div class="adf"></div>-->
+    	<!--</div>-->
+</div>
+<ol id="playlist"></ol>
+</div>
+<script type="text/javascript" src="QPlayer/js/jquery.min.js"></script>
+<script type="text/javascript" src="QPlayer/js/jquery.marquee.min.js"></script>
+<script>
+	var arr= [
+        'Tell Me 女中.mp3',
+        'Tell Me 女高.mp3',
+        'Tell Me 男高.mp3',
+        'Tell Me 男低.mp3',
+        '这位奇妙婴孩是谁 女中.mp3',
+        '这位奇妙婴孩是谁 女高.mp3',
+        '这位奇妙婴孩是谁 男高.mp3',
+        '这位奇妙婴孩是谁 男低.mp3',
+        '因祂活着 女中.mp3',
+        '因祂活着 女高.mp3',
+        '因祂活着 男高.mp3',
+        '因祂活着 男低.mp3',
+        '因祂大爱 女中.mp3',
+        '因祂大爱 女高.mp3',
+        '因祂大爱 男高.mp3',
+        '因祂大爱 男低.mp3',
+        '听啊天使高声唱 女中.mp3',
+        '听啊天使高声唱 女高.mp3',
+        '听啊天使高声唱 男高.mp3',
+        '听啊天使高声唱 男低.mp3',
+        '圣诞颂 女中.mp3',
+        '圣诞颂 女高.mp3',
+        '圣诞颂 男高.mp3',
+        '圣诞颂 男低.mp3',
+        '荣耀歌 女中.mp3',
+        '荣耀歌 女高.mp3',
+        '荣耀歌 男高.mp3',
+        '荣耀歌 男低.mp3',
+        '奇异恩典 女中.mp3',
+        '奇异恩典 女高.mp3',
+        '奇异恩典 男高.mp3',
+        '奇异恩典 男低.mp3',
+        '齐来崇拜 女中.mp3',
+        '齐来崇拜 女高.mp3',
+        '齐来崇拜 男高.mp3',
+        '齐来崇拜 男低.mp3',
+        '普世欢腾 女中.mp3',
+        '普世欢腾 女高.mp3',
+        '普世欢腾 男高.mp3',
+        '普世欢腾 男低.mp3',
+        '平安夜 女中.mp3',
+        '平安夜 女高.mp3',
+        '平安夜 男高.mp3',
+        '平安夜 男低.mp3',
+        '马槽歌 女中.mp3',
+        '马槽歌 女高.mp3',
+        '马槽歌 男高.mp3',
+        '马槽歌 男低.mp3',
+        '快乐崇拜 女中.mp3',
+        '快乐崇拜 女高.mp3',
+        '快乐崇拜 男高.mp3',
+        '快乐崇拜 男低.mp3',
+        '何等恩友 女中.mp3',
+        '何等恩友 女高.mp3',
+        '何等恩友 男高.mp3',
+        '何等恩友 男低.mp3',
+	]
+
+    var	playlist = [
+//        {title:"普世欢腾 女中",artist:"",mp3:"普世欢腾 女中.mp3",cover:"",},
+//        {title:"普世欢腾 女中",artist:"",mp3:"普世欢腾 女中.mp3",cover:"",},
+//        {title:"普世欢腾 女中",artist:"",mp3:"普世欢腾 女中.mp3",cover:"",},
+
+    ];
+
+	for(var i=0;i<arr.length;i++){
+	    var obj={}
+	    obj.title = arr[i]
+		obj.mp3 = arr[i]
+		obj.artist = ''
+		obj.cover = ''
+		playlist.push(obj)
+	}
+
+
+  var isRotate = true;
+  var autoplay = false;
+</script>
+<script type="text/javascript" src="QPlayer/js/player.js"></script>
+<script>
+function bgChange(){
+	var lis= $('.lib');
+	for(var i=0; i<lis.length; i+=2)
+	lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
+}
+window.onload = bgChange;
+</script>
+</body>
+</html>
