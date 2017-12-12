@@ -674,7 +674,7 @@ var memberList = [
         name: '炳林',
         update: true, //本周是否更新
         prayer: [
-            {text: '为我的婚姻和医院的服侍祷告。'},
+            {text: '为更有力量的带领好医院的福音事工祷告。'},
             {text: ''},
             {text: ''}
         ],
