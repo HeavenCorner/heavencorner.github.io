@@ -14,18 +14,38 @@
             height: 100vh;
             overflow-x: hidden;
         }
+        #img-box{
+            width: 100vw;
+            text-align: center;
+            background: #888888;
+            padding-top: 10px;
+        }
         img{
+            vertical-align: top;
         	width: 100vw;
-            max-width: 1200px;
+            max-width: 1000px;
+            margin-bottom: 10px;
         }
     </style>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
-    <img src="01.jpeg" alt="">
-    <img src="02.jpeg" alt="">
+    <div id="img-box">
 
-    <img src="03.jpeg" alt="">
-    <img src="04.jpeg" alt="">
+    </div>
+    <script>
+      for (var i = 1; i < 41; i++) {
+        (function(){
+          var newImgT = new Image();
+        newImgT.onload = function () {
+          $('#img-box').append(newImgT)
+
+        }
+          newImgT.src = i+'.jpg';
+        })(i)
+
+      }
+    </script>
 
 </body>
 </html>
