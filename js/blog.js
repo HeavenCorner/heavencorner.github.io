@@ -419,8 +419,8 @@ $(function(){
                     $('.titleouttimes').html('In order to in heaven, Five years of effort');
 
                 }else{
-                    if($('.titleouttimes').html() != '为同在天堂的5年行程'){ //减少dom操作
-                        $('.titleouttimes').html('为同在天堂的5年行程');
+                    if($('.titleouttimes').html() != 'River'){ //减少dom操作
+                        $('.titleouttimes').html('River');
                     }
                 }
             }else if(times < 201){
