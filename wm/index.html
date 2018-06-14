@@ -35,14 +35,17 @@
     </div>
     <script>
       for (var i = 1; i < 41; i++) {
-        (function(){
-          var newImgT = new Image();
-//        newImgT.onload = function () {
-          $('#img-box').append(newImgT)
+	       if(i !== 15 || i !== 16){
+      	
+		        (function(){
+		          var newImgT = new Image();
+		//        newImgT.onload = function () {
+		          $('#img-box').append(newImgT)
 
-//        }
-          newImgT.src = i+'.jpg';
-        })(i)
+		//        }
+			          newImgT.src = i+'.jpg';
+		        })(i)
+	       }
 
       }
     </script>
