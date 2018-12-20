@@ -42,12 +42,17 @@
 		//        newImgT.onload = function () {
 		          $('#img-box').append(newImgT)
 
-		//        }
-			          newImgT.src = i+'.jpg';
+        //        }
+                    if(i == 35 || i == 36 || i == 39){
+                        newImgT.src = i+'.gif';
+                    }else{
+                        newImgT.src = i+'.jpg';                        
+                    }
 		        })(i)
 	       }
 
       }
+      
     </script>
 
 </body>

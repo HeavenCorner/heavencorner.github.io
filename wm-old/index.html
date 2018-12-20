@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <title>王冕的个人简历</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        body{
+        	padding: 0;
+        	margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        #img-box{
+            width: 100vw;
+            text-align: center;
+            background: #888888;
+            /*padding-top: 10px;*/
+        }
+        img{
+            vertical-align: top;
+        	width: 100vw;
+            max-width: 1600px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <div id="img-box">
+
+    </div>
+    <script>
+      for (var i = 1; i < 41; i++) {
+	       if(i !== 15 || i !== 16){
+      	
+		        (function(){
+		          var newImgT = new Image();
+		//        newImgT.onload = function () {
+		          $('#img-box').append(newImgT)
+
+		//        }
+			          newImgT.src = i+'.jpg';
+		        })(i)
+	       }
+
+      }
+      
+    </script>
+
+</body>
+</html>
