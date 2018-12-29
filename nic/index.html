@@ -44,18 +44,18 @@
 
     </div>
     <script>
-      for (var i = 1; i < 40; i++) {
+      for (var i = 1; i < 42; i++) {
 	       // if(i !== 15 || i !== 16){
 		        (function(){
-
 		        	// 视频 29
 		        	if(i == 31){
 
-		        		$('#img-box').append("<iframe id='iframeid' height='700px !important' width='500px !important' src='http://player.youku.com/embed/XMzk4NzYzMzE2MA==' frameborder=0 'allowfullscreen' onload='hideImg(this)'></iframe>")
+		        		$('#img-box').append("<iframe id='iframeid' height='700px !important' width='500px !important' src='http://player.youku.com/embed/XMzk4NzYzMzE2MA==' frameborder=0 'allowfullscreen' onload=''></iframe>")
 		        		// $('#img-box').append("<embed src='http://player.youku.com/player.php/sid/XMzk4NzYzMzE2MA==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>")
 
-		        	}else{
-		        		var newImgT = new Image();			          
+		        	}else{		        		
+
+                var newImgT = new Image();			          
 				        $('#img-box').append(newImgT)
 
 				        var arr=[28,29,30,32,33,34,35]
@@ -72,24 +72,24 @@
 	       // }
 
       }
-      window.onload = function(){
-      	$(".ykplayer-poster-logo").css({
-      		height: "700px"
-      	})
-      	console.log($(".ykplayer-poster-logo").attr('style'))
-      }
-      $('#iframeid').load(function() {
-      	console.log(document)
-      	console.log(document.getElementsByClassName("ykplayer-poster-logo"))
-		$(parent.document).find(".ykplayer-poster-logo").css("width","200px")
+  //     window.onload = function(){
+  //     	$(".ykplayer-poster-logo").css({
+  //     		height: "700px"
+  //     	})
+  //     	console.log($(".ykplayer-poster-logo").attr('style'))
+  //     }
+  //     $('#iframeid').load(function() {
+  //     	console.log(document)
+  //     	console.log(document.getElementsByClassName("ykplayer-poster-logo"))
+		// $(parent.document).find(".ykplayer-poster-logo").css("width","200px")
       	
-      });
+  //     });
 
-       function hideImg(i) {
-       	console.log(i.contentWindow.document.getElementsByTagName('div'))
-        var imgs = i.contentWindow.document.getElementsByTagName('div');
-        for(var i=0;i<imgs.length;i++)imgs[i].style.display='none'
-    	}
+  //      function hideImg(i) {
+  //      	console.log(i.contentWindow.document.getElementsByTagName('div'))
+  //       var imgs = i.contentWindow.document.getElementsByTagName('div');
+  //       for(var i=0;i<imgs.length;i++)imgs[i].style.display='none'
+  //   	}
       
     </script>
 
