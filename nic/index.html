@@ -48,25 +48,18 @@
 	       // if(i !== 15 || i !== 16){
 		        (function(){
 		        	// 视频 29
-		        	if(i == 31){
+		        		        		
 
-		        		$('#img-box').append("<iframe id='iframeid' height='700px !important' width='500px !important' src='http://player.youku.com/embed/XMzk4NzYzMzE2MA==' frameborder=0 'allowfullscreen' onload=''></iframe>")
-		        		// $('#img-box').append("<embed src='http://player.youku.com/player.php/sid/XMzk4NzYzMzE2MA==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>")
+                    var newImgT = new Image();			          
+				    $('#img-box').append(newImgT)
 
-		        	}else{		        		
+				    var arr=[29,30,31,32,33,34,35]
 
-                var newImgT = new Image();			          
-				        $('#img-box').append(newImgT)
-
-				        var arr=[28,29,30,32,33,34,35]
-
-	                    if(arr.indexOf(i) > -1){
-	                        newImgT.src = i+'.gif';
-	                    }else{
-	                        newImgT.src = i+'.jpg';                        
-	                    }
-
-		        	}
+	                if(arr.indexOf(i) > -1){
+	                    newImgT.src = i+'.gif';
+	                }else{
+	                    newImgT.src = i+'.jpg';                        
+	                }
 		        	
 			    })(i)
 	       // }
