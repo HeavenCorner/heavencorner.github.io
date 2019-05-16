@@ -1,59 +1,52 @@
 <!DOCTYPE html>
 <html lang="ch-zn">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>王冕的个人简历</title>
     <style>
-        *{
-            text-align: center;
-        }
-        body{
-        	padding: 0;
-        	margin: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow-x: hidden;
-        }
-        #img-box{
-            width: 100vw;
-            text-align: center;
-            background: #888888;
-            /*padding-top: 10px;*/
-        }
-        img{
-            vertical-align: top;
-        	width: 100vw;
-            max-width: 1280px;
-            margin-bottom: 10px;
-        }
+      * {
+        text-align: center;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+      }
+      #img-box {
+        width: 100vw;
+        text-align: center;
+        background: #888888;
+        /*padding-top: 10px;*/
+      }
+      img {
+        vertical-align: top;
+        width: 100vw;
+        max-width: 1280px;
+        margin-bottom: 10px;
+      }
     </style>
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-</head>
-<body>
-    <div id="img-box">
-
-    </div>
+    <script src="../js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="img-box"></div>
     <script>
       for (var i = 1; i < 41; i++) {
-	       if(i !== 11){
-      	
-		        (function(){
-		          var newImgT = new Image();
-		//        newImgT.onload = function () {
-		          $('#img-box').append(newImgT)
-
-        //        }
-                    if(i == 35 || i == 36 || i == 39){
-                        newImgT.src = i+'.gif';
-                    }else{
-                        newImgT.src = i+'.jpg';                        
-                    }
-		        })(i)
-	       }
-
+        if (i !== 11) {
+          ;(function() {
+            var newImgT = new Image()
+            newImgT.onload = function() {
+              $('#img-box').append(newImgT)
+            }
+            if (i == 35 || i == 36 || i == 39) {
+              newImgT.src = i + '.gif'
+            } else {
+              newImgT.src = i + '.jpg'
+            }
+          })(i)
+        }
       }
-      
     </script>
-
-</body>
+  </body>
 </html>
